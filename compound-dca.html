@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- GEO / SEO -->
+<meta name="geo.region" content="TH-10"/>
+<meta name="geo.placename" content="Bangkok, Thailand"/>
+<meta name="geo.position" content="13.7563;100.5018"/>
+<meta name="ICBM" content="13.7563, 100.5018"/>
+<meta name="language" content="th"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+<meta name="author" content="Wealth Compass"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Wealth Compass"/>
+<meta property="og:title" content="คำนวณดอกเบี้ยทบต้น DCA และผลกระทบค่าธรรมเนียม · เครื่องมือฟรี | Wealth Compass"/>
+<meta property="og:description" content="ดูพลังดอกเบี้ยทบต้นเมื่อลงทุนแบบ DCA ทุกเดือน พร้อมวิเคราะห์ว่าค่าธรรมเนียมกองทุนกินกำไรคุณไปเท่าไหร่ในระยะยาว ฟรี ไม่ต้องสมัคร"/>
+<meta property="og:url" content="https://wealthcompass.example.com/compound-dca.html"/>
+<meta property="og:locale" content="th_TH"/>
+<meta property="og:locale:alternate" content="en_US"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="ดอกเบี้ยทบต้น + DCA + วิเคราะห์ค่าธรรมเนียม · ฟรี | Wealth Compass"/>
+<meta name="twitter:description" content="เห็นมูลค่าปลายทางของการลงทุนสม่ำเสมอ และดูว่าค่าธรรมเนียม 1% กินกำไรคุณไปเท่าไหร่"/>
+
+<!-- Hreflang / canonical -->
+<link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/compound-dca.html"/>
+<link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/compound-dca.html?lang=en"/>
+<link rel="alternate" hreflang="x-default" href="https://wealthcompass.example.com/compound-dca.html"/>
+<link rel="canonical" href="https://wealthcompass.example.com/compound-dca.html"/>
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()"/>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://wealthcompass.example.com/#organization",
+      "name": "Wealth Compass",
+      "url": "https://wealthcompass.example.com",
+      "areaServed": "TH"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://wealthcompass.example.com/compound-dca.html#app",
+      "name": "เครื่องมือคำนวณดอกเบี้ยทบต้นและ DCA พร้อมวิเคราะห์ค่าธรรมเนียม",
+      "alternateName": "Compound Growth, DCA & Fee Analyzer",
+      "url": "https://wealthcompass.example.com/compound-dca.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "THB"},
+      "inLanguage": ["th", "en"],
+      "publisher": {"@id": "https://wealthcompass.example.com/#organization"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://wealthcompass.example.com/"},
+        {"@type": "ListItem", "position": 2, "name": "ดอกเบี้ยทบต้น & DCA", "item": "https://wealthcompass.example.com/compound-dca.html"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ดอกเบี้ยทบต้นทำงานอย่างไรกับการลงทุนแบบ DCA?",
+          "acceptedAnswer": {"@type": "Answer", "text": "DCA (Dollar-Cost Averaging) คือการลงทุนเงินจำนวนเท่ากันทุกเดือนไม่ว่าตลาดขึ้นหรือลง เมื่อรวมกับดอกเบี้ยทบต้น ผลตอบแทนที่ได้จะถูกนำกลับไปลงทุนต่อ ทำให้เงินงอกบนเงินที่งอกแล้ว ยิ่งเวลานานยิ่งทวีคูณ เครื่องมือนี้ใช้การทบต้นรายเดือนเพื่อจำลองสถานการณ์จริงของการลงทุนสม่ำเสมอ"}
+        },
+        {
+          "@type": "Question",
+          "name": "ค่าธรรมเนียม 1% ต่อปีสำคัญแค่ไหน?",
+          "acceptedAnswer": {"@type": "Answer", "text": "สำคัญมากกว่าที่คิด เพราะค่าธรรมเนียมถูกหักทุกปีจากเงินก้อนที่โตขึ้นเรื่อยๆ ในระยะ 20-30 ปี ค่าธรรมเนียมเพียง 1-2% ต่อปีอาจกินกำไรของคุณไป 30-50% กองทุน index ที่มีค่าธรรมเนียมต่ำ (0.1-0.5%) จึงมักให้ผลลัพธ์สุทธิดีกว่ากองทุน active ในระยะยาว ตามแนวคิดที่ Empower และ John Bogle ผู้ก่อตั้ง Vanguard เน้นย้ำ"}
+        },
+        {
+          "@type": "Question",
+          "name": "กฎ 72 ใช้คำนวณอะไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "กฎ 72 เป็นวิธีประมาณคร่าวๆ ว่าเงินจะเพิ่มเป็นสองเท่าในกี่ปี โดยเอา 72 หารด้วยอัตราผลตอบแทนต่อปี เช่น ผลตอบแทน 7.2% เงินจะโตสองเท่าใน 10 ปี ที่ 6% ใช้ 12 ปี กฎนี้แสดงให้เห็นว่าทำไมความแตกต่างของผลตอบแทนเพียงไม่กี่เปอร์เซ็นต์จึงสร้างความต่างมหาศาลในระยะยาว"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<title>คำนวณดอกเบี้ยทบต้น + DCA + วิเคราะห์ค่าธรรมเนียม · เครื่องมือฟรี | Wealth Compass</title>
+<meta name="description" content="คำนวณมูลค่าปลายทางของการลงทุนแบบ DCA ทุกเดือนด้วยดอกเบี้ยทบต้น พร้อมวิเคราะห์ว่าค่าธรรมเนียมกองทุน (TER) กินกำไรคุณไปเท่าไหร่ ฟรี คำนวณในเครื่องคุณ ไม่ต้องสมัคร"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="_theme.css"/>
+
+<style>
+/* chart */
+.chart-wrap { width: 100%; }
+.chart-wrap svg { width: 100%; height: auto; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 14px; font-size: 13px; }
+.chart-legend .li { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--forest); }
+.chart-legend .swatch { width: 18px; height: 4px; border-radius: 99px; display: inline-block; }
+.chart-legend .swatch.dash { height: 0; border-top: 3px dashed var(--muted); width: 18px; }
+
+/* result-hero sub split */
+.r-split { display: flex; gap: 28px; flex-wrap: wrap; margin-top: 14px; }
+.r-split .blk .k { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); font-weight: 700; }
+.r-split .blk .v { font-size: 19px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; margin-top: 2px; }
+.r-split .blk .v.bright { color: var(--bright); }
+
+/* fee analyzer panel */
+.fee-stat { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+.fee-stat .num { font-size: 30px; font-weight: 800; color: var(--danger); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.fee-meter { background: var(--bg); border: 1px solid var(--line); border-radius: 99px; height: 14px; width: 100%; overflow: hidden; margin: 14px 0 8px; display: flex; }
+.fee-meter .keep { height: 100%; background: var(--bright-2); }
+.fee-meter .lost { height: 100%; background: #e88c74; }
+.fee-meter-labels { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; }
+.fee-meter-labels .keep-l { color: var(--positive); }
+.fee-meter-labels .lost-l { color: var(--danger); }
+
+/* slider hint presets */
+.preset-hint { font-size: 11.5px; color: var(--muted); margin-top: 6px; line-height: 1.5; }
+.preset-hint b { color: var(--forest); }
+
+/* milestones table */
+.ms-table td.num, .ms-table th.num { text-align: right; }
+.ms-table .yr { font-weight: 800; color: var(--forest); }
+.ms-table .val { font-weight: 800; color: var(--forest); }
+.ms-table .gain { color: var(--positive); font-weight: 700; }
+
+/* SEO content */
+.content-prose { max-width: 760px; }
+.content-prose h2 { font-size: 26px; margin: 36px 0 12px; }
+.content-prose h3 { font-size: 19px; margin: 26px 0 10px; }
+.content-prose p, .content-prose li { color: #38454c; font-size: 15.5px; margin-bottom: 12px; }
+.content-prose ul { list-style: disc; padding-left: 22px; }
+.content-prose .src { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content"><span class="lang-th">ข้ามไปเนื้อหาหลัก</span><span class="lang-en">Skip to main content</span></a>
+<nav></nav>
+<script src="_brand.js"></script>
+<script src="_app.js"></script>
+<script src="_nav.js"></script>
+
+<main id="main-content">
+
+<!-- ============ HERO ============ -->
+<header class="tool-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html"><span class="lang-th">หน้าแรก</span><span class="lang-en">Home</span></a> / <span class="lang-th">ดอกเบี้ยทบต้น &amp; DCA</span><span class="lang-en">Compound &amp; DCA</span></div>
+    <span class="badge blue"><span class="lang-th">ขั้นที่ 3 · ออม &amp; ลงทุน</span><span class="lang-en">Stage 3 · Save &amp; invest</span></span>
+    <h1 style="margin-top:14px;">
+      <span class="lang-th">ลงทุนทุกเดือน 20 ปี เงินจะโตเป็นเท่าไหร่?</span>
+      <span class="lang-en">Invest every month for 20 years · how big does it grow?</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-th">ดูพลังดอกเบี้ยทบต้นเมื่อลงทุนแบบ DCA สม่ำเสมอ แล้วเปิดดูความจริงที่คนส่วนใหญ่มองข้าม · ค่าธรรมเนียมกองทุนกินกำไรคุณไปเท่าไหร่</span>
+      <span class="lang-en">See compounding work on a steady DCA habit · then face the truth most people miss: how much fund fees quietly eat from your profit.</span>
+    </p>
+  </div>
+</header>
+
+<!-- ============ TOOL ============ -->
+<section class="section tight" style="padding-top:24px;">
+  <div class="container tool-grid">
+
+    <!-- inputs -->
+    <div class="inputs-col">
+      <div class="panel">
+
+        <!-- mode: forward calc vs solve-for-contribution -->
+        <div class="field">
+          <label><span class="lang-th">โหมดการคำนวณ</span><span class="lang-en">Calculation mode</span></label>
+          <div class="segmented" id="mode-seg" role="group" aria-label="Calculation mode">
+            <button type="button" data-mode="forward" class="on"><span class="lang-th">คำนวณไปข้างหน้า</span><span class="lang-en">Project forward</span></button>
+            <button type="button" data-mode="solve"><span class="lang-th">หาเงินที่ต้องลงทุน</span><span class="lang-en">Solve contribution</span></button>
+          </div>
+        </div>
+
+        <!-- target (solve mode only) -->
+        <div class="field" id="field-target" style="display:none;">
+          <label for="target"><span class="lang-th">เป้าหมายที่ต้องการ</span><span class="lang-en">Target amount</span></label>
+          <div class="input-group">
+            <input type="text" id="target" data-num inputmode="numeric" value="5,000,000" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="lump"><span class="lang-th">เงินก้อนตั้งต้น</span><span class="lang-en">Starting lump sum</span></label>
+          <div class="input-group">
+            <input type="text" id="lump" data-num inputmode="numeric" value="100,000" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+
+        <div class="field" id="field-monthly">
+          <label for="monthly"><span class="lang-th">ลงทุนเพิ่มต่อเดือน (DCA)</span><span class="lang-en">Added monthly (DCA)</span></label>
+          <div class="input-group">
+            <input type="text" id="monthly" data-num inputmode="numeric" value="10,000" autocomplete="off"/>
+            <span class="unit">฿/<span class="lang-th">เดือน</span><span class="lang-en">mo</span></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="years"><span class="lang-th">ระยะเวลาลงทุน</span><span class="lang-en">Time horizon</span></label>
+          <div class="range-row">
+            <input type="range" id="years" min="1" max="40" step="1" value="20"/>
+            <span class="range-val" id="years-val">20 <span class="lang-th">ปี</span><span class="lang-en">yr</span></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="ret"><span class="lang-th">ผลตอบแทนต่อปี (ก่อนค่าธรรมเนียม)</span><span class="lang-en">Annual return (before fees)</span></label>
+          <div class="range-row">
+            <input type="range" id="ret" min="1" max="12" step="0.5" value="7"/>
+            <span class="range-val" id="ret-val">7.0%</span>
+          </div>
+          <p class="preset-hint">
+            <span class="lang-th"><b>อ้างอิงคร่าวๆ:</b> เงินฝาก ~1.5% · ตราสารหนี้ ~3% · พอร์ตผสม ~5–7% · หุ้นโลก ~8–9%</span>
+            <span class="lang-en"><b>Rough guide:</b> deposit ~1.5% · bonds ~3% · balanced ~5–7% · global stocks ~8–9%</span>
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="fee"><span class="lang-th">ค่าธรรมเนียมกองทุนต่อปี (TER)</span><span class="lang-en">Annual fund fee (TER)</span></label>
+          <div class="range-row">
+            <input type="range" id="fee" min="0" max="3" step="0.05" value="1.5"/>
+            <span class="range-val" id="fee-val">1.50%</span>
+          </div>
+          <p class="preset-hint">
+            <span class="lang-th"><b>อ้างอิงคร่าวๆ:</b> กองทุน active ไทย ~1.5–2% · กองทุน index ~0.1–0.5%</span>
+            <span class="lang-en"><b>Rough guide:</b> Thai active funds ~1.5–2% · index funds ~0.1–0.5%</span>
+          </p>
+        </div>
+
+        <!-- step-up contributions -->
+        <div class="field" id="field-stepup">
+          <label for="stepup"><span class="lang-th">เพิ่มเงินลงทุนทุกปี (step-up)</span><span class="lang-en">Increase contribution yearly (step-up)</span></label>
+          <div class="range-row">
+            <input type="range" id="stepup" min="0" max="15" step="0.5" value="0"/>
+            <span class="range-val" id="stepup-val">0.0%/<span class="lang-th">ปี</span><span class="lang-en">yr</span></span>
+          </div>
+          <p class="preset-hint">
+            <span class="lang-th"><b>เคล็ดลับ:</b> เพิ่มเงินลงทุนตามเงินเดือนที่ขึ้นทุกปี ~3–5% จะเร่งปลายทางอย่างมาก</span>
+            <span class="lang-en"><b>Tip:</b> raising your contribution with annual raises (~3–5%) compounds the finish dramatically.</span>
+          </p>
+        </div>
+
+        <!-- inflation + real/nominal -->
+        <div class="field">
+          <label for="infl"><span class="lang-th">เงินเฟ้อต่อปี</span><span class="lang-en">Inflation per year</span></label>
+          <div class="range-row">
+            <input type="range" id="infl" min="0" max="8" step="0.5" value="3"/>
+            <span class="range-val" id="infl-val">3.0%</span>
+          </div>
+        </div>
+
+        <div class="field" style="margin-bottom:0;">
+          <label><span class="lang-th">แสดงมูลค่าแบบ</span><span class="lang-en">Show value as</span></label>
+          <div class="segmented" id="value-seg" role="group" aria-label="Value basis">
+            <button type="button" data-basis="nominal" class="on"><span class="lang-th">มูลค่าอนาคต (nominal)</span><span class="lang-en">Future (nominal)</span></button>
+            <button type="button" data-basis="real"><span class="lang-th">มูลค่าวันนี้ (real)</span><span class="lang-en">Today's (real)</span></button>
+          </div>
+          <p class="preset-hint">
+            <span class="lang-th"><b>มูลค่าวันนี้ (real)</b> = ปรับด้วยเงินเฟ้อแล้ว = กำลังซื้อจริงเมื่อถึงปลายทาง</span>
+            <span class="lang-en"><b>Today's (real)</b> = inflation-adjusted = the actual buying power at the finish.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- results -->
+    <div>
+      <div class="result-hero" aria-live="polite">
+        <div class="lbl" id="r-label"><span class="lang-th">มูลค่าปลายทาง (หลังหักค่าธรรมเนียม)</span><span class="lang-en">Final value (after fees)</span></div>
+        <div class="big" id="r-final">฿4,580,431</div>
+        <div class="sub" id="r-sub" style="display:none;"></div>
+        <div class="r-split">
+          <div class="blk">
+            <div class="k"><span class="lang-th">เงินต้นที่ใส่รวม</span><span class="lang-en">Total contributed</span></div>
+            <div class="v" id="r-contrib">฿2,500,000</div>
+          </div>
+          <div class="blk">
+            <div class="k"><span class="lang-th">กำไรจากการลงทุน</span><span class="lang-en">Investment gain</span></div>
+            <div class="v bright" id="r-gain">฿2,155,937</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- chart -->
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:4px;"><span class="lang-th">เส้นทางการเติบโต</span><span class="lang-en">Growth path</span></h3>
+        <p class="hint" style="margin-bottom:14px;font-size:12px;color:var(--muted);"><span class="lang-th">พื้นที่แรเงาระหว่างเส้น คือส่วนที่ค่าธรรมเนียมกินไป</span><span class="lang-en">The shaded gap between the lines is what fees take.</span></p>
+        <div class="chart-wrap">
+          <svg id="chart" viewBox="0 0 640 300" role="img" aria-label="Compound growth line chart: contributions, net and gross value over time"></svg>
+        </div>
+        <div class="chart-legend">
+          <span class="li"><span class="swatch" style="background:#9fe870;"></span><span class="lang-th">ก่อนหักค่าธรรมเนียม</span><span class="lang-en">Before fees</span></span>
+          <span class="li"><span class="swatch" style="background:#163300;"></span><span class="lang-th">หลังหักค่าธรรมเนียม</span><span class="lang-en">After fees</span></span>
+          <span class="li"><span class="swatch dash"></span><span class="lang-th">เงินต้นที่ใส่</span><span class="lang-en">Contributions</span></span>
+        </div>
+      </div>
+
+      <!-- fee analyzer -->
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:14px;"><span class="lang-th">วิเคราะห์ค่าธรรมเนียม</span><span class="lang-en">Fee analyzer</span></h3>
+        <div class="fee-stat">
+          <span class="num" id="fee-amt">฿957,204</span>
+        </div>
+        <p id="fee-line" style="font-size:14.5px;color:var(--forest);font-weight:600;line-height:1.6;"></p>
+        <div class="fee-meter" aria-hidden="true">
+          <div class="keep" id="fee-keep" style="width:56%;"></div>
+          <div class="lost" id="fee-lost" style="width:44%;"></div>
+        </div>
+        <div class="fee-meter-labels">
+          <span class="keep-l" id="fee-keep-l"></span>
+          <span class="lost-l" id="fee-lost-l"></span>
+        </div>
+        <div class="field" style="margin:16px 0 0;">
+          <label for="cmpfee" style="font-size:13px;"><span class="lang-th">เทียบกับกองทุนค่าธรรมเนียม</span><span class="lang-en">Compare against a fund charging</span></label>
+          <div class="range-row">
+            <input type="range" id="cmpfee" min="0" max="2" step="0.05" value="0.3"/>
+            <span class="range-val" id="cmpfee-val">0.30%</span>
+          </div>
+        </div>
+        <div class="msg" id="index-msg" style="display:block;margin-top:14px;"></div>
+      </div>
+
+      <!-- lump vs DCA -->
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:4px;"><span class="lang-th">ลงทีเดียว vs ทยอย 12 เดือน</span><span class="lang-en">Lump sum vs DCA over 12 months</span></h3>
+        <p class="hint" style="margin-bottom:14px;font-size:12px;color:var(--muted);"><span class="lang-th">ถ้ามีเงินก้อนเท่ากัน ควรลงทีเดียว หรือทยอยลงใน 12 เดือน?</span><span class="lang-en">With the same total cash, invest it all at once or spread it over 12 months?</span></p>
+        <div class="r-split" style="margin-top:0;">
+          <div class="blk">
+            <div class="k" style="color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;"><span class="lang-th">ลงทีเดียว (lump)</span><span class="lang-en">Lump sum</span></div>
+            <div class="v" id="lvd-lump" style="font-size:21px;font-weight:800;color:var(--forest);font-variant-numeric:tabular-nums;margin-top:2px;">–</div>
+          </div>
+          <div class="blk">
+            <div class="k" style="color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;"><span class="lang-th">ทยอย 12 เดือน (DCA)</span><span class="lang-en">DCA 12 months</span></div>
+            <div class="v" id="lvd-dca" style="font-size:21px;font-weight:800;color:var(--forest);font-variant-numeric:tabular-nums;margin-top:2px;">–</div>
+          </div>
+        </div>
+        <p id="lvd-note" style="font-size:13.5px;color:#38454c;line-height:1.6;margin-top:14px;"></p>
+      </div>
+
+      <!-- milestones -->
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:14px;"><span class="lang-th">หมุดหมายตามปี</span><span class="lang-en">Milestones by year</span></h3>
+        <table class="ms-table">
+          <thead>
+            <tr>
+              <th><span class="lang-th">ปีที่</span><span class="lang-en">Year</span></th>
+              <th class="num"><span class="lang-th">เงินต้นสะสม</span><span class="lang-en">Contributed</span></th>
+              <th class="num"><span class="lang-th">มูลค่า (สุทธิ)</span><span class="lang-en">Value (net)</span></th>
+              <th class="num"><span class="lang-th">กำไร</span><span class="lang-en">Gain</span></th>
+            </tr>
+          </thead>
+          <tbody id="ms-body"></tbody>
+        </table>
+        <div class="msg" id="lever-msg" style="display:block;margin-top:14px;"></div>
+      </div>
+
+      <div class="disclaimer" style="margin-top:20px;">
+        <b><span class="lang-th">ข้อควรทราบ:</span><span class="lang-en">Note:</span></b>
+        <span class="lang-th">เครื่องมือนี้สมมติการเติบโตแบบทบต้นสม่ำเสมอ แต่ตลาดจริงผันผวนและผลตอบแทนในอดีตไม่การันตีอนาคต ส่วนวิเคราะห์ค่าธรรมเนียมใช้แนวคิด Fee Analyzer ของ Empower (Personal Capital) เพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุนรายบุคคล</span>
+        <span class="lang-en">This tool assumes smooth compound growth, but real markets fluctuate and past returns don't guarantee future results. The fee analysis follows Empower's (Personal Capital) Fee Analyzer concept. Educational only, not personalized investment advice.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><span class="lang-th">รู้ตัวเลขแล้ว · ขั้นต่อไปคือเลือกกองทุนที่ค่าธรรมเนียมไม่กินกำไร</span><span class="lang-en">You know the numbers · next, pick funds whose fees don't eat your gains</span></h2>
+        <p><span class="lang-th">นักวางแผนการเงินช่วยออกแบบพอร์ต DCA ที่ต้นทุนต่ำและเหมาะกับเป้าหมายคุณ นัดคุยครั้งแรกฟรี 30 นาที</span><span class="lang-en">A planner helps you design a low-cost DCA portfolio matched to your goals. First 30 minutes free.</span></p>
+      </div>
+      <form data-lead aria-label="Consultation request">
+        <input type="text" name="name" required autocomplete="name" placeholder="ชื่อของคุณ / Your name" aria-label="Name"/>
+        <input type="email" name="email" required autocomplete="email" placeholder="อีเมล / Email" aria-label="Email"/>
+        <input type="hidden" name="topic" value="invest"/>
+        <button class="btn btn-primary btn-lg" type="submit"><span class="lang-th">นัดคุยฟรี</span><span class="lang-en">Book free consult</span></button>
+        <div class="msg ok"><span class="lang-th">ได้รับข้อมูลแล้ว เราจะติดต่อกลับภายใน 1 วันทำการ</span><span class="lang-en">Received · we'll reply within 1 business day.</span></div>
+        <div class="msg err"><span class="lang-th">ส่งไม่สำเร็จ ลองอีกครั้ง</span><span class="lang-en">Couldn't send · try again.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEO CONTENT ============ -->
+<section class="section alt">
+  <div class="container content-prose">
+    <div class="section-label"><span class="lang-th">ความรู้</span><span class="lang-en">Learn</span></div>
+
+    <div class="lang-th">
+      <h2>พลังของการเริ่มก่อน</h2>
+      <p>ตัวแปรที่ทรงพลังที่สุดในการลงทุนไม่ใช่จำนวนเงินหรืออัตราผลตอบแทน แต่คือ "เวลา" เพราะดอกเบี้ยทบต้นทำงานแบบทวีคูณ · ปีแรกๆ ดูเหมือนช้า แต่ช่วงท้ายเงินจะพุ่งขึ้นอย่างน่าทึ่ง คนที่เริ่มลงทุนเดือนละ 10,000 บาทตอนอายุ 25 จะมีเงินมากกว่าคนที่เริ่มตอนอายุ 35 อย่างมหาศาล แม้ใส่เงินรวมต่างกันไม่มาก เพราะเงินก้อนแรกๆ มีเวลาทบต้นนานที่สุด ลองเลื่อนระยะเวลาในเครื่องมือด้านบนดู · เพิ่มเวลาเพียง 5 ปีอาจทำให้ปลายทางต่างกันเป็นล้าน</p>
+
+      <h2>DCA ตัดอารมณ์ออกจากการลงทุน</h2>
+      <p>DCA (Dollar-Cost Averaging) คือการลงเงินเท่ากันทุกเดือนโดยไม่สนว่าตลาดจะขึ้นหรือลง ข้อดีไม่ใช่แค่เรื่องตัวเลข แต่เป็นเรื่อง "วินัยและจิตวิทยา" · เมื่อตลาดตก คุณซื้อได้หน่วยมากขึ้นในราคาถูก เมื่อตลาดขึ้น คุณซื้อหน่วยน้อยลง โดยเฉลี่ยแล้วต้นทุนจะถูกเกลี่ย และที่สำคัญที่สุดคือมันตัดความพยายาม "จับจังหวะตลาด" ซึ่งแทบไม่มีใครทำได้สม่ำเสมอ ตั้งโอนอัตโนมัติวันเงินเดือนออก แล้วปล่อยให้ระบบทำงานแทนอารมณ์</p>
+
+      <h2>ค่าธรรมเนียม 1% ไม่ใช่เรื่องเล็ก</h2>
+      <p>หลายคนมองข้ามค่าธรรมเนียมกองทุนเพราะดูเป็นตัวเลขเล็กๆ แต่ในระยะยาวมันคือศัตรูตัวฉกาจของความมั่งคั่ง เพราะค่าธรรมเนียมถูกหักทุกปีจากเงินก้อนที่โตขึ้นเรื่อยๆ ในตัวอย่างเริ่มต้น (ลงทุน 20 ปี ผลตอบแทน 7%) ค่าธรรมเนียม 1.5% ต่อปีกินกำไรของคุณไปเกือบครึ่ง นี่คือเหตุผลที่ John Bogle ผู้ก่อตั้ง Vanguard ผลักดันกองทุน index ต้นทุนต่ำ และทำไม Empower จึงสร้างเครื่องมือ Fee Analyzer ขึ้นมาโดยเฉพาะ · ความต่างของค่าธรรมเนียมเพียง 1% อาจหมายถึงเงินหลายแสนถึงหลายล้านบาทเมื่อเกษียณ</p>
+
+      <h2>กฎ 72 · คณิตศาสตร์ในหัว</h2>
+      <p>กฎ 72 ช่วยให้คุณประมาณได้ในหัวว่าเงินจะโตเป็นสองเท่าในกี่ปี เพียงเอา 72 หารด้วยอัตราผลตอบแทนต่อปี เช่น ที่ผลตอบแทน 7.2% เงินจะโตสองเท่าในราว 10 ปี ที่ 6% ใช้ 12 ปี ที่ 9% ใช้เพียง 8 ปี กฎง่ายๆ นี้เผยความจริงสำคัญ: ความต่างของผลตอบแทนเพียงไม่กี่เปอร์เซ็นต์ (รวมถึงเปอร์เซ็นต์ที่หายไปกับค่าธรรมเนียม) สร้างความต่างมหาศาลในระยะยาว</p>
+      <p class="src">ที่มา: แนวคิด Fee Analyzer · Empower (Personal Capital) · ปรัชญากองทุนต้นทุนต่ำ · John C. Bogle, Vanguard · กฎ 72 เป็นสูตรประมาณทางคณิตศาสตร์การเงินมาตรฐาน</p>
+    </div>
+
+    <div class="lang-en">
+      <h2>The power of starting early</h2>
+      <p>The most powerful variable in investing isn't the amount or the rate · it's time. Compounding grows exponentially: the early years look slow, but the later years surge. Someone who starts investing ฿10,000/month at 25 ends up with vastly more than someone who starts at 35, even with a similar total contributed, because the earliest money compounds the longest. Slide the time horizon above · just 5 more years can mean millions of baht in difference.</p>
+
+      <h2>DCA removes emotion from investing</h2>
+      <p>Dollar-cost averaging means investing the same amount every month regardless of whether the market is up or down. The benefit isn't only mathematical · it's psychological. When markets fall, you buy more units cheaply; when they rise, you buy fewer. Costs average out, and crucially it removes the temptation to "time the market," which almost no one does consistently. Automate the transfer on payday and let the system work instead of your emotions.</p>
+
+      <h2>A 1% fee is not small</h2>
+      <p>Many overlook fund fees because they look like tiny numbers, but over the long run they're a wealth killer · charged every year on a balance that keeps growing. In the default example (20 years at 7%), a 1.5% annual fee eats nearly half your gain. That's why Vanguard founder John Bogle championed low-cost index funds, and why Empower built a dedicated Fee Analyzer. A difference of just 1% in fees can mean hundreds of thousands to millions of baht by retirement.</p>
+
+      <h2>The Rule of 72 · mental math</h2>
+      <p>The Rule of 72 lets you estimate how long money takes to double: divide 72 by the annual return. At 7.2% money doubles in about 10 years; at 6%, 12 years; at 9%, just 8. This simple rule reveals a key truth: a few percentage points of return (including the points lost to fees) create enormous long-term differences.</p>
+      <p class="src">Sources: Fee Analyzer concept · Empower (Personal Capital) · Low-cost fund philosophy · John C. Bogle, Vanguard · The Rule of 72 is a standard financial-math approximation.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer></footer>
+<script src="_footer.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  var W = window.WC;
+  function el(id) { return document.getElementById(id); }
+  function lang() { return W.getLang(); }
+
+  /* ---------- engine: monthly compounding ---------- */
+  /* returns { grossArr, netArr, contribArr } where each arr[year] is value at end of that year (index 0..yrs).
+     stepPct escalates the monthly amount at the start of each new year (year 1 unchanged). */
+  function simulate(lump, monthly, yrs, grossAnnual, netAnnual, stepPct) {
+    var grossArr = [lump];
+    var netArr = [lump];
+    var contribArr = [lump];
+    var gBal = lump, nBal = lump, cBal = lump;
+    var step = (stepPct || 0) / 100;
+    var m = monthly;
+    /* geometric monthly rate so an annual input of 7% truly compounds to 7%/yr */
+    var gMr = Math.pow(1 + grossAnnual, 1 / 12) - 1;
+    var nMr = Math.pow(1 + netAnnual, 1 / 12) - 1;
+    for (var y = 1; y <= yrs; y++) {
+      if (y > 1 && step > 0) { m = m * (1 + step); }
+      for (var mo = 0; mo < 12; mo++) {
+        gBal = gBal * (1 + gMr) + m;
+        nBal = nBal * (1 + nMr) + m;
+        cBal = cBal + m;
+      }
+      grossArr.push(gBal);
+      netArr.push(nBal);
+      contribArr.push(cBal);
+    }
+    return { grossArr: grossArr, netArr: netArr, contribArr: contribArr };
+  }
+
+  /* deflate an array of nominal values to today's purchasing power at the annual inflation rate.
+     value at end of year y is divided by (1+infl)^y. Returns a new array. */
+  function deflateArr(arr, infl) {
+    if (!infl) { return arr.slice(); }
+    var out = [];
+    for (var y = 0; y < arr.length; y++) {
+      out.push(arr[y] / Math.pow(1 + infl, y));
+    }
+    return out;
+  }
+
+  /* solve for the monthly contribution needed to reach the target (nominal end value) given lump + return.
+     Binary search inverting the monthly-compound FV. Honest about the lump already contributed. */
+  function solveMonthly(target, lump, yrs, netAnnual, stepPct) {
+    var lo = 0, hi = 1e9;
+    /* if the lump alone already overshoots, no monthly needed */
+    if (simulate(lump, 0, yrs, netAnnual, netAnnual, stepPct).netArr[yrs] >= target) { return 0; }
+    for (var i = 0; i < 100; i++) {
+      var mid = (lo + hi) / 2;
+      var fv = simulate(lump, mid, yrs, netAnnual, netAnnual, stepPct).netArr[yrs];
+      if (fv > target) { hi = mid; } else { lo = mid; }
+    }
+    return (lo + hi) / 2;
+  }
+
+  /* lump-sum vs DCA-over-12-months for the SAME total cash, both held the full horizon at the net rate. */
+  function lumpFV(amt, yrs, annual) { return amt * Math.pow(1 + annual, yrs); }
+  function dca12FV(total, yrs, annual) {
+    var perMo = total / 12;
+    var mr = Math.pow(1 + annual, 1 / 12) - 1;
+    var bal = 0, months = yrs * 12;
+    for (var mth = 0; mth < months; mth++) {
+      bal = bal * (1 + mr) + (mth < 12 ? perMo : 0);
+    }
+    return bal;
+  }
+
+  /* fmt in ฿M for axis */
+  function fmtM(n) {
+    var m = n / 1000000;
+    if (m >= 10) { return W.fmt(m, 0) + 'M'; }
+    return W.fmt(m, 1) + 'M';
+  }
+
+  /* ---------- chart ---------- */
+  function drawChart(sim, yrs) {
+    var svg = el('chart');
+    var W0 = 640, H0 = 300;
+    var padL = 56, padR = 16, padT = 16, padB = 34;
+    var plotW = W0 - padL - padR;
+    var plotH = H0 - padT - padB;
+
+    var maxV = sim.grossArr[sim.grossArr.length - 1];
+    if (maxV <= 0) { maxV = 1; }
+    /* round max up to a nice value */
+    var niceMax = maxV * 1.04;
+
+    function xAt(y) { return padL + (y / yrs) * plotW; }
+    function yAt(v) { return padT + plotH - (v / niceMax) * plotH; }
+
+    var html = '';
+
+    /* gridlines + y labels (5 lines) */
+    var i, gy, val;
+    for (i = 0; i <= 4; i++) {
+      val = niceMax * i / 4;
+      gy = yAt(val);
+      html += '<line x1="' + padL + '" y1="' + gy + '" x2="' + (W0 - padR) + '" y2="' + gy + '" stroke="#e4e9ec" stroke-width="1"/>';
+      html += '<text x="' + (padL - 8) + '" y="' + (gy + 4) + '" text-anchor="end" font-size="11" fill="#5d7079">฿' + fmtM(val) + '</text>';
+    }
+
+    /* x labels (years) */
+    var xticks = [0, Math.round(yrs / 4), Math.round(yrs / 2), Math.round(yrs * 3 / 4), yrs];
+    var seen = {};
+    for (i = 0; i < xticks.length; i++) {
+      var xt = xticks[i];
+      if (seen[xt]) { continue; }
+      seen[xt] = 1;
+      html += '<text x="' + xAt(xt) + '" y="' + (H0 - 12) + '" text-anchor="middle" font-size="11" fill="#5d7079">' + xt + '</text>';
+    }
+    var unitLbl = lang() === 'th' ? 'ปี' : 'yr';
+    html += '<text x="' + (W0 - padR) + '" y="' + (H0 - 12) + '" text-anchor="end" font-size="10.5" fill="#9fb0b8">' + unitLbl + '</text>';
+
+    /* build point strings */
+    function pts(arr) {
+      var s = '';
+      for (var k = 0; k < arr.length; k++) {
+        s += (k === 0 ? '' : ' ') + xAt(k) + ',' + yAt(arr[k]);
+      }
+      return s;
+    }
+
+    /* area between gross and net (fee loss) */
+    var areaPath = '';
+    for (i = 0; i <= yrs; i++) {
+      areaPath += (i === 0 ? 'M' : 'L') + xAt(i) + ',' + yAt(sim.grossArr[i]);
+    }
+    for (i = yrs; i >= 0; i--) {
+      areaPath += 'L' + xAt(i) + ',' + yAt(sim.netArr[i]);
+    }
+    areaPath += 'Z';
+    html += '<path d="' + areaPath + '" fill="#9fe870" fill-opacity="0.18"/>';
+
+    /* contributions (muted dashed) */
+    html += '<polyline points="' + pts(sim.contribArr) + '" fill="none" stroke="#5d7079" stroke-width="2" stroke-dasharray="6 5" stroke-linejoin="round"/>';
+    /* gross (bright) */
+    html += '<polyline points="' + pts(sim.grossArr) + '" fill="none" stroke="#9fe870" stroke-width="2.5" stroke-linejoin="round"/>';
+    /* net (forest bold) */
+    html += '<polyline points="' + pts(sim.netArr) + '" fill="none" stroke="#163300" stroke-width="3" stroke-linejoin="round"/>';
+
+    /* end dot on net */
+    html += '<circle cx="' + xAt(yrs) + '" cy="' + yAt(sim.netArr[yrs]) + '" r="4.5" fill="#163300"/>';
+
+    svg.innerHTML = html;
+  }
+
+  /* current UI state for segmented controls */
+  var calcMode = 'forward';   /* 'forward' | 'solve' */
+  var valueBasis = 'nominal'; /* 'nominal' | 'real'  */
+
+  /* ---------- render ---------- */
+  function render() {
+    var lump = W.parseNum(el('lump').value);
+    var monthly = W.parseNum(el('monthly').value);
+    var yrs = parseInt(el('years').value, 10);
+    var grossPct = parseFloat(el('ret').value);
+    var feePct = parseFloat(el('fee').value);
+    var stepPct = parseFloat(el('stepup').value);
+    var inflPct = parseFloat(el('infl').value);
+    var cmpFeePct = parseFloat(el('cmpfee').value);
+    var L = lang();
+
+    var grossAnnual = grossPct / 100;
+    var netAnnual = (grossPct - feePct) / 100;
+    var infl = inflPct / 100;
+
+    /* slider value labels */
+    el('years-val').innerHTML = yrs + ' <span class="lang-th">ปี</span><span class="lang-en">yr</span>';
+    el('ret-val').textContent = W.fmt(grossPct, 1) + '%';
+    el('fee-val').textContent = W.fmt(feePct, 2) + '%';
+    el('stepup-val').innerHTML = W.fmt(stepPct, 1) + '%/<span class="lang-th">ปี</span><span class="lang-en">yr</span>';
+    el('infl-val').textContent = W.fmt(inflPct, 1) + '%';
+    el('cmpfee-val').textContent = W.fmt(cmpFeePct, 2) + '%';
+
+    /* ---- solve-for-contribution mode: derive the required monthly, then proceed forward with it ---- */
+    var solvedMonthly = null;
+    if (calcMode === 'solve') {
+      var target = W.parseNum(el('target').value);
+      solvedMonthly = solveMonthly(target, lump, yrs, netAnnual, stepPct);
+      monthly = solvedMonthly;
+    }
+
+    var sim = simulate(lump, monthly, yrs, grossAnnual, netAnnual, stepPct);
+
+    var netEnd = sim.netArr[yrs];
+    var grossEnd = sim.grossArr[yrs];
+    var contribEnd = sim.contribArr[yrs];
+    var netGain = netEnd - contribEnd;
+    var feeCost = grossEnd - netEnd;
+
+    /* real (inflation-adjusted) views · deflate net path + end value when basis = real */
+    var showReal = (valueBasis === 'real' && infl > 0);
+    var netEndShown = showReal ? netEnd / Math.pow(1 + infl, yrs) : netEnd;
+    var netGainShown = netEndShown - contribEnd; /* contributions are nominal cash put in */
+
+    /* result hero · headline differs by mode */
+    if (calcMode === 'solve') {
+      el('r-label').innerHTML = '<span class="lang-th">ต้องลงทุนเดือนละ</span><span class="lang-en">You need to invest monthly</span>';
+      el('r-final').textContent = W.fmtBaht(Math.round(solvedMonthly));
+      el('r-sub').style.display = 'block';
+      el('r-sub').innerHTML = L === 'th'
+        ? 'เพื่อให้ได้ ' + W.fmtBaht(Math.round(W.parseNum(el('target').value))) + ' ใน ' + yrs + ' ปี (ผลตอบแทนสุทธิ ' + W.fmt(grossPct - feePct, 1) + '%/ปี' + (lump > 0 ? ' รวมเงินก้อนตั้งต้น ' + W.fmtBaht(Math.round(lump)) : '') + ')'
+        : 'to reach ' + W.fmtBaht(Math.round(W.parseNum(el('target').value))) + ' in ' + yrs + ' years (net ' + W.fmt(grossPct - feePct, 1) + '%/yr' + (lump > 0 ? ', including your ' + W.fmtBaht(Math.round(lump)) + ' lump' : '') + ').';
+    } else {
+      el('r-label').innerHTML = showReal
+        ? '<span class="lang-th">มูลค่าปลายทาง (วันนี้, หลังเงินเฟ้อ &amp; ค่าธรรมเนียม)</span><span class="lang-en">Final value (today\'s money, after inflation &amp; fees)</span>'
+        : '<span class="lang-th">มูลค่าปลายทาง (หลังหักค่าธรรมเนียม)</span><span class="lang-en">Final value (after fees)</span>';
+      el('r-final').textContent = W.fmtBaht(Math.round(netEndShown));
+      if (showReal) {
+        el('r-sub').style.display = 'block';
+        el('r-sub').innerHTML = L === 'th'
+          ? 'มูลค่าอนาคต (nominal) = ' + W.fmtBaht(Math.round(netEnd)) + ' · ปรับเงินเฟ้อ ' + W.fmt(inflPct, 1) + '%/ปี แล้วเหลือกำลังซื้อ ' + W.fmtBaht(Math.round(netEndShown)) + ' ในเงินวันนี้'
+          : 'Nominal future value = ' + W.fmtBaht(Math.round(netEnd)) + ' · after ' + W.fmt(inflPct, 1) + '%/yr inflation that buys ' + W.fmtBaht(Math.round(netEndShown)) + ' in today\'s money.';
+      } else {
+        el('r-sub').style.display = 'none';
+      }
+    }
+    el('r-contrib').textContent = W.fmtBaht(Math.round(contribEnd));
+    el('r-gain').textContent = W.fmtBaht(Math.round(netGainShown));
+
+    /* chart · feed the deflated net path when showing real, so the lines stay honest */
+    var chartSim = sim;
+    if (showReal) {
+      chartSim = {
+        grossArr: deflateArr(sim.grossArr, infl),
+        netArr: deflateArr(sim.netArr, infl),
+        contribArr: sim.contribArr.slice()
+      };
+    }
+    drawChart(chartSim, yrs);
+
+    /* fee analyzer */
+    el('fee-amt').textContent = W.fmtBaht(Math.round(feeCost));
+    var feeShareOfGain = netGain > 0 ? (feeCost / netGain) * 100 : 0;
+    var feeLine = el('fee-line');
+    if (feePct <= 0) {
+      feeLine.innerHTML = L === 'th'
+        ? 'ไม่มีค่าธรรมเนียม · กำไรทั้งหมดเป็นของคุณ ลองเลื่อนค่าธรรมเนียมขึ้นเพื่อดูผลกระทบ'
+        : 'No fee · the entire gain is yours. Slide the fee up to see the impact.';
+    } else {
+      feeLine.innerHTML = L === 'th'
+        ? 'ค่าธรรมเนียม <b>' + W.fmt(feePct, 2) + '%</b> ต่อปี กินเงินคุณไป <b>' + W.fmtBaht(Math.round(feeCost)) + '</b> ใน ' + yrs + ' ปี = <b>' + W.fmtPct(feeShareOfGain, 0) + '</b> ของกำไรที่ควรได้'
+        : 'A <b>' + W.fmt(feePct, 2) + '%</b> annual fee takes <b>' + W.fmtBaht(Math.round(feeCost)) + '</b> over ' + yrs + ' years = <b>' + W.fmtPct(feeShareOfGain, 0) + '</b> of the gain you should have earned.';
+    }
+
+    /* fee meter (keep vs lost, share of total gross gain) */
+    var grossGain = grossEnd - contribEnd;
+    var lostShare = grossGain > 0 ? Math.min(100, (feeCost / grossGain) * 100) : 0;
+    var keepShare = 100 - lostShare;
+    el('fee-keep').style.width = keepShare + '%';
+    el('fee-lost').style.width = lostShare + '%';
+    el('fee-keep-l').textContent = (L === 'th' ? 'คุณเก็บได้ ' : 'You keep ') + W.fmtPct(keepShare, 0);
+    el('fee-lost-l').textContent = (L === 'th' ? 'ค่าธรรมเนียม ' : 'Fee ') + W.fmtPct(lostShare, 0);
+
+    /* comparison: what if the fee were the user-set comparison fee (default 0.3%)? */
+    var idxMsg = el('index-msg');
+    if (feePct > cmpFeePct) {
+      var idxNetAnnual = (grossPct - cmpFeePct) / 100;
+      var idxSim = simulate(lump, monthly, yrs, grossAnnual, idxNetAnnual, stepPct);
+      var idxEnd = idxSim.netArr[yrs];
+      var extra = idxEnd - netEnd;
+      idxMsg.className = 'msg ok';
+      idxMsg.style.display = 'block';
+      idxMsg.innerHTML = L === 'th'
+        ? '✓ ถ้าย้ายไปกองทุนค่าธรรมเนียม ' + W.fmt(cmpFeePct, 2) + '% คุณจะมีเงินเพิ่มอีก <b>' + W.fmtBaht(Math.round(extra)) + '</b> ปลายทาง (' + W.fmtBaht(Math.round(idxEnd)) + ')'
+        : '✓ Switch to a ' + W.fmt(cmpFeePct, 2) + '% fund and you would have <b>' + W.fmtBaht(Math.round(extra)) + '</b> more at the finish (' + W.fmtBaht(Math.round(idxEnd)) + ').';
+    } else {
+      idxMsg.className = 'msg ok';
+      idxMsg.style.display = 'block';
+      idxMsg.innerHTML = L === 'th'
+        ? '✓ ค่าธรรมเนียมของคุณต่ำกว่าหรือเท่ากองทุนเทียบ (' + W.fmt(cmpFeePct, 2) + '%) แล้ว · อยู่ในระดับต้นทุนต่ำ'
+        : '✓ Your fee is already at or below the comparison fund (' + W.fmt(cmpFeePct, 2) + '%) · already low-cost.';
+    }
+
+    /* milestones table: years 5/10/15/20... up to yrs, plus final */
+    var msMarks = [];
+    var step = 5;
+    for (var y = step; y < yrs; y += step) { msMarks.push(y); }
+    if (msMarks[msMarks.length - 1] !== yrs) { msMarks.push(yrs); }
+    if (msMarks.length === 0) { msMarks.push(yrs); }
+    var rows = '';
+    for (var mi = 0; mi < msMarks.length; mi++) {
+      var yy = msMarks[mi];
+      var v = showReal ? sim.netArr[yy] / Math.pow(1 + infl, yy) : sim.netArr[yy];
+      var c = sim.contribArr[yy];
+      var g = v - c;
+      rows += '<tr>'
+        + '<td class="yr">' + yy + '</td>'
+        + '<td class="num">' + W.fmtBaht(Math.round(c)) + '</td>'
+        + '<td class="num val">' + W.fmtBaht(Math.round(v)) + '</td>'
+        + '<td class="num gain">' + W.fmtBaht(Math.round(g)) + '</td>'
+        + '</tr>';
+    }
+    el('ms-body').innerHTML = rows;
+
+    /* lever insight: starting 5 years late */
+    var leverMsg = el('lever-msg');
+    if (yrs > 5) {
+      var lateSim = simulate(lump, monthly, yrs - 5, grossAnnual, netAnnual, stepPct);
+      var lateEnd = lateSim.netArr[yrs - 5];
+      var lost = netEnd - lateEnd;
+      leverMsg.className = 'msg err';
+      leverMsg.style.display = 'block';
+      leverMsg.innerHTML = L === 'th'
+        ? '⏱ เวลาคือคันโยกที่แรงที่สุด: ถ้าเริ่มช้าไป 5 ปี (ลงทุน ' + (yrs - 5) + ' ปีแทน ' + yrs + ' ปี) ปลายทางจะหายไป <b>' + W.fmtBaht(Math.round(lost)) + '</b>'
+        : '⏱ Time is the strongest lever: starting 5 years late (' + (yrs - 5) + ' years instead of ' + yrs + ') costs you <b>' + W.fmtBaht(Math.round(lost)) + '</b> at the finish.';
+    } else {
+      leverMsg.className = 'msg ok';
+      leverMsg.style.display = 'block';
+      leverMsg.innerHTML = L === 'th'
+        ? '⏱ ยิ่งระยะเวลานาน พลังทบต้นยิ่งทวีคูณ · ลองเพิ่มระยะเวลาเพื่อเห็นผล'
+        : '⏱ The longer the horizon, the stronger compounding gets · try extending the time.';
+    }
+
+    /* ---- lump-sum vs DCA-over-12-months for the same total cash ----
+       Total = the cash the user would otherwise deploy = starting lump + first 12 months of DCA.
+       Both held the full horizon at the net rate. */
+    var lvdTotal = lump + monthly * 12;
+    if (lvdTotal <= 0) { lvdTotal = monthly > 0 ? monthly * 12 : lump; }
+    if (lvdTotal <= 0) { lvdTotal = 1000000; }
+    var lvdNetAnnual = netAnnual;
+    var lumpVal = lumpFV(lvdTotal, yrs, lvdNetAnnual);
+    var dcaVal = dca12FV(lvdTotal, yrs, lvdNetAnnual);
+    if (showReal) {
+      lumpVal = lumpVal / Math.pow(1 + infl, yrs);
+      dcaVal = dcaVal / Math.pow(1 + infl, yrs);
+    }
+    el('lvd-lump').textContent = W.fmtBaht(Math.round(lumpVal));
+    el('lvd-dca').textContent = W.fmtBaht(Math.round(dcaVal));
+    var lvdDiff = Math.round(lumpVal - dcaVal);
+    el('lvd-note').innerHTML = L === 'th'
+      ? 'จากเงินก้อนเดียวกัน ' + W.fmtBaht(Math.round(lvdTotal)) + ' การลงทีเดียวให้ปลายทางมากกว่าราว <b>' + W.fmtBaht(Math.abs(lvdDiff)) + '</b> เพราะเงินได้อยู่ในตลาดเต็มเวลา ในอดีตการลงทีเดียวชนะ DCA ราว 2 ใน 3 ของช่วงเวลา (Vanguard) · แต่การทยอยลงช่วยลด "ความเสียใจ" หากตลาดตกทันทีหลังลงเงินก้อน'
+      : 'From the same ' + W.fmtBaht(Math.round(lvdTotal)) + ', investing it all at once finishes about <b>' + W.fmtBaht(Math.abs(lvdDiff)) + '</b> higher because the money is in the market the whole time. Historically lump sum beats DCA about two-thirds of the time (Vanguard) · but spreading it in reduces the regret if the market drops right after you invest.';
+
+    /* ---------- snapshot finding (projector · 'good' if investing, else 'warn') ---------- */
+    try {
+      if (W && W.saveFinding) {
+        var monthlyClaim = (monthly && monthly > 0) ? Math.round(monthly) : 0;
+        var status = monthlyClaim > 0 ? 'good' : 'warn';
+        var endVal = Math.round(netEnd);
+        W.saveFinding('invest', {
+          tool: 'compound-dca.html',
+          labelTh: 'ลงทุน', labelEn: 'Investing',
+          status: status,
+          headlineTh: 'ลงทุนเดือนละ ' + W.fmtBaht(monthlyClaim) + ' → ปลายทาง ' + W.fmtBaht(endVal),
+          headlineEn: W.fmtBaht(monthlyClaim) + '/mo → ' + W.fmtBaht(endVal),
+          monthlyClaim: monthlyClaim
+        });
+      }
+    } catch (e) {}
+  }
+
+  /* apply solve/forward mode to field visibility */
+  function applyMode() {
+    var solve = (calcMode === 'solve');
+    el('field-target').style.display = solve ? '' : 'none';
+    el('field-monthly').style.display = solve ? 'none' : '';
+  }
+
+  /* ---------- events ---------- */
+  var inputs = ['lump', 'monthly', 'years', 'ret', 'fee', 'stepup', 'infl', 'cmpfee', 'target'];
+  for (var i = 0; i < inputs.length; i++) {
+    el(inputs[i]).addEventListener('input', render);
+  }
+  window.addEventListener('wc:lang', render);
+
+  /* mode segmented (forward / solve) */
+  var modeBtns = el('mode-seg').querySelectorAll('button');
+  for (var mb = 0; mb < modeBtns.length; mb++) {
+    (function (btn) {
+      btn.addEventListener('click', function () {
+        calcMode = btn.getAttribute('data-mode');
+        for (var k = 0; k < modeBtns.length; k++) { modeBtns[k].classList.remove('on'); }
+        btn.classList.add('on');
+        applyMode();
+        render();
+      });
+    })(modeBtns[mb]);
+  }
+
+  /* value-basis segmented (nominal / real) */
+  var basisBtns = el('value-seg').querySelectorAll('button');
+  for (var vb = 0; vb < basisBtns.length; vb++) {
+    (function (btn) {
+      btn.addEventListener('click', function () {
+        valueBasis = btn.getAttribute('data-basis');
+        for (var k = 0; k < basisBtns.length; k++) { basisBtns[k].classList.remove('on'); }
+        btn.classList.add('on');
+        render();
+      });
+    })(basisBtns[vb]);
+  }
+
+  applyMode();
+  render();
+})();
+</script>
+</body>
+</html>

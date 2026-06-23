@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="120" cy="110" r="150" fill="#e4f7d2"/>
+  <circle cx="1090" cy="540" r="180" fill="#e4f7d2"/>
+  <!-- left card: RMF -->
+  <g transform="translate(150,165)">
+    <rect width="360" height="300" rx="36" fill="#163300"/>
+    <text x="180" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="92" font-weight="700" fill="#9fe870">RMF</text>
+    <!-- tiny lock -->
+    <g transform="translate(155,200)">
+      <rect x="0" y="22" width="50" height="40" rx="8" fill="#9fe870"/>
+      <path d="M10 22 V12 a15 15 0 0 1 30 0 V22" fill="none" stroke="#9fe870" stroke-width="7"/>
+    </g>
+  </g>
+  <!-- right card: ESG -->
+  <g transform="translate(690,165)">
+    <rect width="360" height="300" rx="36" fill="#9fe870"/>
+    <text x="180" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="92" font-weight="700" fill="#163300">ESG</text>
+    <!-- tiny leaf -->
+    <g transform="translate(155,205)">
+      <path d="M0 50 C0 14 28 0 52 0 C52 36 24 50 0 50 Z" fill="#163300"/>
+      <path d="M8 44 L44 10" stroke="#9fe870" stroke-width="5"/>
+    </g>
+  </g>
+  <!-- VS circle -->
+  <g transform="translate(600,315)">
+    <circle r="74" fill="#ffffff" stroke="#0d7a3f" stroke-width="6"/>
+    <text x="0" y="24" text-anchor="middle" font-family="Arial, sans-serif" font-size="62" font-weight="700" fill="#0d7a3f">VS</text>
+  </g>
+  <text x="600" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#5d7079">RMF ThaiESG ซื้ออะไรดี</text>
+</svg>

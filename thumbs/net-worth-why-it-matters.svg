@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1070" cy="540" r="200" fill="#e4f7d2"/>
+  <circle cx="120" cy="90" r="150" fill="#e4f7d2"/>
+  <!-- balance scale: stand + beam tilted left (assets heavier) -->
+  <g stroke="#163300" stroke-width="12" stroke-linecap="round" fill="none">
+    <line x1="600" y1="170" x2="600" y2="470"/>
+    <line x1="520" y1="500" x2="680" y2="500"/>
+    <line x1="370" y1="215" x2="830" y2="155"/>
+  </g>
+  <circle cx="600" cy="165" r="16" fill="#163300"/>
+  <!-- left pan (assets, lower) -->
+  <g stroke="#163300" stroke-width="7" fill="none"><line x1="370" y1="215" x2="320" y2="345"/><line x1="370" y1="215" x2="420" y2="345"/></g>
+  <path d="M300 345 A70 36 0 0 0 440 345 Z" fill="#9fe870"/>
+  <circle cx="350" cy="320" r="26" fill="#163300"/><text x="350" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="800" fill="#9fe870">฿</text>
+  <circle cx="392" cy="318" r="22" fill="#163300"/><text x="392" y="327" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#9fe870">฿</text>
+  <!-- right pan (liabilities, higher) -->
+  <g stroke="#163300" stroke-width="7" fill="none"><line x1="830" y1="155" x2="785" y2="270"/><line x1="830" y1="155" x2="875" y2="270"/></g>
+  <path d="M765 270 A65 33 0 0 0 895 270 Z" fill="#0d7a3f"/>
+  <rect x="805" y="232" width="50" height="34" rx="5" fill="#163300"/>
+</svg>

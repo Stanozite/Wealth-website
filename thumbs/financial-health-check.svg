@@ -1,0 +1,38 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Financial health checklist">
+<rect width="1200" height="630" fill="#f2f5f7"/>
+<circle cx="170" cy="140" r="120" fill="#e4f7d2"/>
+<circle cx="1040" cy="510" r="150" fill="#e4f7d2"/>
+<circle cx="1080" cy="120" r="60" fill="#9fe870" opacity="0.45"/>
+<g>
+<rect x="360" y="105" width="480" height="420" rx="24" fill="#ffffff"/>
+<path d="M360 129 a24 24 0 0 1 24 -24 h432 a24 24 0 0 1 24 24 v60 h-480 z" fill="#163300"/>
+<rect x="540" y="80" width="120" height="44" rx="14" fill="#0d7a3f"/>
+<rect x="566" y="92" width="68" height="20" rx="8" fill="#9fe870"/>
+<g>
+<circle cx="430" cy="250" r="22" fill="#9fe870"/>
+<path d="M420 250 l7 8 l14 -16" stroke="#163300" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="476" y="240" width="300" height="20" rx="10" fill="#e4f7d2"/>
+</g>
+<g>
+<circle cx="430" cy="320" r="22" fill="#9fe870"/>
+<path d="M420 320 l7 8 l14 -16" stroke="#163300" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="476" y="310" width="260" height="20" rx="10" fill="#e4f7d2"/>
+</g>
+<g>
+<circle cx="430" cy="390" r="22" fill="#9fe870"/>
+<path d="M420 390 l7 8 l14 -16" stroke="#163300" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="476" y="380" width="290" height="20" rx="10" fill="#e4f7d2"/>
+</g>
+<g>
+<circle cx="430" cy="460" r="22" fill="#e4f7d2" stroke="#9fe870" stroke-width="3"/>
+<rect x="476" y="450" width="220" height="20" rx="10" fill="#e4f7d2"/>
+</g>
+</g>
+<g>
+<circle cx="965" cy="225" r="78" fill="#ffffff"/>
+<path d="M965 268 c-34 -22 -52 -42 -52 -66 a26 26 0 0 1 52 -10 a26 26 0 0 1 52 10 c0 24 -18 44 -52 66 z" fill="#9fe870"/>
+<path d="M918 222 h22 l10 -22 l16 44 l12 -30 l8 16 h22" stroke="#163300" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="120" y="585" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#163300">Financial Health Check</text>
+<text x="120" y="615" font-family="Arial, sans-serif" font-size="22" fill="#5d7079">Spend · Save · Borrow · Plan</text>
+</svg>

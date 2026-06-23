@@ -1,0 +1,42 @@
+# Wealth Compass
+
+> เครื่องมือวางแผนการเงินมาตรฐานสากล (TH/EN) สำหรับคนไทย โดยที่ปรึกษาการเงินอิสระที่ให้คำแนะนำมาก่อนการขาย. เครื่องมือทุกตัวฟรี คำนวณในเบราว์เซอร์ ไม่ต้องสมัคร อ้างอิงมาตรฐาน FPSB/CFP, กฎ 4% (Bengen/Trinity), 50/30/20, Monte Carlo. Free financial-planning tools built for Thailand · budgeting, tax (RMF/SSF/ThaiESG), investing, retirement, insurance, debt.
+
+## เครื่องมือคำนวณ (Tools)
+- [เช็คสุขภาพการเงิน / Financial Health Score](https://wealthcompass.example.com/financial-health-score.html): แบบประเมิน CFPB 10 ข้อ ให้คะแนน 0-100 + 4 องค์ประกอบ (คุมการเงิน/รับแรงกระแทก/ไปถึงเป้า/อิสระเลือก)
+- [วางแผนงบประมาณ / Budget Planner](https://wealthcompass.example.com/budget-planner.html): แบ่งเงินเดือนสูตร 50/30/20, Six Jars, หรือกำหนดเอง + เทียบรายจ่ายจริง
+- [เงินสำรองฉุกเฉิน / Emergency Fund](https://wealthcompass.example.com/emergency-fund.html): คำนวณเป้าเงินสำรอง 3-6 เดือน ปรับตามความมั่นคงรายได้/ผู้พึ่งพิง
+- [ความมั่งคั่งสุทธิ / Net Worth](https://wealthcompass.example.com/net-worth.html): งบดุลส่วนบุคคล + กรอบ 3L (UBS) + เกณฑ์ทวีคูณเงินเดือน (Fidelity) + บันทึกแนวโน้ม
+- [แบบประเมินความเสี่ยง / Risk Profile](https://wealthcompass.example.com/risk-profile.html): 11 คำถามแนว Vanguard → สัดส่วนหุ้น/ตราสารหนี้ + แยก "รับได้" vs "รับไหว"
+- [ดอกเบี้ยทบต้น & DCA / Compound & DCA](https://wealthcompass.example.com/compound-dca.html): จำลองการเติบโตทบต้น + วิเคราะห์ค่าธรรมเนียม + หาเงินที่ต้องลงทุนต่อเดือน
+- [คำนวณภาษีเงินได้ / Thai Income Tax](https://wealthcompass.example.com/tax-calculator.html): ภาษีขั้นบันไดไทยปี 2567 + อัตราที่แท้จริง vs ส่วนเพิ่ม + รายได้หลายประเภท
+- [วางแผนลดหย่อนภาษี / Tax Deduction Optimizer](https://wealthcompass.example.com/tax-deduction-optimizer.html): เพดาน RMF/SSF/ThaiESG/ประกัน/PVD + คำนวณเงินภาษีที่ประหยัดจริงแบบขั้นบันได
+- [จำลองแผนเกษียณ / Retirement Simulator](https://wealthcompass.example.com/retirement-simulator.html): Monte Carlo 1,000 เส้นทาง โอกาสสำเร็จเป็น % + รายได้บำนาญ + ทดสอบ sequence risk
+- [วางแผนปลดหนี้ / Debt Payoff](https://wealthcompass.example.com/debt-payoff.html): เทียบ snowball vs avalanche + แปลงดอกคงที่→ลดต้นลดดอก + DTI + ตารางผ่อน
+- [ทุนประกันที่ควรมี / Insurance Needs](https://wealthcompass.example.com/insurance-needs.html): DIME + Human-Life-Value + ทวีคูณรายได้ + เบี้ยประมาณตามอายุ
+- [ภาพรวมการเงิน / My Snapshot](https://wealthcompass.example.com/snapshot.html): รวมผลทุกเครื่องมือ ชี้ช่องว่างและจุดที่เป้าหมายตีกัน
+
+## บทความความรู้ (Articles)
+- [เกษียณต้องมีเงินเท่าไหร่ + กฎ 4%](https://wealthcompass.example.com/retirement-how-much.html)
+- [FIRE เกษียณก่อน 40 ในไทย](https://wealthcompass.example.com/fire-movement-thailand.html)
+- [ประกันสังคม ม.33 ได้บำนาญเท่าไหร่](https://wealthcompass.example.com/social-security-pension.html)
+- [ลดหย่อนภาษี 2567 ครบทุกตัว RMF/SSF/ThaiESG](https://wealthcompass.example.com/tax-deductions-2567.html)
+- [ภาษีเงินได้บุคคลธรรมดา วิธีคำนวณขั้นบันได](https://wealthcompass.example.com/income-tax-guide.html)
+- [RMF vs ThaiESG ซื้ออะไรก่อน](https://wealthcompass.example.com/rmf-vs-thaiesg.html)
+- [เงินเดือนควรเก็บเท่าไหร่ 50/30/20](https://wealthcompass.example.com/how-much-to-save.html)
+- [เงินสำรองฉุกเฉินควรมีเท่าไหร่](https://wealthcompass.example.com/emergency-fund-guide.html)
+- [Net Worth ตัวเลขเดียวที่บอกฐานะจริง](https://wealthcompass.example.com/net-worth-why-it-matters.html)
+- [เช็คสุขภาพการเงิน 8 ข้อ](https://wealthcompass.example.com/financial-health-check.html)
+- [พลังดอกเบี้ยทบต้น เริ่มเร็ว 5 ปี](https://wealthcompass.example.com/compound-interest-power.html)
+- [DCA คืออะไร เริ่มลงทุนรายเดือน](https://wealthcompass.example.com/dca-how-to-start.html)
+- [ค่าธรรมเนียมกองทุน 1.5% vs Index Fund](https://wealthcompass.example.com/fund-fees-index-funds.html)
+- [ก่อนซื้อกองทุน รู้จัก Risk Profile](https://wealthcompass.example.com/risk-profile-explained.html)
+- [ปลดหนี้บัตรเครดิต Snowball vs Avalanche](https://wealthcompass.example.com/debt-snowball-avalanche.html)
+- [รีไฟแนนซ์บ้านคุ้มไหม](https://wealthcompass.example.com/refinance-home-loan.html)
+- [ประกันชีวิต Term vs Whole Life](https://wealthcompass.example.com/term-vs-whole-life.html)
+- [ประกันสุขภาพ เลือกยังไง](https://wealthcompass.example.com/health-insurance-guide.html)
+
+## หมายเหตุ
+- เครื่องมือเพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุน/ภาษีรายบุคคล
+- เกณฑ์ภาษีอ้างอิงปีภาษี 2567 ตรวจสอบกับกรมสรรพากร (rd.go.th) ก่อนยื่นจริง
+- ติดต่อปรึกษานักวางแผนการเงินอิสระได้ที่หน้าใดก็ได้ (ฟอร์มนัดคุยฟรี 30 นาที)

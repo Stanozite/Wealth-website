@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- GEO / SEO -->
+<meta name="geo.region" content="TH-10"/>
+<meta name="geo.placename" content="Bangkok, Thailand"/>
+<meta name="geo.position" content="13.7563;100.5018"/>
+<meta name="ICBM" content="13.7563, 100.5018"/>
+<meta name="language" content="th"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+<meta name="author" content="Wealth Compass"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Wealth Compass"/>
+<meta property="og:title" content="คำนวณความมั่งคั่งสุทธิ (Net Worth) พร้อมกรอบ 3L · เครื่องมือฟรี | Wealth Compass"/>
+<meta property="og:description" content="กรอกทรัพย์สินและหนี้สิน เห็นความมั่งคั่งสุทธิทันที พร้อมจัดเงินตามกรอบ 3L (Liquidity/Longevity/Legacy) และเทียบเกณฑ์ทวีคูณเงินเดือนของ Fidelity ฟรี ไม่ต้องสมัคร"/>
+<meta property="og:url" content="https://wealthcompass.example.com/net-worth.html"/>
+<meta property="og:locale" content="th_TH"/>
+<meta property="og:locale:alternate" content="en_US"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="คำนวณความมั่งคั่งสุทธิ (Net Worth) · เครื่องมือฟรี | Wealth Compass"/>
+<meta name="twitter:description" content="ทรัพย์สิน − หนี้สิน = ตัวเลขเดียวที่สำคัญที่สุด พร้อมกรอบ 3L (Liquidity/Longevity/Legacy) เห็นผลทันที"/>
+
+<!-- Hreflang / canonical -->
+<link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/net-worth.html"/>
+<link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/net-worth.html?lang=en"/>
+<link rel="alternate" hreflang="x-default" href="https://wealthcompass.example.com/net-worth.html"/>
+<link rel="canonical" href="https://wealthcompass.example.com/net-worth.html"/>
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()"/>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://wealthcompass.example.com/#organization",
+      "name": "Wealth Compass",
+      "url": "https://wealthcompass.example.com",
+      "areaServed": "TH"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://wealthcompass.example.com/net-worth.html#app",
+      "name": "เครื่องมือคำนวณความมั่งคั่งสุทธิ (Net Worth) พร้อมกรอบ 3L",
+      "alternateName": "Net Worth Statement · UBS 3L Framework",
+      "url": "https://wealthcompass.example.com/net-worth.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "THB"},
+      "inLanguage": ["th", "en"],
+      "publisher": {"@id": "https://wealthcompass.example.com/#organization"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://wealthcompass.example.com/"},
+        {"@type": "ListItem", "position": 2, "name": "ความมั่งคั่งสุทธิ", "item": "https://wealthcompass.example.com/net-worth.html"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ความมั่งคั่งสุทธิ (Net Worth) คืออะไร และทำไมสำคัญที่สุด?",
+          "acceptedAnswer": {"@type": "Answer", "text": "ความมั่งคั่งสุทธิ = ทรัพย์สินทั้งหมด − หนี้สินทั้งหมด เป็นตัวเลขเดียวที่สรุปสุขภาพการเงินทั้งชีวิต รายได้สูงไม่ได้แปลว่ารวย ถ้าหนี้โตเร็วกว่าทรัพย์สิน Net worth ที่เพิ่มขึ้นสม่ำเสมอคือหลักฐานเดียวว่าคุณมั่งคั่งขึ้นจริง ควรวัดทุก 6 เดือนเพื่อเห็นแนวโน้ม"}
+        },
+        {
+          "@type": "Question",
+          "name": "ควรตีมูลค่าบ้านและรถอย่างไรให้สมจริง?",
+          "acceptedAnswer": {"@type": "Answer", "text": "บ้านใช้ราคาที่ขายได้จริงในตลาดวันนี้ (เทียบประกาศขายห้อง/บ้านใกล้เคียง แล้วลดต่อรองอีก 5-10%) ไม่ใช่ราคาที่ซื้อมาหรือราคาประเมินสินเชื่อ ส่วนรถยนต์เสื่อมราคาประมาณ 10-15% ต่อปี ใช้ราคารถมือสองรุ่นเดียวกันปีเดียวกันเป็นเกณฑ์ ตีมูลค่าต่ำไว้ก่อนดีกว่าหลอกตัวเอง"}
+        },
+        {
+          "@type": "Question",
+          "name": "กรอบ 3L (Liquidity / Longevity / Legacy) คืออะไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "กรอบจัดเงินของ UBS ที่ private bank ใช้กับลูกค้ามั่งคั่ง แบ่งเงินตามหน้าที่ 3 อย่าง: Liquidity เงินสภาพคล่องสำหรับใช้จ่าย 1-3 ปีข้างหน้า, Longevity เงินลงทุนและเงินเกษียณที่ต้องพอใช้ทั้งชีวิต, Legacy ทรัพย์สินที่จะส่งต่อเกินกว่าชีวิตคุณ เช่น อสังหาริมทรัพย์และทรัพย์สินถาวร การเห็นสัดส่วน 3 ก้อนช่วยให้รู้ว่าเงินก้อนไหนขาดหรือเกิน"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<title>คำนวณความมั่งคั่งสุทธิ (Net Worth) พร้อมกรอบ 3L · เครื่องมือฟรี | Wealth Compass</title>
+<meta name="description" content="กรอกทรัพย์สินและหนี้สิน เห็นความมั่งคั่งสุทธิ (Net Worth) ทันที พร้อมจัดเงินตามกรอบ 3L ของ UBS และเทียบเกณฑ์ทวีคูณเงินเดือน Fidelity ฟรี คำนวณในเครื่องคุณ ไม่ต้องสมัคร"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="_theme.css"/>
+
+<style>
+/* input group headings */
+.group-head {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 14.5px; font-weight: 800; color: var(--forest);
+  margin: 0 0 14px; letter-spacing: -0.01em;
+}
+.group-head .tag { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+.field.compact { margin-bottom: 12px; }
+.field.compact label { font-size: 13px; margin-bottom: 5px; font-weight: 600; }
+
+/* assets vs liabilities bars */
+.bk-row { margin-bottom: 16px; }
+.bk-row .top { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }
+.bk-row .top .k { font-weight: 700; color: var(--forest); }
+.bk-row .top .v { font-weight: 800; color: var(--forest); font-variant-numeric: tabular-nums; }
+
+.ratio-line {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  border-top: 1px dashed var(--line); margin-top: 18px; padding-top: 16px;
+  font-size: 14px; flex-wrap: wrap;
+}
+.ratio-line .k { font-weight: 700; color: var(--forest); }
+.ratio-line .v { font-weight: 800; font-variant-numeric: tabular-nums; }
+
+/* 3L metric grid */
+.l3-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.l3-cell {
+  border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: 18px; background: #fbfdf9;
+}
+.l3-cell .role { font-size: 12.5px; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+.l3-cell .share { font-size: 12.5px; font-weight: 700; color: var(--positive); margin-top: 4px; font-variant-numeric: tabular-nums; }
+@media (max-width: 768px) { .l3-grid { grid-template-columns: 1fr; } }
+
+/* investable / second headline */
+.nw-second {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  flex-wrap: wrap; margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+}
+.nw-second .k { font-size: 13.5px; opacity: 0.85; }
+.nw-second .v { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+/* custom rows */
+.custom-row { display: flex; gap: 8px; align-items: flex-end; margin-bottom: 12px; }
+.custom-row .cr-label { flex: 1 1 auto; }
+.custom-row .cr-amt { flex: 0 0 130px; }
+.custom-row .cr-label input, .custom-row .cr-amt input { width: 100%; }
+.custom-row .cr-del {
+  flex: 0 0 auto; border: 1px solid var(--line); background: #fff; color: var(--danger);
+  border-radius: var(--radius-sm); width: 38px; height: 44px; cursor: pointer;
+  font-size: 18px; line-height: 1; font-weight: 700;
+}
+.custom-row .cr-del:hover { background: var(--danger-soft); }
+.add-row-btn {
+  display: inline-flex; align-items: center; gap: 6px; margin: 2px 0 4px;
+  border: 1px dashed var(--line); background: #fbfdf9; color: var(--forest);
+  border-radius: var(--radius-sm); padding: 9px 14px; font-size: 13px; font-weight: 700;
+  cursor: pointer; font-family: inherit;
+}
+.add-row-btn:hover { border-color: var(--bright-2); background: var(--bright-soft); }
+
+/* snapshot / trend */
+.snap-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
+.snap-actions .btn-sm { flex: 0 0 auto; }
+.trend-wrap { width: 100%; overflow: hidden; }
+.trend-wrap svg { width: 100%; height: auto; display: block; }
+.snap-empty { color: var(--muted); font-size: 13.5px; padding: 8px 0; }
+.snap-table td.up { color: var(--positive); font-weight: 700; }
+.snap-table td.down { color: var(--danger); font-weight: 700; }
+
+/* use-asset note */
+.use-note {
+  margin-top: 14px; padding: 12px 14px; border: 1px dashed var(--line);
+  border-radius: var(--radius-sm); background: #fbfdf9;
+  font-size: 12.5px; color: var(--muted); line-height: 1.5;
+}
+.use-note b { color: var(--forest); }
+
+/* SEO content */
+.content-prose { max-width: 760px; }
+.content-prose h2 { font-size: 26px; margin: 36px 0 12px; }
+.content-prose h3 { font-size: 19px; margin: 26px 0 10px; }
+.content-prose p, .content-prose li { color: #38454c; font-size: 15.5px; margin-bottom: 12px; }
+.content-prose ul { list-style: disc; padding-left: 22px; }
+.content-prose .src { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content"><span class="lang-th">ข้ามไปเนื้อหาหลัก</span><span class="lang-en">Skip to main content</span></a>
+<nav></nav>
+<script src="_brand.js"></script>
+<script src="_app.js"></script>
+<script src="_nav.js"></script>
+
+<main id="main-content">
+
+<!-- ============ HERO ============ -->
+<header class="tool-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html"><span class="lang-th">หน้าแรก</span><span class="lang-en">Home</span></a> / <span class="lang-th">ความมั่งคั่งสุทธิ</span><span class="lang-en">Net worth</span></div>
+    <span class="badge violet"><span class="lang-th">ขั้นที่ 7 · มั่งคั่ง &amp; ส่งต่อ</span><span class="lang-en">Stage 7 · Wealth &amp; legacy</span></span>
+    <h1 style="margin-top:14px;">
+      <span class="lang-th">ตัวเลขเดียวที่บอกว่าคุณมั่งคั่งจริงแค่ไหน</span>
+      <span class="lang-en">The one number that tells you how wealthy you really are</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-th">รวมทรัพย์สิน หักหนี้สิน · แล้วดูว่าเงินของคุณกำลังทำหน้าที่ครบ 3 อย่างตามกรอบ 3L (Liquidity / Longevity / Legacy) หรือยัง</span>
+      <span class="lang-en">Add up what you own, subtract what you owe · then see whether your money covers all three jobs in the 3L framework (Liquidity / Longevity / Legacy).</span>
+    </p>
+  </div>
+</header>
+
+<!-- ============ TOOL ============ -->
+<section class="section tight" style="padding-top:24px;">
+  <div class="container tool-grid">
+
+    <!-- inputs -->
+    <div class="inputs-col">
+      <div class="panel">
+        <div class="group-head"><span class="lang-th">ทรัพย์สิน</span><span class="lang-en">Assets</span> <span class="tag">Assets</span></div>
+
+        <div class="field compact">
+          <label for="a-cash"><span class="lang-th">เงินสด / เงินฝาก</span><span class="lang-en">Cash / deposits</span></label>
+          <div class="input-group">
+            <input type="text" id="a-cash" data-num inputmode="numeric" value="200,000" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="a-invest"><span class="lang-th">กองทุน / หุ้น / สินทรัพย์ลงทุน</span><span class="lang-en">Funds / stocks / investments</span></label>
+          <div class="input-group">
+            <input type="text" id="a-invest" data-num inputmode="numeric" value="500,000" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="a-retire"><span class="lang-th">กองทุนเกษียณ RMF / PVD / กบข.</span><span class="lang-en">Retirement funds (RMF / PVD / GPF)</span></label>
+          <div class="input-group">
+            <input type="text" id="a-retire" data-num inputmode="numeric" value="300,000" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="a-property"><span class="lang-th">อสังหาริมทรัพย์ (ราคาขายได้จริง)</span><span class="lang-en">Real estate (realistic resale value)</span></label>
+          <div class="input-group">
+            <input type="text" id="a-property" data-num inputmode="numeric" value="0" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="a-car"><span class="lang-th">รถยนต์ (ราคามือสองวันนี้)</span><span class="lang-en">Vehicles (today's resale value)</span></label>
+          <div class="input-group">
+            <input type="text" id="a-car" data-num inputmode="numeric" value="0" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="a-gold"><span class="lang-th">ทอง / อื่นๆ</span><span class="lang-en">Gold / other assets</span></label>
+          <div class="input-group">
+            <input type="text" id="a-gold" data-num inputmode="numeric" value="0" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+
+        <div id="a-custom"></div>
+        <button type="button" class="add-row-btn" id="a-add">+ <span class="lang-th">เพิ่มรายการ (เช่น คริปโต / หุ้นในธุรกิจ / งานศิลปะ)</span><span class="lang-en">Add item (e.g. crypto / business equity / art)</span></button>
+
+        <div style="border-top:1px solid var(--line); margin:20px 0 18px;"></div>
+        <div class="group-head"><span class="lang-th">หนี้สิน</span><span class="lang-en">Liabilities</span> <span class="tag">Liabilities</span></div>
+
+        <div class="field compact">
+          <label for="d-home"><span class="lang-th">สินเชื่อบ้าน (ยอดคงเหลือ)</span><span class="lang-en">Home loan (outstanding)</span></label>
+          <div class="input-group">
+            <input type="text" id="d-home" data-num inputmode="numeric" value="0" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="d-car"><span class="lang-th">สินเชื่อรถ (ยอดคงเหลือ)</span><span class="lang-en">Car loan (outstanding)</span></label>
+          <div class="input-group">
+            <input type="text" id="d-car" data-num inputmode="numeric" value="0" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="d-card"><span class="lang-th">บัตรเครดิต / สินเชื่อส่วนบุคคล</span><span class="lang-en">Credit cards / personal loans</span></label>
+          <div class="input-group">
+            <input type="text" id="d-card" data-num inputmode="numeric" value="0" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="d-other"><span class="lang-th">หนี้อื่นๆ</span><span class="lang-en">Other debts</span></label>
+          <div class="input-group">
+            <input type="text" id="d-other" data-num inputmode="numeric" value="0" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+
+        <div id="d-custom"></div>
+        <button type="button" class="add-row-btn" id="d-add">+ <span class="lang-th">เพิ่มรายการ (เช่น หนี้นอกระบบ / ยืมครอบครัว / ภาษีค้างจ่าย)</span><span class="lang-en">Add item (e.g. loan to family / tax owed)</span></button>
+
+        <div style="border-top:1px solid var(--line); margin:20px 0 18px;"></div>
+        <div class="group-head"><span class="lang-th">เทียบเกณฑ์ (ไม่บังคับ)</span><span class="lang-en">Benchmark (optional)</span></div>
+        <p class="hint" style="margin:-6px 0 12px;"><span class="lang-th">กรอกทั้งสองช่องเพื่อเทียบกับเกณฑ์ทวีคูณเงินเดือนของ Fidelity</span><span class="lang-en">Fill both to compare against Fidelity's salary-multiple milestones.</span></p>
+        <div class="field compact">
+          <label for="b-income"><span class="lang-th">รายได้ต่อปี (ก่อนภาษี)</span><span class="lang-en">Annual income (gross)</span></label>
+          <div class="input-group">
+            <input type="text" id="b-income" data-num inputmode="numeric" placeholder="เช่น 1,200,000" autocomplete="off"/>
+            <span class="unit">฿/<span class="lang-th">ปี</span><span class="lang-en">yr</span></span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="b-age"><span class="lang-th">อายุ</span><span class="lang-en">Age</span></label>
+          <div class="input-group">
+            <input type="number" id="b-age" min="18" max="80" step="1" placeholder="18–80" autocomplete="off"/>
+            <span class="unit"><span class="lang-th">ปี</span><span class="lang-en">yrs</span></span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="b-startwork"><span class="lang-th">อายุที่เริ่มทำงาน</span><span class="lang-en">Age you started working</span></label>
+          <div class="input-group">
+            <input type="number" id="b-startwork" min="15" max="40" step="1" value="23" autocomplete="off"/>
+            <span class="unit"><span class="lang-th">ปี</span><span class="lang-en">yrs</span></span>
+          </div>
+        </div>
+        <div class="field compact">
+          <label for="b-retire-age"><span class="lang-th">อายุเกษียณเป้าหมาย</span><span class="lang-en">Target retirement age</span></label>
+          <div class="input-group">
+            <input type="number" id="b-retire-age" min="45" max="75" step="1" value="60" autocomplete="off"/>
+            <span class="unit"><span class="lang-th">ปี</span><span class="lang-en">yrs</span></span>
+          </div>
+        </div>
+        <p class="hint" style="margin:-4px 0 0;"><span class="lang-th">หมุดสุดท้ายของ Fidelity (10×) ปรับมาที่อายุเกษียณเป้าหมายของคุณ แทน 67 ปีแบบสหรัฐฯ</span><span class="lang-en">Fidelity's final 10× milestone is re-anchored to your target retirement age instead of the US default of 67.</span></p>
+      </div>
+    </div>
+
+    <!-- results -->
+    <div>
+      <div class="result-hero" aria-live="polite">
+        <div class="lbl"><span class="lang-th">ความมั่งคั่งสุทธิของคุณ</span><span class="lang-en">Your net worth</span></div>
+        <div class="big" id="r-nw">฿1,000,000</div>
+        <div class="sub" id="r-nw-sub"></div>
+        <div class="nw-second">
+          <span class="k"><span class="lang-th">ความมั่งคั่งที่ลงทุนได้ (ไม่รวมบ้าน+รถ)</span><span class="lang-en">Investable net worth (excl. home + car)</span></span>
+          <span class="v" id="r-nw-invest">฿1,000,000</span>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:16px;"><span class="lang-th">ทรัพย์สิน vs หนี้สิน</span><span class="lang-en">Assets vs liabilities</span></h3>
+        <div id="al-bars"></div>
+        <div class="ratio-line">
+          <span class="k"><span class="lang-th">อัตราส่วนหนี้สินต่อทรัพย์สิน</span><span class="lang-en">Debt-to-asset ratio</span></span>
+          <span><span class="v" id="r-ratio">0%</span> <span id="r-ratio-badge"></span></span>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:6px;"><span class="lang-th">เงินคุณทำงาน 3 หน้าที่ (กรอบ 3L (Liquidity/Longevity/Legacy))</span><span class="lang-en">Your money has 3 jobs (the 3L framework)</span></h3>
+        <p class="hint" style="margin-bottom:16px;"><span class="lang-th">UBS Wealth Way แบ่งทรัพย์สินตามหน้าที่ ไม่ใช่ตามประเภท · เห็นทันทีว่าก้อนไหนขาด</span><span class="lang-en">UBS Wealth Way sorts assets by job, not by type · gaps show instantly.</span></p>
+        <div class="l3-grid" id="l3-grid"></div>
+        <div class="use-note" id="use-note" hidden></div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:6px;"><span class="lang-th">บันทึก &amp; แนวโน้ม (วัดทุก 6 เดือน)</span><span class="lang-en">Snapshots &amp; trend (measure every 6 months)</span></h3>
+        <p class="hint" style="margin-bottom:14px;"><span class="lang-th">กดบันทึกค่าวันนี้ไว้ในเครื่องคุณ แล้วกลับมาวัดซ้ำทุก 6 เดือน เพื่อดูเส้นแนวโน้มของชีวิตคุณ · ข้อมูลเก็บในเบราว์เซอร์นี้เท่านั้น ไม่ส่งออกที่ไหน</span><span class="lang-en">Save today's figure on your device, then re-measure every 6 months to watch your trend line. Data stays in this browser only · nothing is sent anywhere.</span></p>
+        <div class="snap-actions">
+          <button type="button" class="btn btn-primary btn-sm" id="snap-save"><span class="lang-th">บันทึกค่าวันนี้</span><span class="lang-en">Save today's figure</span></button>
+          <button type="button" class="btn btn-outline btn-sm" id="snap-clear"><span class="lang-th">ลบประวัติ</span><span class="lang-en">Clear history</span></button>
+        </div>
+        <div class="trend-wrap" id="snap-trend"></div>
+        <div id="snap-table"></div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;" id="bm-panel" hidden>
+        <h3 style="font-size:17px;margin-bottom:16px;"><span class="lang-th">เทียบเกณฑ์ทวีคูณเงินเดือน (Fidelity)</span><span class="lang-en">Salary-multiple benchmark (Fidelity)</span></h3>
+        <div id="bm-rows"></div>
+        <div id="bm-msg" class="msg" style="display:block;margin-top:6px;"></div>
+        <p class="hint" style="margin-top:12px;"><span class="lang-th">เกณฑ์ Fidelity: มีเงินสะสม 1 เท่าของรายได้ต่อปีภายในอายุ 30, 3 เท่าภายใน 40, 6 เท่าภายใน 50, 8 เท่าภายใน 60 และ 10 เท่าภายในอายุเกษียณเป้าหมาย (สหรัฐฯ ใช้ 67) · ก่อนอายุ 30 คำนวณจากอายุที่เริ่มทำงาน และเป้าหมายระหว่างช่วงอายุคำนวณแบบเทียบสัดส่วน</span><span class="lang-en">Fidelity milestones: 1× annual income by 30, 3× by 40, 6× by 50, 8× by 60, and 10× by your target retirement age (US default 67) · before 30 it prorates from the age you started working; targets between milestones are interpolated.</span></p>
+      </div>
+
+      <div class="disclaimer" style="margin-top:20px;">
+        <b><span class="lang-th">ที่มาของกรอบ:</span><span class="lang-en">Sources:</span></b>
+        <span class="lang-th">กรอบ 3L · UBS Wealth Way; เกณฑ์ทวีคูณเงินเดือน · Fidelity. มูลค่าอสังหาใช้ราคาตลาดประมาณการ เครื่องมือนี้ให้ข้อมูลเพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุนรายบุคคล</span>
+        <span class="lang-en">3L framework · UBS Wealth Way; salary-multiple milestones · Fidelity. Property values are market estimates. Educational tool, not personalized advice.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><span class="lang-th">ความมั่งคั่งที่สร้างมาทั้งชีวิต ควรมีโครงสร้างรองรับ</span><span class="lang-en">Wealth built over a lifetime deserves real structure</span></h2>
+        <p><span class="lang-th">นักวางแผนการเงินช่วยจัดโครงสร้างทรัพย์สิน ภาษี และการส่งต่อให้ครบทั้ง 3L · นัดคุยครั้งแรกฟรี 30 นาที</span><span class="lang-en">A planner helps you structure assets, tax and succession across all three Ls. First 30 minutes free.</span></p>
+      </div>
+      <form data-lead aria-label="Consultation request">
+        <input type="text" name="name" required autocomplete="name" placeholder="ชื่อของคุณ / Your name" aria-label="Name"/>
+        <input type="email" name="email" required autocomplete="email" placeholder="อีเมล / Email" aria-label="Email"/>
+        <input type="hidden" name="topic" value="networth"/>
+        <button class="btn btn-primary btn-lg" type="submit"><span class="lang-th">นัดคุยฟรี</span><span class="lang-en">Book free consult</span></button>
+        <div class="msg ok"><span class="lang-th">ได้รับข้อมูลแล้ว เราจะติดต่อกลับภายใน 1 วันทำการ</span><span class="lang-en">Received · we'll reply within 1 business day.</span></div>
+        <div class="msg err"><span class="lang-th">ส่งไม่สำเร็จ ลองอีกครั้ง</span><span class="lang-en">Couldn't send · try again.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEO CONTENT ============ -->
+<section class="section alt">
+  <div class="container content-prose">
+    <div class="section-label"><span class="lang-th">ความรู้</span><span class="lang-en">Learn</span></div>
+
+    <div class="lang-th">
+      <h2>ทำไม Net Worth คือตัวเลขเดียวที่สำคัญที่สุด</h2>
+      <p>รายได้บอกแค่ว่าเงิน "ไหลเข้า" เร็วแค่ไหน แต่ความมั่งคั่งสุทธิ (ทรัพย์สิน − หนี้สิน) บอกว่าคุณ "เก็บไว้ได้" เท่าไร คนเงินเดือนสามแสนที่ผ่อนทุกอย่างเต็มวงเงิน อาจจนกว่าคนเงินเดือนหกหมื่นที่ลงทุนสม่ำเสมอ · เพราะความรวยที่แท้จริงวัดจากสิ่งที่เหลืออยู่เมื่อหักหนี้ทั้งหมดแล้ว ไม่ใช่จากไลฟ์สไตล์ที่คนอื่นมองเห็น Net worth ที่โตขึ้นทุกปีคือหลักฐานเดียวที่โกหกไม่ได้ว่าคุณกำลังมั่งคั่งขึ้นจริง</p>
+      <h3>วิธีตีมูลค่าทรัพย์สินอย่าง realistic</h3>
+      <ul>
+        <li><b>บ้าน/คอนโด</b> · ใช้ราคาที่ "ขายได้จริงวันนี้" ไม่ใช่ราคาที่ซื้อมาหรือราคาประเมินธนาคาร เปิดดูประกาศขายยูนิตใกล้เคียงในตึก/หมู่บ้านเดียวกัน แล้วเผื่อส่วนลดต่อรองอีก 5-10% ราคาที่ตั้งขายไม่เท่ากับราคาที่ปิดดีลได้</li>
+        <li><b>รถยนต์</b> · เสื่อมราคาประมาณ 10-15% ต่อปี รถป้ายแดง 1 ล้านบาท ผ่านไป 5 ปีมักเหลือราว 5-6 แสน ใช้ราคาประกาศขายรถมือสองรุ่นเดียวกัน ปีเดียวกัน เป็นเกณฑ์</li>
+        <li><b>ทอง/ของสะสม</b> · ใช้ราคารับซื้อคืน ไม่ใช่ราคาขายออกหน้าร้าน</li>
+        <li><b>หลักการเดียว:</b> ตีต่ำไว้ก่อน · net worth ที่ inflate ด้วยราคาในฝัน คือการโกหกตัวเองที่แพงที่สุด</li>
+      </ul>
+      <h3>ทำไมต้องวัดทุก 6 เดือน</h3>
+      <p>ตัวเลขครั้งเดียวคือ "ภาพถ่าย" แต่สิ่งที่สร้างความมั่งคั่งคือ "แนวโน้ม" การวัดทุก 6 เดือน (เช่น มกราคมและกรกฎาคม) ถี่พอจะจับปัญหาได้เร็ว · หนี้บัตรที่เริ่มลาม พอร์ตที่ไม่โต · แต่ห่างพอที่จะไม่ตื่นตระหนกกับความผันผวนรายเดือนของตลาด จดตัวเลขลงตารางเดิมทุกครั้ง แล้วดูเส้นแนวโน้ม 3-5 ปี นั่นคือรายงานผลประกอบการของชีวิตคุณ</p>
+      <h3>กรอบ 3L · เงินทุกบาทควรมีหน้าที่</h3>
+      <p>UBS หนึ่งใน private bank ใหญ่ที่สุดของโลก จัดเงินลูกค้ามั่งคั่งเป็น 3 ก้อนตาม "หน้าที่" ไม่ใช่ตามประเภทสินทรัพย์:</p>
+      <ul>
+        <li><b>Liquidity (สภาพคล่อง)</b> · เงินสดและเงินฝากสำหรับค่าใช้จ่าย 1-3 ปีข้างหน้า หน้าที่คือทำให้คุณไม่ต้องขายของถูกในจังหวะแย่</li>
+        <li><b>Longevity (ทั้งชีวิต)</b> · เงินลงทุนและกองทุนเกษียณที่ต้องเลี้ยงคุณไปตลอดชีวิต ก้อนนี้ควรเป็นก้อนใหญ่ที่สุดและโตเร็วที่สุด</li>
+        <li><b>Legacy (ส่งต่อ)</b> · ทรัพย์สินที่อยู่เกินกว่าชีวิตคุณ เช่น อสังหาริมทรัพย์ ทอง ของมีค่า · สิ่งที่จะกลายเป็นมรดกและเรื่องราวของครอบครัว</li>
+      </ul>
+      <p>คนส่วนใหญ่มี Liquidity เกิน (เงินนอนแบงก์เฉยๆ) และ Longevity ขาด (ลงทุนน้อยเกินไป) · เครื่องมือด้านบนแสดงสัดส่วนของคุณทันที</p>
+    </div>
+
+    <div class="lang-en">
+      <h2>Why net worth is the only number that matters</h2>
+      <p>Income measures how fast money flows in; net worth (assets minus liabilities) measures what you actually keep. A steadily growing net worth is the one piece of evidence that can't lie about whether you're really getting wealthier.</p>
+      <h3>Value assets realistically</h3>
+      <p>Use today's achievable sale price for property (check comparable listings, then assume 5-10% negotiation), depreciate cars 10-15% per year, and use buy-back prices for gold. When in doubt, value low · an inflated net worth is the most expensive lie you can tell yourself.</p>
+      <h3>Measure every 6 months</h3>
+      <p>One reading is a snapshot; the trend is what builds wealth. A six-month cadence catches problems early without panicking over monthly market noise.</p>
+      <h3>The 3L framework</h3>
+      <p>UBS sorts wealthy clients' money by job, not asset type: Liquidity funds the next 1-3 years of spending, Longevity funds the rest of your life, and Legacy is what outlives you. Most people hold too much Liquidity and too little Longevity · the tool above shows your split instantly.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer></footer>
+<script src="_footer.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  var W = window.WC;
+
+  function el(id) { return document.getElementById(id); }
+  function lang() { return W.getLang(); }
+  function val(id) { return W.parseNum(el(id).value); }
+
+  var HIST_KEY = 'wc_networth_history';
+  var last = { netWorth: 0, assets: 0, liab: 0 };
+
+  /* Fidelity salary-multiple milestones, re-anchored to the user's
+     start-work age (default 23) and target retirement age (default 60).
+     Base Fidelity shape: 1× by 30, 3× by 40, 6× by 50, 8× by 60, 10× by 67.
+     We keep the intermediate milestones and move the final 10× milestone
+     to the user's retirement age. */
+  function buildMilestones(retireAge) {
+    var base = [[30, 1], [40, 3], [50, 6], [60, 8], [67, 10]];
+    var out = [];
+    for (var i = 0; i < base.length; i++) {
+      /* drop any fixed milestone at/after the chosen retirement age · the
+         retirement age becomes the new 10× anchor */
+      if (base[i][0] < retireAge) { out.push([base[i][0], base[i][1]]); }
+    }
+    out.push([retireAge, 10]);
+    return out;
+  }
+
+  function targetMultiple(age, startWork, retireAge) {
+    var MS = buildMilestones(retireAge);
+    var last = MS[MS.length - 1];
+    if (age >= last[0]) { return last[1]; }
+    var first = MS[0];
+    /* below the first milestone: prorate 0→first multiple from start-work age */
+    if (age <= first[0]) {
+      if (age <= startWork) { return 0; }
+      return first[1] * (age - startWork) / (first[0] - startWork);
+    }
+    for (var i = 0; i < MS.length - 1; i++) {
+      var a0 = MS[i][0], m0 = MS[i][1];
+      var a1 = MS[i + 1][0], m1 = MS[i + 1][1];
+      if (age >= a0 && age < a1) {
+        return m0 + (m1 - m0) * (age - a0) / (a1 - a0);
+      }
+    }
+    return last[1];
+  }
+
+  /* ---------- assets vs liabilities bars ---------- */
+  function renderBars(assets, debts, L) {
+    var maxV = Math.max(assets, debts, 1);
+    var rows = [
+      { th: 'ทรัพย์สินรวม', en: 'Total assets', v: assets, color: 'var(--forest)' },
+      { th: 'หนี้สินรวม', en: 'Total liabilities', v: debts, color: '#e88c74' }
+    ];
+    var html = '';
+    for (var i = 0; i < rows.length; i++) {
+      var r = rows[i];
+      var w = (r.v / maxV) * 100;
+      html += '<div class="bk-row">'
+        + '<div class="top"><span class="k">' + (L === 'th' ? r.th : r.en) + '</span>'
+        + '<span class="v">' + W.fmtBaht(r.v) + '</span></div>'
+        + '<div class="bar-bg"><div class="bar-fill" style="width:' + w + '%;background:' + r.color + ';"></div></div>'
+        + '</div>';
+    }
+    el('al-bars').innerHTML = html;
+
+    /* debt-to-asset ratio */
+    var ratioEl = el('r-ratio');
+    var badgeEl = el('r-ratio-badge');
+    if (assets <= 0) {
+      ratioEl.textContent = '–';
+      ratioEl.style.color = 'var(--muted)';
+      badgeEl.innerHTML = '';
+      return;
+    }
+    var ratio = (debts / assets) * 100;
+    ratioEl.textContent = W.fmtPct(ratio, 0);
+    if (ratio <= 50) {
+      ratioEl.style.color = 'var(--positive)';
+      badgeEl.innerHTML = '<span class="badge green">' + (L === 'th' ? 'แข็งแรง · ไม่เกิน 50%' : 'Healthy · within 50%') + '</span>';
+    } else {
+      ratioEl.style.color = 'var(--warn)';
+      badgeEl.innerHTML = '<span class="badge amber">' + (L === 'th' ? 'สูงเกิน 50% · ควรเร่งลดหนี้' : 'Above 50% · prioritize debt paydown') + '</span>';
+    }
+  }
+
+  /* ---------- 3L buckets ---------- */
+  function renderL3(liq, lon, leg, assets, car, L) {
+    var cells = [
+      {
+        name: 'Liquidity', v: liq,
+        thName: 'สภาพคล่อง', enName: 'Liquidity',
+        thRole: 'ใช้จ่าย 1-3 ปีข้างหน้า · กันชนไม่ให้ต้องขายของถูกในจังหวะแย่',
+        enRole: 'Funds the next 1-3 years · so you never sell good assets at bad prices.'
+      },
+      {
+        name: 'Longevity', v: lon,
+        thName: 'ทั้งชีวิต', enName: 'Longevity',
+        thRole: 'ชีวิตทั้งชีวิตของคุณ · เงินลงทุนและเงินเกษียณที่ต้องเลี้ยงคุณตลอดไป',
+        enRole: 'The rest of your life · investments and retirement money that must last.'
+      },
+      {
+        name: 'Legacy', v: leg,
+        thName: 'ส่งต่อ', enName: 'Legacy',
+        thRole: 'ส่งต่อเกินกว่าชีวิตคุณ · อสังหาฯ และทรัพย์สินถาวรที่กลายเป็นมรดก',
+        enRole: 'Outlives you · property and lasting assets that become your legacy.'
+      }
+    ];
+    var html = '';
+    for (var i = 0; i < cells.length; i++) {
+      var c = cells[i];
+      var pct = assets > 0 ? (c.v / assets) * 100 : 0;
+      html += '<div class="l3-cell metric">'
+        + '<div class="lbl">' + c.name + ' · ' + (L === 'th' ? c.thName : c.enName) + '</div>'
+        + '<div class="val" style="font-size:1.45em;">' + W.fmtBaht(c.v) + '</div>'
+        + '<div class="share">' + W.fmtPct(pct, 0) + ' ' + (L === 'th' ? 'ของทรัพย์สิน' : 'of assets') + '</div>'
+        + '<div class="role">' + (L === 'th' ? c.thRole : c.enRole) + '</div>'
+        + '</div>';
+    }
+    el('l3-grid').innerHTML = html;
+
+    /* car is a depreciating use-asset · excluded from all 3 Ls, noted separately */
+    var note = el('use-note');
+    if (car > 0) {
+      note.hidden = false;
+      note.innerHTML = L === 'th'
+        ? '<b>ใช้สอย (Use): ' + W.fmtBaht(car) + '</b> · รถยนต์เป็นสินทรัพย์เสื่อมราคาที่ไว้ใช้งาน ไม่ใช่เงินลงทุนหรือมรดก จึงไม่นับรวมในกรอบ 3L ด้านบน (แต่ยังนับในความมั่งคั่งสุทธิรวม)'
+        : '<b>Use asset: ' + W.fmtBaht(car) + '</b> · a car is a depreciating use-asset, not an investment or a legacy holding, so it is excluded from the 3L buckets above (it still counts toward total net worth).';
+    } else {
+      note.hidden = true;
+      note.innerHTML = '';
+    }
+  }
+
+  /* ---------- Fidelity benchmark ---------- */
+  function renderBenchmark(netWorth, L) {
+    var income = val('b-income');
+    var age = W.parseNum(el('b-age').value);
+    var panel = el('bm-panel');
+    if (income <= 0 || age < 18 || age > 80) { panel.hidden = true; return; }
+    panel.hidden = false;
+
+    var startWork = W.parseNum(el('b-startwork').value);
+    if (!(startWork >= 15 && startWork <= 40)) { startWork = 23; }
+    var retireAge = W.parseNum(el('b-retire-age').value);
+    if (!(retireAge >= 45 && retireAge <= 75)) { retireAge = 60; }
+
+    var mult = targetMultiple(age, startWork, retireAge);
+    var target = income * mult;
+    var pctOfTarget = target > 0 ? (netWorth / target) * 100 : 0;
+    var onTrack = netWorth >= target;
+
+    var html = '<div class="bk-row">'
+      + '<div class="top"><span class="k">'
+      + (L === 'th' ? 'เป้าหมายที่อายุ ' + age + ' ≈ ' + W.fmt(mult, 1) + '× ของรายได้ต่อปี' : 'Target at age ' + age + ' ≈ ' + W.fmt(mult, 1) + '× annual income')
+      + '</span><span class="v">' + W.fmtBaht(netWorth) + ' / ' + W.fmtBaht(target) + '</span></div>'
+      + '<div class="bar-bg"><div class="bar-fill" style="width:' + Math.min(100, Math.max(0, pctOfTarget)) + '%;'
+      + 'background:' + (onTrack ? 'var(--bright-2)' : '#e88c74') + ';"></div></div>'
+      + '</div>';
+    el('bm-rows').innerHTML = html;
+
+    var msg = el('bm-msg');
+    if (target <= 0) {
+      msg.className = 'msg ok';
+      msg.innerHTML = L === 'th'
+        ? '✓ อายุของคุณยังไม่ถึงหมุดแรกของ Fidelity (1× ภายในอายุ 30) · เริ่มก่อนคือแต้มต่อที่ใหญ่ที่สุด'
+        : '✓ You\'re before Fidelity\'s first milestone (1× by 30) · starting early is the biggest edge there is.';
+    } else if (onTrack) {
+      msg.className = 'msg ok';
+      msg.innerHTML = L === 'th'
+        ? '✓ ความมั่งคั่งสุทธิของคุณอยู่ที่ ' + W.fmtPct(pctOfTarget, 0) + ' ของเป้าหมาย · นำเกณฑ์ Fidelity แล้ว รักษาวินัยการลงทุนต่อไป'
+        : '✓ Your net worth is at ' + W.fmtPct(pctOfTarget, 0) + ' of target · ahead of the Fidelity track. Keep the discipline going.';
+    } else {
+      msg.className = 'msg err';
+      msg.innerHTML = L === 'th'
+        ? 'ยังขาดอีก ' + W.fmtBaht(target - netWorth) + ' (' + W.fmtPct(pctOfTarget, 0) + ' ของเป้า) · ยังตามทันได้: เพิ่มอัตราออม-ลงทุนอัตโนมัติทุกเดือน แล้ววัดใหม่ทุก 6 เดือน'
+        : 'Short by ' + W.fmtBaht(target - netWorth) + ' (' + W.fmtPct(pctOfTarget, 0) + ' of target) · catchable: raise your automated monthly investing, re-measure every 6 months.';
+    }
+    msg.style.display = 'block';
+  }
+
+  /* ---------- snapshots & trend ---------- */
+  function loadHistory() {
+    try {
+      var raw = localStorage.getItem(HIST_KEY);
+      if (!raw) { return []; }
+      var arr = JSON.parse(raw);
+      return (arr && arr.length) ? arr : [];
+    } catch (e) { return []; }
+  }
+
+  function saveHistory(arr) {
+    try { localStorage.setItem(HIST_KEY, JSON.stringify(arr)); } catch (e) {}
+  }
+
+  function todayStr() {
+    var d = new Date();
+    var m = d.getMonth() + 1;
+    var day = d.getDate();
+    return d.getFullYear() + '-' + (m < 10 ? '0' + m : m) + '-' + (day < 10 ? '0' + day : day);
+  }
+
+  function saveSnapshot() {
+    var hist = loadHistory();
+    var today = todayStr();
+    var snap = { date: today, netWorth: last.netWorth, assets: last.assets, liab: last.liab };
+    /* one snapshot per date · overwrite if saving again today */
+    var replaced = false;
+    for (var i = 0; i < hist.length; i++) {
+      if (hist[i].date === today) { hist[i] = snap; replaced = true; break; }
+    }
+    if (!replaced) { hist.push(snap); }
+    hist.sort(function (a, b) { return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
+    saveHistory(hist);
+    renderTrend();
+  }
+
+  function clearHistory() {
+    try { localStorage.removeItem(HIST_KEY); } catch (e) {}
+    renderTrend();
+  }
+
+  /* build an SVG poly-line of saved net-worth snapshots */
+  function trendSvg(hist) {
+    var w = 640, h = 200, padL = 8, padR = 8, padT = 18, padB = 28;
+    var n = hist.length;
+    var vals = [];
+    for (var i = 0; i < n; i++) { vals.push(hist[i].netWorth); }
+    var minV = Math.min.apply(null, vals);
+    var maxV = Math.max.apply(null, vals);
+    if (minV === maxV) { maxV = minV + 1; minV = minV - 1; }
+    /* always include zero baseline if values straddle / are near it */
+    if (minV > 0) { minV = 0; }
+    var plotW = w - padL - padR;
+    var plotH = h - padT - padB;
+    function x(i) { return n === 1 ? padL + plotW / 2 : padL + (plotW * i) / (n - 1); }
+    function y(v) { return padT + plotH - ((v - minV) / (maxV - minV)) * plotH; }
+
+    var pts = '';
+    var dots = '';
+    for (var j = 0; j < n; j++) {
+      var px = x(j), py = y(hist[j].netWorth);
+      pts += (j === 0 ? '' : ' ') + px.toFixed(1) + ',' + py.toFixed(1);
+      dots += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="3.5" fill="var(--forest)"></circle>';
+    }
+    /* zero baseline */
+    var zeroY = y(0);
+    var zeroLine = (minV <= 0 && maxV >= 0)
+      ? '<line x1="' + padL + '" y1="' + zeroY.toFixed(1) + '" x2="' + (w - padR) + '" y2="' + zeroY.toFixed(1) + '" stroke="var(--line)" stroke-dasharray="3 3"></line>'
+      : '';
+    var poly = n > 1
+      ? '<polyline points="' + pts + '" fill="none" stroke="var(--bright-2)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"></polyline>'
+      : '';
+    return '<svg viewBox="0 0 ' + w + ' ' + h + '" role="img" aria-label="Net worth trend">'
+      + zeroLine + poly + dots + '</svg>';
+  }
+
+  function renderTrend() {
+    var L = lang();
+    var hist = loadHistory();
+    var trendBox = el('snap-trend');
+    var tableBox = el('snap-table');
+
+    if (!hist.length) {
+      trendBox.innerHTML = '';
+      tableBox.innerHTML = '<div class="snap-empty">'
+        + (L === 'th'
+            ? 'ยังไม่มีบันทึก · กด "บันทึกค่าวันนี้" เพื่อเริ่มเส้นแนวโน้มของคุณ'
+            : 'No snapshots yet · tap "Save today\'s figure" to start your trend line.')
+        + '</div>';
+      return;
+    }
+
+    trendBox.innerHTML = trendSvg(hist);
+
+    var rows = '';
+    for (var i = 0; i < hist.length; i++) {
+      var nw = hist[i].netWorth;
+      var changeCell = '<td class="num">–</td>';
+      if (i > 0) {
+        var diff = nw - hist[i - 1].netWorth;
+        var cls = diff > 0 ? 'up' : (diff < 0 ? 'down' : '');
+        var sign = diff > 0 ? '+' : (diff < 0 ? '−' : '');
+        changeCell = '<td class="num ' + cls + '">' + sign + W.fmtBaht(Math.abs(diff)) + '</td>';
+      }
+      rows += '<tr><td>' + hist[i].date + '</td>'
+        + '<td class="num">' + (nw < 0 ? '−' : '') + W.fmtBaht(Math.abs(nw)) + '</td>'
+        + changeCell + '</tr>';
+    }
+    var hDate = L === 'th' ? 'วันที่' : 'Date';
+    var hNW = L === 'th' ? 'ความมั่งคั่งสุทธิ' : 'Net worth';
+    var hChg = L === 'th' ? 'เปลี่ยนแปลง' : 'Change';
+    tableBox.innerHTML = '<table class="snap-table" style="margin-top:14px;"><thead><tr>'
+      + '<th>' + hDate + '</th><th class="num">' + hNW + '</th><th class="num">' + hChg + '</th>'
+      + '</tr></thead><tbody>' + rows + '</tbody></table>';
+  }
+
+  /* ---------- custom rows ---------- */
+  /* each custom row: label input + amount input + delete button.
+     custom assets count as investable (user-defined liquid/longevity-type
+     holdings like crypto, business equity, art). */
+  function sumCustom(containerId) {
+    var box = el(containerId);
+    var amts = box.querySelectorAll('input[data-num]');
+    var total = 0;
+    for (var i = 0; i < amts.length; i++) { total += W.parseNum(amts[i].value); }
+    return total;
+  }
+
+  function addCustomRow(containerId, label, amount) {
+    var box = el(containerId);
+    var L = lang();
+    var row = document.createElement('div');
+    row.className = 'custom-row';
+    var labPh = L === 'th' ? 'ชื่อรายการ' : 'Label';
+    row.innerHTML =
+      '<div class="field compact cr-label" style="margin:0;">'
+        + '<input type="text" class="cr-label-input" placeholder="' + labPh + '" autocomplete="off"/>'
+      + '</div>'
+      + '<div class="field compact cr-amt" style="margin:0;">'
+        + '<div class="input-group">'
+          + '<input type="text" data-num inputmode="numeric" value="' + (amount || 0) + '" autocomplete="off"/>'
+          + '<span class="unit">฿</span>'
+        + '</div>'
+      + '</div>'
+      + '<button type="button" class="cr-del" aria-label="remove">&times;</button>';
+    box.appendChild(row);
+    if (label) { row.querySelector('.cr-label-input').value = label; }
+    /* live thousand-separators on the new amount input */
+    W.bindNumInputs(row);
+    var amtInput = row.querySelector('input[data-num]');
+    amtInput.addEventListener('input', render);
+    row.querySelector('.cr-del').addEventListener('click', function () {
+      box.removeChild(row);
+      render();
+    });
+    render();
+  }
+
+  /* ---------- render ---------- */
+  function render() {
+    var L = lang();
+
+    var cash = val('a-cash');
+    var invest = val('a-invest');
+    var retire = val('a-retire');
+    var property = val('a-property');
+    var car = val('a-car');
+    var gold = val('a-gold');
+    var customAssets = sumCustom('a-custom');
+    var customDebts = sumCustom('d-custom');
+
+    var assets = cash + invest + retire + property + car + gold + customAssets;
+    var debts = val('d-home') + val('d-car') + val('d-card') + val('d-other') + customDebts;
+    var netWorth = assets - debts;
+
+    last.netWorth = netWorth;
+    last.assets = assets;
+    last.liab = debts;
+
+    /* investable / liquid net worth excludes home + car (use-assets) */
+    var investableAssets = assets - property - car;
+    var investableNW = investableAssets - debts;
+    el('r-nw-invest').textContent = (investableNW < 0 ? '−' : '') + W.fmtBaht(Math.abs(investableNW));
+
+    /* hero */
+    var big = el('r-nw');
+    var sub = el('r-nw-sub');
+    big.textContent = (netWorth < 0 ? '−' : '') + W.fmtBaht(Math.abs(netWorth));
+    if (netWorth < 0) {
+      big.className = 'big score-low';
+      sub.innerHTML = L === 'th'
+        ? 'ติดลบวันนี้ไม่ใช่จุดจบ · มันคือจุดเริ่มต้นของการวัดผล โฟกัสโปะหนี้ดอกเบี้ยสูงสุดก่อน แล้วตัวเลขนี้จะขยับเร็วกว่าที่คิด'
+        : 'Negative today isn\'t the end · it\'s the starting line. Attack the highest-interest debt first and this number moves faster than you think.';
+    } else {
+      big.className = 'big';
+      sub.innerHTML = L === 'th'
+        ? 'ทรัพย์สิน ' + W.fmtBaht(assets) + ' − หนี้สิน ' + W.fmtBaht(debts) + ' · วัดซ้ำทุก 6 เดือน แนวโน้มสำคัญกว่าตัวเลขครั้งเดียว'
+        : 'Assets ' + W.fmtBaht(assets) + ' − liabilities ' + W.fmtBaht(debts) + ' · re-measure every 6 months; the trend matters more than any single reading.';
+    }
+
+    renderBars(assets, debts, L);
+
+    /* 3L mapping: Liquidity = cash + custom assets; Longevity = invest + retirement;
+       Legacy = property + gold/other. Car is a depreciating use-asset · excluded
+       from all 3 Ls and shown in a separate "Use" note. Buckets sum over 3L-eligible
+       assets (total minus car) so shares add to 100%. */
+    var l3Assets = assets - car;
+    renderL3(cash + customAssets, invest + retire, property + gold, l3Assets, car, L);
+
+    renderBenchmark(netWorth, L);
+    renderTrend();
+
+    emitFinding(netWorth, investableNW);
+    saveProfile();
+  }
+
+  /* ---------- snapshot instrumentation (added · does not alter UI/logic) ---------- */
+  /* write one finding for the cross-tool snapshot. status:
+       net worth >= Fidelity milestone-for-age -> good
+       50-99% of it -> warn; <50% or negative -> bad.
+     If no age/income benchmark available, fall back to positive vs negative. */
+  function emitFinding(netWorth, investableNW) {
+    if (!W || !W.saveFinding) { return; }
+    var status = 'warn';
+
+    var income = val('b-income');
+    var age = W.parseNum(el('b-age').value);
+    var haveBench = income > 0 && age >= 18 && age <= 80;
+
+    if (haveBench) {
+      var startWork = W.parseNum(el('b-startwork').value);
+      if (!(startWork >= 15 && startWork <= 40)) { startWork = 23; }
+      var retireAge = W.parseNum(el('b-retire-age').value);
+      if (!(retireAge >= 45 && retireAge <= 75)) { retireAge = 60; }
+      var mult = targetMultiple(age, startWork, retireAge);
+      var target = income * mult;
+      if (target <= 0) {
+        /* before first milestone · treat positive net worth as on-track */
+        status = netWorth >= 0 ? 'good' : 'bad';
+      } else {
+        var pct = (netWorth / target) * 100;
+        if (pct >= 100) { status = 'good'; }
+        else if (pct >= 50) { status = 'warn'; }
+        else { status = 'bad'; }
+      }
+    } else {
+      status = netWorth >= 0 ? 'good' : 'bad';
+    }
+
+    var nwTxt = (netWorth < 0 ? '−' : '') + W.fmtBaht(Math.abs(netWorth));
+    var invTxt = (investableNW < 0 ? '−' : '') + W.fmtBaht(Math.abs(investableNW));
+
+    W.saveFinding('networth', {
+      tool: 'net-worth.html',
+      status: status,
+      headlineTh: 'ความมั่งคั่งสุทธิ ' + nwTxt + ' (ลงทุนได้ ' + invTxt + ')',
+      headlineEn: 'Net worth ' + nwTxt + ' (investable ' + invTxt + ')',
+      monthlyClaim: 0
+    });
+  }
+
+  /* persist age + income to the shared profile (reused by other tools) */
+  function saveProfile() {
+    if (!W || !W.profile || !W.profile.set) { return; }
+    var patch = {};
+    var income = val('b-income');
+    var age = W.parseNum(el('b-age').value);
+    if (income > 0) { patch.income = income; }
+    if (age >= 18 && age <= 80) { patch.age = age; }
+    try { W.profile.set(patch); } catch (e) {}
+  }
+
+  /* ---------- prefill from shared profile (income + age) ----------
+     only fills empty benchmark inputs · never overrides what the user typed
+     or the page defaults. */
+  function prefillProfile() {
+    if (!W || !W.profile || !W.profile.get) { return; }
+    var p;
+    try { p = W.profile.get() || {}; } catch (e) { p = {}; }
+    var incEl = el('b-income');
+    if (incEl && incEl.value === '' && p.income) { incEl.value = W.fmt(W.parseNum(p.income)); }
+    var ageEl = el('b-age');
+    if (ageEl && ageEl.value === '' && p.age) { ageEl.value = W.parseNum(p.age); }
+  }
+  prefillProfile();
+
+  /* ---------- events ---------- */
+  var inputs = ['a-cash', 'a-invest', 'a-retire', 'a-property', 'a-car', 'a-gold',
+                'd-home', 'd-car', 'd-card', 'd-other',
+                'b-income', 'b-age', 'b-startwork', 'b-retire-age'];
+  for (var i = 0; i < inputs.length; i++) {
+    el(inputs[i]).addEventListener('input', render);
+  }
+
+  el('a-add').addEventListener('click', function () { addCustomRow('a-custom', '', 0); });
+  el('d-add').addEventListener('click', function () { addCustomRow('d-custom', '', 0); });
+  el('snap-save').addEventListener('click', saveSnapshot);
+  el('snap-clear').addEventListener('click', clearHistory);
+
+  window.addEventListener('wc:lang', render);
+
+  render();
+})();
+</script>
+</body>
+</html>

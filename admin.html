@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>หลังบ้าน · Wealth Compass</title>
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; connect-src 'self' https://*.supabase.co; img-src 'self' data: blob: https://*.supabase.co https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; base-uri 'self'"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="_theme.css"/>
+
+<style>
+/* ---------- admin page-specific ---------- */
+.admin-topbar {
+  position: sticky; top: 0; z-index: 900;
+  background: var(--forest); color: #fff;
+}
+.admin-topbar .inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 32px;
+  height: 64px; display: flex; align-items: center; gap: 14px;
+}
+.admin-topbar .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; color: #fff; }
+.admin-topbar .brand .mark {
+  width: 32px; height: 32px; border-radius: 9px;
+  background: var(--bright); color: var(--forest);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 800;
+}
+.admin-topbar .spacer { flex: 1; }
+.admin-topbar .who { font-size: 13px; color: rgba(255,255,255,0.7); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 40vw; }
+
+.center-wrap { min-height: 86vh; display: flex; align-items: center; justify-content: center; padding: 40px 20px; }
+.center-card { width: 100%; max-width: 460px; }
+.center-card h1 { font-size: 24px; margin-bottom: 8px; }
+.center-card .sub { color: var(--muted); font-size: 14.5px; margin-bottom: 22px; }
+.setup-steps { list-style: none; counter-reset: stp; margin: 18px 0 6px; }
+.setup-steps li {
+  counter-increment: stp; position: relative;
+  padding: 0 0 16px 44px; font-size: 14.5px;
+}
+.setup-steps li::before {
+  content: counter(stp); position: absolute; left: 0; top: 0;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--bright-soft); color: var(--positive);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 13.5px;
+}
+.setup-steps code {
+  background: var(--bg); border: 1px solid var(--line);
+  border-radius: 6px; padding: 1px 7px; font-size: 12.5px;
+}
+.center-card .btn { width: 100%; }
+
+.admin-main { max-width: 1200px; margin: 0 auto; padding: 36px 32px 90px; }
+.list-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+.list-head h1 { font-size: 28px; }
+
+.tbl-panel { padding: 0; overflow-x: auto; }
+.tbl-panel table { min-width: 760px; }
+.tbl-panel td { vertical-align: middle; }
+td.thumb-cell { width: 56px; }
+td.thumb-cell img { width: 40px; height: 40px; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); }
+td.thumb-cell .emo { font-size: 24px; line-height: 40px; display: block; text-align: center; width: 40px; }
+td.title-cell { font-weight: 700; color: var(--forest); max-width: 320px; }
+td.title-cell .slug { display: block; font-weight: 400; font-size: 11.5px; color: var(--muted); }
+td.act-cell { white-space: nowrap; text-align: right; }
+.row-btn {
+  border: 1px solid var(--line); background: #fff; color: var(--forest);
+  border-radius: 99px; padding: 6px 14px; font-size: 12.5px; font-weight: 700;
+  cursor: pointer; margin-left: 6px; transition: background .15s, color .15s, border-color .15s;
+}
+.row-btn:hover { background: var(--bright-soft); border-color: var(--bright-2); }
+.row-btn:disabled { opacity: .55; cursor: wait; }
+.row-btn.danger:hover { background: var(--danger-soft); border-color: var(--danger); color: var(--danger); }
+.row-btn.armed { background: var(--danger); border-color: var(--danger); color: #fff; }
+.row-btn.armed:hover { background: var(--danger); color: #fff; }
+.empty-row td { text-align: center; color: var(--muted); padding: 36px 12px; }
+
+#editor { margin-top: 26px; }
+#editor h2 { font-size: 21px; margin-bottom: 18px; }
+.ed-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 12px 28px; align-items: start; }
+.ed-grid textarea { resize: vertical; }
+.thumb-prev { margin-top: 10px; }
+.thumb-prev img { width: 160px; border-radius: var(--radius-sm); border: 1px solid var(--line); }
+.pub-row { display: flex; align-items: center; gap: 10px; margin: 4px 0 18px; }
+.pub-row input[type="checkbox"] { width: 19px; height: 19px; accent-color: var(--forest); cursor: pointer; }
+.pub-row label { font-size: 14.5px; font-weight: 700; color: var(--forest); cursor: pointer; }
+.ed-actions { display: flex; gap: 12px; margin-top: 8px; }
+button[aria-busy="true"] { opacity: .6; cursor: wait; }
+
+@media (max-width: 900px) {
+  .ed-grid { grid-template-columns: 1fr; }
+  .admin-main { padding: 26px 20px 70px; }
+  .admin-topbar .inner { padding: 0 20px; }
+}
+</style>
+</head>
+<body>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="_brand.js"></script>
+<script src="_app.js"></script>
+<script src="_supabase.js"></script>
+
+<!-- ============ VIEW 1: SETUP (Supabase not configured) ============ -->
+<div id="view-setup" style="display:none;">
+  <div class="center-wrap">
+    <div class="panel center-card">
+      <h1><span class="lang-th">ยังไม่ได้เชื่อมต่อ Supabase</span><span class="lang-en">Supabase not connected yet</span></h1>
+      <p class="sub">
+        <span class="lang-th">หลังบ้านต้องการฐานข้อมูลก่อนใช้งาน ทำตาม 4 ขั้นตอนนี้ (ครั้งเดียวจบ)</span>
+        <span class="lang-en">The back office needs a database first. Follow these 4 one-time steps.</span>
+      </p>
+      <ol class="setup-steps">
+        <li>สร้างโปรเจกต์ฟรีที่ <code>supabase.com</code></li>
+        <li>รันไฟล์ <code>supabase/migrations/001_articles.sql</code> ใน SQL Editor (Dashboard &gt; SQL Editor &gt; New query)</li>
+        <li>ไปที่ Authentication &gt; Users &gt; Add user · สร้างอีเมล + รหัสผ่านสำหรับล็อกอินหลังบ้าน</li>
+        <li>คัดลอก Project URL + anon key (Settings &gt; API) ไปใส่ใน <code>_brand.js</code> แล้วรีเฟรชหน้านี้</li>
+      </ol>
+      <a class="btn btn-forest" href="README.md">
+        <span class="lang-th">อ่านคู่มือใน README</span><span class="lang-en">Read the README guide</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VIEW 2: LOGIN ============ -->
+<div id="view-login" style="display:none;">
+  <div class="center-wrap">
+    <div class="panel center-card">
+      <h1><span class="lang-th">เข้าสู่ระบบหลังบ้าน</span><span class="lang-en">Admin sign in</span></h1>
+      <p class="sub">
+        <span class="lang-th">Wealth Compass · จัดการบทความ</span>
+        <span class="lang-en">Wealth Compass · manage articles</span>
+      </p>
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="login-email"><span class="lang-th">อีเมล</span><span class="lang-en">Email</span></label>
+          <input type="email" id="login-email" autocomplete="email" required/>
+        </div>
+        <div class="field">
+          <label for="login-password"><span class="lang-th">รหัสผ่าน</span><span class="lang-en">Password</span></label>
+          <input type="password" id="login-password" autocomplete="current-password" required/>
+        </div>
+        <button type="submit" class="btn btn-forest" id="login-btn">
+          <span class="lang-th">เข้าสู่ระบบ</span><span class="lang-en">Sign in</span>
+        </button>
+        <div class="msg err" id="login-msg" role="alert"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VIEW 3: ADMIN ============ -->
+<div id="view-admin" style="display:none;">
+
+  <div class="admin-topbar">
+    <div class="inner">
+      <div class="brand"><span class="mark">W</span><span>หลังบ้าน Wealth Compass</span></div>
+      <div class="spacer"></div>
+      <div class="who" id="who-email"></div>
+      <button type="button" class="btn btn-primary btn-sm" id="logout-btn">
+        <span class="lang-th">ออกจากระบบ</span><span class="lang-en">Sign out</span>
+      </button>
+    </div>
+  </div>
+
+  <main class="admin-main">
+
+    <!-- ----- list ----- -->
+    <div id="list-wrap">
+      <div class="list-head">
+        <h1><span class="lang-th">บทความ</span><span class="lang-en">Articles</span></h1>
+        <button type="button" class="btn btn-primary" id="new-btn">
+          <span class="lang-th">+ เขียนบทความใหม่</span><span class="lang-en">+ New article</span>
+        </button>
+      </div>
+      <div class="msg err" id="list-msg" role="alert"></div>
+      <div class="panel tbl-panel" id="tbl-panel">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>ชื่อ</th>
+              <th>หมวด</th>
+              <th>สถานะ</th>
+              <th>อัปเดต</th>
+              <th style="text-align:right;">จัดการ</th>
+            </tr>
+          </thead>
+          <tbody id="list-body">
+            <tr class="empty-row"><td colspan="6">กำลังโหลด…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ----- editor ----- -->
+    <div id="editor" class="panel" style="display:none;">
+      <h2 id="ed-title">เขียนบทความใหม่</h2>
+      <form id="ed-form" novalidate>
+        <div class="ed-grid">
+
+          <!-- left column: meta fields -->
+          <div>
+            <div class="field">
+              <label for="f-slug">Slug</label>
+              <input type="text" id="f-slug" placeholder="my-new-article"/>
+              <div class="hint">a-z, 0-9, ขีดกลาง เท่านั้น · ใช้ใน URL</div>
+            </div>
+            <div class="field">
+              <label for="f-pillar">หมวด (pillar)</label>
+              <select id="f-pillar">
+                <option value="foundation">พื้นฐานการเงิน (foundation)</option>
+                <option value="debt">จัดการหนี้ (debt)</option>
+                <option value="invest">ลงทุน (invest)</option>
+                <option value="tax">ภาษี (tax)</option>
+                <option value="protect">ประกันและคุ้มครอง (protect)</option>
+                <option value="retire">เกษียณ (retire)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-emoji">อีโมจิ</label>
+              <input type="text" id="f-emoji" maxlength="8" placeholder="📄"/>
+            </div>
+            <div class="field">
+              <label for="f-title-th">ชื่อบทความ (ไทย)</label>
+              <input type="text" id="f-title-th"/>
+            </div>
+            <div class="field">
+              <label for="f-title-en">ชื่อบทความ (อังกฤษ)</label>
+              <input type="text" id="f-title-en"/>
+            </div>
+            <div class="field">
+              <label for="f-desc-th">คำโปรย (ไทย)</label>
+              <textarea id="f-desc-th" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label for="f-desc-en">คำโปรย (อังกฤษ)</label>
+              <textarea id="f-desc-en" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label for="f-read-min">เวลาอ่าน (นาที)</label>
+              <input type="number" id="f-read-min" min="1" max="60" value="7"/>
+            </div>
+            <div class="field">
+              <label for="f-tool">เครื่องมือที่เกี่ยวข้อง (CTA กลางบทความ)</label>
+              <select id="f-tool">
+                <option value=""> · ไม่ผูกเครื่องมือ · </option>
+                <option value="budget-planner.html">budget-planner.html · วางแผนงบประมาณ</option>
+                <option value="emergency-fund.html">emergency-fund.html · เงินสำรองฉุกเฉิน</option>
+                <option value="net-worth.html">net-worth.html · ความมั่งคั่งสุทธิ</option>
+                <option value="financial-health-score.html">financial-health-score.html · คะแนนสุขภาพการเงิน</option>
+                <option value="debt-payoff.html">debt-payoff.html · ปลดหนี้</option>
+                <option value="compound-dca.html">compound-dca.html · ดอกเบี้ยทบต้น / DCA</option>
+                <option value="risk-profile.html">risk-profile.html · แบบประเมินความเสี่ยง</option>
+                <option value="tax-calculator.html">tax-calculator.html · คำนวณภาษี</option>
+                <option value="tax-deduction-optimizer.html">tax-deduction-optimizer.html · ลดหย่อนภาษี</option>
+                <option value="insurance-needs.html">insurance-needs.html · ทุนประกันที่ควรมี</option>
+                <option value="retirement-simulator.html">retirement-simulator.html · แผนเกษียณ</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-thumb">รูปปก (thumbnail)</label>
+              <input type="file" id="f-thumb" accept="image/*"/>
+              <div class="hint">แนะนำ 1200×630 px · อัปโหลดอัตโนมัติตอนบันทึก</div>
+              <div class="thumb-prev" id="thumb-prev" style="display:none;"><img id="thumb-prev-img" src="" alt="ตัวอย่างรูปปก"/></div>
+            </div>
+            <div class="pub-row">
+              <input type="checkbox" id="f-published"/>
+              <label for="f-published">เผยแพร่ทันที</label>
+            </div>
+          </div>
+
+          <!-- right column: content -->
+          <div>
+            <div class="field">
+              <label for="f-content-th">เนื้อหา (ไทย)</label>
+              <textarea id="f-content-th" rows="14"></textarea>
+              <div class="hint">HTML ได้ เช่น &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;</div>
+            </div>
+            <div class="field">
+              <label for="f-content-en">เนื้อหา (อังกฤษ)</label>
+              <textarea id="f-content-en" rows="8"></textarea>
+              <div class="hint">เว้นว่างได้ ถ้ายังไม่มีฉบับแปล</div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="msg" id="ed-msg" role="alert"></div>
+        <div class="ed-actions">
+          <button type="submit" class="btn btn-primary" id="save-btn">
+            <span class="lang-th">บันทึก</span><span class="lang-en">Save</span>
+          </button>
+          <button type="button" class="btn btn-outline" id="cancel-btn">
+            <span class="lang-th">ยกเลิก</span><span class="lang-en">Cancel</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+  </main>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var SLUG_RE = /^[a-z0-9-]+$/;
+  var PILLAR_LABEL = {
+    foundation: 'พื้นฐาน',
+    debt: 'หนี้',
+    invest: 'ลงทุน',
+    tax: 'ภาษี',
+    protect: 'คุ้มครอง',
+    retire: 'เกษียณ'
+  };
+  var PILLAR_BADGE = {
+    foundation: 'green',
+    debt: 'amber',
+    invest: 'blue',
+    tax: 'violet',
+    protect: 'red',
+    retire: 'blue'
+  };
+
+  var rows = [];          /* cached article list */
+  var editingId = null;   /* null = creating */
+  var armedId = null;     /* two-click delete state */
+  var armedTimer = null;
+
+  function el(id) { return document.getElementById(id); }
+
+  function esc(s) {
+    if (s === null || s === undefined) { return ''; }
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function busy(btn, on) {
+    btn.disabled = !!on;
+    if (on) { btn.setAttribute('aria-busy', 'true'); }
+    else { btn.removeAttribute('aria-busy'); }
+  }
+
+  function showMsg(id, kind, text) {
+    var m = el(id);
+    m.className = 'msg ' + kind + ' show';
+    m.textContent = text;
+  }
+  function hideMsg(id) {
+    var m = el(id);
+    m.className = m.className.indexOf('err') >= 0 ? 'msg err' : 'msg';
+    m.textContent = '';
+  }
+
+  function fmtDate(s) {
+    if (!s) { return ' · '; }
+    var d = new Date(s);
+    if (isNaN(d.getTime())) { return ' · '; }
+    return d.toLocaleDateString('th-TH', { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+
+  /* ---------- view switching ---------- */
+  function showView(id) {
+    var ids = ['view-setup', 'view-login', 'view-admin'];
+    var i;
+    for (i = 0; i < ids.length; i++) {
+      el(ids[i]).style.display = (ids[i] === id) ? '' : 'none';
+    }
+  }
+
+  /* ---------- list ---------- */
+  function findRow(id) {
+    var i;
+    for (i = 0; i < rows.length; i++) {
+      if (String(rows[i].id) === String(id)) { return rows[i]; }
+    }
+    return null;
+  }
+
+  function renderList() {
+    var body = el('list-body');
+    var h = '';
+    var i, r, thumb, pubBadge, pubBtnLabel;
+
+    if (!rows.length) {
+      body.innerHTML = '<tr class="empty-row"><td colspan="6">ยังไม่มีบทความ · กด "+ เขียนบทความใหม่" เพื่อเริ่ม</td></tr>';
+      return;
+    }
+    for (i = 0; i < rows.length; i++) {
+      r = rows[i];
+      if (r.thumb_url) {
+        thumb = '<img src="' + esc(r.thumb_url) + '" alt="" loading="lazy"/>';
+      } else {
+        thumb = '<span class="emo">' + esc(r.emoji || '📄') + '</span>';
+      }
+      pubBadge = r.published
+        ? '<span class="badge green">เผยแพร่</span>'
+        : '<span class="badge amber">ฉบับร่าง</span>';
+      pubBtnLabel = r.published ? 'ซ่อน' : 'เผยแพร่';
+
+      h += '<tr>'
+        + '<td class="thumb-cell">' + thumb + '</td>'
+        + '<td class="title-cell">' + esc(r.title_th)
+        + '<span class="slug">' + esc(r.slug) + '</span></td>'
+        + '<td><span class="badge ' + (PILLAR_BADGE[r.pillar] || 'blue') + '">'
+        + esc(PILLAR_LABEL[r.pillar] || r.pillar) + '</span></td>'
+        + '<td>' + pubBadge + '</td>'
+        + '<td>' + esc(fmtDate(r.updated_at)) + '</td>'
+        + '<td class="act-cell">'
+        + '<button type="button" class="row-btn" data-act="edit" data-id="' + esc(r.id) + '">แก้ไข</button>'
+        + '<button type="button" class="row-btn" data-act="pub" data-id="' + esc(r.id) + '">' + pubBtnLabel + '</button>'
+        + '<button type="button" class="row-btn danger" data-act="del" data-id="' + esc(r.id) + '">ลบ</button>'
+        + '</td>'
+        + '</tr>';
+    }
+    body.innerHTML = h;
+  }
+
+  function loadList() {
+    var panel = el('tbl-panel');
+    hideMsg('list-msg');
+    panel.setAttribute('aria-busy', 'true');
+    el('list-body').innerHTML = '<tr class="empty-row"><td colspan="6">กำลังโหลด…</td></tr>';
+    armedId = null;
+    WC_DB.articles.listAll().then(function (data) {
+      rows = data || [];
+      renderList();
+      panel.removeAttribute('aria-busy');
+    }).catch(function (e) {
+      panel.removeAttribute('aria-busy');
+      el('list-body').innerHTML = '<tr class="empty-row"><td colspan="6">โหลดไม่สำเร็จ</td></tr>';
+      showMsg('list-msg', 'err', 'โหลดรายการไม่สำเร็จ: ' + ((e && e.message) || 'ลองรีเฟรชหน้า'));
+    });
+  }
+
+  /* ---------- two-click delete ---------- */
+  function disarmDelete() {
+    if (armedTimer) { clearTimeout(armedTimer); armedTimer = null; }
+    armedId = null;
+    var btns = document.querySelectorAll('.row-btn.armed');
+    var i;
+    for (i = 0; i < btns.length; i++) {
+      btns[i].className = 'row-btn danger';
+      btns[i].textContent = 'ลบ';
+    }
+  }
+
+  function onListClick(e) {
+    var t = e.target;
+    while (t && t !== document && !(t.getAttribute && t.getAttribute('data-act'))) {
+      t = t.parentNode;
+    }
+    if (!t || t === document) { return; }
+    var act = t.getAttribute('data-act');
+    var id = t.getAttribute('data-id');
+    var row = findRow(id);
+    if (!row) { return; }
+
+    if (act === 'edit') {
+      disarmDelete();
+      openEditor(row);
+      return;
+    }
+
+    if (act === 'pub') {
+      disarmDelete();
+      busy(t, true);
+      WC_DB.articles.update(row.id, { published: !row.published }).then(function (r) {
+        if (r && r.error) {
+          busy(t, false);
+          showMsg('list-msg', 'err', 'เปลี่ยนสถานะไม่สำเร็จ: ' + r.error.message);
+          return;
+        }
+        loadList();
+      }).catch(function (er) {
+        busy(t, false);
+        showMsg('list-msg', 'err', 'เปลี่ยนสถานะไม่สำเร็จ: ' + ((er && er.message) || ''));
+      });
+      return;
+    }
+
+    if (act === 'del') {
+      if (armedId !== id) {
+        /* first click: arm */
+        disarmDelete();
+        armedId = id;
+        t.className = 'row-btn armed';
+        t.textContent = 'ยืนยันลบ?';
+        armedTimer = setTimeout(disarmDelete, 4000);
+        return;
+      }
+      /* second click: delete for real */
+      if (armedTimer) { clearTimeout(armedTimer); armedTimer = null; }
+      armedId = null;
+      busy(t, true);
+      WC_DB.articles.remove(row.id).then(function (r) {
+        if (r && r.error) {
+          busy(t, false);
+          t.className = 'row-btn danger';
+          t.textContent = 'ลบ';
+          showMsg('list-msg', 'err', 'ลบไม่สำเร็จ: ' + r.error.message);
+          return;
+        }
+        loadList();
+      }).catch(function (er) {
+        busy(t, false);
+        t.className = 'row-btn danger';
+        t.textContent = 'ลบ';
+        showMsg('list-msg', 'err', 'ลบไม่สำเร็จ: ' + ((er && er.message) || ''));
+      });
+    }
+  }
+
+  /* ---------- editor ---------- */
+  function setThumbPreview(url) {
+    if (url) {
+      el('thumb-prev-img').src = url;
+      el('thumb-prev').style.display = '';
+    } else {
+      el('thumb-prev-img').src = '';
+      el('thumb-prev').style.display = 'none';
+    }
+  }
+
+  function openEditor(row) {
+    editingId = row ? row.id : null;
+    el('ed-title').textContent = row ? ('แก้ไข: ' + (row.title_th || row.slug)) : 'เขียนบทความใหม่';
+    hideMsg('ed-msg');
+
+    el('f-slug').value = row ? (row.slug || '') : '';
+    el('f-slug').disabled = !!row;
+    el('f-pillar').value = row ? (row.pillar || 'foundation') : 'foundation';
+    el('f-emoji').value = row ? (row.emoji || '') : '';
+    el('f-title-th').value = row ? (row.title_th || '') : '';
+    el('f-title-en').value = row ? (row.title_en || '') : '';
+    el('f-desc-th').value = row ? (row.desc_th || '') : '';
+    el('f-desc-en').value = row ? (row.desc_en || '') : '';
+    el('f-read-min').value = row ? (row.read_min || 7) : 7;
+    el('f-tool').value = row ? (row.tool_slug || '') : '';
+    el('f-content-th').value = row ? (row.content_th || '') : '';
+    el('f-content-en').value = row ? (row.content_en || '') : '';
+    el('f-published').checked = row ? !!row.published : false;
+    el('f-thumb').value = '';
+    setThumbPreview(row ? row.thumb_url : null);
+
+    el('list-wrap').style.display = 'none';
+    el('editor').style.display = '';
+    window.scrollTo(0, 0);
+  }
+
+  function closeEditor() {
+    editingId = null;
+    el('editor').style.display = 'none';
+    el('list-wrap').style.display = '';
+  }
+
+  function doSave(e) {
+    e.preventDefault();
+    hideMsg('ed-msg');
+
+    var slug = el('f-slug').value.trim();
+    var titleTh = el('f-title-th').value.trim();
+
+    if (!SLUG_RE.test(slug)) {
+      showMsg('ed-msg', 'err', 'Slug ไม่ถูกต้อง · ใช้ a-z, 0-9 และขีดกลาง (-) เท่านั้น');
+      return;
+    }
+    if (!titleTh) {
+      showMsg('ed-msg', 'err', 'กรุณาใส่ชื่อบทความ (ไทย)');
+      return;
+    }
+
+    var readMin = parseInt(el('f-read-min').value, 10);
+    if (isNaN(readMin) || readMin < 1) { readMin = 7; }
+
+    var row = {
+      slug: slug,
+      pillar: el('f-pillar').value,
+      emoji: el('f-emoji').value.trim() || '📄',
+      title_th: titleTh,
+      title_en: el('f-title-en').value.trim(),
+      desc_th: el('f-desc-th').value.trim(),
+      desc_en: el('f-desc-en').value.trim(),
+      content_th: el('f-content-th').value,
+      content_en: el('f-content-en').value,
+      tool_slug: el('f-tool').value || null,
+      read_min: readMin,
+      published: el('f-published').checked
+    };
+
+    var fileInput = el('f-thumb');
+    var file = (fileInput.files && fileInput.files.length) ? fileInput.files[0] : null;
+    var saveBtn = el('save-btn');
+    busy(saveBtn, true);
+
+    var p;
+    if (file) {
+      p = WC_DB.storage.uploadThumb(file, slug).then(function (r) {
+        if (r && r.error) { throw new Error('อัปโหลดรูปไม่สำเร็จ: ' + r.error.message); }
+        row.thumb_url = r.url;
+      });
+    } else {
+      p = Promise.resolve();
+    }
+
+    p.then(function () {
+      return editingId
+        ? WC_DB.articles.update(editingId, row)
+        : WC_DB.articles.create(row);
+    }).then(function (r) {
+      busy(saveBtn, false);
+      if (r && r.error) {
+        var m = r.error.message || 'บันทึกไม่สำเร็จ';
+        if (m.indexOf('duplicate') >= 0 || m.indexOf('unique') >= 0) {
+          m = 'Slug นี้ถูกใช้แล้ว · เปลี่ยนเป็นชื่ออื่น';
+        }
+        showMsg('ed-msg', 'err', m);
+        return;
+      }
+      showMsg('ed-msg', 'ok', 'บันทึกแล้ว ✓');
+      setTimeout(function () {
+        closeEditor();
+        loadList();
+      }, 650);
+    }).catch(function (er) {
+      busy(saveBtn, false);
+      showMsg('ed-msg', 'err', (er && er.message) || 'บันทึกไม่สำเร็จ ลองอีกครั้ง');
+    });
+  }
+
+  /* ---------- auth ---------- */
+  function enterAdmin(email) {
+    el('who-email').textContent = email || '';
+    closeEditor();
+    showView('view-admin');
+    loadList();
+  }
+
+  function doLogin(e) {
+    e.preventDefault();
+    hideMsg('login-msg');
+    var email = el('login-email').value.trim();
+    var pass = el('login-password').value;
+    if (!email || !pass) {
+      showMsg('login-msg', 'err', 'กรุณาใส่อีเมลและรหัสผ่าน');
+      return;
+    }
+    var btn = el('login-btn');
+    busy(btn, true);
+    WC_DB.auth.signIn(email, pass).then(function (r) {
+      busy(btn, false);
+      if (r && r.error) {
+        showMsg('login-msg', 'err', 'เข้าสู่ระบบไม่สำเร็จ: ' + (r.error.message || 'ตรวจอีเมล/รหัสผ่านอีกครั้ง'));
+        return;
+      }
+      var em = (r && r.data && r.data.user && r.data.user.email) || email;
+      el('login-password').value = '';
+      enterAdmin(em);
+    }).catch(function (er) {
+      busy(btn, false);
+      showMsg('login-msg', 'err', 'เข้าสู่ระบบไม่สำเร็จ: ' + ((er && er.message) || ''));
+    });
+  }
+
+  function doLogout() {
+    var btn = el('logout-btn');
+    busy(btn, true);
+    WC_DB.auth.signOut().then(function () {
+      busy(btn, false);
+      el('login-email').value = '';
+      el('login-password').value = '';
+      hideMsg('login-msg');
+      showView('view-login');
+    }).catch(function () {
+      busy(btn, false);
+      showView('view-login');
+    });
+  }
+
+  /* ---------- boot ---------- */
+  function boot() {
+    if (!window.WC_DB || !WC_DB.configured()) {
+      showView('view-setup');
+      return;
+    }
+    WC_DB.auth.getSession().then(function (session) {
+      if (session && session.user) {
+        enterAdmin(session.user.email);
+      } else {
+        showView('view-login');
+      }
+    }).catch(function () {
+      showView('view-login');
+    });
+  }
+
+  /* ---------- wiring ---------- */
+  el('login-form').addEventListener('submit', doLogin);
+  el('logout-btn').addEventListener('click', doLogout);
+  el('new-btn').addEventListener('click', function () { openEditor(null); });
+  el('list-body').addEventListener('click', onListClick);
+  el('ed-form').addEventListener('submit', doSave);
+  el('cancel-btn').addEventListener('click', closeEditor);
+  el('f-thumb').addEventListener('change', function () {
+    var f = (this.files && this.files.length) ? this.files[0] : null;
+    if (f && window.URL && URL.createObjectURL) {
+      setThumbPreview(URL.createObjectURL(f));
+    }
+  });
+
+  boot();
+})();
+</script>
+
+</body>
+</html>

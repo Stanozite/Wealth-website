@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- GEO / SEO -->
+<meta name="geo.region" content="TH-10"/>
+<meta name="geo.placename" content="Bangkok, Thailand"/>
+<meta name="geo.position" content="13.7563;100.5018"/>
+<meta name="ICBM" content="13.7563, 100.5018"/>
+<meta name="language" content="th"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+<meta name="author" content="Wealth Compass"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Wealth Compass"/>
+<meta property="og:title" content="วางแผนงบประมาณ 50/30/20 และ 6 โหล · เครื่องมือฟรี | Wealth Compass"/>
+<meta property="og:description" content="กรอกรายได้ เห็นทันทีว่าควรแบ่งเงินเดือนอย่างไร ตามสูตร 50/30/20 หรือ Six Jars พร้อมเทียบรายจ่ายจริงของคุณ ฟรี ไม่ต้องสมัคร"/>
+<meta property="og:url" content="https://wealthcompass.example.com/budget-planner.html"/>
+<meta property="og:locale" content="th_TH"/>
+<meta property="og:locale:alternate" content="en_US"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="วางแผนงบประมาณ 50/30/20 · เครื่องมือฟรี | Wealth Compass"/>
+<meta name="twitter:description" content="แบ่งเงินเดือนแบบมืออาชีพด้วยสูตร 50/30/20 หรือ Six Jars เห็นผลทันที"/>
+
+<!-- Hreflang / canonical -->
+<link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/budget-planner.html"/>
+<link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/budget-planner.html?lang=en"/>
+<link rel="alternate" hreflang="x-default" href="https://wealthcompass.example.com/budget-planner.html"/>
+<link rel="canonical" href="https://wealthcompass.example.com/budget-planner.html"/>
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()"/>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://wealthcompass.example.com/#organization",
+      "name": "Wealth Compass",
+      "url": "https://wealthcompass.example.com",
+      "areaServed": "TH"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://wealthcompass.example.com/budget-planner.html#app",
+      "name": "เครื่องมือวางแผนงบประมาณ 50/30/20",
+      "alternateName": "Budget Planner · 50/30/20 & Six Jars",
+      "url": "https://wealthcompass.example.com/budget-planner.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "THB"},
+      "inLanguage": ["th", "en"],
+      "publisher": {"@id": "https://wealthcompass.example.com/#organization"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://wealthcompass.example.com/"},
+        {"@type": "ListItem", "position": 2, "name": "วางแผนงบประมาณ", "item": "https://wealthcompass.example.com/budget-planner.html"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "สูตร 50/30/20 คืออะไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "หลักการแบ่งรายได้หลังหักภาษีเป็น 3 ส่วน: 50% สำหรับสิ่งจำเป็น (ที่อยู่ อาหาร เดินทาง) 30% สำหรับความต้องการ (กิน เที่ยว ช้อป) และ 20% สำหรับออมและลงทุน คิดค้นโดย Elizabeth Warren ศาสตราจารย์กฎหมาย Harvard"}
+        },
+        {
+          "@type": "Question",
+          "name": "Six Jars (6 โหล) ต่างจาก 50/30/20 อย่างไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Six Jars แบ่งละเอียดกว่าเป็น 6 ส่วน: จำเป็น 55% อิสรภาพการเงิน 10% การศึกษา 10% ออมระยะยาว 10% สนุก 10% และให้ 5% เหมาะกับคนที่อยากคุมเงินละเอียดขึ้นและให้ความสำคัญกับการพัฒนาตัวเอง"}
+        },
+        {
+          "@type": "Question",
+          "name": "ถ้ารายจ่ายจำเป็นเกิน 50% ควรทำอย่างไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "พบบ่อยในกรุงเทพฯ ที่ค่าเช่าสูง เริ่มจากปรับชั่วคราวเป็น 60/20/20 แล้วค่อยลดรายจ่ายคงที่ก้อนใหญ่ เช่น ย้ายที่พัก รีไฟแนนซ์ แต่อย่าลดสัดส่วนออมต่ำกว่า 10% เพราะจะกระทบเป้าหมายระยะยาวมาก"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<title>วางแผนงบประมาณ 50/30/20 และ Six Jars · เครื่องมือฟรี | Wealth Compass</title>
+<meta name="description" content="กรอกรายได้ เห็นทันทีว่าควรแบ่งเงินเดือนอย่างไรตามสูตร 50/30/20 หรือ 6 โหล (Six Jars) พร้อมเทียบรายจ่ายจริง ฟรี คำนวณในเครื่องคุณ ไม่ต้องสมัคร"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="_theme.css"/>
+
+<style>
+/* donut */
+.donut-wrap { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+.donut-legend { flex: 1; min-width: 220px; }
+.donut-legend .li {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 10px 0; border-bottom: 1px dashed var(--line); font-size: 14.5px;
+}
+.donut-legend .li .name { display: flex; align-items: center; gap: 9px; font-weight: 600; }
+.donut-legend .dot { width: 12px; height: 12px; border-radius: 4px; display: inline-block; }
+.donut-legend .amt { font-weight: 800; color: var(--forest); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.donut-legend .pct { color: var(--muted); font-size: 12.5px; font-weight: 600; }
+
+/* breakdown rows */
+.bk-row { margin-bottom: 16px; }
+.bk-row .top { display: flex; justify-content: space-between; font-size: 14px; margin-bottom: 6px; }
+.bk-row .top .k { font-weight: 700; color: var(--forest); }
+.bk-row .top .v { font-weight: 800; color: var(--forest); font-variant-numeric: tabular-nums; }
+
+/* actual-vs-plan */
+.vs-pill { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 99px; }
+.vs-pill.over { background: var(--danger-soft); color: var(--danger); }
+.vs-pill.under { background: var(--bright-soft); color: var(--positive); }
+
+/* SEO content */
+.content-prose { max-width: 760px; }
+.content-prose h2 { font-size: 26px; margin: 36px 0 12px; }
+.content-prose h3 { font-size: 19px; margin: 26px 0 10px; }
+.content-prose p, .content-prose li { color: #38454c; font-size: 15.5px; margin-bottom: 12px; }
+.content-prose ul { list-style: disc; padding-left: 22px; }
+.content-prose .src { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content"><span class="lang-th">ข้ามไปเนื้อหาหลัก</span><span class="lang-en">Skip to main content</span></a>
+<nav></nav>
+<script src="_brand.js"></script>
+<script src="_app.js"></script>
+<script src="_nav.js"></script>
+
+<main id="main-content">
+
+<!-- ============ HERO ============ -->
+<header class="tool-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html"><span class="lang-th">หน้าแรก</span><span class="lang-en">Home</span></a> / <span class="lang-th">วางแผนงบประมาณ</span><span class="lang-en">Budget planner</span></div>
+    <span class="badge green"><span class="lang-th">ขั้นที่ 1 · รากฐาน</span><span class="lang-en">Stage 1 · Foundation</span></span>
+    <h1 style="margin-top:14px;">
+      <span class="lang-th">เงินเดือนเข้าแล้ว ควรแบ่งอย่างไร?</span>
+      <span class="lang-en">Your salary just landed. Where should it go?</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-th">แบ่งรายได้ตามสูตรที่นักวางแผนการเงินทั่วโลกใช้ · 50/30/20 ของ Elizabeth Warren หรือ Six Jars · แล้วเทียบกับรายจ่ายจริงของคุณ</span>
+      <span class="lang-en">Split your income the way planners worldwide do · Warren's 50/30/20 or the Six Jars · then compare against your real spending.</span>
+    </p>
+  </div>
+</header>
+
+<!-- ============ TOOL ============ -->
+<section class="section tight" style="padding-top:24px;">
+  <div class="container tool-grid">
+
+    <!-- inputs -->
+    <div class="inputs-col">
+      <div class="panel">
+        <div class="field">
+          <label for="income"><span class="lang-th">รายได้ต่อเดือน (หลังหักภาษี/ประกันสังคม)</span><span class="lang-en">Monthly take-home income</span></label>
+          <div class="input-group">
+            <input type="text" id="income" data-num inputmode="numeric" value="60,000" autocomplete="off"/>
+            <span class="unit">฿/<span class="lang-th">เดือน</span><span class="lang-en">mo</span></span>
+          </div>
+          <label class="hh-check" for="hh-toggle" style="display:flex;align-items:center;gap:8px;margin-top:10px;font-size:14px;font-weight:600;color:var(--forest);cursor:pointer;">
+            <input type="checkbox" id="hh-toggle"/>
+            <span><span class="lang-th">รวมรายได้คู่ (ครัวเรือน)</span><span class="lang-en">Combine partner's income (household)</span></span>
+          </label>
+          <div class="input-group" id="hh-row" hidden style="margin-top:10px;">
+            <input type="text" id="income2" data-num inputmode="numeric" placeholder="รายได้คู่ / Partner income" aria-label="Partner monthly take-home income"/>
+            <span class="unit">฿/<span class="lang-th">เดือน</span><span class="lang-en">mo</span></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label><span class="lang-th">เลือกสูตร</span><span class="lang-en">Method</span></label>
+          <div class="segmented" role="group" aria-label="Budget method">
+            <button type="button" id="m-503020" class="on">50/30/20</button>
+            <button type="button" id="m-jars">Six Jars</button>
+            <button type="button" id="m-custom"><span class="lang-th">กำหนดเอง</span><span class="lang-en">Custom</span></button>
+          </div>
+          <div id="cr-row" hidden style="margin-top:14px;">
+            <p class="hint" style="margin-bottom:10px;"><span class="lang-th">กำหนดสัดส่วนเอง (เช่น 60/20/20) · รวมต้องได้ 100%</span><span class="lang-en">Set your own split (e.g. 60/20/20) · must total 100%.</span></p>
+            <div style="display:flex;gap:8px;">
+              <div class="input-group" style="flex:1;">
+                <input type="text" id="cr-needs" data-num inputmode="numeric" value="60" aria-label="Custom needs percent"/>
+                <span class="unit">%</span>
+              </div>
+              <div class="input-group" style="flex:1;">
+                <input type="text" id="cr-wants" data-num inputmode="numeric" value="20" aria-label="Custom wants percent"/>
+                <span class="unit">%</span>
+              </div>
+              <div class="input-group" style="flex:1;">
+                <input type="text" id="cr-save" data-num inputmode="numeric" value="20" aria-label="Custom savings percent"/>
+                <span class="unit">%</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;font-size:11.5px;color:var(--muted);font-weight:600;margin-top:4px;">
+              <span style="flex:1;text-align:center;"><span class="lang-th">จำเป็น</span><span class="lang-en">Needs</span></span>
+              <span style="flex:1;text-align:center;"><span class="lang-th">ต้องการ</span><span class="lang-en">Wants</span></span>
+              <span style="flex:1;text-align:center;"><span class="lang-th">ออม</span><span class="lang-en">Save</span></span>
+            </div>
+            <div id="cr-warn" class="msg" hidden style="display:block;margin-top:10px;background:var(--warn-soft);color:var(--warn);border:0;"></div>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid var(--line); margin:22px 0 18px;"></div>
+        <div class="field">
+          <label style="display:flex;justify-content:space-between;align-items:center;">
+            <span><span class="lang-th">รายจ่ายจริงของคุณ (ไม่บังคับ)</span><span class="lang-en">Your actual spending (optional)</span></span>
+          </label>
+          <p class="hint" style="margin-bottom:12px;"><span class="lang-th">กรอกเพื่อเทียบแผนกับความจริง · จุดที่หลุดจะโชว์ทันที</span><span class="lang-en">Fill in to compare plan vs reality · gaps show instantly.</span></p>
+          <div class="input-group" style="margin-bottom:10px;">
+            <input type="text" id="act-needs" data-num inputmode="numeric" placeholder="สิ่งจำเป็น / Needs" aria-label="Actual needs spending"/>
+            <span class="unit">฿</span>
+          </div>
+          <div class="input-group" style="margin-bottom:10px;">
+            <input type="text" id="act-wants" data-num inputmode="numeric" placeholder="ความต้องการ / Wants" aria-label="Actual wants spending"/>
+            <span class="unit">฿</span>
+          </div>
+          <div class="input-group">
+            <input type="text" id="act-save" data-num inputmode="numeric" placeholder="ออม+ลงทุน / Savings" aria-label="Actual savings"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- results -->
+    <div>
+      <div class="result-hero" aria-live="polite">
+        <div class="lbl"><span class="lang-th">เป้าออม+ลงทุนของคุณ</span><span class="lang-en">Your savings target</span></div>
+        <div class="big" id="r-save">฿12,000</div>
+        <div class="sub" id="r-save-sub"><span class="lang-th">ต่อเดือน = ปีละ</span> <b id="r-save-yr">฿144,000</b> <span class="lang-th"> · จ่ายให้ตัวเองก่อนเสมอ</span><span class="lang-en">per month · pay yourself first</span></div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;">
+        <div class="donut-wrap">
+          <svg id="donut" width="190" height="190" viewBox="0 0 190 190" role="img" aria-label="Budget allocation donut chart"></svg>
+          <div class="donut-legend" id="legend"></div>
+        </div>
+        <div id="annual" style="margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:13px;color:var(--muted);font-weight:600;text-align:center;"></div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;" id="vs-panel" hidden>
+        <h3 style="font-size:17px;margin-bottom:16px;"><span class="lang-th">แผน vs จริง</span><span class="lang-en">Plan vs actual</span></h3>
+        <div id="vs-rows"></div>
+        <div id="vs-insight" class="msg" style="display:block;margin-top:6px;"></div>
+      </div>
+
+      <div class="disclaimer" style="margin-top:20px;">
+        <b><span class="lang-th">ที่มาของสูตร:</span><span class="lang-en">Sources:</span></b>
+        <span class="lang-th">50/30/20 · Elizabeth Warren &amp; Amelia Warren Tyagi, "All Your Worth" (2005) · Six Jars · T. Harv Eker. เครื่องมือนี้ให้ข้อมูลเพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุนรายบุคคล</span>
+        <span class="lang-en">50/30/20 · Elizabeth Warren &amp; Amelia Warren Tyagi, "All Your Worth" (2005) · Six Jars · T. Harv Eker. Educational tool, not personalized advice.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><span class="lang-th">งบไม่เคยอยู่ · ปัญหามักไม่ใช่ตัวเลข</span><span class="lang-en">Budget never sticks? It's rarely about the math</span></h2>
+        <p><span class="lang-th">นักวางแผนการเงินช่วยออกแบบระบบเงินที่อยู่ได้จริงกับชีวิตคุณ นัดคุยครั้งแรกฟรี 30 นาที</span><span class="lang-en">A planner helps you design a money system that survives real life. First 30 minutes free.</span></p>
+      </div>
+      <form data-lead aria-label="Consultation request">
+        <input type="text" name="name" required autocomplete="name" placeholder="ชื่อของคุณ / Your name" aria-label="Name"/>
+        <input type="email" name="email" required autocomplete="email" placeholder="อีเมล / Email" aria-label="Email"/>
+        <input type="hidden" name="topic" value="budget"/>
+        <button class="btn btn-primary btn-lg" type="submit"><span class="lang-th">นัดคุยฟรี</span><span class="lang-en">Book free consult</span></button>
+        <div class="msg ok"><span class="lang-th">ได้รับข้อมูลแล้ว เราจะติดต่อกลับภายใน 1 วันทำการ</span><span class="lang-en">Received · we'll reply within 1 business day.</span></div>
+        <div class="msg err"><span class="lang-th">ส่งไม่สำเร็จ ลองอีกครั้ง</span><span class="lang-en">Couldn't send · try again.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEO CONTENT ============ -->
+<section class="section alt">
+  <div class="container content-prose">
+    <div class="section-label"><span class="lang-th">ความรู้</span><span class="lang-en">Learn</span></div>
+
+    <div class="lang-th">
+      <h2>สูตร 50/30/20 คืออะไร และทำไมทั้งโลกใช้</h2>
+      <p>50/30/20 คือหลักแบ่งรายได้หลังหักภาษีเป็น 3 ส่วน คิดค้นโดย Elizabeth Warren ศาสตราจารย์กฎหมายจาก Harvard (ต่อมาเป็นวุฒิสมาชิกสหรัฐฯ) ในหนังสือ "All Your Worth" · ความเรียบง่ายของมันคือเหตุผลที่ธนาคารและที่ปรึกษาการเงินทั่วโลกแนะนำ:</p>
+      <ul>
+        <li><b>50% สิ่งจำเป็น (Needs)</b> · ค่าเช่า/ผ่อนบ้าน อาหาร เดินทาง ค่าน้ำไฟ ประกัน ขั้นต่ำหนี้</li>
+        <li><b>30% ความต้องการ (Wants)</b> · กินข้าวนอกบ้าน เที่ยว ช้อปปิ้ง สตรีมมิ่ง · สิ่งที่ตัดได้โดยชีวิตไม่พัง</li>
+        <li><b>20% ออมและลงทุน (Savings)</b> · เงินฉุกเฉิน กองทุน ลดหย่อนภาษี และโปะหนี้เกินขั้นต่ำ</li>
+      </ul>
+      <h3>ปรับให้เข้ากับชีวิตในไทย</h3>
+      <p>ค่าครองชีพกรุงเทพฯ ทำให้หลายคน Needs เกิน 50% · ไม่เป็นไร เริ่มที่ 60/20/20 ก่อนแล้วค่อยขยับ สิ่งเดียวที่ไม่ควรประนีประนอมคือฝั่งออม: รักษาขั้นต่ำ 10% และตั้งโอนอัตโนมัติวันเงินเดือนออก ("จ่ายให้ตัวเองก่อน") เพราะวินัยที่ดีที่สุดคือระบบ ไม่ใช่กำลังใจ</p>
+      <h3>เมื่อไหร่ควรใช้ Six Jars แทน</h3>
+      <p>ถ้าคุณอยากคุมละเอียดกว่า 3 ก้อน สูตร 6 โหลของ T. Harv Eker แบ่งเป็น จำเป็น 55% / อิสรภาพการเงิน 10% (ลงทุนเท่านั้น ห้ามถอน) / การศึกษา 10% / ออมระยะยาว 10% / สนุก 10% / ให้ผู้อื่น 5% · จุดเด่นคือบังคับให้มีงบพัฒนาตัวเองและงบสนุกแบบไม่ต้องรู้สึกผิด</p>
+    </div>
+
+    <div class="lang-en">
+      <h2>What is the 50/30/20 rule?</h2>
+      <p>Created by Harvard law professor (later U.S. Senator) Elizabeth Warren in "All Your Worth", it splits take-home pay three ways: 50% needs, 30% wants, 20% savings and investing. Its simplicity is why banks and advisors worldwide recommend it.</p>
+      <h3>Adapting it for Thailand</h3>
+      <p>Bangkok housing costs push many people's needs above 50% · that's fine. Start at 60/20/20 and improve over time. The one line you never compromise: savings of at least 10%, automated on payday. The best discipline is a system, not willpower.</p>
+      <h3>When to use Six Jars instead</h3>
+      <p>T. Harv Eker's six-jar method (55/10/10/10/10/5) adds dedicated jars for education, guilt-free fun and giving · ideal if you want finer control and a built-in self-improvement budget.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer></footer>
+<script src="_footer.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  var METHODS = {
+    '503020': {
+      name: { th: '50/30/20', en: '50/30/20' },
+      parts: [
+        { key: 'needs', th: 'สิ่งจำเป็น', en: 'Needs', pct: 50, color: '#163300' },
+        { key: 'wants', th: 'ความต้องการ', en: 'Wants', pct: 30, color: '#5d7079' },
+        { key: 'save',  th: 'ออม + ลงทุน', en: 'Save + invest', pct: 20, color: '#9fe870' }
+      ],
+      saveKeys: ['save']
+    },
+    'jars': {
+      name: { th: '6 โหล', en: 'Six Jars' },
+      parts: [
+        { key: 'nec',  th: 'จำเป็น', en: 'Necessities', pct: 55, color: '#163300' },
+        { key: 'ffa',  th: 'อิสรภาพการเงิน', en: 'Financial freedom', pct: 10, color: '#9fe870' },
+        { key: 'edu',  th: 'การศึกษา', en: 'Education', pct: 10, color: '#80e142' },
+        { key: 'lts',  th: 'ออมระยะยาว', en: 'Long-term savings', pct: 10, color: '#0d7a3f' },
+        { key: 'play', th: 'สนุก', en: 'Play', pct: 10, color: '#5d7079' },
+        { key: 'give', th: 'ให้ผู้อื่น', en: 'Give', pct: 5, color: '#b9c8ce' }
+      ],
+      /* FFA + LTS + EDU are all forward-looking (invest / long-term save /
+         self-development). They belong in the SAVINGS bucket · not wants. */
+      needKeys: ['nec'],
+      wantKeys: ['play', 'give'],
+      saveKeys: ['ffa', 'lts', 'edu']
+    }
+  };
+  METHODS['503020'].needKeys = ['needs'];
+  METHODS['503020'].wantKeys = ['wants'];
+
+  /* custom-ratio method is built fresh on each render from the three inputs */
+  function customMethod() {
+    var n = clampPct(W.parseNum(el('cr-needs').value));
+    var w = clampPct(W.parseNum(el('cr-wants').value));
+    var s = clampPct(W.parseNum(el('cr-save').value));
+    return {
+      name: { th: 'กำหนดเอง', en: 'Custom' },
+      parts: [
+        { key: 'needs', th: 'สิ่งจำเป็น', en: 'Needs', pct: n, color: '#163300' },
+        { key: 'wants', th: 'ความต้องการ', en: 'Wants', pct: w, color: '#5d7079' },
+        { key: 'save',  th: 'ออม + ลงทุน', en: 'Save + invest', pct: s, color: '#9fe870' }
+      ],
+      needKeys: ['needs'], wantKeys: ['wants'], saveKeys: ['save'],
+      sum: n + w + s
+    };
+  }
+  function clampPct(v) { if (v < 0) { return 0; } if (v > 100) { return 100; } return v; }
+
+  /* current active method object (custom is dynamic) */
+  function activeMethod() {
+    return state.method === 'custom' ? customMethod() : METHODS[state.method];
+  }
+
+  var state = { method: '503020' };
+  var LS_KEY = 'wc_budget';
+  var W = window.WC;
+
+  function el(id) { return document.getElementById(id); }
+  function lang() { return W.getLang(); }
+
+  function income() {
+    var base = W.parseNum(el('income').value);
+    if (el('hh-toggle').checked) { base += W.parseNum(el('income2').value); }
+    return base;
+  }
+
+  /* sum the income share of a list of part-keys for a method */
+  function bucketAmt(m, inc, keys) {
+    var sum = 0;
+    for (var i = 0; i < m.parts.length; i++) {
+      if (keys.indexOf(m.parts[i].key) >= 0) { sum += inc * m.parts[i].pct / 100; }
+    }
+    return sum;
+  }
+
+  /* ---------- donut ---------- */
+  function drawDonut(parts, total) {
+    var svg = el('donut');
+    var cx = 95, cy = 95, r = 70, sw = 30;
+    var c = 2 * Math.PI * r;
+    var html = '';
+    var offset = 0;
+    for (var i = 0; i < parts.length; i++) {
+      var frac = parts[i].pct / 100;
+      var dash = frac * c;
+      html += '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" '
+        + 'stroke="' + parts[i].color + '" stroke-width="' + sw + '" '
+        + 'stroke-dasharray="' + dash + ' ' + (c - dash) + '" '
+        + 'stroke-dashoffset="' + (-offset) + '" '
+        + 'transform="rotate(-90 ' + cx + ' ' + cy + ')"/>';
+      offset += dash;
+    }
+    html += '<text x="' + cx + '" y="' + (cy - 4) + '" text-anchor="middle" font-size="13" fill="#5d7079" font-weight="600">'
+      + (lang() === 'th' ? 'รายได้' : 'Income') + '</text>';
+    html += '<text x="' + cx + '" y="' + (cy + 18) + '" text-anchor="middle" font-size="16" font-weight="800" fill="#163300">'
+      + W.fmtBaht(total) + '</text>';
+    svg.innerHTML = html;
+  }
+
+  /* ---------- render ---------- */
+  function render() {
+    var m = activeMethod();
+    var inc = income();
+    var L = lang();
+
+    /* custom-ratio validation · amber when ≠ 100 */
+    var customOK = true;
+    if (state.method === 'custom') {
+      customOK = Math.round(m.sum) === 100;
+      var warn = el('cr-warn');
+      var rem = 100 - m.sum;
+      warn.hidden = customOK;
+      if (!customOK) {
+        warn.innerHTML = L === 'th'
+          ? 'รวมกันต้องได้ 100% · ตอนนี้ ' + W.fmt(m.sum, 0) + '% (' + (rem > 0 ? 'ขาดอีก ' : 'เกิน ') + W.fmt(Math.abs(rem), 0) + '%)'
+          : 'Must total 100% · currently ' + W.fmt(m.sum, 0) + '% (' + (rem > 0 ? 'short ' : 'over ') + W.fmt(Math.abs(rem), 0) + '%)';
+      }
+    } else {
+      el('cr-warn').hidden = true;
+    }
+
+    drawDonut(m.parts, inc);
+
+    /* legend */
+    var lg = '';
+    for (var i = 0; i < m.parts.length; i++) {
+      var p = m.parts[i];
+      var amt = inc * p.pct / 100;
+      lg += '<div class="li">'
+        + '<span class="name"><span class="dot" style="background:' + p.color + '"></span>'
+        + (L === 'th' ? p.th : p.en)
+        + ' <span class="pct">' + p.pct + '%</span></span>'
+        + '<span class="amt">' + W.fmtBaht(amt) + '</span>'
+        + '</div>';
+    }
+    el('legend').innerHTML = lg;
+
+    /* save hero */
+    var saveAmt = bucketAmt(m, inc, m.saveKeys);
+    el('r-save').textContent = W.fmtBaht(saveAmt);
+    el('r-save-yr').textContent = W.fmtBaht(saveAmt * 12);
+
+    /* annual view · yearly totals (×12) per consolidated bucket */
+    var planNeeds = bucketAmt(m, inc, m.needKeys);
+    var planWants = bucketAmt(m, inc, m.wantKeys);
+    el('annual').innerHTML = L === 'th'
+      ? 'รายปี (×12): จำเป็น <b>' + W.fmtBaht(planNeeds * 12) + '</b> · ต้องการ <b>' + W.fmtBaht(planWants * 12) + '</b> · ออม <b>' + W.fmtBaht(saveAmt * 12) + '</b>'
+      : 'Yearly (×12): needs <b>' + W.fmtBaht(planNeeds * 12) + '</b> · wants <b>' + W.fmtBaht(planWants * 12) + '</b> · save <b>' + W.fmtBaht(saveAmt * 12) + '</b>';
+
+    renderVs(inc, planNeeds, planWants, saveAmt, L);
+    saveState();
+    emitFinding(inc, saveAmt);
+  }
+
+  /* ---------- snapshot finding (defensive · WC may be absent) ---------- */
+  function emitFinding(inc, saveAmt) {
+    if (!W || !W.saveFinding) { return; }
+    var rate = inc > 0 ? (saveAmt / inc) * 100 : 0;
+    var status = rate >= 20 ? 'good' : (rate >= 10 ? 'warn' : 'bad');
+    var rateTxt = W.fmt(rate, 0);
+    var amtTxt = W.fmtBaht(saveAmt);
+    try {
+      W.saveFinding('budget', {
+        tool: 'budget-planner.html',
+        labelTh: 'งบประมาณ', labelEn: 'Budget',
+        status: status,
+        headlineTh: 'เหลือออม+ลงทุนเดือนละ ' + amtTxt + ' (' + rateTxt + '% ของรายได้)',
+        headlineEn: amtTxt + '/mo to save (' + rateTxt + '%)',
+        monthlyClaim: Math.round(saveAmt)
+      });
+    } catch (e) {}
+  }
+
+  /* ---------- plan vs actual ---------- */
+  function renderVs(inc, planNeeds, planWants, planSave, L) {
+    var aN = W.parseNum(el('act-needs').value);
+    var aW = W.parseNum(el('act-wants').value);
+    var aS = W.parseNum(el('act-save').value);
+    var panel = el('vs-panel');
+    if (aN + aW + aS === 0 || inc === 0) { panel.hidden = true; return; }
+    panel.hidden = false;
+
+    /* plan buckets are derived from the active method (P0 fix: Six Jars
+       savings correctly = FFA + LTS + EDU; wants = play + give) */
+    var rows = [
+      { th: 'สิ่งจำเป็น', en: 'Needs', plan: planNeeds, act: aN, overBad: true },
+      { th: 'ความต้องการ', en: 'Wants', plan: planWants, act: aW, overBad: true },
+      { th: 'ออม + ลงทุน', en: 'Save + invest', plan: planSave, act: aS, overBad: false }
+    ];
+    var html = '';
+    for (var i = 0; i < rows.length; i++) {
+      var r = rows[i];
+      var pctOfPlan = r.plan > 0 ? (r.act / r.plan) * 100 : 0;
+      var over = r.act > r.plan;
+      var good = r.overBad ? !over : (r.act >= r.plan);
+      var pillTxt;
+      if (r.overBad) {
+        pillTxt = over
+          ? (L === 'th' ? 'เกินแผน ' : 'Over by ') + W.fmtBaht(r.act - r.plan)
+          : (L === 'th' ? 'ตามแผน' : 'On plan');
+      } else {
+        pillTxt = good
+          ? (L === 'th' ? 'ถึงเป้า' : 'On target')
+          : (L === 'th' ? 'ขาดอีก ' : 'Short by ') + W.fmtBaht(r.plan - r.act);
+      }
+      html += '<div class="bk-row">'
+        + '<div class="top"><span class="k">' + (L === 'th' ? r.th : r.en)
+        + ' <span class="vs-pill ' + (good ? 'under' : 'over') + '">' + pillTxt + '</span></span>'
+        + '<span class="v">' + W.fmtBaht(r.act) + ' / ' + W.fmtBaht(r.plan) + '</span></div>'
+        + '<div class="bar-bg"><div class="bar-fill" style="width:' + Math.min(100, pctOfPlan) + '%;'
+        + 'background:' + (good ? 'var(--bright-2)' : '#e88c74') + ';"></div></div>'
+        + '</div>';
+    }
+    el('vs-rows').innerHTML = html;
+
+    /* insight */
+    var ins = el('vs-insight');
+    var saveRate = inc > 0 ? (aS / inc) * 100 : 0;
+    if (aS >= planSave) {
+      ins.className = 'msg ok';
+      /* surplus router · send the excess to compound growth */
+      var surplus = aS - planSave;
+      var cta = L === 'th'
+        ? ' เอาเงินส่วนเกินไปต่อยอด: <a href="compound-dca.html">ดอกเบี้ยทบต้น &amp; DCA</a>'
+        : ' Put the surplus to work: <a href="compound-dca.html">Compound &amp; DCA</a>';
+      var surplusTxt = surplus > 0
+        ? (L === 'th' ? ' เกินเป้าอีก ' : ' Beating target by ') + W.fmtBaht(surplus) + '.'
+        : '';
+      ins.innerHTML = (L === 'th'
+        ? '✓ อัตราออมจริงของคุณ ' + W.fmtPct(saveRate, 0) + ' · ถึงเป้าแล้ว รักษาให้สม่ำเสมอด้วยการตั้งโอนอัตโนมัติ'
+        : '✓ Your real savings rate is ' + W.fmtPct(saveRate, 0) + ' · on target. Lock it in with an automatic transfer.')
+        + surplusTxt + cta;
+    } else {
+      ins.className = 'msg err';
+      ins.innerHTML = L === 'th'
+        ? 'อัตราออมจริง ' + W.fmtPct(saveRate, 0) + ' ต่ำกว่าเป้า · เริ่มจากย้ายเงินออมไปโอนอัตโนมัติ "วันเงินเดือนออก" ก่อนใช้ แล้วค่อยตัด Wants'
+        : 'Real savings rate is ' + W.fmtPct(saveRate, 0) + ' · below target. Automate savings on payday first, then trim wants.';
+    }
+    ins.style.display = 'block';
+  }
+
+  /* ---------- persistence (same idiom as _app.js lang) ---------- */
+  function saveState() {
+    try {
+      var data = {
+        method: state.method,
+        income: el('income').value,
+        hh: el('hh-toggle').checked,
+        income2: el('income2').value,
+        crN: el('cr-needs').value, crW: el('cr-wants').value, crS: el('cr-save').value,
+        aN: el('act-needs').value, aW: el('act-wants').value, aS: el('act-save').value
+      };
+      localStorage.setItem(LS_KEY, JSON.stringify(data));
+    } catch (e) {}
+  }
+  function restoreState() {
+    var raw;
+    try { raw = localStorage.getItem(LS_KEY); } catch (e) { return; }
+    if (!raw) { return; }
+    var d;
+    try { d = JSON.parse(raw); } catch (e) { return; }
+    if (!d) { return; }
+    if (d.income) { el('income').value = d.income; }
+    if (d.income2) { el('income2').value = d.income2; }
+    if (d.crN) { el('cr-needs').value = d.crN; }
+    if (d.crW) { el('cr-wants').value = d.crW; }
+    if (d.crS) { el('cr-save').value = d.crS; }
+    if (d.aN) { el('act-needs').value = d.aN; }
+    if (d.aW) { el('act-wants').value = d.aW; }
+    if (d.aS) { el('act-save').value = d.aS; }
+    if (d.hh) { el('hh-toggle').checked = true; el('hh-row').hidden = false; }
+    if (d.method) { state.method = d.method; }
+  }
+
+  /* ---------- events ---------- */
+  el('m-503020').addEventListener('click', function () { setMethod('503020'); });
+  el('m-jars').addEventListener('click', function () { setMethod('jars'); });
+  el('m-custom').addEventListener('click', function () { setMethod('custom'); });
+  function setMethod(m) {
+    state.method = m;
+    el('m-503020').classList.toggle('on', m === '503020');
+    el('m-jars').classList.toggle('on', m === 'jars');
+    el('m-custom').classList.toggle('on', m === 'custom');
+    el('cr-row').hidden = m !== 'custom';
+    render();
+  }
+
+  /* household / two-income toggle */
+  el('hh-toggle').addEventListener('change', function () {
+    el('hh-row').hidden = !el('hh-toggle').checked;
+    render();
+  });
+
+  var inputs = ['income', 'income2', 'cr-needs', 'cr-wants', 'cr-save',
+                'act-needs', 'act-wants', 'act-save'];
+  for (var i = 0; i < inputs.length; i++) {
+    el(inputs[i]).addEventListener('input', render);
+  }
+  window.addEventListener('wc:lang', render);
+
+  /* ---------- shared profile: prefill on load, save on income edit ---------- */
+  function prefillProfile() {
+    if (!W || !W.profile || !W.profile.get) { return; }
+    var p;
+    try { p = W.profile.get(); } catch (e) { p = null; }
+    if (!p) { return; }
+    if (p.income != null && p.income !== '') { el('income').value = W.fmt(W.parseNum(p.income)); }
+  }
+  function saveProfile() {
+    if (!W || !W.profile || !W.profile.set) { return; }
+    try { W.profile.set({ income: W.parseNum(el('income').value) }); } catch (e) {}
+  }
+  el('income').addEventListener('input', saveProfile);
+
+  restoreState();
+  prefillProfile();
+  /* reflect restored method on the segmented control + custom row */
+  el('m-503020').classList.toggle('on', state.method === '503020');
+  el('m-jars').classList.toggle('on', state.method === 'jars');
+  el('m-custom').classList.toggle('on', state.method === 'custom');
+  el('cr-row').hidden = state.method !== 'custom';
+  render();
+})();
+</script>
+</body>
+</html>

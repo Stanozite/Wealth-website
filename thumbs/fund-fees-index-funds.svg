@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1060" cy="110" r="180" fill="#e4f7d2"/>
+  <circle cx="130" cy="560" r="160" fill="#e4f7d2"/>
+  <!-- donut: forest ring with one bright slice pulled out -->
+  <g transform="translate(560,315)">
+    <circle r="150" fill="none" stroke="#163300" stroke-width="64"/>
+    <!-- pulled slice -->
+    <g transform="translate(36,-30)">
+      <path d="M0 0 L132 -72 A150 150 0 0 1 150 0 Z" fill="#9fe870"/>
+    </g>
+    <circle r="86" fill="#f2f5f7"/>
+    <text x="0" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="58" font-weight="800" fill="#163300">%</text>
+  </g>
+  <!-- scissors clipping (two blades + 2 handle circles) -->
+  <g transform="translate(870,430)" stroke="#0d7a3f" stroke-width="13" fill="none" stroke-linecap="round">
+    <line x1="-90" y1="-70" x2="40" y2="20"/>
+    <line x1="-90" y1="70" x2="40" y2="-20"/>
+    <circle cx="-104" cy="-70" r="22" fill="#f2f5f7"/>
+    <circle cx="-104" cy="70" r="22" fill="#f2f5f7"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tools-site",
+      "runtimeExecutable": "py",
+      "runtimeArgs": ["-m", "http.server", "8731", "--directory", "C:\\Users\\Acer\\OneDrive\\Others\\เดสก์ท็อป\\Tin's Business Portfolio\\CO-WORK\\Wealth Advisor\\Tools Website"],
+      "port": 8731
+    }
+  ]
+}

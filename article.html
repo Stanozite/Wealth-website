@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- GEO / SEO -->
+<meta name="geo.region" content="TH-10"/>
+<meta name="geo.placename" content="Bangkok, Thailand"/>
+<meta name="geo.position" content="13.7563;100.5018"/>
+<meta name="ICBM" content="13.7563, 100.5018"/>
+<meta name="language" content="th"/>
+<meta name="robots" content="index, follow"/>
+<meta name="author" content="Wealth Compass"/>
+
+<!-- Open Graph (generic · JS fills real values from DB) -->
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Wealth Compass"/>
+<meta property="og:title" content="บทความ · Wealth Compass"/>
+<meta property="og:description" content="ความรู้การเงินส่วนบุคคลสำหรับคนไทย จาก Wealth Compass"/>
+<meta property="og:locale" content="th_TH"/>
+<meta property="og:locale:alternate" content="en_US"/>
+
+<!-- Canonical (JS sets href = BRAND.domain + '/article.html?slug=' + slug) -->
+<link id="canonical" rel="canonical" href="https://wealthcompass.example.com/article.html"/>
+
+<!-- Security: like budget-planner + supabase CDN/API allowances -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https: https://*.supabase.co; connect-src 'self' https://formspree.io https://*.supabase.co; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()"/>
+
+<!-- NO static JSON-LD: injected by JS after the article loads from the DB -->
+
+<title>บทความ · Wealth Compass</title>
+<meta name="description" content="ความรู้การเงินส่วนบุคคลสำหรับคนไทย จาก Wealth Compass · อ่านฟรี พร้อมเครื่องมือคำนวณประกอบทุกบทความ"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="_theme.css"/>
+
+<style>
+/* article hero (matches static article pages) */
+.article-hero { padding: 56px 0 24px; }
+.article-hero .crumb { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.article-hero .crumb a { color: var(--positive); font-weight: 600; }
+.article-hero h1 { font-size: clamp(30px, 4.4vw, 46px); font-weight: 800; margin: 14px 0 0; max-width: 820px; }
+.article-hero .byline { color: var(--muted); font-size: 13.5px; font-weight: 600; margin-top: 16px; }
+
+/* hero thumbnail */
+.a-thumb { display: none; width: 100%; max-width: 860px; border-radius: var(--radius); margin-top: 26px; }
+
+/* prose (matches static article pages) */
+.content-prose { max-width: 760px; }
+.content-prose h2 { font-size: 26px; margin: 38px 0 12px; }
+.content-prose h3 { font-size: 19px; margin: 26px 0 10px; }
+.content-prose p, .content-prose li { color: #38454c; font-size: 15.5px; line-height: 1.7; margin-bottom: 12px; }
+.content-prose ul, .content-prose ol { padding-left: 22px; margin-bottom: 14px; }
+.content-prose ul { list-style: disc; }
+.content-prose ol { list-style: decimal; }
+.content-prose .src { font-size: 13px; color: var(--muted); }
+.content-prose .lead-q { font-weight: 700; color: var(--forest); }
+.content-prose img { max-width: 100%; border-radius: var(--radius-sm); }
+.content-prose table { width: 100%; border-collapse: collapse; margin: 18px 0 8px; font-size: 14.5px; }
+.content-prose table th, .content-prose table td { padding: 11px 12px; border-bottom: 1px solid var(--line); }
+.content-prose table th { background: var(--forest); color: var(--bright); font-weight: 700; }
+.content-prose blockquote { border-left: 4px solid var(--bright-2); margin: 18px 0; padding: 6px 0 6px 18px; color: #38454c; font-style: italic; }
+
+/* mid-article CTA (light, matches static article pages) */
+.mid-cta {
+  margin: 30px 0; padding: 22px 24px; border-radius: 16px;
+  background: var(--bright-soft); border: 1px solid var(--bright-2);
+  display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+}
+.mid-cta .mc-txt { flex: 1; min-width: 240px; }
+.mid-cta .mc-txt b { color: var(--forest); font-size: 16px; }
+.mid-cta .mc-txt span.sub { display: block; color: #38454c; font-size: 14px; margin-top: 4px; }
+
+/* end-of-article tool CTA (forest panel) */
+.tool-cta {
+  display: none; margin: 34px 0 6px; padding: 26px 28px; border-radius: var(--radius);
+  background: var(--forest); align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+}
+.tool-cta .tc-txt { flex: 1; min-width: 240px; }
+.tool-cta .tc-txt b { color: #fff; font-size: 17px; }
+.tool-cta .tc-txt span.sub { display: block; color: rgba(255,255,255,0.75); font-size: 14px; margin-top: 4px; }
+
+/* FAQ (so DB articles can use .faq-item markup) */
+.faq-block { max-width: 760px; }
+.faq-item { border-bottom: 1px solid var(--line); padding: 18px 0; }
+.faq-item h3 { font-size: 17px; margin: 0 0 8px; color: var(--forest); }
+.faq-item p { color: #38454c; font-size: 15px; line-height: 1.7; margin: 0; }
+
+/* loading / not-found states */
+.state-panel { max-width: 540px; margin: 90px auto; text-align: center; padding: 48px 32px; }
+.state-panel h1 { font-size: clamp(24px, 3.4vw, 34px); margin: 0 0 10px; }
+.state-panel p { color: var(--muted); font-size: 15px; margin-bottom: 8px; }
+.state-panel .links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+.spinner {
+  width: 42px; height: 42px; border-radius: 50%;
+  border: 4px solid var(--bright-soft); border-top-color: var(--positive);
+  margin: 0 auto 18px; animation: wc-spin 0.9s linear infinite;
+}
+@keyframes wc-spin { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content"><span class="lang-th">ข้ามไปเนื้อหาหลัก</span><span class="lang-en">Skip to main content</span></a>
+<nav></nav>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="_brand.js"></script>
+<script src="_app.js"></script>
+<script src="_supabase.js"></script>
+<script src="_articles.js"></script>
+<script src="_nav.js"></script>
+
+<main id="main-content">
+
+<!-- ============ STATE: LOADING ============ -->
+<div id="state-loading">
+  <div class="panel state-panel">
+    <div class="spinner" aria-hidden="true"></div>
+    <p role="status"><span class="lang-th">กำลังโหลดบทความ…</span><span class="lang-en">Loading article…</span></p>
+  </div>
+</div>
+
+<!-- ============ STATE: NOT FOUND ============ -->
+<div id="state-notfound" style="display:none;">
+  <div class="panel state-panel">
+    <h1><span class="lang-th">ไม่พบบทความนี้</span><span class="lang-en">Article not found</span></h1>
+    <p>
+      <span class="lang-th">บทความอาจถูกย้ายหรือไม่มีอยู่ · แต่ความรู้และเครื่องมือทั้งหมดยังอยู่ครบ</span>
+      <span class="lang-en">This article moved or never existed · but every guide and tool is still here.</span>
+    </p>
+    <p id="nf-noconfig" style="display:none;">
+      <span class="lang-th">ระบบบทความออนไลน์ยังไม่เปิดใช้งาน</span>
+      <span class="lang-en">The online article system is not enabled yet.</span>
+    </p>
+    <div class="links">
+      <a class="btn btn-primary" href="blog.html"><span class="lang-th">ดูบทความทั้งหมด</span><span class="lang-en">All articles</span></a>
+      <a class="btn btn-ghost" href="index.html"><span class="lang-th">หน้าแรก</span><span class="lang-en">Home</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ARTICLE VIEW ============ -->
+<div id="article-view" style="display:none;">
+
+  <!-- hero -->
+  <header class="article-hero">
+    <div class="container">
+      <div class="crumb">
+        <a href="index.html"><span class="lang-th">หน้าแรก</span><span class="lang-en">Home</span></a> /
+        <a href="blog.html"><span class="lang-th">ความรู้</span><span class="lang-en">Learn</span></a> /
+        <span id="a-crumb-title"></span>
+      </div>
+      <span id="a-badge" class="badge green"></span>
+      <h1 id="a-title"></h1>
+      <div class="byline" id="a-byline"></div>
+      <img id="a-thumb" class="a-thumb" src="" alt="" loading="lazy"/>
+    </div>
+  </header>
+
+  <!-- body -->
+  <section class="section alt">
+    <div class="container content-prose">
+      <div class="section-label"><span class="lang-th">ความรู้</span><span class="lang-en">Learn</span></div>
+      <div id="a-content"></div>
+
+      <!-- tool CTA (forest panel, shown only when tool_slug exists) -->
+      <div id="a-toolcta" class="tool-cta">
+        <div class="tc-txt">
+          <b><span class="lang-th">ลองคำนวณด้วยเครื่องมือฟรี</span><span class="lang-en">Try the free calculator</span></b>
+          <span class="sub"><span class="lang-th">เห็นตัวเลขของตัวเองทันที คำนวณในเครื่องคุณ ไม่ต้องสมัคร</span><span class="lang-en">See your own numbers instantly · runs in your browser, no sign-up.</span></span>
+        </div>
+        <a id="a-toolcta-link" class="btn btn-primary btn-lg" href="#"><span class="lang-th">เปิดเครื่องมือ</span><span class="lang-en">Open the tool</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- related -->
+  <section class="section tight">
+    <div class="container">
+      <div class="section-label"><span class="lang-th">บทความที่เกี่ยวข้อง</span><span class="lang-en">Related reading</span></div>
+      <div id="related" class="article-grid"></div>
+    </div>
+  </section>
+
+  <!-- consult CTA -->
+  <section class="section tight">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div>
+          <h2><span class="lang-th">อ่านจบแล้ว · อยากให้ช่วยวางแผนของคุณจริงไหม?</span><span class="lang-en">Done reading · want help building your own plan?</span></h2>
+          <p><span class="lang-th">นักวางแผนการเงินช่วยแปลงความรู้เป็นแผนที่เหมาะกับชีวิตคุณ นัดคุยครั้งแรกฟรี 30 นาที</span><span class="lang-en">A planner turns the theory into a plan that fits your real life. First 30 minutes free.</span></p>
+        </div>
+        <form data-lead aria-label="Consultation request">
+          <input type="text" name="name" required autocomplete="name" placeholder="ชื่อของคุณ / Your name" aria-label="Name"/>
+          <input type="email" name="email" required autocomplete="email" placeholder="อีเมล / Email" aria-label="Email"/>
+          <input type="hidden" name="topic" id="a-topic" value="article"/>
+          <button class="btn btn-primary btn-lg" type="submit"><span class="lang-th">นัดคุยฟรี</span><span class="lang-en">Book free consult</span></button>
+          <div class="msg ok"><span class="lang-th">ได้รับข้อมูลแล้ว เราจะติดต่อกลับภายใน 1 วันทำการ</span><span class="lang-en">Received · we'll reply within 1 business day.</span></div>
+          <div class="msg err"><span class="lang-th">ส่งไม่สำเร็จ ลองอีกครั้ง</span><span class="lang-en">Couldn't send · try again.</span></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- disclaimer -->
+  <section class="section tight">
+    <div class="container content-prose">
+      <div class="disclaimer">
+        <b><span class="lang-th">หมายเหตุ:</span><span class="lang-en">Note:</span></b>
+        <span class="lang-th">บทความนี้จัดทำเพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุนหรือการวางแผนการเงินรายบุคคล</span>
+        <span class="lang-en">This article is for educational purposes only and is not personalized investment or financial advice.</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+<footer></footer>
+<script src="_footer.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- helpers ---------- */
+  function esc(s) {
+    return String(s || '')
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  /* minimal sanitizer · content comes from the trusted admin (authenticated
+     owner via RLS), but strip script tags + inline event handlers anyway */
+  function sanitize(html) {
+    var out = String(html || '');
+    out = out.replace(/<script[\s\S]*?<\/script>/gi, '');
+    out = out.replace(/<script[^>]*>/gi, '');
+    out = out.replace(/\son\w+\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '');
+    return out;
+  }
+
+  function show(id, on) {
+    var el = document.getElementById(id);
+    if (el) { el.style.display = on ? '' : 'none'; }
+  }
+
+  function pick(th, en, lang) {
+    if (lang === 'en' && en) { return en; }
+    return th || en || '';
+  }
+
+  function getLang() {
+    return (window.WC && window.WC.getLang) ? window.WC.getLang() : 'th';
+  }
+
+  /* ---------- state ---------- */
+  var slug = new URLSearchParams(window.location.search).get('slug') || '';
+  var ROW = null;
+  var JSONLD_DONE = false;
+
+  function setState(state) {
+    show('state-loading', state === 'loading');
+    show('state-notfound', state === 'notfound');
+    show('article-view', state === 'article');
+  }
+
+  function notFound(noConfig) {
+    document.title = 'ไม่พบบทความนี้ · Wealth Compass';
+    if (noConfig) { show('nf-noconfig', true); }
+    setState('notfound');
+  }
+
+  /* ---------- JSON-LD (injected once, from DB data) ---------- */
+  function injectJsonLd(row) {
+    if (JSONLD_DONE) { return; }
+    JSONLD_DONE = true;
+    var B = window.BRAND || {};
+    var domain = B.domain || '';
+    var url = domain + '/article.html?slug=' + encodeURIComponent(slug);
+    var org = {
+      '@type': 'Organization',
+      '@id': domain + '/#organization',
+      'name': 'Wealth Compass',
+      'url': domain,
+      'areaServed': 'TH'
+    };
+    var article = {
+      '@type': 'Article',
+      '@id': url + '#article',
+      'headline': row.title_th || row.title_en || '',
+      'description': row.desc_th || row.desc_en || '',
+      'datePublished': row.created_at || '',
+      'inLanguage': 'th',
+      'author': { '@type': 'Organization', 'name': 'Wealth Compass' },
+      'publisher': { '@id': domain + '/#organization' },
+      'mainEntityOfPage': url
+    };
+    if (row.thumb_url) { article.image = row.thumb_url; }
+    var crumbs = {
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        { '@type': 'ListItem', 'position': 1, 'name': 'หน้าแรก', 'item': domain + '/' },
+        { '@type': 'ListItem', 'position': 2, 'name': 'ความรู้การเงิน', 'item': domain + '/blog.html' },
+        { '@type': 'ListItem', 'position': 3, 'name': row.title_th || row.title_en || '', 'item': url }
+      ]
+    };
+    var data = { '@context': 'https://schema.org', '@graph': [org, article, crumbs] };
+    var s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.textContent = JSON.stringify(data);
+    document.head.appendChild(s);
+  }
+
+  /* ---------- render ---------- */
+  function renderRow(row) {
+    var lang = getLang();
+    var pillarKey = (window.WC_articles && window.WC_articles.pillars && window.WC_articles.pillars[row.pillar]) ? row.pillar : 'foundation';
+    var p = window.WC_articles.pillars[pillarKey];
+    var title = pick(row.title_th, row.title_en, lang);
+    var desc = pick(row.desc_th, row.desc_en, lang);
+    var date = String(row.created_at || '').slice(0, 10);
+    var readMin = row.read_min || 7;
+
+    /* head */
+    document.title = title ? (title + ' | Wealth Compass') : 'บทความ · Wealth Compass';
+    var md = document.querySelector('meta[name="description"]');
+    if (md) { md.setAttribute('content', desc); }
+    var ogt = document.querySelector('meta[property="og:title"]');
+    if (ogt) { ogt.setAttribute('content', title + ' | Wealth Compass'); }
+    var ogd = document.querySelector('meta[property="og:description"]');
+    if (ogd) { ogd.setAttribute('content', desc); }
+    var canon = document.getElementById('canonical');
+    if (canon && window.BRAND && window.BRAND.domain) {
+      canon.setAttribute('href', window.BRAND.domain + '/article.html?slug=' + encodeURIComponent(slug));
+    }
+
+    /* hero · title/desc/byline always escaped */
+    document.getElementById('a-crumb-title').innerHTML = esc(title);
+    var badge = document.getElementById('a-badge');
+    badge.className = 'badge ' + p.badge;
+    badge.innerHTML = '<span class="lang-th">' + p.th + '</span><span class="lang-en">' + p.en + '</span>';
+    document.getElementById('a-title').innerHTML = esc(title);
+    var byline = 'Wealth Compass · ' + esc(date) + ' · ';
+    byline += (lang === 'th') ? ('อ่าน ' + esc(readMin) + ' นาที') : (esc(readMin) + ' min read');
+    document.getElementById('a-byline').innerHTML = byline;
+
+    /* thumbnail */
+    var thumb = document.getElementById('a-thumb');
+    if (row.thumb_url) {
+      thumb.src = row.thumb_url;
+      thumb.alt = title;
+      thumb.style.display = 'block';
+    } else {
+      thumb.style.display = 'none';
+    }
+
+    /* content · sanitized before innerHTML */
+    var content = pick(row.content_th, row.content_en, lang);
+    document.getElementById('a-content').innerHTML = sanitize(content);
+
+    /* tool CTA */
+    var cta = document.getElementById('a-toolcta');
+    if (row.tool_slug) {
+      document.getElementById('a-toolcta-link').setAttribute('href', row.tool_slug);
+      cta.style.display = 'flex';
+    } else {
+      cta.style.display = 'none';
+    }
+
+    /* lead-form topic */
+    var topic = document.getElementById('a-topic');
+    if (topic) { topic.value = 'article-' + slug; }
+
+    /* related (auto re-renders on wc:lang + wc:articles via _articles.js) */
+    if (window.WC_articles && window.WC_articles.render) {
+      window.WC_articles.render('#related', { exclude: slug, pillar: pillarKey, limit: 3 });
+    }
+
+    injectJsonLd(row);
+    setState('article');
+  }
+
+  /* ---------- boot ---------- */
+  function boot() {
+    if (!slug) { notFound(false); return; }
+    if (!window.WC_DB || !window.WC_DB.configured || !window.WC_DB.configured()) {
+      notFound(true);
+      return;
+    }
+    window.WC_DB.articles.getBySlug(slug).then(function (row) {
+      if (!row) { notFound(false); return; }
+      ROW = row;
+      renderRow(ROW);
+    }).catch(function () { notFound(false); });
+  }
+
+  /* re-render article body + byline when the language toggles */
+  window.addEventListener('wc:lang', function () {
+    if (ROW) { renderRow(ROW); }
+  });
+
+  boot();
+})();
+</script>
+</body>
+</html>

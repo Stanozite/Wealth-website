@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, follow"/>
+<link rel="canonical" href="https://wealthcompass.example.com/snapshot.html"/>
+
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Wealth Compass"/>
+<meta property="og:title" content="ภาพรวมการเงินของคุณ · Wealth Compass"/>
+<meta property="og:description" content="รวมผลจากทุกเครื่องมือเป็นภาพเดียว เห็นช่องว่างและจุดที่เป้าหมายตีกัน"/>
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()"/>
+
+<title>ภาพรวมการเงินของคุณ · Wealth Compass</title>
+<meta name="description" content="รวมผลจากทุกเครื่องมือเป็นภาพเดียว เห็นช่องว่างและจุดที่เป้าหมายตีกัน พร้อมส่งให้นักวางแผนการเงินดูก่อนคุย"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="_theme.css"/>
+
+<style>
+.snap-hero { padding: 56px 0 24px; }
+.snap-hero h1 { font-size: clamp(30px, 4.4vw, 48px); font-weight: 800; }
+.snap-hero .lede { color: var(--muted); font-size: 17px; max-width: 640px; margin-top: 12px; }
+.progress-wrap { display: flex; align-items: center; gap: 16px; margin-top: 22px; flex-wrap: wrap; }
+.progress-wrap .bar-bg { max-width: 320px; }
+
+/* pillar cards */
+.pillar-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 14px; }
+@media (max-width: 1024px) { .pillar-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .pillar-grid { grid-template-columns: 1fr; } }
+.pcard { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 18px 20px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 7px; }
+.pcard .ph { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.pcard .pname { font-weight: 800; color: var(--forest); font-size: 15px; }
+.pcard .dot { width: 11px; height: 11px; border-radius: 50%; flex: 0 0 auto; }
+.dot.good { background: var(--positive); } .dot.warn { background: #d9a300; } .dot.bad { background: var(--danger); }
+.pcard .pline { font-size: 13.5px; color: #38454c; line-height: 1.55; }
+.pcard.empty { background: repeating-linear-gradient(135deg,#f7faf4,#f7faf4 10px,#fff 10px,#fff 20px); }
+.pcard.empty .pline { color: var(--muted); }
+.pcard a.do { font-size: 13px; font-weight: 700; color: var(--positive); margin-top: 2px; }
+
+/* conflict block · the money quote */
+.conflict-band { background: var(--forest); color: #fff; border-radius: var(--radius); padding: 40px; position: relative; overflow: hidden; margin-top: 8px; }
+.conflict-band::after { content: ''; position: absolute; right: -70px; top: -70px; width: 240px; height: 240px; border-radius: 50%; background: radial-gradient(circle, rgba(159,232,112,0.2), transparent 70%); }
+.conflict-band h2 { color: #fff; font-size: clamp(22px, 3vw, 30px); font-weight: 800; }
+.conflict-list { margin-top: 20px; display: grid; gap: 14px; position: relative; z-index: 2; }
+.conflict-item { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); border-radius: 14px; padding: 16px 18px; }
+.conflict-item .fact { font-size: 15px; font-weight: 700; color: var(--bright); }
+.conflict-item .q { font-size: 14.5px; color: rgba(255,255,255,0.85); margin-top: 5px; }
+.conflict-none { color: rgba(255,255,255,0.8); font-size: 15px; margin-top: 14px; position: relative; z-index: 2; }
+.conflict-cta { margin-top: 26px; position: relative; z-index: 2; display: flex; gap: 12px; flex-wrap: wrap; }
+
+.snap-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+
+/* send-to-advisor form */
+.send-panel { margin-top: 22px; }
+.send-panel form { display: grid; gap: 12px; max-width: 520px; }
+.send-opt { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--muted); }
+.send-opt input { width: 16px; height: 16px; margin-top: 2px; accent-color: var(--forest); }
+
+@media print {
+  nav, .site-footer, .snap-actions, .send-panel, .conflict-cta, .nav-wrap, .reveal-skip { display: none !important; }
+  .conflict-band { background: #fff !important; color: #000 !important; border: 2px solid #163300; }
+  .conflict-band h2, .conflict-item .fact { color: #163300 !important; }
+  .conflict-item { border-color: #163300; }
+  .conflict-item .q { color: #333 !important; }
+  body { background: #fff; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content"><span class="lang-th">ข้ามไปเนื้อหาหลัก</span><span class="lang-en">Skip to main content</span></a>
+<nav></nav>
+<script src="_brand.js"></script>
+<script src="_app.js"></script>
+<script src="_nav.js"></script>
+
+<main id="main-content">
+<header class="snap-hero">
+  <div class="container">
+    <div class="crumb" style="font-size:13px;color:var(--muted);margin-bottom:12px;"><a href="index.html" style="color:var(--positive);font-weight:600;"><span class="lang-th">หน้าแรก</span><span class="lang-en">Home</span></a> / <span class="lang-th">ภาพรวมการเงิน</span><span class="lang-en">My Snapshot</span></div>
+    <h1><span class="lang-th">ภาพรวมการเงินของคุณ</span><span class="lang-en">Your financial snapshot</span></h1>
+    <p class="lede">
+      <span class="lang-th">รวมผลจากทุกเครื่องมือที่คุณใช้เป็นภาพเดียว · เห็นช่องว่าง และจุดที่เป้าหมายของคุณแย่งเงินก้อนเดียวกัน</span>
+      <span class="lang-en">Every tool you've used, in one picture · the gaps, and where your goals compete for the same baht.</span>
+    </p>
+    <div class="progress-wrap">
+      <div class="bar-bg"><div class="bar-fill" id="prog-fill" style="width:0%"></div></div>
+      <span id="prog-txt" style="font-weight:700;color:var(--forest);font-size:14px;"></span>
+    </div>
+  </div>
+</header>
+
+<section class="section tight" style="padding-top:14px;">
+  <div class="container">
+    <div class="pillar-grid" id="pillar-grid"></div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="container">
+    <div class="conflict-band reveal">
+      <h2><span class="lang-th">จุดที่ตีกัน · สิ่งที่ตัวเลขตอบให้ไม่ได้</span><span class="lang-en">Where it collides · what the numbers can't decide</span></h2>
+      <div class="conflict-list" id="conflict-list"></div>
+      <div class="conflict-none" id="conflict-none" hidden>
+        <span class="lang-th">ยังเห็นจุดตีกันไม่ชัด · ลองทำเครื่องมือให้ครบขึ้น แล้วภาพจะคมกว่านี้</span>
+        <span class="lang-en">No clear collisions yet · complete more tools and the picture sharpens.</span>
+      </div>
+      <div class="conflict-cta">
+        <a class="btn btn-primary btn-lg" href="#send"><span class="lang-th">คุยกับนักวางแผน 30 นาที ฟรี</span><span class="lang-en">Book 30 free minutes</span></a>
+        <button class="btn btn-outline btn-lg" type="button" id="btn-print" style="border-color:rgba(255,255,255,0.4);color:#fff;"><span class="lang-th">บันทึก/พิมพ์ภาพรวม</span><span class="lang-en">Save / print</span></button>
+      </div>
+    </div>
+
+    <div class="snap-actions">
+      <a class="btn btn-outline btn-sm" href="index.html#tools"><span class="lang-th">+ ทำเครื่องมือเพิ่ม</span><span class="lang-en">+ Use more tools</span></a>
+      <button class="btn btn-outline btn-sm" type="button" id="btn-clear"><span class="lang-th">ล้างข้อมูลในเครื่อง</span><span class="lang-en">Clear my data</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- send to advisor -->
+<section class="section tight" id="send">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><span class="lang-th">ให้นักวางแผนช่วยจัดลำดับให้</span><span class="lang-en">Let a planner sequence it for you</span></h2>
+        <p><span class="lang-th">ชิ้นส่วนพวกนี้เกี่ยวกันหมด การจัดลำดับว่าทำอะไรก่อน-หลังคือสิ่งที่ที่ปรึกษาช่วยได้ · คำแนะนำมาก่อนการขาย นัดคุยครั้งแรกฟรี</span><span class="lang-en">These pieces interact. Sequencing what comes first is exactly what an advisor does · advice before any sale, first call free.</span></p>
+      </div>
+      <form data-lead aria-label="Consultation request" class="send-panel-form">
+        <input type="text" name="name" required autocomplete="name" placeholder="ชื่อของคุณ / Your name" aria-label="Name"/>
+        <input type="email" name="email" required autocomplete="email" placeholder="อีเมล / Email" aria-label="Email"/>
+        <input type="hidden" name="topic" value="snapshot"/>
+        <textarea name="snapshot_summary" id="snap-summary" hidden></textarea>
+        <label class="send-opt">
+          <input type="checkbox" name="share_financials" id="share-fin"/>
+          <span>
+            <span class="lang-th">แนบสรุปภาพรวมการเงิน (ตัวเลขของคุณ) ให้ที่ปรึกษาดูก่อนคุย · ส่งเฉพาะเมื่อคุณติ๊กช่องนี้</span>
+            <span class="lang-en">Attach my financial summary for the advisor to read first · sent only if you tick this.</span>
+          </span>
+        </label>
+        <button class="btn btn-primary btn-lg" type="submit"><span class="lang-th">นัดคุยฟรี 30 นาที</span><span class="lang-en">Book my free 30 minutes</span></button>
+        <div class="msg ok"><span class="lang-th">ได้รับแล้ว เราจะติดต่อกลับภายใน 1 วันทำการ</span><span class="lang-en">Received · we'll reply within 1 business day.</span></div>
+        <div class="msg err"><span class="lang-th">ส่งไม่สำเร็จ ลองอีกครั้ง</span><span class="lang-en">Couldn't send · try again.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+<footer></footer>
+<script src="_footer.js"></script>
+
+<script>
+(function () {
+  'use strict';
+  var WC = window.WC;
+  function L() { return WC.getLang(); }
+  function t(th, en) { return L() === 'th' ? th : en; }
+
+  /* the 9 finding slots snapshot expects, in display order. tool = where to go if empty. */
+  var SLOTS = [
+    { key: 'health',     th: 'สุขภาพการเงิน',   en: 'Financial health', tool: 'financial-health-score.html' },
+    { key: 'budget',     th: 'งบประมาณ',         en: 'Budget',           tool: 'budget-planner.html' },
+    { key: 'emergency',  th: 'เงินสำรองฉุกเฉิน', en: 'Emergency fund',   tool: 'emergency-fund.html' },
+    { key: 'debt',       th: 'หนี้สิน',           en: 'Debt',             tool: 'debt-payoff.html' },
+    { key: 'networth',   th: 'ความมั่งคั่งสุทธิ', en: 'Net worth',        tool: 'net-worth.html' },
+    { key: 'invest',     th: 'ลงทุน',             en: 'Investing',        tool: 'compound-dca.html' },
+    { key: 'tax',        th: 'ภาษี',              en: 'Tax',              tool: 'tax-calculator.html' },
+    { key: 'insurance',  th: 'ความคุ้มครอง',      en: 'Protection',       tool: 'insurance-needs.html' },
+    { key: 'retirement', th: 'เกษียณ',            en: 'Retirement',       tool: 'retirement-simulator.html' }
+  ];
+
+  function renderPillars() {
+    var f = WC.getFindings();
+    var grid = document.getElementById('pillar-grid');
+    var html = '', done = 0;
+    for (var i = 0; i < SLOTS.length; i++) {
+      var s = SLOTS[i], d = f[s.key];
+      if (d) {
+        done++;
+        var head = t(d.headlineTh || '', d.headlineEn || '');
+        html += '<div class="pcard">'
+          + '<div class="ph"><span class="pname">' + t(s.th, s.en) + '</span>'
+          + '<span class="dot ' + (d.status || 'warn') + '"></span></div>'
+          + '<div class="pline">' + head + '</div>'
+          + '<a class="do" href="' + s.tool + '">' + t('ดูอีกครั้ง →', 'Review →') + '</a>'
+          + '</div>';
+      } else {
+        html += '<div class="pcard empty">'
+          + '<div class="ph"><span class="pname">' + t(s.th, s.en) + '</span><span class="dot" style="background:var(--line)"></span></div>'
+          + '<div class="pline">' + t('ยังไม่ได้ทำ', 'Not done yet') + '</div>'
+          + '<a class="do" href="' + s.tool + '">' + t('เริ่มเลย →', 'Start →') + '</a>'
+          + '</div>';
+      }
+    }
+    grid.innerHTML = html;
+    var pct = Math.round(done / SLOTS.length * 100);
+    document.getElementById('prog-fill').style.width = pct + '%';
+    document.getElementById('prog-txt').textContent = t('ทำแล้ว ' + done + '/' + SLOTS.length + ' เครื่องมือ', done + '/' + SLOTS.length + ' tools done');
+    return f;
+  }
+
+  /* ---- conflict engine: fact + question, never an answer ---- */
+  function num(x) { return (typeof x === 'number' && !isNaN(x)) ? x : 0; }
+  function claims(f) {
+    var keys = ['retirement', 'debt', 'emergency', 'invest'], sum = 0;
+    for (var i = 0; i < keys.length; i++) { if (f[keys[i]]) { sum += num(f[keys[i]].monthlyClaim); } }
+    return sum;
+  }
+  function renderConflicts(f) {
+    var prof = WC.profile.get();
+    var out = [];
+
+    /* R1 · cash flow: all goals draw from one surplus */
+    if (f.budget && typeof f.budget.monthlyClaim === 'number') {
+      var surplus = num(f.budget.monthlyClaim); /* budget stores surplus capacity here */
+      var demand = claims(f);
+      if (demand > 0 && surplus > 0 && demand > surplus * 1.05) {
+        out.push({
+          fact: t('เงินเหลือต่อเดือน ฿' + WC.fmt(surplus) + ' แต่เป้าหมายขอรวม ฿' + WC.fmt(demand) + ' · ขาด ฿' + WC.fmt(demand - surplus),
+                  'You free up ฿' + WC.fmt(surplus) + '/mo but your goals ask for ฿' + WC.fmt(demand) + ' · short ฿' + WC.fmt(demand - surplus)),
+          q: t('จะตัดเป้าไหนก่อน เลื่อนเป้าไหนทีหลัง? ตัวเลขเลือกให้คุณไม่ได้', 'Which goal gives way, which waits? The numbers can’t choose for you.')
+        });
+      }
+    }
+    /* R2 · emergency before investing */
+    if (f.emergency && f.emergency.status === 'bad' && f.invest) {
+      out.push({
+        fact: t('คุณกำลังวางแผนลงทุน แต่เงินสำรองฉุกเฉินยังไม่ครบ', 'You’re planning to invest, but your emergency fund isn’t full.'),
+        q: t('ถ้าตลาดตกตอนคุณต้องใช้เงินด่วน จะขายขาดทุนไหม? ลงทุนก่อนหรือเติมกันชนก่อน?', 'If markets drop when you need cash, do you sell at a loss? Buffer first, or invest first?')
+      });
+    }
+    /* R3 · protection gap with dependents */
+    if (f.insurance && f.insurance.status === 'bad' && num(prof.dependents) > 0) {
+      out.push({
+        fact: t('มีคนพึ่งพิงคุณ แต่ทุนประกันยังขาดอยู่', 'People depend on you, but your life cover still has a gap.'),
+        q: t('ถ้าวันนั้นมาถึงพรุ่งนี้ ครอบครัวรับภาระแทนได้ไหม? เรื่องนี้รอได้แค่ไหน?', 'If that day came tomorrow, could your family carry it? How long can this wait?')
+      });
+    }
+    /* R4 · debt vs invest */
+    if (f.debt && f.debt.status === 'bad' && f.invest) {
+      out.push({
+        fact: t('คุณมีทั้งหนี้ดอกสูงและแผนลงทุนพร้อมกัน', 'You’re carrying high-interest debt and an investing plan at once.'),
+        q: t('ดอกหนี้อาจสูงกว่าผลตอบแทนลงทุน · โปะหนี้ก่อนคุ้มกว่าหรือเปล่า?', 'Debt interest may beat investment returns · is paying it down first worth more?')
+      });
+    }
+    /* R5 · retirement gap + tax wrapper unused */
+    if (f.retirement && f.retirement.status !== 'good' && f.tax) {
+      out.push({
+        fact: t('แผนเกษียณยังไม่ถึงโซนมั่นใจ และคุณยังเสียภาษีอยู่', 'Your retirement isn’t in the comfort zone, and you’re still paying tax.'),
+        q: t('RMF/SSF/ThaiESG ช่วยทั้งลดภาษีและเติมเงินเกษียณในก้อนเดียว · ใช้เต็มเพดานหรือยัง?', 'RMF/SSF/ThaiESG cut tax and fund retirement at once · are you using the full cap?')
+      });
+    }
+
+    var list = document.getElementById('conflict-list');
+    var none = document.getElementById('conflict-none');
+    if (out.length === 0) { list.innerHTML = ''; none.hidden = false; return; }
+    none.hidden = true;
+    var html = '';
+    for (var i = 0; i < out.length; i++) {
+      html += '<div class="conflict-item"><div class="fact">' + out[i].fact + '</div><div class="q">' + out[i].q + '</div></div>';
+    }
+    list.innerHTML = html;
+  }
+
+  /* ---- plain-text summary for print / send-to-advisor ---- */
+  function buildSummary() {
+    var f = WC.getFindings(), lines = [];
+    lines.push('Wealth Compass · Financial Snapshot');
+    for (var i = 0; i < SLOTS.length; i++) {
+      var s = SLOTS[i], d = f[s.key];
+      if (d) { lines.push('- ' + s.en + ' [' + (d.status || '?') + ']: ' + (d.headlineEn || d.headlineTh || '')); }
+    }
+    return lines.join('\n');
+  }
+
+  function render() {
+    var f = renderPillars();
+    renderConflicts(f);
+  }
+  render();
+  window.addEventListener('wc:lang', render);
+
+  document.getElementById('btn-print').addEventListener('click', function () { window.print(); });
+  document.getElementById('btn-clear').addEventListener('click', function () {
+    try {
+      localStorage.removeItem('wc_findings');
+      localStorage.removeItem('wc_profile');
+    } catch (e) {}
+    render();
+  });
+
+  /* send-to-advisor: populate hidden summary only if the user opts in */
+  var shareBox = document.getElementById('share-fin');
+  var summaryEl = document.getElementById('snap-summary');
+  var sendForm = document.querySelector('.send-panel-form');
+  if (sendForm) {
+    sendForm.addEventListener('submit', function () {
+      summaryEl.value = (shareBox && shareBox.checked) ? buildSummary() : '';
+    });
+  }
+})();
+</script>
+</body>
+</html>

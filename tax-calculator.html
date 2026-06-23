@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- GEO / SEO -->
+<meta name="geo.region" content="TH-10"/>
+<meta name="geo.placename" content="Bangkok, Thailand"/>
+<meta name="geo.position" content="13.7563;100.5018"/>
+<meta name="ICBM" content="13.7563, 100.5018"/>
+<meta name="language" content="th"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+<meta name="author" content="Wealth Compass"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Wealth Compass"/>
+<meta property="og:title" content="คำนวณภาษีเงินได้บุคคลธรรมดา ปีภาษี 2567 · เครื่องมือฟรี | Wealth Compass"/>
+<meta property="og:description" content="กรอกเงินเดือนและลดหย่อน เห็นภาษีทั้งปีทันที พร้อมบันไดอัตราภาษีแบบขั้น เห็นชัดว่าลดหย่อนเพิ่ม ฿100 ประหยัดเท่าไหร่ ฟรี ไม่ต้องสมัคร"/>
+<meta property="og:url" content="https://wealthcompass.example.com/tax-calculator.html"/>
+<meta property="og:locale" content="th_TH"/>
+<meta property="og:locale:alternate" content="en_US"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="คำนวณภาษีเงินได้บุคคลธรรมดา 2567 · เครื่องมือฟรี | Wealth Compass"/>
+<meta name="twitter:description" content="เห็นภาษีทั้งปี อัตราที่แท้จริง และอัตราส่วนเพิ่มของคุณในคลิกเดียว คำนวณในเครื่องคุณ"/>
+
+<!-- Hreflang / canonical -->
+<link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/tax-calculator.html"/>
+<link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/tax-calculator.html?lang=en"/>
+<link rel="alternate" hreflang="x-default" href="https://wealthcompass.example.com/tax-calculator.html"/>
+<link rel="canonical" href="https://wealthcompass.example.com/tax-calculator.html"/>
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()"/>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://wealthcompass.example.com/#organization",
+      "name": "Wealth Compass",
+      "url": "https://wealthcompass.example.com",
+      "areaServed": "TH"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://wealthcompass.example.com/tax-calculator.html#app",
+      "name": "เครื่องมือคำนวณภาษีเงินได้บุคคลธรรมดา",
+      "alternateName": "Thai Personal Income Tax Calculator",
+      "url": "https://wealthcompass.example.com/tax-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "THB"},
+      "inLanguage": ["th", "en"],
+      "publisher": {"@id": "https://wealthcompass.example.com/#organization"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://wealthcompass.example.com/"},
+        {"@type": "ListItem", "position": 2, "name": "คำนวณภาษี", "item": "https://wealthcompass.example.com/tax-calculator.html"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "คำนวณภาษีเงินได้บุคคลธรรมดาอย่างไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "4 ขั้นตอน: (1) รวมเงินได้ทั้งปี (2) หักค่าใช้จ่าย · เงินเดือนหักได้ 50% แต่ไม่เกิน 100,000 บาท (3) หักค่าลดหย่อน เช่น ส่วนตัว 60,000 ประกันสังคม 9,000 RMF/SSF ฯลฯ ได้ \"เงินได้สุทธิ\" (4) นำเงินได้สุทธิเข้าตารางอัตราภาษีแบบขั้นบันได 0–35% โดยแต่ละขั้นเสียตามอัตราของขั้นนั้นเท่านั้น เช่น เงินเดือน 60,000/เดือน (720,000/ปี) จ่ายประกันสังคมเต็มปี ไม่มีลดหย่อนอื่น จะได้เงินได้สุทธิ 551,000 และภาษีทั้งปี 35,150 บาท"}
+        },
+        {
+          "@type": "Question",
+          "name": "อัตราภาษีที่แท้จริง (effective rate) ต่างจากอัตราส่วนเพิ่ม (marginal rate) อย่างไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "อัตราส่วนเพิ่มคืออัตราของขั้นบันไดสูงสุดที่เงินได้สุทธิของคุณไปถึง · ใช้ตอบว่า \"เงินก้อนถัดไปโดนภาษีกี่ %\" และ \"ลดหย่อนเพิ่ม 100 บาท ประหยัดกี่บาท\" ส่วนอัตราที่แท้จริงคือภาษีทั้งปีหารด้วยรายได้รวม · มักต่ำกว่ามาก เพราะเงินส่วนแรก ๆ เสียภาษีอัตราต่ำหรือไม่เสียเลย เช่น เงินเดือน 60,000/เดือน อัตราส่วนเพิ่ม 15% แต่อัตราที่แท้จริงเพียงประมาณ 4.9%"}
+        },
+        {
+          "@type": "Question",
+          "name": "เงินเดือนเท่าไหร่ถึงเริ่มเสียภาษี?",
+          "acceptedAnswer": {"@type": "Answer", "text": "กรณีโสด จ่ายประกันสังคมเต็มปี และไม่มีลดหย่อนอื่น รายได้ปีละประมาณ 319,000 บาท (ราว 26,600 บาท/เดือน) จะมีเงินได้สุทธิพอดี 150,000 บาท ซึ่งยังอยู่ในช่วงยกเว้นภาษี · เกินกว่านี้จึงเริ่มเสีย 5% เฉพาะส่วนที่เกิน อย่างไรก็ตามผู้มีเงินได้จากงานประจำเกิน 120,000 บาท/ปี ยังมีหน้าที่ยื่นแบบ ภ.ง.ด.91 แม้คำนวณแล้วไม่ต้องเสียภาษี"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<title>คำนวณภาษีเงินได้บุคคลธรรมดา ปีภาษี 2567 · เครื่องมือฟรี | Wealth Compass</title>
+<meta name="description" content="คำนวณภาษีเงินได้บุคคลธรรมดาแบบขั้นบันได กรอกเงินเดือน สถานะ และลดหย่อน เห็นภาษีทั้งปี อัตราที่แท้จริง และเงินที่ประหยัดได้จากการลดหย่อนเพิ่ม ฟรี คำนวณในเครื่องคุณ"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="_theme.css"/>
+
+<style>
+/* bracket ladder */
+.bk-row { margin-bottom: 16px; }
+.bk-row .top { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; margin-bottom: 6px; align-items: baseline; }
+.bk-row .top .k { font-weight: 700; color: var(--forest); }
+.bk-row .top .v { font-weight: 800; color: var(--forest); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bk-row .bk-sub { font-size: 12px; color: var(--muted); margin-top: 4px; font-variant-numeric: tabular-nums; }
+.bk-row.marginal {
+  background: var(--bright-soft); border: 1px solid var(--bright-2);
+  border-radius: var(--radius-sm); padding: 12px 14px; margin: 0 -14px 16px;
+}
+.rate-pill {
+  display: inline-block; font-size: 11.5px; font-weight: 700; padding: 1px 9px;
+  border-radius: 99px; background: var(--bg); border: 1px solid var(--line);
+  color: var(--muted); vertical-align: 1px;
+}
+.bk-row.marginal .rate-pill { background: var(--forest); border-color: var(--forest); color: var(--bright); }
+.marg-tag {
+  display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 9px;
+  border-radius: 99px; background: var(--forest); color: var(--bright); margin-left: 6px; vertical-align: 1px;
+}
+.marg-note {
+  margin-top: 18px; padding: 14px 18px; border-radius: var(--radius-sm);
+  background: var(--forest); color: #fff; font-size: 14px; font-weight: 600;
+}
+.marg-note b { color: var(--bright); }
+
+/* waterfall table */
+.wf-table td, .wf-table th { padding: 12px; }
+.wf-table .minus { color: var(--danger); }
+.wf-table .plus { color: var(--positive); }
+.wf-table tr.total td { font-weight: 800; color: var(--forest); border-top: 2px solid var(--forest); border-bottom: none; font-size: 1.05em; }
+.wf-table tr.net td { font-weight: 700; color: var(--forest); background: #f7faf4; }
+
+/* SEO content */
+.content-prose { max-width: 760px; }
+.content-prose h2 { font-size: 26px; margin: 36px 0 12px; }
+.content-prose h3 { font-size: 19px; margin: 26px 0 10px; }
+.content-prose p, .content-prose li { color: #38454c; font-size: 15.5px; margin-bottom: 12px; }
+.content-prose ul, .content-prose ol { padding-left: 22px; }
+.content-prose ul { list-style: disc; }
+.content-prose ol { list-style: decimal; }
+.content-prose .src { font-size: 13px; color: var(--muted); }
+.content-prose table { font-size: 14px; margin: 14px 0 20px; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content"><span class="lang-th">ข้ามไปเนื้อหาหลัก</span><span class="lang-en">Skip to main content</span></a>
+<nav></nav>
+<script src="_brand.js"></script>
+<script src="_app.js"></script>
+<script src="_tax.js"></script>
+<script src="_nav.js"></script>
+
+<main id="main-content">
+
+<!-- ============ HERO ============ -->
+<header class="tool-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html"><span class="lang-th">หน้าแรก</span><span class="lang-en">Home</span></a> / <span class="lang-th">คำนวณภาษี</span><span class="lang-en">Tax calculator</span></div>
+    <span class="badge amber">ขั้นที่ 4 · ภาษี / Stage 4 · Tax · ยอดนิยม</span>
+    <h1 style="margin-top:14px;">
+      <span class="lang-th">ปีนี้ต้องจ่ายภาษีเท่าไหร่กันแน่?</span>
+      <span class="lang-en">How much tax will you actually pay this year?</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-th">กรอกเงินเดือนและลดหย่อน เห็นภาษีทั้งปีแบบขั้นบันไดทันที · พร้อมตัวเลขที่สำคัญที่สุด: ทุก ฿100 ที่ลดหย่อนเพิ่ม คุณประหยัดได้กี่บาท</span>
+      <span class="lang-en">Enter your salary and deductions to see your full-year tax bracket by bracket · plus the number that matters most: how much every extra ฿100 of deductions saves you.</span>
+    </p>
+  </div>
+</header>
+
+<!-- ============ TOOL ============ -->
+<section class="section tight" style="padding-top:24px;">
+  <div class="container tool-grid">
+
+    <!-- inputs -->
+    <div class="inputs-col">
+      <div class="panel">
+        <div class="field">
+          <label for="year"><span class="lang-th">ปีภาษี</span><span class="lang-en">Tax year</span></label>
+          <select id="year"></select>
+        </div>
+
+        <div class="field">
+          <label for="salary"><span class="lang-th">เงินเดือนรวมทั้งปี (เงินได้ 40(1))</span><span class="lang-en">Annual employment income · 40(1)</span></label>
+          <div class="input-group">
+            <input type="text" id="salary" data-num inputmode="numeric" value="720,000" autocomplete="off"/>
+            <span class="unit">฿/<span class="lang-th">ปี</span><span class="lang-en">yr</span></span>
+          </div>
+          <p class="hint"><span class="lang-th">เงินเดือน × 12 + โบนัส</span><span class="lang-en">Monthly salary × 12 + bonus</span></p>
+        </div>
+
+        <div class="field" style="margin-bottom:10px;">
+          <label><span class="lang-th">รายได้อื่น (หักค่าใช้จ่ายตามประเภท)</span><span class="lang-en">Other income (expense by category)</span></label>
+          <div id="other-rows"></div>
+          <button type="button" id="add-other" class="btn btn-outline btn-sm" style="margin-top:6px;">
+            <span class="lang-th">+ เพิ่มรายได้อื่น</span><span class="lang-en">+ Add income row</span>
+          </button>
+          <p class="hint"><span class="lang-th">40(2) ค่าจ้าง/คอมมิชชั่น · 40(5) ค่าเช่า · 40(6) วิชาชีพอิสระ · 40(7) รับเหมา · 40(8) ธุรกิจ/อื่น ๆ · หักค่าใช้จ่ายเหมาให้อัตโนมัติตามประเภท</span><span class="lang-en">Expense deduction auto-applied per category (not the salary-only 50%).</span></p>
+        </div>
+
+        <div class="field">
+          <label><span class="lang-th">สถานะ</span><span class="lang-en">Status</span></label>
+          <div class="segmented" role="group" aria-label="Marital status">
+            <button type="button" id="st-single" class="on"><span class="lang-th">โสด</span><span class="lang-en">Single</span></button>
+            <button type="button" id="st-married"><span class="lang-th">สมรส (คู่ไม่มีรายได้)</span><span class="lang-en">Married (no income)</span></button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="kids"><span class="lang-th">จำนวนบุตร</span><span class="lang-en">Children</span></label>
+          <input type="number" id="kids" min="0" max="5" step="1" value="0" inputmode="numeric"/>
+          <p class="hint"><span class="lang-th">คิด 30,000/คน (แบบง่าย · บุตรคนที่ 2 ขึ้นไปที่เกิดปี 2561 เป็นต้นมา จริง ๆ ได้ 60,000)</span><span class="lang-en">Counted at ฿30,000 each (simplified · 2nd+ child born 2018 onward is actually ฿60,000)</span></p>
+        </div>
+
+        <div class="field">
+          <label for="parents"><span class="lang-th">เลี้ยงดูบิดามารดา (อายุ 60+ รายได้น้อย)</span><span class="lang-en">Supported parents (60+, low income)</span></label>
+          <input type="number" id="parents" min="0" max="4" step="1" value="0" inputmode="numeric"/>
+          <p class="hint"><span class="lang-th">คิด 30,000/คน สูงสุด 4 คน (รวมบิดามารดาคู่สมรส)</span><span class="lang-en">฿30,000 each, up to 4 (incl. spouse's parents)</span></p>
+        </div>
+
+        <div class="field">
+          <label><span class="lang-th">ประกันสังคม</span><span class="lang-en">Social security</span></label>
+          <div class="segmented" role="group" aria-label="Social security">
+            <button type="button" id="sso-yes" class="on"><span class="lang-th">จ่ายเต็มปี (9,000)</span><span class="lang-en">Full year (9,000)</span></button>
+            <button type="button" id="sso-no"><span class="lang-th">ไม่จ่าย</span><span class="lang-en">None</span></button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label><span class="lang-th">ผู้มีอายุ 65 ปีขึ้นไป</span><span class="lang-en">Age 65 or older</span></label>
+          <div class="segmented" role="group" aria-label="Age 65+ exemption">
+            <button type="button" id="eld-no" class="on"><span class="lang-th">ไม่ใช่</span><span class="lang-en">No</span></button>
+            <button type="button" id="eld-yes"><span class="lang-th">ใช่ (ยกเว้น 190,000)</span><span class="lang-en">Yes (exempt 190,000)</span></button>
+          </div>
+          <p class="hint"><span class="lang-th">ยกเว้นเงินได้ 190,000 บาท สำหรับผู้มีอายุ 65 ปีขึ้นไป</span><span class="lang-en">Income exemption of ฿190,000 for taxpayers aged 65+.</span></p>
+        </div>
+
+        <div class="field">
+          <label for="disabled"><span class="lang-th">อุปการะคนพิการ/ทุพพลภาพ</span><span class="lang-en">Disabled dependents</span></label>
+          <input type="number" id="disabled" min="0" max="10" step="1" value="0" inputmode="numeric"/>
+          <p class="hint"><span class="lang-th">คิด 60,000/คน</span><span class="lang-en">฿60,000 each.</span></p>
+        </div>
+
+        <div class="field">
+          <label for="wht"><span class="lang-th">ภาษีหัก ณ ที่จ่ายที่ถูกหักไว้แล้ว</span><span class="lang-en">Tax already withheld (WHT)</span></label>
+          <div class="input-group">
+            <input type="text" id="wht" data-num inputmode="numeric" value="0" autocomplete="off"/>
+            <span class="unit">฿/<span class="lang-th">ปี</span><span class="lang-en">yr</span></span>
+          </div>
+          <p class="hint"><span class="lang-th">ยอดรวมที่นายจ้าง/ผู้จ่ายหักไว้ตลอดปี (จากหนังสือรับรองหัก ณ ที่จ่าย)</span><span class="lang-en">Total withheld by employer/payers over the year (from your WHT certificate).</span></p>
+        </div>
+
+        <div style="border-top:1px solid var(--line); margin:22px 0 18px;"></div>
+
+        <button type="button" id="ded-toggle" class="btn btn-outline btn-sm" aria-expanded="false" style="width:100%;justify-content:space-between;">
+          <span><span class="lang-th">ลดหย่อนเพิ่มเติม (RMF / ประกัน / บ้าน / บริจาค)</span><span class="lang-en">Additional deductions (RMF / insurance / home / donation)</span></span>
+          <span id="ded-caret">▾</span>
+        </button>
+
+        <div id="ded-section" style="display:none;margin-top:16px;">
+          <div class="field">
+            <label for="d-retire"><span class="lang-th">RMF / SSF / ThaiESG / กบข. / กองทุนสำรองเลี้ยงชีพ</span><span class="lang-en">RMF / SSF / ThaiESG / GPF / provident fund</span></label>
+            <div class="input-group">
+              <input type="text" id="d-retire" data-num inputmode="numeric" value="0" autocomplete="off"/>
+              <span class="unit">฿</span>
+            </div>
+            <p class="hint" id="d-retire-note"><span class="lang-th">กลุ่มเกษียณรวมไม่เกิน 500,000 (ThaiESG แยกอีก 300,000) · เครื่องมือนี้คุมเพดานรวม 500,000</span><span class="lang-en">Retirement group combined ≤ ฿500,000 (ThaiESG separate ฿300,000). This field caps at ฿500,000.</span></p>
+          </div>
+
+          <div class="field">
+            <label for="d-life"><span class="lang-th">เบี้ยประกันชีวิต + สุขภาพ</span><span class="lang-en">Life + health insurance</span></label>
+            <div class="input-group">
+              <input type="text" id="d-life" data-num inputmode="numeric" value="0" autocomplete="off"/>
+              <span class="unit">฿</span>
+            </div>
+            <p class="hint" id="d-life-note"><span class="lang-th">รวมกันไม่เกิน 100,000 (สุขภาพไม่เกิน 25,000)</span><span class="lang-en">Combined ≤ ฿100,000 (health ≤ ฿25,000).</span></p>
+          </div>
+
+          <div class="field">
+            <label for="d-pension"><span class="lang-th">เบี้ยประกันบำนาญ</span><span class="lang-en">Annuity (pension) insurance</span></label>
+            <div class="input-group">
+              <input type="text" id="d-pension" data-num inputmode="numeric" value="0" autocomplete="off"/>
+              <span class="unit">฿</span>
+            </div>
+            <p class="hint" id="d-pension-note"><span class="lang-th">15% ของเงินได้ สูงสุด 200,000 (อยู่ในกลุ่มเกษียณ 500,000)</span><span class="lang-en">15% of income, max ฿200,000 (inside the ฿500,000 retirement group).</span></p>
+          </div>
+
+          <div class="field">
+            <label for="d-home"><span class="lang-th">ดอกเบี้ยเงินกู้ซื้อบ้าน</span><span class="lang-en">Mortgage interest</span></label>
+            <div class="input-group">
+              <input type="text" id="d-home" data-num inputmode="numeric" value="0" autocomplete="off"/>
+              <span class="unit">฿</span>
+            </div>
+            <p class="hint" id="d-home-note"><span class="lang-th">สูงสุด 100,000</span><span class="lang-en">Max ฿100,000.</span></p>
+          </div>
+
+          <div class="field" style="margin-bottom:6px;">
+            <label for="d-donate"><span class="lang-th">เงินบริจาค</span><span class="lang-en">Donations</span></label>
+            <div class="input-group">
+              <input type="text" id="d-donate" data-num inputmode="numeric" value="0" autocomplete="off"/>
+              <span class="unit">฿</span>
+            </div>
+            <p class="hint" id="d-donate-note"><span class="lang-th">ไม่เกิน 10% ของเงินได้หลังหักค่าใช้จ่ายและลดหย่อนอื่น</span><span class="lang-en">Up to 10% of income after expenses and other allowances.</span></p>
+          </div>
+
+          <div id="cap-warn" class="msg" style="margin-top:4px;"></div>
+
+          <p class="hint" style="margin-top:10px;">
+            <span class="lang-th"><a href="tax-deduction-optimizer.html" style="color:var(--positive);font-weight:700;">ยังไม่รู้ตัวเลข? ใช้เครื่องมือวางแผนลดหย่อน →</a></span>
+            <span class="lang-en"><a href="tax-deduction-optimizer.html" style="color:var(--positive);font-weight:700;">Not sure? Use the deduction optimizer →</a></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- results -->
+    <div>
+      <div class="result-hero" aria-live="polite">
+        <div class="lbl"><span class="lang-th">ภาษีที่ต้องจ่ายทั้งปี (ปีภาษี <span id="r-year-th">2567</span>)</span><span class="lang-en">Total tax for the year (TY <span id="r-year-en">2024</span>)</span></div>
+        <div class="big" id="r-tax">฿35,150</div>
+        <div class="sub"><span class="lang-th">เฉลี่ยเดือนละ</span><span class="lang-en">Average</span> <b id="r-mo">฿2,929</b><span class="lang-en">/mo</span> · <span class="lang-th">อัตราภาษีที่แท้จริง</span><span class="lang-en">effective rate</span> <b id="r-eff">4.9%</b></div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:18px;"><span class="lang-th">บันไดภาษีของคุณ · เสียทีละขั้น ไม่ใช่ทั้งก้อน</span><span class="lang-en">Your tax ladder · each step taxed separately</span></h3>
+        <div id="ladder"></div>
+        <div class="marg-note" id="marg-note"></div>
+      </div>
+
+      <div class="panel" id="settle-panel" style="margin-top:20px;display:none;">
+        <h3 style="font-size:17px;margin-bottom:8px;"><span class="lang-th">หัก ณ ที่จ่ายแล้ว · คืนหรือจ่ายเพิ่ม</span><span class="lang-en">Withholding settlement · refund or owe</span></h3>
+        <div id="settle-body"></div>
+      </div>
+
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:14px;"><span class="lang-th">เส้นทางจากรายได้สู่ภาษี</span><span class="lang-en">From income to tax</span></h3>
+        <table class="wf-table" aria-label="Tax calculation waterfall"><tbody id="wf-body"></tbody></table>
+      </div>
+
+      <div class="panel" id="compare-panel" style="margin-top:20px;display:none;">
+        <h3 style="font-size:17px;margin-bottom:14px;"><span class="lang-th">เทียบ: มี vs ไม่มีลดหย่อนเพิ่มเติม</span><span class="lang-en">With vs without your extra deductions</span></h3>
+        <table aria-label="Deduction impact comparison"><tbody id="compare-body"></tbody></table>
+      </div>
+
+      <div class="panel" id="next-panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:8px;"><span class="lang-th">ลดหย่อนอีกเท่าไหร่ ลงขั้นภาษีถัดไป</span><span class="lang-en">How much more deduction to drop a bracket</span></h3>
+        <div id="next-body"></div>
+      </div>
+
+      <div id="insight" class="msg" style="margin-top:20px;"></div>
+
+      <div class="disclaimer" style="margin-top:20px;">
+        <b><span class="lang-th">ข้อจำกัด:</span><span class="lang-en">Limitations:</span></b>
+        <span class="lang-th">อัตราและเกณฑ์อ้างอิงปีภาษี 2567 (พ.ศ.) · กฎหมายภาษีเปลี่ยนได้ทุกปี โปรดตรวจสอบกับกรมสรรพากร (rd.go.th) หรือที่ปรึกษาภาษีก่อนยื่นจริง เครื่องมือนี้คำนวณกรณีทั่วไป ไม่ครอบคลุมเครดิตภาษีเงินปันผล รายได้ต่างประเทศ ฯลฯ</span>
+        <span class="lang-en">Rates and thresholds reference Thai tax year 2024 (B.E. 2567) · tax law can change every year. Verify with the Revenue Department (rd.go.th) or a tax advisor before filing. This tool covers the common case and excludes dividend tax credits, foreign income, etc.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><span class="lang-th">จ่ายภาษีเกินจำเป็นทุกปี โดยไม่รู้ตัว?</span><span class="lang-en">Overpaying tax every year without knowing it?</span></h2>
+        <p><span class="lang-th">นักวางแผนการเงินช่วยจัดพอร์ตลดหย่อนให้พอดีกับเป้าเกษียณและสภาพคล่องของคุณ · ไม่ใช่แค่ซื้อกองทุนตอนธันวาคม นัดคุยครั้งแรกฟรี 30 นาที</span><span class="lang-en">A planner aligns your deductions with your retirement goal and cash flow · not just a December fund scramble. First 30 minutes free.</span></p>
+      </div>
+      <form data-lead aria-label="Consultation request">
+        <input type="text" name="name" required autocomplete="name" placeholder="ชื่อของคุณ / Your name" aria-label="Name"/>
+        <input type="email" name="email" required autocomplete="email" placeholder="อีเมล / Email" aria-label="Email"/>
+        <input type="hidden" name="topic" value="tax"/>
+        <button class="btn btn-primary btn-lg" type="submit"><span class="lang-th">นัดคุยฟรี</span><span class="lang-en">Book free consult</span></button>
+        <div class="msg ok"><span class="lang-th">ได้รับข้อมูลแล้ว เราจะติดต่อกลับภายใน 1 วันทำการ</span><span class="lang-en">Received · we'll reply within 1 business day.</span></div>
+        <div class="msg err"><span class="lang-th">ส่งไม่สำเร็จ ลองอีกครั้ง</span><span class="lang-en">Couldn't send · try again.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEO CONTENT ============ -->
+<section class="section alt">
+  <div class="container content-prose">
+    <div class="section-label"><span class="lang-th">ความรู้</span><span class="lang-en">Learn</span></div>
+
+    <div class="lang-th">
+      <h2>คำนวณภาษีเงินได้บุคคลธรรมดาอย่างไร · ทีละขั้น</h2>
+      <p>ภาษีเงินได้บุคคลธรรมดาของไทยใช้ระบบ "ขั้นบันได" (progressive) · เงินได้สุทธิของคุณถูกหั่นเป็นชั้น ๆ และแต่ละชั้นเสียภาษีตามอัตราของชั้นนั้นเท่านั้น ขั้นตอนการคำนวณมี 4 ขั้น:</p>
+      <ol>
+        <li><b>รวมเงินได้ทั้งปี</b> · เงินเดือน × 12 + โบนัส + รายได้อื่น</li>
+        <li><b>หักค่าใช้จ่าย</b> · เงินได้จากงานประจำ (มาตรา 40(1)) หักเหมาได้ 50% แต่ไม่เกิน 100,000 บาท</li>
+        <li><b>หักค่าลดหย่อน</b> · ส่วนตัว 60,000 / คู่สมรสไม่มีรายได้ 60,000 / บุตร / บิดามารดา / ประกันสังคม / RMF / SSF / ประกันชีวิต ฯลฯ ผลลัพธ์คือ "เงินได้สุทธิ"</li>
+        <li><b>เข้าตารางขั้นบันได</b> · 150,000 แรกยกเว้น จากนั้น 5% → 10% → 15% → 20% → 25% → 30% → 35% ตามช่วง</li>
+      </ol>
+
+      <h3>ตัวอย่างจริง: เงินเดือน 60,000 บาท</h3>
+      <p>สมมติโสด เงินเดือน 60,000 บาท/เดือน (720,000 บาท/ปี) จ่ายประกันสังคมเต็มปี ไม่มีลดหย่อนอื่น:</p>
+      <ul>
+        <li>รายได้รวม 720,000 − ค่าใช้จ่าย 100,000 (เพดาน) − ลดหย่อน 69,000 (ส่วนตัว 60,000 + ประกันสังคม 9,000) = <b>เงินได้สุทธิ 551,000 บาท</b></li>
+        <li>ขั้น 0–150,000: ยกเว้น = 0</li>
+        <li>ขั้น 150,001–300,000: 150,000 × 5% = 7,500</li>
+        <li>ขั้น 300,001–500,000: 200,000 × 10% = 20,000</li>
+        <li>ขั้น 500,001–750,000: เข้ามาแค่ 51,000 × 15% = 7,650</li>
+        <li><b>รวมภาษีทั้งปี = 35,150 บาท</b> (เฉลี่ยเดือนละ ~2,929 บาท)</li>
+      </ul>
+
+      <h3>อัตราภาษีที่แท้จริง vs อัตราส่วนเพิ่ม · ต่างกันยังไง</h3>
+      <p>จากตัวอย่างข้างบน คน ๆ นี้อยู่ "ขั้น 15%" แต่จ่ายภาษีจริงเพียง 35,150 ÷ 720,000 ≈ <b>4.9% ของรายได้ทั้งหมด</b> · ตัวเลขสองตัวนี้ตอบคนละคำถาม:</p>
+      <ul>
+        <li><b>อัตราส่วนเพิ่ม (marginal rate)</b> = อัตราของขั้นสูงสุดที่เงินได้สุทธิคุณไปถึง · ใช้ตัดสินใจ "ลดหย่อนเพิ่มคุ้มไหม" เพราะลดหย่อนเพิ่ม 100 บาท ประหยัดภาษีเท่ากับอัตรานี้พอดี (ขั้น 15% → ประหยัด 15 บาท ต่อทุก 100 บาท)</li>
+        <li><b>อัตราที่แท้จริง (effective rate)</b> = ภาษีทั้งปี ÷ รายได้รวม · บอกภาระจริงโดยรวม มักต่ำกว่าอัตราส่วนเพิ่มมาก เพราะเงินก้อนแรก ๆ เสียอัตราต่ำหรือไม่เสียเลย</li>
+      </ul>
+
+      <h3>3 ความเข้าใจผิดยอดฮิตเรื่องภาษี</h3>
+      <p><b>1. "ขึ้น bracket ใหม่แล้วโดนภาษีทั้งก้อน" · ผิด</b> ถ้าเงินได้สุทธิคุณขยับจาก 500,000 เป็น 500,100 บาท มีเพียง 100 บาทสุดท้ายที่โดน 15% (เสียเพิ่ม 15 บาท) ไม่ใช่ทั้ง 500,100 โดน 15% การได้เงินเดือนขึ้นจึง<b>ไม่มีทาง</b>ทำให้เงินเหลือหลังภาษีน้อยลง</p>
+      <p><b>2. "บริษัทหักภาษี ณ ที่จ่ายแล้ว ไม่ต้องยื่น" · ผิด</b> การหัก ณ ที่จ่ายเป็นแค่การจ่ายล่วงหน้า คุณยังต้องยื่น ภ.ง.ด.91 (หรือ 90) ทุกปี และบ่อยครั้งการยื่นทำให้<b>ได้เงินคืน</b> เพราะบริษัทไม่รู้ลดหย่อนทั้งหมดของคุณ</p>
+      <p><b>3. "ลดหย่อนไม่คุ้ม ได้คืนนิดเดียว" · ขึ้นกับขั้นภาษีคุณ</b> เงินประหยัดจากลดหย่อน = ยอดลดหย่อน × อัตราส่วนเพิ่ม คนขั้น 15% ที่ซื้อ RMF 100,000 บาท ประหยัดภาษีทันที 15,000 บาท · เทียบเท่าผลตอบแทน 15% ตั้งแต่วันแรก ยิ่งขั้นสูงยิ่งคุ้ม</p>
+
+      <p class="src">อ้างอิงเกณฑ์ปีภาษี 2567 จากกรมสรรพากร (rd.go.th) · เครื่องมือนี้ให้ข้อมูลเพื่อการศึกษา ไม่ใช่คำแนะนำภาษีรายบุคคล</p>
+    </div>
+
+    <div class="lang-en">
+      <h2>How Thai personal income tax is calculated</h2>
+      <p>Thailand uses progressive brackets on "net income": total income, minus a 50% expense deduction on employment income (capped at ฿100,000), minus allowances (personal ฿60,000, spouse, children, parents, social security, RMF/SSF, insurance, etc.). The first ฿150,000 of net income is exempt; the rest is taxed in slices at 5% up to 35%.</p>
+      <h3>Worked example: ฿60,000/month salary</h3>
+      <p>Single, full-year social security, no other deductions: 720,000 − 100,000 expenses − 69,000 allowances = net 551,000. Tax = 7,500 + 20,000 + 7,650 = <b>฿35,150/year</b> (~฿2,929/month, effective rate ≈ 4.9%).</p>
+      <h3>Effective vs marginal rate</h3>
+      <p>Your marginal rate (here 15%) answers "what does the next baht cost?" and "what does an extra ฿100 of deductions save?" Your effective rate (here ~4.9%) is total tax over total income · always lower, because early slices are taxed lightly or not at all.</p>
+      <h3>The biggest myth</h3>
+      <p>Moving into a higher bracket never taxes your whole income at the new rate · only the slice above the threshold. A raise can never leave you with less after-tax money.</p>
+      <p class="src">Based on Thai tax year 2024 (B.E. 2567) rules from the Revenue Department (rd.go.th). Educational tool, not personalized tax advice.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer></footer>
+<script src="_footer.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  var W = window.WC;
+  var T = window.WC_TAX;
+
+  var YEAR_LABELS = { 2567: { th: '2567', en: '2024' } };
+  var OTHER_CATS = ['40(2)', '40(5)', '40(6)', '40(7)', '40(8)'];
+  var CAT_LABEL = {
+    '40(2)': { th: '40(2) ค่าจ้าง/คอมมิชชั่น (50% ≤100k)', en: '40(2) commission (50%, cap 100k)' },
+    '40(5)': { th: '40(5) ค่าเช่า (เหมา 30%)', en: '40(5) rental (30%)' },
+    '40(6)': { th: '40(6) วิชาชีพอิสระ (30%)', en: '40(6) liberal profession (30%)' },
+    '40(7)': { th: '40(7) รับเหมา (60%)', en: '40(7) contractor (60%)' },
+    '40(8)': { th: '40(8) ธุรกิจ/อื่น ๆ (60%)', en: '40(8) business/other (60%)' }
+  };
+
+  var state = { married: false, sso: true, elderly: false, year: 2567, otherRows: [] };
+
+  function el(id) { return document.getElementById(id); }
+  function lang() { return W.getLang(); }
+
+  function clampInt(id, max) {
+    var n = Math.round(W.parseNum(el(id).value));
+    if (n < 0) { n = 0; }
+    if (n > max) { n = max; }
+    return n;
+  }
+
+  /* ---------- dynamic year dropdown ---------- */
+  function buildYearOptions() {
+    var sel = el('year');
+    var keys = [];
+    for (var k in T.TAX_YEARS) { if (T.TAX_YEARS.hasOwnProperty(k)) { keys.push(k); } }
+    keys.sort();
+    var html = '';
+    var L = lang();
+    for (var i = 0; i < keys.length; i++) {
+      var lbl = YEAR_LABELS[keys[i]] ? (L === 'th' ? YEAR_LABELS[keys[i]].th : YEAR_LABELS[keys[i]].en) : keys[i];
+      html += '<option value="' + keys[i] + '"' + (Number(keys[i]) === state.year ? ' selected' : '') + '>' + lbl + '</option>';
+    }
+    sel.innerHTML = html;
+  }
+
+  /* ---------- dynamic other-income rows ---------- */
+  function renderOtherRows() {
+    var L = lang();
+    var wrap = el('other-rows');
+    var html = '';
+    for (var i = 0; i < state.otherRows.length; i++) {
+      var row = state.otherRows[i];
+      var optHtml = '';
+      for (var j = 0; j < OTHER_CATS.length; j++) {
+        var c = OTHER_CATS[j];
+        optHtml += '<option value="' + c + '"' + (c === row.cat ? ' selected' : '') + '>'
+          + (L === 'th' ? CAT_LABEL[c].th : CAT_LABEL[c].en) + '</option>';
+      }
+      html += '<div class="range-row" style="margin-bottom:8px;gap:8px;">'
+        + '<div class="input-group" style="flex:1;">'
+        + '<input type="text" data-num inputmode="numeric" class="other-amt" data-idx="' + i + '" value="'
+        + (row.amt ? W.fmt(row.amt) : '0') + '" aria-label="Other income amount"/>'
+        + '<span class="unit">฿</span></div>'
+        + '<select class="other-cat" data-idx="' + i + '" style="flex:1.2;" aria-label="Income category">' + optHtml + '</select>'
+        + '<button type="button" class="other-del" data-idx="' + i + '" aria-label="Remove row" '
+        + 'style="border:1px solid var(--line);background:var(--panel);border-radius:var(--radius-sm);width:38px;cursor:pointer;color:var(--danger);font-weight:700;">×</button>'
+        + '</div>';
+    }
+    wrap.innerHTML = html;
+    // re-bind
+    var amts = wrap.querySelectorAll('.other-amt');
+    for (var a = 0; a < amts.length; a++) {
+      amts[a].addEventListener('input', onOtherAmt);
+    }
+    var cats = wrap.querySelectorAll('.other-cat');
+    for (var b = 0; b < cats.length; b++) {
+      cats[b].addEventListener('change', onOtherCat);
+    }
+    var dels = wrap.querySelectorAll('.other-del');
+    for (var d = 0; d < dels.length; d++) {
+      dels[d].addEventListener('click', onOtherDel);
+    }
+    if (W.bindNumInputs) { W.bindNumInputs(wrap); }
+    el('add-other').style.display = state.otherRows.length >= 3 ? 'none' : '';
+  }
+  function onOtherAmt(e) {
+    var idx = Number(e.target.getAttribute('data-idx'));
+    state.otherRows[idx].amt = W.parseNum(e.target.value);
+    render();
+  }
+  function onOtherCat(e) {
+    var idx = Number(e.target.getAttribute('data-idx'));
+    state.otherRows[idx].cat = e.target.value;
+    render();
+  }
+  function onOtherDel(e) {
+    var idx = Number(e.target.getAttribute('data-idx'));
+    state.otherRows.splice(idx, 1);
+    renderOtherRows();
+    render();
+  }
+
+  /* ---------- capped extra deductions ---------- */
+  /* returns { total, warns:[{th,en}] } given income-after-expense for the
+     donation cap base. Caps reference ปีภาษี 2567. */
+  function cappedDeductions(donationBase) {
+    var warns = [];
+    var retire = W.parseNum(el('d-retire').value);
+    var life = W.parseNum(el('d-life').value);
+    var pension = W.parseNum(el('d-pension').value);
+    var home = W.parseNum(el('d-home').value);
+    var donate = W.parseNum(el('d-donate').value);
+    var income = state.grossForCaps || 0;
+
+    var retireCap = 500000;
+    var lifeCap = 100000;
+    var pensionCap = Math.min(income * 0.15, 200000);
+    var homeCap = 100000;
+
+    var retireD = Math.min(retire, retireCap);
+    var lifeD = Math.min(life, lifeCap);
+    var pensionD = Math.min(pension, pensionCap);
+    var homeD = Math.min(home, homeCap);
+
+    // donation cap = 10% of income after expenses & all other deductions
+    var preDonate = retireD + lifeD + pensionD + homeD;
+    var donateCap = Math.max(0, (donationBase - preDonate) * 0.10);
+    var donateD = Math.min(donate, donateCap);
+
+    if (retire > retireCap) { warns.push({ th: 'กลุ่มเกษียณเกินเพดาน 500,000 · ส่วนเกินไม่ได้สิทธิ', en: 'Retirement group over ฿500,000 cap · excess not deductible' }); }
+    if (life > lifeCap) { warns.push({ th: 'ประกันชีวิต+สุขภาพเกิน 100,000 · ส่วนเกินไม่ได้สิทธิ', en: 'Life+health over ฿100,000 cap · excess not deductible' }); }
+    if (pension > pensionCap) { warns.push({ th: 'เบี้ยบำนาญเกินเพดาน (15% ของเงินได้ สูงสุด 200,000)', en: 'Annuity over cap (15% of income, max ฿200,000)' }); }
+    if (home > homeCap) { warns.push({ th: 'ดอกเบี้ยบ้านเกิน 100,000 · ส่วนเกินไม่ได้สิทธิ', en: 'Mortgage interest over ฿100,000 cap · excess not deductible' }); }
+    if (donate > donateCap) { warns.push({ th: 'เงินบริจาคเกิน 10% ของเงินได้หลังหัก · ส่วนเกินไม่ได้สิทธิ', en: 'Donation over 10% of income after deductions · excess not deductible' }); }
+
+    return { total: retireD + lifeD + pensionD + homeD + donateD, warns: warns };
+  }
+
+  /* ---------- core calculation ----------
+     withExtra=false runs the same scenario but zeroes the capped extra
+     deductions · used for the with/without comparison. */
+  function calc(withExtra) {
+    var year = state.year;
+    var salary = W.parseNum(el('salary').value);
+    var kids = clampInt('kids', 5);
+    var parents = clampInt('parents', 4);
+    var disabled = clampInt('disabled', 10);
+
+    // employment expense: 40(1) salary, shared 50% cap 100k with 40(2)
+    var salaryExpense = T.expenseDeduction(salary, '40(1)', year);
+
+    // other income rows
+    var otherIncome = 0;
+    var otherExpense = 0;
+    var cat2Salary = 0; // 40(2) shares the 100k cap with salary
+    for (var i = 0; i < state.otherRows.length; i++) {
+      var amt = state.otherRows[i].amt > 0 ? state.otherRows[i].amt : 0;
+      var cat = state.otherRows[i].cat;
+      otherIncome += amt;
+      if (cat === '40(2)') {
+        cat2Salary += amt; // accumulate; cap applied below
+      } else {
+        otherExpense += T.expenseDeduction(amt, cat, year);
+      }
+    }
+    // shared 40(1)+40(2) expense: 50% of (salary + 40(2)) capped at 100k
+    var empExpense = Math.min((salary + cat2Salary) * 0.5, 100000);
+    var expense = empExpense + otherExpense;
+
+    var gross = salary + otherIncome;
+    // age 65+ exemption reduces taxable income (treated as an income exemption)
+    var elderlyExempt = state.elderly ? T.TAX_YEARS[year].elderlyExempt : 0;
+
+    var baseAllow = 60000
+      + (state.married ? 60000 : 0)
+      + kids * 30000
+      + parents * 30000
+      + disabled * 60000
+      + (state.sso ? 9000 : 0);
+
+    // donation base = income after expenses, elderly exemption and standard allowances
+    state.grossForCaps = gross;
+    var donationBase = Math.max(0, gross - expense - elderlyExempt - baseAllow);
+    var capped = withExtra ? cappedDeductions(donationBase) : { total: 0, warns: [] };
+
+    var allow = baseAllow + capped.total;
+    var net = Math.max(0, gross - expense - elderlyExempt - allow);
+
+    var ct = T.computeTax(net, year);
+    var rows = [];
+    for (var b = 0; b < ct.perBracket.length; b++) {
+      var pb = ct.perBracket[b];
+      rows.push({
+        bracket: { min: pb.floor, max: pb.ceil, rate: Math.round(pb.rate * 100) },
+        filled: pb.taxable, tax: pb.tax,
+        width: pb.ceil === Infinity ? Infinity : (pb.ceil - pb.floor)
+      });
+    }
+    return {
+      gross: gross, expense: expense, elderlyExempt: elderlyExempt,
+      baseAllow: baseAllow, extraDed: capped.total, allow: allow,
+      net: net, tax: ct.tax, rows: rows,
+      marginalRate: Math.round(ct.marginalRate * 100),
+      warns: capped.warns
+    };
+  }
+
+  /* ---------- bracket ladder ---------- */
+  function rangeLabel(b, L) {
+    if (b.max === Infinity) {
+      return (L === 'th' ? 'มากกว่า ' : 'Over ') + W.fmtBaht(b.min);
+    }
+    return W.fmtBaht(b.min === 0 ? 0 : b.min + 1) + ' – ' + W.fmtBaht(b.max);
+  }
+
+  function renderLadder(r, L) {
+    var html = '';
+    for (var i = 0; i < r.rows.length; i++) {
+      var row = r.rows[i];
+      if (i > 0 && row.filled <= 0) { break; }
+      var b = row.bracket;
+      var isMarginal = row.filled > 0 ? (r.net <= b.max) : (i === 0 && r.net <= b.max);
+      var pct = b.max === Infinity
+        ? (row.filled > 0 ? 100 : 0)
+        : Math.min(100, row.filled / row.width * 100);
+      var sub;
+      if (b.max === Infinity) {
+        sub = (L === 'th' ? 'เงินได้ในขั้นนี้ ' : 'Income in this step: ') + W.fmtBaht(row.filled);
+      } else {
+        sub = (L === 'th' ? 'เงินได้ในขั้นนี้ ' : 'Income in this step: ')
+          + W.fmtBaht(row.filled) + ' / ' + W.fmtBaht(row.width);
+      }
+      html += '<div class="bk-row' + (isMarginal ? ' marginal' : '') + '">'
+        + '<div class="top"><span class="k">' + rangeLabel(b, L)
+        + ' <span class="rate-pill">' + b.rate + '%</span>'
+        + (isMarginal ? '<span class="marg-tag">' + (L === 'th' ? 'ขั้นของคุณ' : 'Your step') + '</span>' : '')
+        + '</span>'
+        + '<span class="v">' + (L === 'th' ? 'ภาษี ' : 'Tax ') + W.fmtBaht(row.tax) + '</span></div>'
+        + '<div class="bar-bg"><div class="bar-fill" style="width:' + pct + '%;'
+        + (isMarginal ? 'background:var(--forest);' : '') + '"></div></div>'
+        + '<div class="bk-sub">' + sub + '</div>'
+        + '</div>';
+    }
+    el('ladder').innerHTML = html;
+
+    var note = el('marg-note');
+    var z = r.marginalRate;
+    if (z === 0) {
+      note.innerHTML = L === 'th'
+        ? 'เงินได้สุทธิของคุณยังอยู่ในช่วงยกเว้นภาษี (ไม่เกิน ฿150,000) · <b>ภาษีปีนี้ = ฿0</b> แต่ถ้ามีเงินได้จากงานประจำเกิน ฿120,000/ปี ยังต้องยื่นแบบ'
+        : 'Your net income is within the exempt band (up to ฿150,000) · <b>tax = ฿0</b>. You may still need to file if employment income exceeds ฿120,000/year.';
+    } else {
+      note.innerHTML = L === 'th'
+        ? 'อัตราส่วนเพิ่มของคุณ = <b>' + z + '%</b> · ทุก ฿100 ที่ลดหย่อนเพิ่ม ประหยัด <b>฿' + z + '</b>'
+        : 'Your marginal rate = <b>' + z + '%</b> · every extra ฿100 of deductions saves <b>฿' + z + '</b>';
+    }
+  }
+
+  /* ---------- waterfall table ---------- */
+  function renderWaterfall(r, L) {
+    var rows = [
+      { th: 'รายได้รวมทั้งปี', en: 'Total annual income', v: r.gross, cls: 'plus', sign: '' },
+      { th: 'หักค่าใช้จ่าย (ตามประเภทเงินได้)', en: 'Expense deduction (by category)', v: r.expense, cls: 'minus', sign: '−' }
+    ];
+    if (r.elderlyExempt > 0) {
+      rows.push({ th: 'ยกเว้นผู้มีอายุ 65 ปีขึ้นไป', en: 'Age-65+ exemption', v: r.elderlyExempt, cls: 'minus', sign: '−' });
+    }
+    rows.push({ th: 'หักค่าลดหย่อนรวม', en: 'Total allowances', v: r.allow, cls: 'minus', sign: '−' });
+    rows.push({ th: 'เงินได้สุทธิ', en: 'Net taxable income', v: r.net, cls: '', sign: '', net: true });
+    rows.push({ th: 'ภาษีที่ต้องจ่าย', en: 'Tax due', v: r.tax, cls: '', sign: '', total: true });
+    var html = '';
+    for (var i = 0; i < rows.length; i++) {
+      var row = rows[i];
+      var trCls = row.total ? ' class="total"' : (row.net ? ' class="net"' : '');
+      html += '<tr' + trCls + '>'
+        + '<td>' + (L === 'th' ? row.th : row.en) + '</td>'
+        + '<td class="num' + (row.cls ? ' ' + row.cls : '') + '">' + row.sign + W.fmtBaht(row.v) + '</td>'
+        + '</tr>';
+    }
+    el('wf-body').innerHTML = html;
+  }
+
+  /* ---------- WHT settlement (refund / owe) ---------- */
+  function renderSettle(r, L) {
+    var wht = W.parseNum(el('wht').value);
+    var panel = el('settle-panel');
+    if (wht <= 0) { panel.style.display = 'none'; return; }
+    panel.style.display = '';
+    var diff = wht - r.tax; // positive = refund
+    var body = el('settle-body');
+    if (diff >= 0) {
+      body.innerHTML = '<div class="metric"><div class="lbl">' + (L === 'th' ? 'ได้คืน' : 'Refund')
+        + '</div><div class="val green">' + W.fmtBaht(diff) + '</div>'
+        + '<div class="note">' + (L === 'th'
+          ? 'หัก ณ ที่จ่าย ' + W.fmtBaht(wht) + ' − ภาษีจริง ' + W.fmtBaht(r.tax)
+          : 'Withheld ' + W.fmtBaht(wht) + ' − actual tax ' + W.fmtBaht(r.tax)) + '</div></div>';
+    } else {
+      body.innerHTML = '<div class="metric"><div class="lbl">' + (L === 'th' ? 'ต้องจ่ายเพิ่ม' : 'Owe more')
+        + '</div><div class="val amber">' + W.fmtBaht(-diff) + '</div>'
+        + '<div class="note">' + (L === 'th'
+          ? 'ภาษีจริง ' + W.fmtBaht(r.tax) + ' − หัก ณ ที่จ่าย ' + W.fmtBaht(wht)
+          : 'Actual tax ' + W.fmtBaht(r.tax) + ' − withheld ' + W.fmtBaht(wht)) + '</div></div>';
+    }
+  }
+
+  /* ---------- with vs without extra deductions ---------- */
+  function renderCompare(rWith, rNo, L) {
+    var panel = el('compare-panel');
+    if (rWith.extraDed <= 0) { panel.style.display = 'none'; return; }
+    panel.style.display = '';
+    var saved = rNo.tax - rWith.tax;
+    var html = ''
+      + '<tr><td>' + (L === 'th' ? 'ภาษีถ้าไม่มีลดหย่อนเพิ่มเติม' : 'Tax without extra deductions')
+      + '</td><td class="num">' + W.fmtBaht(rNo.tax) + '</td></tr>'
+      + '<tr><td>' + (L === 'th' ? 'ภาษีเมื่อใช้ลดหย่อนเพิ่มเติม ' : 'Tax with your extra deductions ')
+      + W.fmtBaht(rWith.extraDed) + '</td><td class="num">' + W.fmtBaht(rWith.tax) + '</td></tr>'
+      + '<tr class="total"><td>' + (L === 'th' ? 'ประหยัดภาษี' : 'Tax saved')
+      + '</td><td class="num plus">' + W.fmtBaht(saved) + '</td></tr>';
+    el('compare-body').innerHTML = html;
+  }
+
+  /* ---------- distance to next-lower bracket ---------- */
+  function renderNext(r, L) {
+    var body = el('next-body');
+    if (r.marginalRate === 0) {
+      body.innerHTML = L === 'th'
+        ? 'คุณอยู่ในช่วงยกเว้นภาษีอยู่แล้ว · ลดหย่อนเพิ่มไม่ทำให้ลงขั้นได้อีก'
+        : 'You are already in the exempt band · no lower bracket to reach.';
+      return;
+    }
+    // current bracket floor = the largest bracket floor <= net
+    var floor = 0;
+    var brackets = T.TAX_YEARS[state.year].brackets;
+    var prev = 0;
+    for (var i = 0; i < brackets.length; i++) {
+      if (r.net > prev && r.net <= brackets[i][0]) { floor = prev; break; }
+      prev = brackets[i][0];
+    }
+    var need = r.net - floor; // deduction that brings net down into the lower bracket
+    if (need <= 0) {
+      body.innerHTML = L === 'th' ? 'คุณอยู่ขอบล่างของขั้นพอดี' : 'You are right at the bottom of your bracket.';
+      return;
+    }
+    body.innerHTML = '<div class="metric"><div class="lbl">'
+      + (L === 'th' ? 'ลดหย่อนเพิ่มอีก' : 'Add deductions of')
+      + '</div><div class="val">' + W.fmtBaht(need) + '</div>'
+      + '<div class="note">' + (L === 'th'
+        ? 'เพื่อให้เงินได้สุทธิลงต่ำกว่า ฿' + W.fmt(floor) + ' (พ้นขั้น ' + r.marginalRate + '%)'
+        : 'to drop net income below ฿' + W.fmt(floor) + ' (out of the ' + r.marginalRate + '% bracket)')
+      + '</div></div>';
+  }
+
+  /* ---------- cap warnings ---------- */
+  function renderWarns(r, L) {
+    var box = el('cap-warn');
+    if (!r.warns || r.warns.length === 0) { box.className = 'msg'; box.innerHTML = ''; return; }
+    box.className = 'msg show';
+    box.style.color = 'var(--warn)';
+    box.style.background = 'var(--warn-soft)';
+    box.style.border = '1px solid #ecd9b8';
+    var html = '';
+    for (var i = 0; i < r.warns.length; i++) {
+      html += (i ? '<br/>' : '') + '⚠ ' + (L === 'th' ? r.warns[i].th : r.warns[i].en);
+    }
+    box.innerHTML = html;
+  }
+
+  /* ---------- insight ---------- */
+  function renderInsight(r, L) {
+    var ins = el('insight');
+    if (r.marginalRate >= 15 && r.extraDed < 100000) {
+      ins.className = 'msg ok show';
+      ins.innerHTML = L === 'th'
+        ? 'คุณอยู่ขั้นภาษี ' + r.marginalRate + '% แต่ใช้ลดหย่อนเพิ่มเติมเพียง ' + W.fmtBaht(r.extraDed)
+          + ' · คุณน่าจะประหยัดได้อีกมากด้วย RMF/ThaiESG <a href="tax-deduction-optimizer.html" style="color:var(--positive);text-decoration:underline;">ลองวางแผนลดหย่อน →</a>'
+        : 'You are in the ' + r.marginalRate + '% bracket but only use ' + W.fmtBaht(r.extraDed)
+          + ' of additional deductions · RMF/ThaiESG could save you much more. <a href="tax-deduction-optimizer.html" style="color:var(--positive);text-decoration:underline;">Plan your deductions →</a>';
+    } else {
+      ins.className = 'msg';
+      ins.innerHTML = '';
+    }
+  }
+
+  /* ---------- snapshot finding (defensive · WC may be absent) ----------
+     status: 'warn' if marginal rate >= 15% AND extra deductions are low/empty
+     (room to optimize), 'good' otherwise. Tax is informational, not pass/fail. */
+  function emitFinding(r) {
+    if (!W || !W.saveFinding) { return; }
+    var eff = r.gross > 0 ? (r.tax / r.gross) * 100 : 0;
+    var taxTxt = W.fmtBaht(r.tax);
+    var effTxt = W.fmt(eff, 1);
+    var status = (r.marginalRate >= 15 && (r.extraDed || 0) < 100000) ? 'warn' : 'good';
+    try {
+      W.saveFinding('tax', {
+        tool: 'tax-calculator.html',
+        labelTh: 'ภาษี', labelEn: 'Tax',
+        status: status,
+        headlineTh: 'ภาษีปีนี้ ' + taxTxt + ' (อัตราแท้จริง ' + effTxt + '%)',
+        headlineEn: 'Tax ' + taxTxt + ' (effective ' + effTxt + '%)',
+        monthlyClaim: 0
+      });
+    } catch (e) {}
+  }
+
+  /* ---------- shared profile: prefill on load, save on income edit ---------- */
+  function prefillProfile() {
+    if (!W || !W.profile || !W.profile.get) { return; }
+    var p;
+    try { p = W.profile.get(); } catch (e) { p = null; }
+    if (!p) { return; }
+    if (p.income != null && p.income !== '') { el('salary').value = W.fmt(W.parseNum(p.income)); }
+  }
+  function saveProfile() {
+    if (!W || !W.profile || !W.profile.set) { return; }
+    try {
+      var annual = W.parseNum(el('salary').value);
+      W.profile.set({ income: annual, incomeMonthly: Math.round(annual / 12) });
+    } catch (e) {}
+  }
+
+  /* ---------- render ---------- */
+  function render() {
+    var L = lang();
+    var r = calc(true);
+    var rNo = calc(false);
+    el('r-tax').textContent = W.fmtBaht(r.tax);
+    el('r-mo').textContent = W.fmtBaht(r.tax / 12);
+    el('r-eff').textContent = r.gross > 0 ? W.fmtPct(r.tax / r.gross * 100, 1) : '0%';
+    if (YEAR_LABELS[state.year]) {
+      el('r-year-th').textContent = YEAR_LABELS[state.year].th;
+      el('r-year-en').textContent = YEAR_LABELS[state.year].en;
+    }
+    renderLadder(r, L);
+    renderWaterfall(r, L);
+    renderSettle(r, L);
+    renderCompare(r, rNo, L);
+    renderNext(r, L);
+    renderWarns(r, L);
+    renderInsight(r, L);
+    emitFinding(r);
+  }
+
+  /* ---------- events ---------- */
+  el('st-single').addEventListener('click', function () { setMarried(false); });
+  el('st-married').addEventListener('click', function () { setMarried(true); });
+  function setMarried(m) {
+    state.married = m;
+    el('st-single').classList.toggle('on', !m);
+    el('st-married').classList.toggle('on', m);
+    render();
+  }
+  el('sso-yes').addEventListener('click', function () { setSso(true); });
+  el('sso-no').addEventListener('click', function () { setSso(false); });
+  function setSso(s) {
+    state.sso = s;
+    el('sso-yes').classList.toggle('on', s);
+    el('sso-no').classList.toggle('on', !s);
+    render();
+  }
+  el('eld-no').addEventListener('click', function () { setEld(false); });
+  el('eld-yes').addEventListener('click', function () { setEld(true); });
+  function setEld(e) {
+    state.elderly = e;
+    el('eld-no').classList.toggle('on', !e);
+    el('eld-yes').classList.toggle('on', e);
+    render();
+  }
+  el('year').addEventListener('change', function () {
+    state.year = Number(el('year').value);
+    render();
+  });
+  el('add-other').addEventListener('click', function () {
+    if (state.otherRows.length >= 3) { return; }
+    state.otherRows.push({ amt: 0, cat: '40(8)' });
+    renderOtherRows();
+    render();
+  });
+  el('ded-toggle').addEventListener('click', function () {
+    var sec = el('ded-section');
+    var open = sec.style.display === 'none';
+    sec.style.display = open ? 'block' : 'none';
+    el('ded-toggle').setAttribute('aria-expanded', open ? 'true' : 'false');
+    el('ded-caret').textContent = open ? '▴' : '▾';
+  });
+
+  var inputs = ['salary', 'kids', 'parents', 'disabled', 'wht',
+    'd-retire', 'd-life', 'd-pension', 'd-home', 'd-donate'];
+  for (var i = 0; i < inputs.length; i++) {
+    el(inputs[i]).addEventListener('input', render);
+    el(inputs[i]).addEventListener('change', render);
+  }
+  el('salary').addEventListener('input', saveProfile);
+  window.addEventListener('wc:lang', function () {
+    buildYearOptions();
+    renderOtherRows();
+    render();
+  });
+
+  prefillProfile();
+  buildYearOptions();
+  renderOtherRows();
+  render();
+})();
+</script>
+</body>
+</html>

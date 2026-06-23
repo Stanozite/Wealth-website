@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://wealthcompass.example.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/financial-health-score.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/financial-health-score.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/financial-health-score.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/budget-planner.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/budget-planner.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/budget-planner.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/emergency-fund.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/emergency-fund.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/emergency-fund.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/net-worth.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/net-worth.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/net-worth.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/risk-profile.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/risk-profile.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/risk-profile.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/compound-dca.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/compound-dca.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/compound-dca.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/tax-calculator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/tax-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/tax-calculator.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/tax-deduction-optimizer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/tax-deduction-optimizer.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/tax-deduction-optimizer.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/retirement-simulator.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/retirement-simulator.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/retirement-simulator.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/debt-payoff.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/debt-payoff.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/debt-payoff.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/insurance-needs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/insurance-needs.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/insurance-needs.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/services.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/services.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/blog.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/retirement-how-much.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/retirement-how-much.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/retirement-how-much.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/tax-deductions-2567.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/tax-deductions-2567.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/tax-deductions-2567.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/how-much-to-save.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/how-much-to-save.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/how-much-to-save.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/emergency-fund-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/emergency-fund-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/emergency-fund-guide.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/compound-interest-power.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/compound-interest-power.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/compound-interest-power.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/debt-snowball-avalanche.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/debt-snowball-avalanche.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/debt-snowball-avalanche.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/fire-movement-thailand.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/fire-movement-thailand.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/fire-movement-thailand.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/social-security-pension.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/social-security-pension.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/social-security-pension.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/dca-how-to-start.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/dca-how-to-start.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/dca-how-to-start.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/fund-fees-index-funds.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/fund-fees-index-funds.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/fund-fees-index-funds.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/risk-profile-explained.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/risk-profile-explained.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/risk-profile-explained.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/net-worth-why-it-matters.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/net-worth-why-it-matters.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/net-worth-why-it-matters.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/financial-health-check.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/financial-health-check.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/financial-health-check.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/term-vs-whole-life.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/term-vs-whole-life.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/term-vs-whole-life.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/health-insurance-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/health-insurance-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/health-insurance-guide.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/income-tax-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/income-tax-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/income-tax-guide.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/rmf-vs-thaiesg.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/rmf-vs-thaiesg.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/rmf-vs-thaiesg.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/refinance-home-loan.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/refinance-home-loan.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/refinance-home-loan.html?lang=en"/>
+  </url>
+  <url>
+    <loc>https://wealthcompass.example.com/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+</urlset>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1090" cy="120" r="180" fill="#e4f7d2"/>
+  <circle cx="110" cy="560" r="200" fill="#e4f7d2"/>
+  <!-- left shield: Term (slim outline) -->
+  <g>
+    <path d="M300 150 L470 150 L470 360 Q470 460 385 510 Q300 460 300 360 Z" fill="#ffffff" stroke="#163300" stroke-width="10"/>
+    <text x="385" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="150" font-weight="800" fill="#163300">T</text>
+  </g>
+  <!-- right shield: Whole Life (solid forest, bright letter) -->
+  <g>
+    <path d="M730 150 L900 150 L900 360 Q900 460 815 510 Q730 460 730 360 Z" fill="#163300"/>
+    <text x="815" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="150" font-weight="800" fill="#9fe870">W</text>
+  </g>
+  <!-- VS pill center -->
+  <rect x="540" y="290" width="120" height="76" rx="99" fill="#9fe870"/>
+  <text x="600" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" font-weight="800" fill="#163300">VS</text>
+  <!-- captions -->
+  <text x="385" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#5d7079">Term</text>
+  <text x="815" y="575" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#163300">Whole Life</text>
+</svg>

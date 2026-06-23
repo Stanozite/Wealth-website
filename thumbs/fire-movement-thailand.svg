@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FIRE early retirement">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="190" cy="150" r="170" fill="#e4f7d2"/>
+  <circle cx="1020" cy="500" r="210" fill="#ffffff"/>
+  <!-- coins -->
+  <rect x="535" y="556" width="130" height="24" rx="12" fill="#0d7a3f"/>
+  <rect x="535" y="528" width="130" height="24" rx="12" fill="#0d7a3f"/>
+  <rect x="535" y="500" width="130" height="24" rx="12" fill="#0d7a3f"/>
+  <ellipse cx="600" cy="500" rx="65" ry="12" fill="#9fe870"/>
+  <rect x="425" y="556" width="96" height="24" rx="12" fill="#0d7a3f"/>
+  <ellipse cx="473" cy="556" rx="48" ry="9" fill="#e4f7d2"/>
+  <rect x="679" y="556" width="96" height="24" rx="12" fill="#0d7a3f"/>
+  <ellipse cx="727" cy="556" rx="48" ry="9" fill="#e4f7d2"/>
+  <!-- flame -->
+  <path d="M600 92 C652 168 726 224 726 326 C726 422 670 478 600 478 C530 478 474 422 474 326 C474 224 548 168 600 92 Z" fill="#163300"/>
+  <path d="M600 236 C634 284 668 314 668 366 C668 422 638 452 600 452 C562 452 532 422 532 366 C532 314 566 284 600 236 Z" fill="#9fe870"/>
+  <!-- 25x badge -->
+  <rect x="930" y="468" width="206" height="112" rx="44" fill="#9fe870"/>
+  <text x="1033" y="558" font-family="Arial, sans-serif" font-size="64" font-weight="800" fill="#163300" text-anchor="middle">25&#215;</text>
+</svg>

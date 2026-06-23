@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- GEO / SEO -->
+<meta name="geo.region" content="TH-10"/>
+<meta name="geo.placename" content="Bangkok, Thailand"/>
+<meta name="geo.position" content="13.7563;100.5018"/>
+<meta name="ICBM" content="13.7563, 100.5018"/>
+<meta name="language" content="th"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+<meta name="author" content="Wealth Compass"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Wealth Compass"/>
+<meta property="og:title" content="จำลองแผนเกษียณ Monte Carlo · เครื่องมือฟรี | Wealth Compass"/>
+<meta property="og:description" content="ทดสอบแผนเกษียณด้วย Monte Carlo 1,000 เส้นทาง เห็นโอกาสสำเร็จเป็น % แทนตัวเลขลวงตา พร้อมปุ่มลองขยับเพื่อหาว่าอะไรช่วยได้มากสุด ฟรี ไม่ต้องสมัคร"/>
+<meta property="og:url" content="https://wealthcompass.example.com/retirement-simulator.html"/>
+<meta property="og:locale" content="th_TH"/>
+<meta property="og:locale:alternate" content="en_US"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="จำลองแผนเกษียณ Monte Carlo · เครื่องมือฟรี | Wealth Compass"/>
+<meta name="twitter:description" content="โอกาสสำเร็จเป็น % จากการจำลองตลาด 1,000 เส้นทาง · แม่นกว่ากราฟเส้นตรง"/>
+
+<!-- Hreflang / canonical -->
+<link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/retirement-simulator.html"/>
+<link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/retirement-simulator.html?lang=en"/>
+<link rel="alternate" hreflang="x-default" href="https://wealthcompass.example.com/retirement-simulator.html"/>
+<link rel="canonical" href="https://wealthcompass.example.com/retirement-simulator.html"/>
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()"/>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://wealthcompass.example.com/#organization",
+      "name": "Wealth Compass",
+      "url": "https://wealthcompass.example.com",
+      "areaServed": "TH"
+    },
+    {
+      "@type": "WebApplication",
+      "@id": "https://wealthcompass.example.com/retirement-simulator.html#app",
+      "name": "เครื่องมือจำลองแผนเกษียณ Monte Carlo",
+      "alternateName": "Retirement Simulator · Monte Carlo",
+      "url": "https://wealthcompass.example.com/retirement-simulator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "THB"},
+      "inLanguage": ["th", "en"],
+      "publisher": {"@id": "https://wealthcompass.example.com/#organization"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://wealthcompass.example.com/"},
+        {"@type": "ListItem", "position": 2, "name": "จำลองแผนเกษียณ", "item": "https://wealthcompass.example.com/retirement-simulator.html"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Monte Carlo คืออะไร และทำไมแม่นกว่ากราฟเส้นตรง?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Monte Carlo คือการจำลองตลาดหลายพันเส้นทางโดยสุ่มผลตอบแทนรายปีตามค่าเฉลี่ยและความผันผวนจริง แทนที่จะคิดว่าตลาดให้ผลตอบแทนคงที่ทุกปี ผลคือได้ 'โอกาสสำเร็จเป็น %' ที่สะท้อนความเป็นจริงว่าตลาดขึ้นลงไม่เท่ากันทุกปี กราฟเส้นตรงซ่อนความเสี่ยงสำคัญที่เรียกว่า sequence risk · ถ้าตลาดตกแรงในช่วงต้นเกษียณ พอร์ตอาจหมดเร็วกว่าที่กราฟเส้นตรงบอกมาก"}
+        },
+        {
+          "@type": "Question",
+          "name": "โอกาสสำเร็จควรอยู่ที่กี่เปอร์เซ็นต์จึงจะอุ่นใจ?",
+          "acceptedAnswer": {"@type": "Answer", "text": "นักวางแผนการเงินส่วนใหญ่มองว่าโซน 75-90% คือ 'โซนมั่นใจ' (อ้างอิง Michael Kitces) ไม่ควรไล่ตาม 100% เพราะการจะได้ 100% มักแปลว่าต้องออมมากเกินจำเป็นจนเสียคุณภาพชีวิตวันนี้ หรือลงทุนอนุรักษ์เกินไป ถ้าได้ 85% ขึ้นไปถือว่าแข็งแรง และยังปรับระหว่างทางได้เสมอ"}
+        },
+        {
+          "@type": "Question",
+          "name": "กฎ 4% และสูตร 25 เท่า คืออะไร?",
+          "acceptedAnswer": {"@type": "Answer", "text": "กฎ 4% จากงานวิจัยของ William Bengen และ Trinity Study บอกว่าถ้าถอนเงิน 4% ของพอร์ตในปีแรกแล้วปรับตามเงินเฟ้อ พอร์ตมีโอกาสสูงที่จะอยู่ได้ 30 ปี พลิกกลับเป็นสูตรง่ายๆ คือคุณต้องมีเงินก้อนประมาณ 25 เท่าของรายจ่ายต่อปี (100% ÷ 4% = 25) เป็นจุดเริ่มต้นที่ดี แต่ Monte Carlo ให้ภาพที่ละเอียดกว่าเพราะคิดความผันผวนเข้าไปด้วย"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<title>จำลองแผนเกษียณ Monte Carlo · โอกาสสำเร็จเป็น % | Wealth Compass</title>
+<meta name="description" content="ทดสอบแผนเกษียณด้วย Monte Carlo 1,000 เส้นทาง เห็นโอกาสสำเร็จเป็น % แทนตัวเลขลวงตา พร้อมปุ่มลองขยับเพื่อหาว่าลีเวอร์ไหนช่วยได้มากสุด ฟรี คำนวณในเครื่องคุณ"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="_theme.css"/>
+
+<style>
+/* ---- result hero color states (drive .big) ---- */
+.result-hero .big.rh-good { color: var(--bright) !important; }
+.result-hero .big.rh-mid  { color: #f5c842 !important; }
+.result-hero .big.rh-low  { color: #ff8a70 !important; }
+
+/* ---- range labels ---- */
+.range-cap { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 5px; font-weight: 600; }
+
+/* ---- checkbox row ---- */
+.chk-row { display: flex; align-items: center; gap: 9px; font-size: 13px; font-weight: 600; color: var(--forest); cursor: pointer; }
+.chk-row input[type="checkbox"] { width: 17px; height: 17px; accent-color: var(--forest); cursor: pointer; flex: 0 0 auto; }
+
+/* ---- advanced (collapsible) ---- */
+.adv { border-top: 1px solid var(--line); margin-top: 22px; padding-top: 4px; }
+.adv > summary { list-style: none; cursor: pointer; font-size: 13.5px; font-weight: 700; color: var(--forest); padding: 12px 0; display: flex; align-items: center; gap: 8px; }
+.adv > summary::-webkit-details-marker { display: none; }
+.adv > summary::before { content: '+'; display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid var(--line); font-size: 14px; line-height: 1; }
+.adv[open] > summary::before { content: '−'; }
+.adv-body { padding-top: 4px; }
+.adv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+.adv-grid .field { margin-bottom: 4px; }
+.adv-grid input[type="number"] { padding: 10px 12px; font-size: 14px; }
+
+/* ---- what-if magnitude inputs ---- */
+.wi-mag { width: 74px; padding: 7px 9px; font-size: 13px; font-weight: 700; text-align: right; }
+.whatif-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.whatif-head .lever-lbl { font-weight: 700; color: var(--forest); }
+.whatif-head .lever-unit { font-size: 12px; color: var(--muted); font-weight: 600; }
+.whatif-row { display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  border: 1.5px solid var(--line); background: #fff; border-radius: var(--radius-sm); padding: 11px 14px; }
+
+/* ---- fan chart ---- */
+.fan-wrap { width: 100%; }
+.fan-wrap svg { width: 100%; height: auto; }
+.fan-legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 14px; font-size: 12.5px; color: var(--muted); font-weight: 600; }
+.fan-legend .lk { display: inline-flex; align-items: center; gap: 7px; }
+.fan-legend .sw { width: 18px; height: 10px; border-radius: 3px; display: inline-block; }
+.fan-legend .swl { width: 18px; height: 0; border-top: 3px solid var(--forest); display: inline-block; }
+.fan-legend .swd { width: 18px; height: 0; border-top: 2px dashed var(--muted); display: inline-block; }
+
+/* ---- readiness score ---- */
+.score-wrap { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.score-num { font-size: 52px; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.score-num.s-red { color: var(--danger); }
+.score-num.s-amber { color: var(--warn); }
+.score-num.s-amgreen { color: #2f9e44; }
+.score-num.s-green { color: var(--positive); }
+.score-body { flex: 1; min-width: 200px; }
+.score-track { background: var(--bg); border: 1px solid var(--line); border-radius: 99px; height: 12px; overflow: hidden; margin: 10px 0 6px; position: relative; }
+.score-bar { height: 100%; border-radius: 99px; transition: width .5s ease, background .3s; }
+
+/* ---- what-if ---- */
+.whatif-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.whatif-btn {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  width: 100%; text-align: left; cursor: pointer;
+  border: 1.5px solid var(--line); background: #fff; border-radius: var(--radius-sm);
+  padding: 13px 16px; font-family: inherit; font-size: 14px; font-weight: 700; color: var(--forest);
+  transition: border .18s, box-shadow .18s, transform .12s;
+}
+.whatif-btn:hover { border-color: var(--bright-2); box-shadow: var(--shadow); transform: translateY(-1px); }
+.whatif-res { font-variant-numeric: tabular-nums; font-weight: 800; color: var(--muted); white-space: nowrap; }
+.whatif-res.has { color: var(--positive); }
+.whatif-res .delta { font-size: 12px; font-weight: 700; }
+
+/* ---- stat row in result hero ---- */
+.rh-foot { display: flex; gap: 26px; flex-wrap: wrap; margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.16); position: relative; z-index: 2; }
+.rh-foot .it .k { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.6); font-weight: 700; }
+.rh-foot .it .v { font-size: 19px; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; margin-top: 2px; }
+
+.calc-note { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+/* SEO content */
+.content-prose { max-width: 760px; }
+.content-prose h2 { font-size: 26px; margin: 36px 0 12px; }
+.content-prose h3 { font-size: 19px; margin: 26px 0 10px; }
+.content-prose p, .content-prose li { color: #38454c; font-size: 15.5px; margin-bottom: 12px; }
+.content-prose ul { list-style: disc; padding-left: 22px; }
+.content-prose .src { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content"><span class="lang-th">ข้ามไปเนื้อหาหลัก</span><span class="lang-en">Skip to main content</span></a>
+<nav></nav>
+<script src="_brand.js"></script>
+<script src="_app.js"></script>
+<script src="_nav.js"></script>
+
+<main id="main-content">
+
+<!-- ============ HERO ============ -->
+<header class="tool-hero">
+  <div class="container">
+    <div class="crumb"><a href="index.html"><span class="lang-th">หน้าแรก</span><span class="lang-en">Home</span></a> / <span class="lang-th">จำลองแผนเกษียณ</span><span class="lang-en">Retirement simulator</span></div>
+    <span class="badge violet">ขั้นที่ 6 · เกษียณ · Monte Carlo</span>
+    <h1 style="margin-top:14px;">
+      <span class="lang-th">แผนเกษียณของคุณมี "โอกาสสำเร็จ" กี่เปอร์เซ็นต์?</span>
+      <span class="lang-en">What are the odds your retirement plan actually works?</span>
+    </h1>
+    <p class="lede">
+      <span class="lang-th">เลิกใช้กราฟเส้นตรงที่หลอกตา · จำลองตลาดจริง 1,000 เส้นทางด้วย Monte Carlo แล้วดูว่าเงินคุณรอดถึงอายุที่วางแผนไว้กี่เส้นทาง</span>
+      <span class="lang-en">Drop the straight-line chart that lies. Simulate 1,000 real market paths with Monte Carlo and see how often your money lasts.</span>
+    </p>
+  </div>
+</header>
+
+<!-- ============ TOOL ============ -->
+<section class="section tight" style="padding-top:24px;">
+  <div class="container tool-grid">
+
+    <!-- inputs -->
+    <div class="inputs-col">
+      <div class="panel">
+
+        <div class="field">
+          <label for="age-now"><span class="lang-th">อายุปัจจุบัน</span><span class="lang-en">Current age</span></label>
+          <div class="range-row">
+            <input type="range" id="age-now" min="20" max="75" step="1" value="35"/>
+            <span class="range-val" id="age-now-v">35</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="age-ret"><span class="lang-th">อายุเกษียณ</span><span class="lang-en">Retirement age</span></label>
+          <div class="range-row">
+            <input type="range" id="age-ret" min="45" max="70" step="1" value="60"/>
+            <span class="range-val" id="age-ret-v">60</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="age-end"><span class="lang-th">วางแผนถึงอายุ</span><span class="lang-en">Plan until age</span></label>
+          <div class="range-row">
+            <input type="range" id="age-end" min="75" max="100" step="1" value="90"/>
+            <span class="range-val" id="age-end-v">90</span>
+          </div>
+        </div>
+
+        <div style="border-top:1px solid var(--line); margin:22px 0 18px;"></div>
+
+        <div class="field">
+          <label for="initial"><span class="lang-th">เงินลงทุนที่มีตอนนี้</span><span class="lang-en">Current investments</span></label>
+          <div class="input-group">
+            <input type="text" id="initial" data-num inputmode="numeric" value="1,000,000" autocomplete="off"/>
+            <span class="unit">฿</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="contrib"><span class="lang-th">ลงทุนเพิ่ม / เดือน</span><span class="lang-en">Monthly contribution</span></label>
+          <div class="input-group">
+            <input type="text" id="contrib" data-num inputmode="numeric" value="30,000" autocomplete="off"/>
+            <span class="unit">฿/<span class="lang-th">เดือน</span><span class="lang-en">mo</span></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="expense"><span class="lang-th">ค่าใช้จ่ายหลังเกษียณ</span><span class="lang-en">Retirement spending</span></label>
+          <div class="input-group">
+            <input type="text" id="expense" data-num inputmode="numeric" value="30,000" autocomplete="off"/>
+            <span class="unit">฿/<span class="lang-th">เดือน</span><span class="lang-en">mo</span></span>
+          </div>
+          <p class="hint"><span class="lang-th">เป็นค่าเงินวันนี้ · โมเดลจะปรับเงินเฟ้อให้อัตโนมัติ</span><span class="lang-en">In today's money · the model inflates it automatically.</span></p>
+        </div>
+
+        <div class="field">
+          <label for="guar"><span class="lang-th">บำนาญ / รายได้ประจำหลังเกษียณ</span><span class="lang-en">Pension / guaranteed income</span></label>
+          <div class="input-group">
+            <input type="text" id="guar" data-num inputmode="numeric" value="0" autocomplete="off"/>
+            <span class="unit">฿/<span class="lang-th">เดือน</span><span class="lang-en">mo</span></span>
+          </div>
+          <p class="hint"><span class="lang-th">บำนาญประกันสังคม / กบข. / รายได้ค่าเช่า · โมเดลจะหักออกจากเงินที่ต้องถอนแต่ละปี</span><span class="lang-en">SSO / GPF pension / rental income · netted off each year's withdrawal.</span></p>
+        </div>
+
+        <div class="field">
+          <label for="guar-age"><span class="lang-th">เริ่มรับรายได้ประจำเมื่ออายุ</span><span class="lang-en">Income starts at age</span></label>
+          <div class="range-row">
+            <input type="range" id="guar-age" min="50" max="75" step="1" value="60"/>
+            <span class="range-val" id="guar-age-v">60</span>
+          </div>
+          <div style="margin-top:10px;">
+            <label class="chk-row" for="guar-infl">
+              <input type="checkbox" id="guar-infl" checked/>
+              <span><span class="lang-th">ปรับเงินเฟ้อให้รายได้ประจำด้วย</span><span class="lang-en">Inflate this income too</span></span>
+            </label>
+          </div>
+          <p class="hint"><span class="lang-th">ค่าเริ่มต้น: ปรับเงินเฟ้อ (เหมาะกับ กบข.) · บำนาญประกันสังคมมีเพดาน ปิดสวิตช์นี้ได้</span><span class="lang-en">Default on (fits GPF). SSO is capped · turn it off for a flat pension.</span></p>
+        </div>
+
+        <div class="field">
+          <label><span class="lang-th">สัดส่วนหุ้น/ตราสารหนี้ ช่วงสะสม</span><span class="lang-en">Stock/bond mix while accumulating</span></label>
+          <div class="segmented" role="group" aria-label="Accumulation allocation">
+            <button type="button" id="a-4060" data-ws="40">40/60</button>
+            <button type="button" id="a-6040" class="on" data-ws="60">60/40</button>
+            <button type="button" id="a-8020" data-ws="80">80/20</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label><span class="lang-th">สัดส่วนหุ้นหลังเกษียณ</span><span class="lang-en">Stock mix after retirement</span></label>
+          <div class="segmented" role="group" aria-label="Decumulation allocation">
+            <button type="button" id="d-20" data-ws="20">20/80</button>
+            <button type="button" id="d-40" class="on" data-ws="40">40/60</button>
+            <button type="button" id="d-60" data-ws="60">60/40</button>
+          </div>
+          <p class="hint"><span class="lang-th">หุ้นมากขึ้น = เติบโตกว่าแต่ผันผวนกว่าในช่วงถอนเงิน</span><span class="lang-en">More stocks = more growth but more volatility while withdrawing.</span></p>
+        </div>
+
+        <div class="field">
+          <label for="wrate"><span class="lang-th">อัตราถอน (ใช้ในคะแนนความพร้อม)</span><span class="lang-en">Withdrawal rate (for readiness score)</span></label>
+          <div class="range-row">
+            <input type="range" id="wrate" min="3" max="6" step="0.5" value="4"/>
+            <span class="range-val" id="wrate-v">4%</span>
+          </div>
+          <p class="hint"><span class="lang-th">กฎ 4% เป็นค่ามาตรฐาน · ต่ำกว่าปลอดภัยกว่า สูงกว่าเสี่ยงกว่า</span><span class="lang-en">The 4% rule is the standard · lower is safer, higher is riskier.</span></p>
+        </div>
+
+        <!-- advanced (collapsible) -->
+        <details class="adv">
+          <summary><span class="lang-th">สมมติฐานตลาด (ขั้นสูง)</span><span class="lang-en">Market assumptions (advanced)</span></summary>
+          <div class="adv-body">
+            <div class="field">
+              <label><span class="lang-th">ชุดสมมติฐาน</span><span class="lang-en">Assumption preset</span></label>
+              <div class="segmented" role="group" aria-label="Market preset">
+                <button type="button" id="pre-global" class="on">โลก (Global)</button>
+                <button type="button" id="pre-thai">ไทย (SET)</button>
+              </div>
+            </div>
+            <div class="adv-grid">
+              <div class="field">
+                <label for="sm"><span class="lang-th">หุ้น ผลตอบแทนเฉลี่ย %</span><span class="lang-en">Stock mean %</span></label>
+                <input type="number" id="sm" step="0.5" value="9"/>
+              </div>
+              <div class="field">
+                <label for="ssd"><span class="lang-th">หุ้น ความผันผวน %</span><span class="lang-en">Stock SD %</span></label>
+                <input type="number" id="ssd" step="0.5" value="17"/>
+              </div>
+              <div class="field">
+                <label for="bm"><span class="lang-th">ตราสารหนี้ ผลตอบแทน %</span><span class="lang-en">Bond mean %</span></label>
+                <input type="number" id="bm" step="0.5" value="3.5"/>
+              </div>
+              <div class="field">
+                <label for="bsd"><span class="lang-th">ตราสารหนี้ ผันผวน %</span><span class="lang-en">Bond SD %</span></label>
+                <input type="number" id="bsd" step="0.5" value="5.5"/>
+              </div>
+              <div class="field">
+                <label for="inflr"><span class="lang-th">เงินเฟ้อ %</span><span class="lang-en">Inflation %</span></label>
+                <input type="number" id="inflr" step="0.5" value="3"/>
+              </div>
+            </div>
+            <p class="hint"><span class="lang-th">สลับชุด "ไทย (SET)" จะเปลี่ยนเป็นหุ้น ~7%/20 ตราสารหนี้ ~2.5%/5 เงินเฟ้อ ~2%</span><span class="lang-en">The Thai (SET) preset swaps in stocks ~7%/20, bonds ~2.5%/5, inflation ~2%.</span></p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- results -->
+    <div>
+      <div class="result-hero" aria-live="polite">
+        <div class="lbl"><span class="lang-th">โอกาสสำเร็จ</span><span class="lang-en">Probability of success</span></div>
+        <div class="big rh-good" id="r-pct">–</div>
+        <div class="sub" id="r-pct-sub"><span class="lang-th">กำลังจำลอง…</span><span class="lang-en">Simulating…</span></div>
+        <div class="rh-foot">
+          <div class="it">
+            <div class="k"><span class="lang-th">เงิน ณ วันเกษียณ (กลาง)</span><span class="lang-en">Balance at retirement (median)</span></div>
+            <div class="v" id="r-retbal">–</div>
+          </div>
+          <div class="it">
+            <div class="k"><span class="lang-th">เส้นทางที่รอด</span><span class="lang-en">Paths that survived</span></div>
+            <div class="v" id="r-paths">–</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- fan chart -->
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:4px;"><span class="lang-th">เส้นทางความมั่งคั่ง · ช่วงที่เป็นไปได้</span><span class="lang-en">Wealth paths · range of outcomes</span></h3>
+        <p class="hint" style="margin-bottom:14px;"><span class="lang-th">แถบสว่างคือช่วงเปอร์เซ็นไทล์ที่ 10–90 · เส้นเข้มคือค่ากลาง · เส้นประคือปีเกษียณ</span><span class="lang-en">Shaded band = 10th–90th percentile · bold line = median · dashed line = retirement.</span></p>
+        <div class="fan-wrap">
+          <svg id="fan" viewBox="0 0 640 300" role="img" aria-label="Monte Carlo wealth fan chart"></svg>
+        </div>
+        <div class="fan-legend">
+          <span class="lk"><span class="sw" style="background:rgba(159,232,112,0.55);"></span><span class="lang-th">ช่วง 10–90%</span><span class="lang-en">10–90% band</span></span>
+          <span class="lk"><span class="swl"></span><span class="lang-th">ค่ากลาง (median)</span><span class="lang-en">Median</span></span>
+          <span class="lk"><span class="swd"></span><span class="lang-th">เกษียณ</span><span class="lang-en">Retirement</span></span>
+        </div>
+      </div>
+
+      <!-- readiness score -->
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:14px;"><span class="lang-th">คะแนนความพร้อมเกษียณ</span><span class="lang-en">Retirement readiness score</span></h3>
+        <div class="score-wrap">
+          <div class="score-num s-red" id="score-num">–</div>
+          <div class="score-body">
+            <div class="score-track"><div class="score-bar" id="score-bar" style="width:0%;background:var(--danger);"></div></div>
+            <div id="score-msg" style="font-size:13.5px;color:var(--muted);font-weight:600;"></div>
+          </div>
+        </div>
+        <p class="calc-note"><span class="lang-th">คะแนน = (เงินที่ถอนได้แบบยั่งยืน ÷ เงินที่ต้องใช้สุทธิจากบำนาญ) × 100 · สไตล์ Fidelity · เงินถอนได้ = ยอดกลาง ณ วันเกษียณ × อัตราถอน ÷ 12</span><span class="lang-en">Score = sustainable income ÷ income needed (net of pension) × 100 (Fidelity-style) · sustainable = median balance at retirement × withdrawal rate ÷ 12.</span></p>
+      </div>
+
+      <!-- what-if -->
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:4px;"><span class="lang-th">ลองขยับดู</span><span class="lang-en">Try a lever</span></h3>
+        <p class="hint" style="margin-bottom:14px;"><span class="lang-th">กดเพื่อจำลองซ้ำทันที · ดูว่าแต่ละทางช่วยโอกาสสำเร็จได้แค่ไหน</span><span class="lang-en">Tap to re-run instantly and see how much each move helps.</span></p>
+        <div class="whatif-grid">
+          <div class="whatif-row">
+            <span class="whatif-head">
+              <span class="lever-lbl"><span class="lang-th">ทำงานต่ออีก</span><span class="lang-en">Work</span></span>
+              <input type="number" class="wi-mag" id="wi-work-mag" min="1" max="15" step="1" value="5"/>
+              <span class="lever-unit"><span class="lang-th">ปี</span><span class="lang-en">more years</span></span>
+            </span>
+            <span class="whatif-res" id="wi-work-r"> · </span>
+          </div>
+          <div class="whatif-row">
+            <span class="whatif-head">
+              <span class="lever-lbl"><span class="lang-th">ออมเพิ่ม</span><span class="lang-en">Save</span></span>
+              <input type="text" class="wi-mag" id="wi-save-mag" data-num inputmode="numeric" value="5,000"/>
+              <span class="lever-unit">฿/<span class="lang-th">เดือน</span><span class="lang-en">mo</span></span>
+            </span>
+            <span class="whatif-res" id="wi-save-r"> · </span>
+          </div>
+          <div class="whatif-row">
+            <span class="whatif-head">
+              <span class="lever-lbl"><span class="lang-th">ลดรายจ่าย</span><span class="lang-en">Cut spending</span></span>
+              <input type="number" class="wi-mag" id="wi-cut-mag" min="1" max="50" step="1" value="10"/>
+              <span class="lever-unit">%</span>
+            </span>
+            <span class="whatif-res" id="wi-cut-r"> · </span>
+          </div>
+        </div>
+        <div id="wi-insight" class="msg" style="display:block;margin-top:14px;"></div>
+      </div>
+
+      <!-- sequence risk -->
+      <div class="panel" style="margin-top:20px;">
+        <h3 style="font-size:17px;margin-bottom:4px;"><span class="lang-th">ทดสอบปีแย่ช่วงต้น (sequence risk)</span><span class="lang-en">Stress-test a bad start (sequence risk)</span></h3>
+        <p class="hint" style="margin-bottom:14px;"><span class="lang-th">บังคับให้ 5 ปีแรกหลังเกษียณตลาดแย่ (−10%, −5%, 0%, …) แล้วดูว่าโอกาสสำเร็จเหลือเท่าไร · นี่คือความเสี่ยงที่กราฟเส้นตรงซ่อนไว้</span><span class="lang-en">Force the first 5 retirement years to poor returns (−10%, −5%, 0%, …) and see what's left · the risk a straight line hides.</span></p>
+        <button type="button" class="btn btn-outline" id="seq-btn" style="width:100%;"><span class="lang-th">รันทดสอบ sequence risk</span><span class="lang-en">Run sequence-risk test</span></button>
+        <div id="seq-out" class="msg" style="display:none;margin-top:14px;"></div>
+      </div>
+
+      <div class="disclaimer" style="margin-top:20px;">
+        <b><span class="lang-th">วิธีคำนวณ &amp; ข้อจำกัด:</span><span class="lang-en">Method &amp; limits:</span></b>
+        <span class="lang-th">Monte Carlo 1,000 เส้นทาง สมมติฐานตลาดปรับได้ (ค่าเริ่มต้นโลก: หุ้น 9%±17 ตราสารหนี้ 3.5%±5.5 เงินเฟ้อ 3% / มีพรีเซ็ตไทย SET) หักบำนาญ-รายได้ประจำออกจากการถอน มีปุ่มทดสอบ sequence risk · ยังไม่รวมภาษี / ค่าธรรมเนียม; อ้างอิงกฎ 4% (Bengen / Trinity) โซน 75–90% (Kitces) · ไม่ใช่คำแนะนำการลงทุนรายบุคคล</span>
+        <span class="lang-en">Monte Carlo, 1,000 paths, adjustable market assumptions (Global default: stocks 9%±17, bonds 3.5%±5.5, 3% inflation; Thai SET preset available). Guaranteed income is netted off withdrawals, and a sequence-risk stress test is included. Still excludes taxes and fees. References: 4% rule (Bengen / Trinity), 75–90% comfort zone (Kitces). Educational, not personalized advice.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><span class="lang-th">ตัวเลขสวยยังไม่พอ · ลำดับของผลตอบแทนสำคัญพอๆ กับค่าเฉลี่ย</span><span class="lang-en">A pretty number isn't enough · sequence matters as much as average</span></h2>
+        <p><span class="lang-th">นักวางแผนช่วยออกแบบกลยุทธ์ถอนเงิน บริหารภาษี และรับมือ sequence risk ให้แผนคุณทนทานจริง นัดคุยครั้งแรกฟรี 30 นาที</span><span class="lang-en">A planner designs your withdrawal strategy, tax efficiency and sequence-risk buffers so the plan survives reality. First 30 minutes free.</span></p>
+      </div>
+      <form data-lead aria-label="Consultation request">
+        <input type="text" name="name" required autocomplete="name" placeholder="ชื่อของคุณ / Your name" aria-label="Name"/>
+        <input type="email" name="email" required autocomplete="email" placeholder="อีเมล / Email" aria-label="Email"/>
+        <input type="hidden" name="topic" value="retirement"/>
+        <button class="btn btn-primary btn-lg" type="submit"><span class="lang-th">นัดคุยฟรี</span><span class="lang-en">Book free consult</span></button>
+        <div class="msg ok"><span class="lang-th">ได้รับข้อมูลแล้ว เราจะติดต่อกลับภายใน 1 วันทำการ</span><span class="lang-en">Received · we'll reply within 1 business day.</span></div>
+        <div class="msg err"><span class="lang-th">ส่งไม่สำเร็จ ลองอีกครั้ง</span><span class="lang-en">Couldn't send · try again.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEO CONTENT ============ -->
+<section class="section alt">
+  <div class="container content-prose">
+    <div class="section-label"><span class="lang-th">ความรู้</span><span class="lang-en">Learn</span></div>
+
+    <div class="lang-th">
+      <h2>ทำไมกราฟเส้นตรงถึงหลอกตา</h2>
+      <p>เครื่องคิดเลขเกษียณส่วนใหญ่ให้คุณกรอกผลตอบแทนคงที่ เช่น 7% ต่อปี แล้ววาดเส้นโค้งสวยๆ ขึ้นไปเรื่อยๆ ปัญหาคือตลาดจริงไม่เคยให้ 7% ทุกปี · บางปี +25% บางปี −18% และ <b>ลำดับ</b> ที่มันเกิดขึ้นสำคัญมาก สิ่งนี้เรียกว่า <b>sequence-of-returns risk</b>: ถ้าตลาดตกหนักในช่วง 2–3 ปีแรกหลังเกษียณ ตอนที่คุณกำลังถอนเงินออกพอดี พอร์ตอาจฟื้นไม่ทันและหมดเร็วกว่าที่กราฟเส้นตรงบอกหลายปี ทั้งที่ค่าเฉลี่ยระยะยาวเท่ากันเป๊ะ</p>
+
+      <h2>Monte Carlo แบบบ้านๆ</h2>
+      <p>Monte Carlo ฟังดูซับซ้อน แต่แนวคิดง่ายมาก: แทนที่จะเดาผลตอบแทนปีละค่าเดียว เรา <b>สุ่ม</b> ผลตอบแทนของแต่ละปีจากการกระจายตัวที่อิงค่าเฉลี่ยและความผันผวนจริงของตลาด แล้วทำซ้ำทั้งแผนตั้งแต่วันนี้จนถึงอายุที่วางไว้ · หนึ่งรอบคือหนึ่ง "เส้นทางชีวิต" ที่เป็นไปได้ เครื่องมือนี้รัน 1,000 เส้นทาง แล้วนับว่ากี่เส้นทางที่เงินยังเหลือถึงปลายทาง นั่นคือ "โอกาสสำเร็จ" ที่คุณเห็น มันไม่ได้ทำนายอนาคต · แต่บอกว่าแผนคุณ <b>ทนทาน</b> แค่ไหนเมื่อเจอตลาดหลากหลายแบบ</p>
+
+      <h2>สูตร 25 เท่า และกฎ 4%</h2>
+      <p>จุดเริ่มต้นที่จำง่ายที่สุดคือ: คุณต้องมีเงินก้อนประมาณ <b>25 เท่า</b> ของรายจ่ายต่อปี งานวิจัยของ William Bengen และ Trinity Study พบว่าการถอน 4% ของพอร์ตในปีแรกแล้วปรับตามเงินเฟ้อ มีโอกาสสูงที่จะอยู่ได้ครบ 30 ปี (100% ÷ 4% = 25 เท่า) เช่น ถ้าใช้ปีละ 1.2 ล้าน ก็เล็งที่ราว 30 ล้าน กฎนี้เป็นไม้บรรทัดหยาบๆ ที่ดี ส่วน Monte Carlo คือการตรวจละเอียดอีกชั้นที่คิดความผันผวนเข้าไปด้วย</p>
+
+      <h2>ทำไม 100% ไม่ใช่เป้าที่ดี</h2>
+      <p>หลายคนเห็นโอกาสสำเร็จ 100% แล้วสบายใจ แต่ Michael Kitces ชี้ว่านั่นมักเป็นสัญญาณว่าคุณ <b>ออมมากเกินไป</b> หรือลงทุนอนุรักษ์เกินจนเสียโอกาสใช้ชีวิตวันนี้ การได้ 100% หมายความว่าในเกือบทุกสถานการณ์คุณจะ <b>ตายพร้อมเงินกองโต</b> ที่ไม่ได้ใช้ โซนที่นักวางแผนมองว่าเหมาะคือ <b>75–90%</b> เพราะแผนยังปรับระหว่างทางได้เสมอ · ลดรายจ่ายปีที่ตลาดแย่ ทำงานต่ออีกนิด หรือเลื่อนทริปใหญ่ ความยืดหยุ่นเล็กน้อยมีค่ามากกว่าการไล่ตามความสมบูรณ์แบบบนกระดาษ</p>
+    </div>
+
+    <div class="lang-en">
+      <h2>Why the straight line lies</h2>
+      <p>Most retirement calculators ask for a fixed return · say 7% a year · and draw a smooth rising curve. But real markets never deliver 7% every year: some years +25%, some −18%, and the <b>order</b> matters enormously. This is <b>sequence-of-returns risk</b>: a sharp drop in the first few years of retirement, right when you start withdrawing, can drain a portfolio far faster than the straight line suggests · even with the exact same long-run average.</p>
+      <h2>Monte Carlo, plain and simple</h2>
+      <p>The idea is easy: instead of guessing one return per year, we <b>randomly draw</b> each year's return from a distribution based on real market averages and volatility, then replay the whole plan from today to your target age. One run is one possible "life path." This tool runs 1,000 paths and counts how many still have money at the end · that's your probability of success. It doesn't predict the future; it shows how <b>robust</b> your plan is across many possible markets.</p>
+      <h2>The 25x rule and the 4% rule</h2>
+      <p>The simplest starting point: you need roughly <b>25 times</b> your annual spending. Bengen's research and the Trinity Study found that withdrawing 4% in year one, then adjusting for inflation, has a high chance of lasting 30 years (100% ÷ 4% = 25x). Monte Carlo is the finer-grained check layered on top.</p>
+      <h2>Why 100% is not a good target</h2>
+      <p>Michael Kitces notes that a 100% success rate usually means you <b>over-saved</b> or invested too conservatively · you'll likely die with a large unused pile. Planners aim for the <b>75–90%</b> zone, because you can always adjust along the way. Small flexibility beats chasing paper perfection.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer></footer>
+<script src="_footer.js"></script>
+
+<script>
+(function () {
+  'use strict';
+
+  var W = window.WC;
+  var PATHS = 1000;
+
+  /* default (Global) market constants · preserved exactly */
+  var DEF = { sm: 9, ssd: 17, bm: 3.5, bsd: 5.5, infl: 3 };
+  var PRESET_THAI = { sm: 7, ssd: 20, bm: 2.5, bsd: 5, infl: 2 };
+
+  /* stock % while accumulating (ws) and after retirement (decws); cfg() divides by 100 */
+  var state = { ws: 60, decws: 40 };
+
+  function el(id) { return document.getElementById(id); }
+  function lang() { return W.getLang(); }
+  function pnum(id, fallback) {
+    var v = parseFloat(el(id).value);
+    return isNaN(v) ? fallback : v;
+  }
+
+  /* ---------- inputs ---------- */
+  function cfg() {
+    var ageNow = parseInt(el('age-now').value, 10);
+    var ageRet = parseInt(el('age-ret').value, 10);
+    var ageEnd = parseInt(el('age-end').value, 10);
+    /* already-retired / pure-decumulation: if age-now >= age-ret, skip accumulation */
+    if (ageRet < ageNow) { ageRet = ageNow; }
+    if (ageEnd <= ageRet) { ageEnd = ageRet + 1; }
+    var guarAge = parseInt(el('guar-age').value, 10);
+    return {
+      ageNow: ageNow, ageRet: ageRet, ageEnd: ageEnd,
+      initial: W.parseNum(el('initial').value),
+      contrib: W.parseNum(el('contrib').value),
+      expense: W.parseNum(el('expense').value),
+      guar: W.parseNum(el('guar').value),
+      guarAge: guarAge,
+      guarInfl: el('guar-infl').checked,
+      ws: state.ws / 100,
+      decws: state.decws / 100,
+      wrate: pnum('wrate', 4) / 100,
+      /* market assumptions (advanced) · decimals */
+      sm: pnum('sm', DEF.sm) / 100,
+      ssd: pnum('ssd', DEF.ssd) / 100,
+      bm: pnum('bm', DEF.bm) / 100,
+      bsd: pnum('bsd', DEF.bsd) / 100,
+      infl: pnum('inflr', DEF.infl) / 100,
+      /* sequence-risk override: array of forced returns for first decum years, or null */
+      seq: null
+    };
+  }
+
+  /* ---------- Box-Muller standard normal ---------- */
+  function gauss() {
+    var u = 0, v = 0;
+    while (u === 0) { u = Math.random(); }
+    while (v === 0) { v = Math.random(); }
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  /* ---------- the simulation ----------
+     Returns { success, median balances per year array, retireBalances sorted } */
+  function simulate(c) {
+    var accM = c.ws * c.sm + (1 - c.ws) * c.bm;
+    /* SD as weighted sum of component SDs (ignores correlation · documented simplification) */
+    var accSd = c.ws * c.ssd + (1 - c.ws) * c.bsd;
+    var decM = c.decws * c.sm + (1 - c.decws) * c.bm;
+    var decSd = c.decws * c.ssd + (1 - c.decws) * c.bsd;
+
+    var accYears = c.ageRet - c.ageNow;
+    var totYears = c.ageEnd - c.ageNow;
+    var annualContrib = c.contrib * 12;
+    var seq = c.seq; /* forced first-N decum returns or null */
+
+    var success = 0;
+    var paths = PATHS;
+
+    /* per-year balance samples for percentile bands: byYear[y] = array length paths */
+    var byYear = new Array(totYears + 1);
+    var y;
+    for (y = 0; y <= totYears; y++) { byYear[y] = new Float64Array(paths); }
+    var retireBalances = new Float64Array(paths);
+
+    var p;
+    for (p = 0; p < paths; p++) {
+      var bal = c.initial;
+      byYear[0][p] = bal;
+      var alive = true;
+
+      /* accumulation */
+      for (y = 0; y < accYears; y++) {
+        var r = accM + accSd * gauss();
+        /* contributions spread through the year → grow at half-year on average */
+        bal = bal * (1 + r) + annualContrib * (1 + r / 2);
+        if (bal < 0) { bal = 0; }
+        byYear[y + 1][p] = bal;
+      }
+      retireBalances[p] = bal;
+
+      /* decumulation: withdraw (inflated spending − guaranteed income), then grow remainder */
+      var decIdx = 0;
+      for (y = accYears; y < totYears; y++) {
+        var age = c.ageNow + y;
+        var inflFac = Math.pow(1 + c.infl, y); /* years from today */
+        var annualExp = c.expense * 12 * inflFac;
+        var annualGuar = 0;
+        if (c.guar > 0 && age >= c.guarAge) {
+          annualGuar = c.guar * 12 * (c.guarInfl ? inflFac : 1);
+        }
+        var net = annualExp - annualGuar;
+        if (net < 0) { net = 0; } /* surplus income is not reinvested (conservative) */
+        bal = bal - net;
+        if (bal < 0) { alive = false; bal = 0; byYear[y + 1][p] = 0; break; }
+        var rd;
+        if (seq && decIdx < seq.length) { rd = seq[decIdx]; }
+        else { rd = decM + decSd * gauss(); }
+        decIdx++;
+        bal = bal * (1 + rd);
+        if (bal < 0) { bal = 0; }
+        byYear[y + 1][p] = bal;
+      }
+
+      /* if path failed mid-way, fill remaining years with 0 */
+      if (!alive) {
+        for (var z = y + 1; z <= totYears; z++) { byYear[z][p] = 0; }
+      } else {
+        success++;
+      }
+    }
+
+    /* percentile bands per year */
+    var p10 = new Array(totYears + 1);
+    var p50 = new Array(totYears + 1);
+    var p90 = new Array(totYears + 1);
+    for (y = 0; y <= totYears; y++) {
+      var arr = Array.prototype.slice.call(byYear[y]);
+      arr.sort(function (a, b) { return a - b; });
+      p10[y] = arr[Math.floor(paths * 0.10)];
+      p50[y] = arr[Math.floor(paths * 0.50)];
+      p90[y] = arr[Math.floor(paths * 0.90)];
+    }
+
+    var rb = Array.prototype.slice.call(retireBalances);
+    rb.sort(function (a, b) { return a - b; });
+    var medRetire = rb[Math.floor(paths * 0.50)];
+
+    return {
+      success: success,
+      pct: Math.round(success / paths * 100),
+      medRetire: medRetire,
+      p10: p10, p50: p50, p90: p90,
+      accYears: accYears, totYears: totYears
+    };
+  }
+
+  /* lightweight success-only run for what-if buttons (no band storage) */
+  function quickPct(c) {
+    var accM = c.ws * c.sm + (1 - c.ws) * c.bm;
+    var accSd = c.ws * c.ssd + (1 - c.ws) * c.bsd;
+    var decM = c.decws * c.sm + (1 - c.decws) * c.bm;
+    var decSd = c.decws * c.ssd + (1 - c.decws) * c.bsd;
+    var accYears = c.ageRet - c.ageNow;
+    var totYears = c.ageEnd - c.ageNow;
+    var annualContrib = c.contrib * 12;
+    var seq = c.seq;
+    var success = 0, p, y;
+    for (p = 0; p < PATHS; p++) {
+      var bal = c.initial, alive = true;
+      for (y = 0; y < accYears; y++) {
+        var r = accM + accSd * gauss();
+        bal = bal * (1 + r) + annualContrib * (1 + r / 2);
+        if (bal < 0) { bal = 0; }
+      }
+      var decIdx = 0;
+      for (y = accYears; y < totYears; y++) {
+        var age = c.ageNow + y;
+        var inflFac = Math.pow(1 + c.infl, y);
+        var annualExp = c.expense * 12 * inflFac;
+        var annualGuar = (c.guar > 0 && age >= c.guarAge) ? c.guar * 12 * (c.guarInfl ? inflFac : 1) : 0;
+        var net = annualExp - annualGuar;
+        if (net < 0) { net = 0; }
+        bal = bal - net;
+        if (bal < 0) { alive = false; break; }
+        var rd;
+        if (seq && decIdx < seq.length) { rd = seq[decIdx]; }
+        else { rd = decM + decSd * gauss(); }
+        decIdx++;
+        bal = bal * (1 + rd);
+        if (bal < 0) { bal = 0; }
+      }
+      if (alive) { success++; }
+    }
+    return Math.round(success / PATHS * 100);
+  }
+
+  /* ---------- fan chart ---------- */
+  function drawFan(res, c) {
+    var svg = el('fan');
+    var L = lang();
+    var Wd = 640, Ht = 300;
+    var padL = 56, padR = 16, padT = 14, padB = 30;
+    var plotW = Wd - padL - padR, plotH = Ht - padT - padB;
+    var n = res.totYears;
+
+    /* y max from p90 */
+    var maxV = 1;
+    for (var i = 0; i <= n; i++) { if (res.p90[i] > maxV) { maxV = res.p90[i]; } }
+    maxV = maxV * 1.08;
+
+    function xOf(yr) { return padL + (n === 0 ? 0 : (yr / n) * plotW); }
+    function yOf(v) { return padT + plotH - (v / maxV) * plotH; }
+
+    var html = '';
+
+    /* y gridlines + labels (฿M) */
+    var ticks = 4, t;
+    for (t = 0; t <= ticks; t++) {
+      var gv = maxV * t / ticks;
+      var gy = yOf(gv);
+      html += '<line x1="' + padL + '" y1="' + gy.toFixed(1) + '" x2="' + (Wd - padR) + '" y2="' + gy.toFixed(1) + '" stroke="#e4e9ec" stroke-width="1"/>';
+      html += '<text x="' + (padL - 8) + '" y="' + (gy + 4).toFixed(1) + '" text-anchor="end" font-size="11" fill="#5d7079" font-weight="600">฿' + (gv / 1000000).toFixed(gv >= 10000000 ? 0 : 1) + 'M</text>';
+    }
+
+    /* x labels (ages) */
+    var xticks = 5, xi;
+    for (xi = 0; xi <= xticks; xi++) {
+      var yr = Math.round(n * xi / xticks);
+      var ageLbl = c.ageNow + yr;
+      html += '<text x="' + xOf(yr).toFixed(1) + '" y="' + (Ht - 8) + '" text-anchor="middle" font-size="11" fill="#5d7079" font-weight="600">' + ageLbl + '</text>';
+    }
+
+    /* 10-90 band as filled polygon */
+    var pts = '';
+    for (var a = 0; a <= n; a++) { pts += xOf(a).toFixed(1) + ',' + yOf(res.p90[a]).toFixed(1) + ' '; }
+    for (var b = n; b >= 0; b--) { pts += xOf(b).toFixed(1) + ',' + yOf(res.p10[b]).toFixed(1) + ' '; }
+    html += '<polygon points="' + pts.trim() + '" fill="rgba(159,232,112,0.45)" stroke="none"/>';
+
+    /* median line */
+    var med = '';
+    for (var m = 0; m <= n; m++) { med += (m === 0 ? 'M' : 'L') + xOf(m).toFixed(1) + ' ' + yOf(res.p50[m]).toFixed(1) + ' '; }
+    html += '<path d="' + med.trim() + '" fill="none" stroke="#163300" stroke-width="2.6" stroke-linejoin="round"/>';
+
+    /* dashed vline at retirement */
+    var rx = xOf(res.accYears);
+    html += '<line x1="' + rx.toFixed(1) + '" y1="' + padT + '" x2="' + rx.toFixed(1) + '" y2="' + (padT + plotH) + '" stroke="#5d7079" stroke-width="1.4" stroke-dasharray="5 4"/>';
+    html += '<text x="' + (rx + 5).toFixed(1) + '" y="' + (padT + 12) + '" font-size="10.5" fill="#5d7079" font-weight="700">' + (L === 'th' ? 'เกษียณ ' : 'Retire ') + c.ageRet + '</text>';
+
+    svg.innerHTML = html;
+  }
+
+  /* ---------- readiness score ---------- */
+  function renderScore(res, c) {
+    var L = lang();
+    var sustainable = res.medRetire * c.wrate / 12; /* monthly sustainable income from portfolio */
+    var inflAtRet = Math.pow(1 + c.infl, res.accYears);
+    var grossNeed = c.expense * inflAtRet; /* inflated monthly spend at retirement */
+    /* portfolio only needs to cover spending net of guaranteed income starting at retirement */
+    var guarAtRet = (c.guar > 0 && c.ageRet >= c.guarAge) ? c.guar * (c.guarInfl ? inflAtRet : 1) : 0;
+    var needed = grossNeed - guarAtRet;
+    if (needed < 0) { needed = 0; }
+    var score = needed > 0 ? Math.round(sustainable / needed * 100) : 150;
+    if (score < 0) { score = 0; }
+    if (score > 150) { score = 150; }
+
+    var cls, color, label;
+    if (score < 65) { cls = 's-red'; color = 'var(--danger)'; label = L === 'th' ? 'ยังขาดมาก · ต้องปรับแผน' : 'Well short · plan needs work'; }
+    else if (score <= 80) { cls = 's-amber'; color = 'var(--warn)'; label = L === 'th' ? 'ใกล้แล้ว แต่ยังต้องเสริม' : 'Close, but needs a boost'; }
+    else if (score <= 95) { cls = 's-amgreen'; color = '#2f9e44'; label = L === 'th' ? 'เกือบพร้อม · ปรับนิดเดียว' : 'Almost there · minor tuning'; }
+    else { cls = 's-green'; color = 'var(--positive)'; label = L === 'th' ? 'พร้อมเกษียณ' : 'On track to retire'; }
+
+    var num = el('score-num');
+    num.textContent = score;
+    num.className = 'score-num ' + cls;
+    var bar = el('score-bar');
+    bar.style.width = Math.min(100, score / 150 * 100) + '%';
+    bar.style.background = color;
+    el('score-msg').textContent = label
+      + (L === 'th'
+          ? ' · ถอนได้ ~' + W.fmtBaht(sustainable) + '/เดือน เทียบกับที่ต้องใช้ ' + W.fmtBaht(needed) + '/เดือน'
+          : ' · ~' + W.fmtBaht(sustainable) + '/mo sustainable vs ' + W.fmtBaht(needed) + '/mo needed');
+  }
+
+  /* ---------- result hero ---------- */
+  function renderHero(res) {
+    var L = lang();
+    var pct = res.pct;
+    var pctEl = el('r-pct');
+    pctEl.textContent = pct + '%';
+    var cls, sub;
+    if (pct >= 85) {
+      cls = 'rh-good';
+      sub = L === 'th' ? 'แข็งแรง · อยู่เหนือโซนมั่นใจของที่ปรึกษา (75–90%, Kitces)' : 'Strong · above the advisor comfort zone (75–90%, Kitces).';
+    } else if (pct >= 70) {
+      cls = 'rh-mid';
+      sub = L === 'th' ? 'อยู่ในโซนมั่นใจของที่ปรึกษา 75–90% (Kitces) · ปรับเล็กน้อยก็ยิ่งอุ่นใจ' : 'In the 75–90% advisor comfort zone (Kitces) · small tweaks add cushion.';
+    } else {
+      cls = 'rh-low';
+      sub = L === 'th' ? 'ต่ำกว่าโซนมั่นใจ 75–90% (Kitces) · ลองขยับลีเวอร์ด้านล่างดู' : 'Below the 75–90% comfort zone (Kitces) · try the levers below.';
+    }
+    pctEl.className = 'big ' + cls;
+    el('r-pct-sub').textContent = sub;
+    el('r-retbal').textContent = W.fmtBaht(res.medRetire);
+    el('r-paths').textContent = res.success + ' / ' + PATHS;
+  }
+
+  /* ---------- what-if ---------- */
+  function renderWhatIf(base, c) {
+    var L = lang();
+    var workYrs = Math.max(1, Math.round(pnum('wi-work-mag', 5)));
+    var saveAmt = Math.max(0, W.parseNum(el('wi-save-mag').value));
+    var cutPct = Math.max(0, pnum('wi-cut-mag', 10));
+    var scenarios = [
+      { id: 'wi-work', c: clone(c, { ageRet: Math.min(c.ageEnd - 1, c.ageRet + workYrs) }) },
+      { id: 'wi-save', c: clone(c, { contrib: c.contrib + saveAmt }) },
+      { id: 'wi-cut',  c: clone(c, { expense: c.expense * (1 - cutPct / 100) }) }
+    ];
+    var best = { gain: -999, id: '', label: '' };
+    var labels = {
+      'wi-work': L === 'th' ? 'ทำงานต่ออีก ' + workYrs + ' ปี' : 'working ' + workYrs + ' more years',
+      'wi-save': L === 'th' ? 'ออมเพิ่มเดือนละ ฿' + W.fmt(saveAmt) : 'saving ฿' + W.fmt(saveAmt) + ' more a month',
+      'wi-cut':  L === 'th' ? 'ลดรายจ่ายหลังเกษียณ ' + cutPct + '%' : 'cutting spending ' + cutPct + '%'
+    };
+    for (var i = 0; i < scenarios.length; i++) {
+      var s = scenarios[i];
+      var p = quickPct(s.c);
+      var gain = p - base;
+      var resEl = el(s.id + '-r');
+      var sign = gain > 0 ? '+' : '';
+      resEl.className = 'whatif-res has';
+      resEl.innerHTML = p + '% <span class="delta">(' + sign + gain + ')</span>';
+      if (gain > best.gain) { best.gain = gain; best.id = s.id; best.label = labels[s.id]; }
+    }
+    var ins = el('wi-insight');
+    if (best.gain <= 0) {
+      ins.className = 'msg';
+      ins.style.background = 'var(--info-soft)';
+      ins.style.color = 'var(--info-text)';
+      ins.style.border = '1px solid #c5dcf0';
+      ins.innerHTML = L === 'th'
+        ? 'แผนนี้แข็งแรงอยู่แล้ว · ลีเวอร์ทั้งสามช่วยเพิ่มได้ไม่มาก ลองปรับให้ใช้ชีวิตวันนี้มากขึ้นก็ได้'
+        : 'This plan is already strong · the three levers add little. You could even spend a bit more today.';
+    } else {
+      ins.className = 'msg ok';
+      ins.style.background = '';
+      ins.style.color = '';
+      ins.style.border = '';
+      ins.innerHTML = L === 'th'
+        ? '💡 ลีเวอร์ที่ช่วยมากที่สุดคือ <b>' + best.label + '</b> · เพิ่มโอกาสสำเร็จ +' + best.gain + ' จุด'
+        : '💡 Your biggest lever is <b>' + best.label + '</b> · it adds +' + best.gain + ' points.';
+    }
+    ins.style.display = 'block';
+  }
+
+  function clone(c, over) {
+    var n = {
+      ageNow: c.ageNow, ageRet: c.ageRet, ageEnd: c.ageEnd,
+      initial: c.initial, contrib: c.contrib, expense: c.expense,
+      guar: c.guar, guarAge: c.guarAge, guarInfl: c.guarInfl,
+      ws: c.ws, decws: c.decws, wrate: c.wrate,
+      sm: c.sm, ssd: c.ssd, bm: c.bm, bsd: c.bsd, infl: c.infl, seq: c.seq
+    };
+    for (var k in over) { if (over.hasOwnProperty(k)) { n[k] = over[k]; } }
+    return n;
+  }
+
+  /* ---------- run all ---------- */
+  var lastPct = 0;
+  function runAll() {
+    var c = cfg();
+    var res = simulate(c);
+    lastPct = res.pct;
+    renderHero(res);
+    drawFan(res, c);
+    renderScore(res, c);
+    renderWhatIf(res.pct, c);
+    emitFinding(res, c);
+  }
+
+  /* ---------- snapshot finding (debounced via runAll → schedule) ---------- */
+  function emitFinding(res, c) {
+    try {
+      if (!W || !W.saveFinding) { return; }
+      var pct = res.pct;
+      var status = pct >= 85 ? 'good' : (pct >= 70 ? 'warn' : 'bad');
+      W.saveFinding('retirement', {
+        tool: 'retirement-simulator.html',
+        labelTh: 'เกษียณ', labelEn: 'Retirement',
+        status: status,
+        headlineTh: 'โอกาสเกษียณสำเร็จ ' + pct + '%',
+        headlineEn: 'Retirement success ' + pct + '%',
+        monthlyClaim: c.contrib || 0
+      });
+      /* persist age inputs to shared profile */
+      if (W.profile && W.profile.set) {
+        W.profile.set({ age: c.ageNow, retireAge: c.ageRet });
+      }
+    } catch (e) {}
+  }
+
+  /* ---------- sequence-risk stress test ---------- */
+  function runSeq() {
+    var L = lang();
+    var c = cfg();
+    /* deterministic poor first 5 retirement years: −10%, −5%, 0%, then normal */
+    c.seq = [-0.10, -0.05, 0.0, 0.0, 0.0];
+    var stressed = quickPct(c);
+    var base = lastPct;
+    var drop = base - stressed;
+    var out = el('seq-out');
+    out.className = 'msg';
+    out.style.display = 'block';
+    out.style.background = 'var(--info-soft)';
+    out.style.color = 'var(--info-text)';
+    out.style.border = '1px solid #c5dcf0';
+    out.innerHTML = L === 'th'
+      ? 'ถ้าตลาดแย่ 5 ปีแรกหลังเกษียณ โอกาสสำเร็จเหลือ <b>' + stressed + '%</b> (จาก ' + base + '% ปกติ · ลดลง ' + drop + ' จุด). ยิ่งลดมาก แผนยิ่งอ่อนไหวต่อ sequence risk · กันชนเงินสด/พันธบัตรช่วงต้นช่วยได้'
+      : 'A bad first 5 years drops success to <b>' + stressed + '%</b> (from ' + base + '% · down ' + drop + ' points). The bigger the drop, the more sequence-sensitive your plan · a cash/bond buffer early on helps.';
+  }
+
+  /* ---------- debounce ---------- */
+  var timer = null;
+  function schedule() {
+    if (timer) { clearTimeout(timer); }
+    timer = setTimeout(runAll, 250);
+  }
+
+  /* ---------- range live values ---------- */
+  function bindRange(id, suffix) {
+    var input = el(id), out = el(id + '-v');
+    input.addEventListener('input', function () { out.textContent = input.value + (suffix || ''); schedule(); });
+  }
+  bindRange('age-now');
+  bindRange('age-ret');
+  bindRange('age-end');
+  bindRange('guar-age');
+  bindRange('wrate', '%');
+
+  var textInputs = ['initial', 'contrib', 'expense', 'guar', 'sm', 'ssd', 'bm', 'bsd', 'inflr'];
+  for (var i = 0; i < textInputs.length; i++) {
+    el(textInputs[i]).addEventListener('input', schedule);
+  }
+  el('guar-infl').addEventListener('change', schedule);
+
+  /* what-if magnitude inputs re-run on change */
+  var magInputs = ['wi-work-mag', 'wi-save-mag', 'wi-cut-mag'];
+  for (var j = 0; j < magInputs.length; j++) {
+    el(magInputs[j]).addEventListener('input', schedule);
+  }
+
+  /* accumulation allocation segmented */
+  function setAlloc(ws) {
+    state.ws = ws;
+    el('a-4060').classList.toggle('on', ws === 40);
+    el('a-6040').classList.toggle('on', ws === 60);
+    el('a-8020').classList.toggle('on', ws === 80);
+    schedule();
+  }
+  el('a-4060').addEventListener('click', function () { setAlloc(40); });
+  el('a-6040').addEventListener('click', function () { setAlloc(60); });
+  el('a-8020').addEventListener('click', function () { setAlloc(80); });
+
+  /* decumulation allocation segmented */
+  function setDecAlloc(ws) {
+    state.decws = ws;
+    el('d-20').classList.toggle('on', ws === 20);
+    el('d-40').classList.toggle('on', ws === 40);
+    el('d-60').classList.toggle('on', ws === 60);
+    schedule();
+  }
+  el('d-20').addEventListener('click', function () { setDecAlloc(20); });
+  el('d-40').addEventListener('click', function () { setDecAlloc(40); });
+  el('d-60').addEventListener('click', function () { setDecAlloc(60); });
+
+  /* market preset toggle */
+  function applyPreset(pre, globalOn) {
+    el('sm').value = pre.sm;
+    el('ssd').value = pre.ssd;
+    el('bm').value = pre.bm;
+    el('bsd').value = pre.bsd;
+    el('inflr').value = pre.infl;
+    el('pre-global').classList.toggle('on', globalOn);
+    el('pre-thai').classList.toggle('on', !globalOn);
+    schedule();
+  }
+  el('pre-global').addEventListener('click', function () { applyPreset(DEF, true); });
+  el('pre-thai').addEventListener('click', function () { applyPreset(PRESET_THAI, false); });
+  /* manual edits to assumption fields drop the preset highlight */
+  var assumeFields = ['sm', 'ssd', 'bm', 'bsd', 'inflr'];
+  for (var a = 0; a < assumeFields.length; a++) {
+    el(assumeFields[a]).addEventListener('input', function () {
+      el('pre-global').classList.remove('on');
+      el('pre-thai').classList.remove('on');
+    });
+  }
+
+  /* sequence-risk button */
+  el('seq-btn').addEventListener('click', runSeq);
+
+  window.addEventListener('wc:lang', runAll);
+
+  /* ---------- prefill age inputs from shared profile (defensive, defaults preserved) ---------- */
+  (function prefillProfile() {
+    try {
+      if (!W || !W.profile || !W.profile.get) { return; }
+      var p = W.profile.get() || {};
+      var ageEl = el('age-now');
+      if (p.age != null && p.age !== '' && ageEl) {
+        var a = parseInt(p.age, 10);
+        if (!isNaN(a) && a >= parseInt(ageEl.min, 10) && a <= parseInt(ageEl.max, 10)) {
+          ageEl.value = a;
+          var av = el('age-now-v'); if (av) { av.textContent = a; }
+        }
+      }
+      var retEl = el('age-ret');
+      if (p.retireAge != null && p.retireAge !== '' && retEl) {
+        var ra = parseInt(p.retireAge, 10);
+        if (!isNaN(ra) && ra >= parseInt(retEl.min, 10) && ra <= parseInt(retEl.max, 10)) {
+          retEl.value = ra;
+          var rv = el('age-ret-v'); if (rv) { rv.textContent = ra; }
+        }
+      }
+    } catch (e) {}
+  })();
+
+  runAll();
+})();
+</script>
+</body>
+</html>

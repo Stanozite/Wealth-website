@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1080" cy="100" r="180" fill="#e4f7d2"/>
+  <circle cx="120" cy="560" r="160" fill="#e4f7d2"/>
+  <!-- calendar card -->
+  <g>
+    <rect x="180" y="90" width="460" height="450" rx="24" fill="#ffffff"/>
+    <path d="M180 114 a24 24 0 0 1 24 -24 h412 a24 24 0 0 1 24 24 v76 h-460 Z" fill="#163300"/>
+    <circle cx="300" cy="90" r="14" fill="#9fe870"/>
+    <circle cx="520" cy="90" r="14" fill="#9fe870"/>
+    <!-- 3x3 date grid -->
+    <g fill="#e4f7d2">
+      <rect x="240" y="230" width="90" height="80" rx="14"/>
+      <rect x="365" y="230" width="90" height="80" rx="14"/>
+      <rect x="490" y="230" width="90" height="80" rx="14"/>
+      <rect x="240" y="330" width="90" height="80" rx="14"/>
+      <rect x="365" y="330" width="90" height="80" rx="14"/>
+      <rect x="490" y="330" width="90" height="80" rx="14"/>
+      <rect x="240" y="430" width="90" height="80" rx="14"/>
+      <rect x="365" y="430" width="90" height="80" rx="14"/>
+      <rect x="490" y="430" width="90" height="80" rx="14"/>
+    </g>
+    <!-- marked DCA dates -->
+    <g>
+      <circle cx="285" cy="270" r="34" fill="#9fe870"/>
+      <circle cx="410" cy="370" r="34" fill="#9fe870"/>
+      <circle cx="535" cy="470" r="34" fill="#9fe870"/>
+      <text x="285" y="284" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="800" fill="#163300">฿</text>
+      <text x="410" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="800" fill="#163300">฿</text>
+      <text x="535" y="484" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="800" fill="#163300">฿</text>
+    </g>
+  </g>
+  <!-- ascending bars -->
+  <g>
+    <rect x="730" y="420" width="70" height="120" rx="12" fill="#0d7a3f"/>
+    <rect x="825" y="360" width="70" height="180" rx="12" fill="#0d7a3f"/>
+    <rect x="920" y="290" width="70" height="250" rx="12" fill="#9fe870"/>
+    <rect x="1015" y="200" width="70" height="340" rx="12" fill="#9fe870"/>
+  </g>
+  <!-- trend arrow -->
+  <path d="M740 380 C840 350 950 270 1060 160" fill="none" stroke="#163300" stroke-width="14" stroke-linecap="round"/>
+  <path d="M1060 160 L1002 168 M1060 160 L1048 218" stroke="#163300" stroke-width="14" stroke-linecap="round"/>
+</svg>

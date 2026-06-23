@@ -1,0 +1,12 @@
+.vercel
+.DS_Store
+Thumbs.db
+desktop.ini
+node_modules/
+*.log
+
+# secrets — never commit
+*recovery-codes*
+*recovery*code*
+.env
+.env.*

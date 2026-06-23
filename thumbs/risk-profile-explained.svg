@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1060" cy="110" r="190" fill="#e4f7d2"/>
+  <circle cx="130" cy="560" r="160" fill="#e4f7d2"/>
+  <!-- gauge arc segments -->
+  <g transform="translate(600,430)" fill="none" stroke-width="46" stroke-linecap="butt">
+    <path d="M-250 0 A250 250 0 0 1 -177 -177" stroke="#e4f7d2"/>
+    <path d="M-177 -177 A250 250 0 0 1 0 -250" stroke="#9fe870"/>
+    <path d="M0 -250 A250 250 0 0 1 177 -177" stroke="#0d7a3f"/>
+    <path d="M177 -177 A250 250 0 0 1 250 0" stroke="#163300"/>
+  </g>
+  <!-- needle pointing mid-right -->
+  <g transform="translate(600,430)">
+    <line x1="0" y1="0" x2="150" y2="-150" stroke="#163300" stroke-width="14" stroke-linecap="round"/>
+    <circle r="26" fill="#163300"/>
+    <circle r="11" fill="#9fe870"/>
+  </g>
+  <!-- target rings bottom-left -->
+  <g transform="translate(250,250)">
+    <circle r="50" fill="none" stroke="#9fe870" stroke-width="12"/>
+    <circle r="18" fill="#163300"/>
+  </g>
+</svg>
