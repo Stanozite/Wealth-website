@@ -163,17 +163,22 @@
   function L() { return WC.getLang(); }
   function t(th, en) { return L() === 'th' ? th : en; }
 
-  /* the 9 finding slots snapshot expects, in display order. tool = where to go if empty. */
+  /* the finding slots snapshot expects, in display order. tool = where to go if empty.
+     new key checklist (see tasks/guideline_2026-07-02_dev-standards.md #3):
+     every saveFinding() key used anywhere on the site MUST have a slot here,
+     added in the same commit as the tool that emits it. */
   var SLOTS = [
-    { key: 'health',     th: 'สุขภาพการเงิน',   en: 'Financial health', tool: 'financial-health-score.html' },
-    { key: 'budget',     th: 'งบประมาณ',         en: 'Budget',           tool: 'budget-planner.html' },
-    { key: 'emergency',  th: 'เงินสำรองฉุกเฉิน', en: 'Emergency fund',   tool: 'emergency-fund.html' },
-    { key: 'debt',       th: 'หนี้สิน',           en: 'Debt',             tool: 'debt-payoff.html' },
-    { key: 'networth',   th: 'ความมั่งคั่งสุทธิ', en: 'Net worth',        tool: 'net-worth.html' },
-    { key: 'invest',     th: 'ลงทุน',             en: 'Investing',        tool: 'compound-dca.html' },
-    { key: 'tax',        th: 'ภาษี',              en: 'Tax',              tool: 'tax-calculator.html' },
-    { key: 'insurance',  th: 'ความคุ้มครอง',      en: 'Protection',       tool: 'insurance-needs.html' },
-    { key: 'retirement', th: 'เกษียณ',            en: 'Retirement',       tool: 'retirement-simulator.html' }
+    { key: 'health',      th: 'สุขภาพการเงิน',     en: 'Financial health', tool: 'financial-health-score.html' },
+    { key: 'budget',      th: 'งบประมาณ',           en: 'Budget',           tool: 'budget-planner.html' },
+    { key: 'emergency',   th: 'เงินสำรองฉุกเฉิน',   en: 'Emergency fund',   tool: 'emergency-fund.html' },
+    { key: 'debt',        th: 'หนี้สิน',             en: 'Debt',             tool: 'debt-payoff.html' },
+    { key: 'networth',    th: 'ความมั่งคั่งสุทธิ',   en: 'Net worth',        tool: 'net-worth.html' },
+    { key: 'invest',      th: 'ลงทุน',               en: 'Investing',        tool: 'compound-dca.html' },
+    { key: 'riskprofile', th: 'ระดับความเสี่ยง',     en: 'Risk profile',     tool: 'risk-profile.html' },
+    { key: 'tax',         th: 'ภาษี',                en: 'Tax',              tool: 'tax-calculator.html' },
+    { key: 'taxplan',     th: 'แผนภาษีหลายปี',       en: 'Multi-year tax',   tool: 'multi-year-tax-planner.html' },
+    { key: 'insurance',   th: 'ความคุ้มครอง',        en: 'Protection',       tool: 'insurance-needs.html' },
+    { key: 'retirement',  th: 'เกษียณ',              en: 'Retirement',       tool: 'retirement-simulator.html' }
   ];
 
   function renderPillars() {

@@ -11,6 +11,7 @@
 - [ดอกเบี้ยทบต้น & DCA / Compound & DCA](https://wealthcompass.example.com/compound-dca.html): จำลองการเติบโตทบต้น + วิเคราะห์ค่าธรรมเนียม + หาเงินที่ต้องลงทุนต่อเดือน
 - [คำนวณภาษีเงินได้ / Thai Income Tax](https://wealthcompass.example.com/tax-calculator.html): ภาษีขั้นบันไดไทยปี 2567 + อัตราที่แท้จริง vs ส่วนเพิ่ม + รายได้หลายประเภท
 - [วางแผนลดหย่อนภาษี / Tax Deduction Optimizer](https://wealthcompass.example.com/tax-deduction-optimizer.html): เพดาน RMF/SSF/ThaiESG/ประกัน/PVD + คำนวณเงินภาษีที่ประหยัดจริงแบบขั้นบันได
+- [วางแผนภาษีล่วงหน้าหลายปี / Multi-Year Tax Planner](https://wealthcompass.example.com/multi-year-tax-planner.html): วางแผนลดหย่อนล่วงหน้าทั้งทศวรรษ จะซื้อ RMF/ThaiESG/บำนาญกี่ปี เห็นภาษีประหยัดรายปี+สะสม timeline+กราฟ เติมแผนอัตโนมัติแบบดูสภาพคล่อง+ความเสี่ยงคืนภาษี SSF หมดอายุ 2567
 - [จำลองแผนเกษียณ / Retirement Simulator](https://wealthcompass.example.com/retirement-simulator.html): Monte Carlo 1,000 เส้นทาง โอกาสสำเร็จเป็น % + รายได้บำนาญ + ทดสอบ sequence risk
 - [วางแผนปลดหนี้ / Debt Payoff](https://wealthcompass.example.com/debt-payoff.html): เทียบ snowball vs avalanche + แปลงดอกคงที่→ลดต้นลดดอก + DTI + ตารางผ่อน
 - [ทุนประกันที่ควรมี / Insurance Needs](https://wealthcompass.example.com/insurance-needs.html): DIME + Human-Life-Value + ทวีคูณรายได้ + เบี้ยประมาณตามอายุ

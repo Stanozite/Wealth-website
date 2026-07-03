@@ -132,11 +132,110 @@
     return Infinity;
   }
 
+  /* ============================================================
+     Multi-year deduction config + cap engine (for the forward
+     tax planner). Centralizes the deduction caps that were
+     previously hard-coded inside tax-deduction-optimizer.html.
+     All ฿ figures ปีภาษี 2567 · verify with rd.go.th before filing.
+     ============================================================ */
+  var DED_CONFIG = {
+    2567: {
+      personal: 60000, spouse: 60000,
+      childPerHead: 30000, child2ndGE2561: 60000, disabledPerHead: 60000,
+      parentPerHead: 30000, parentHealthCap: 15000,
+      ssoCap: 9000, expensePct: 0.5, expenseCap: 100000,
+      groupCap: 500000,                 // RMF+SSF+PVD+GPF+annuity combined
+      rmfPct: 0.30, rmfCap: 500000,
+      ssfPct: 0.30, ssfCap: 200000, ssfBuyable: true,   // SSF: ปีภาษี 2567 = ปีสุดท้ายที่ซื้อได้
+      esgPct: 0.30, esgCap: 300000, esgSeparate: true, esgHoldYears: 5, // ThaiESG = วงแยกต่างหาก
+      annuityPct: 0.15, annuityCap: 200000,
+      lifeCap: 100000, healthCap: 25000, lifeHealthCombined: 100000,
+      mortgageCap: 100000,
+      donationPct: 0.10, donationEduMult: 2,
+      verify: false
+    }
+  };
+
+  /* taxConfig(year) → deduction config for a BE year.
+     Unknown / future years clone 2567, flip ssfBuyable off for >=2568,
+     and set verify:true so the UI shows a "ตรวจกับ rd.go.th" banner. */
+  function taxConfig(year) {
+    var base = DED_CONFIG[year];
+    if (base) { return base; }
+    var src = DED_CONFIG[2567];
+    var out = {};
+    for (var k in src) { if (src.hasOwnProperty(k)) { out[k] = src[k]; } }
+    out.ssfBuyable = (year < 2568);   // SSF sunset after ปีภาษี 2567
+    out.verify = true;                // figures not officially confirmed for this year
+    out.clonedFrom = 2567;
+    return out;
+  }
+
+  /* canBuy(product, age, yrBE) → whether a NEW purchase is allowed that year.
+     Only SSF is year-gated (sunset). RMF/ThaiESG/annuity buyable anytime;
+     their age/hold constraints affect REDEMPTION, not buying. */
+  function canBuy(product, age, yrBE) {
+    var p = String(product).toUpperCase();
+    if (p === 'SSF') { return taxConfig(yrBE).ssfBuyable === true; }
+    return true;
+  }
+
+  /* enforceCaps(yrBE, income, proposed, mandatory)
+       proposed  = {rmf, ssf, esg, annuity}  (planned optional buys, ฿)
+       mandatory = {pvd, gpf}                 (already inside the 500k group)
+     → { clamped:{rmf,ssf,esg,annuity}, wasted, hitGroupCap }
+     Order: per-product caps (ThaiESG separate) → 500k group, trimming the
+     least-desirable group member first (annuity → rmf → ssf). 'wasted' = baht
+     that earns NO deduction (exceeded a cap). */
+  function enforceCaps(yrBE, income, proposed, mandatory) {
+    var c = taxConfig(yrBE);
+    var inc = income > 0 ? income : 0;
+    var pRmf = (proposed && proposed.rmf > 0) ? proposed.rmf : 0;
+    var pSsf = (proposed && proposed.ssf > 0) ? proposed.ssf : 0;
+    var pEsg = (proposed && proposed.esg > 0) ? proposed.esg : 0;
+    var pAnn = (proposed && proposed.annuity > 0) ? proposed.annuity : 0;
+    var pvd = (mandatory && mandatory.pvd > 0) ? mandatory.pvd : 0;
+    var gpf = (mandatory && mandatory.gpf > 0) ? mandatory.gpf : 0;
+
+    var rmfCapY = Math.min(c.rmfPct * inc, c.rmfCap);
+    var ssfCapY = c.ssfBuyable ? Math.min(c.ssfPct * inc, c.ssfCap) : 0;
+    var esgCapY = Math.min(c.esgPct * inc, c.esgCap);
+    var annCapY = Math.min(c.annuityPct * inc, c.annuityCap);
+
+    var wasted = 0;
+    var rmf = Math.min(pRmf, rmfCapY); wasted += (pRmf - rmf);
+    var ssf = Math.min(pSsf, ssfCapY); wasted += (pSsf - ssf);
+    var esg = Math.min(pEsg, esgCapY); wasted += (pEsg - esg);     // ThaiESG separate — never hits the group
+    var ann = Math.min(pAnn, annCapY); wasted += (pAnn - ann);
+
+    /* 500k retirement group: rmf+ssf+annuity+pvd+gpf */
+    var groupRoom = Math.max(0, c.groupCap - pvd - gpf);
+    var groupUsed = rmf + ssf + ann;
+    var hitGroupCap = false;
+    if (groupUsed > groupRoom) {
+      hitGroupCap = true;
+      var over = groupUsed - groupRoom;
+      /* trim least-desirable first: annuity → rmf → ssf */
+      var cut = Math.min(ann, over); ann -= cut; over -= cut; wasted += cut;
+      if (over > 0) { cut = Math.min(rmf, over); rmf -= cut; over -= cut; wasted += cut; }
+      if (over > 0) { cut = Math.min(ssf, over); ssf -= cut; over -= cut; wasted += cut; }
+    }
+    return {
+      clamped: { rmf: rmf, ssf: ssf, esg: esg, annuity: ann },
+      wasted: wasted,
+      hitGroupCap: hitGroupCap
+    };
+  }
+
   /* idempotent export */
   window.WC_TAX = {
     TAX_YEARS: TAX_YEARS,
+    DED_CONFIG: DED_CONFIG,
     computeTax: computeTax,
     expenseDeduction: expenseDeduction,
-    nextBracketFloor: nextBracketFloor
+    nextBracketFloor: nextBracketFloor,
+    taxConfig: taxConfig,
+    canBuy: canBuy,
+    enforceCaps: enforceCaps
   };
 })();
