@@ -556,10 +556,12 @@
     var donate = W.parseNum(el('d-donate').value);
     var income = state.grossForCaps || 0;
 
-    var retireCap = 500000;
-    var lifeCap = 100000;
-    var pensionCap = Math.min(income * 0.15, 200000);
-    var homeCap = 100000;
+    /* caps from _tax.js DED_CONFIG (single source · guideline #1) */
+    var C = T.taxConfig(state.year);
+    var retireCap = C.groupCap;
+    var lifeCap = C.lifeHealthCombined;
+    var pensionCap = Math.min(income * C.annuityPct, C.annuityCap);
+    var homeCap = C.mortgageCap;
 
     var retireD = Math.min(retire, retireCap);
     var lifeD = Math.min(life, lifeCap);
@@ -568,7 +570,7 @@
 
     // donation cap = 10% of income after expenses & all other deductions
     var preDonate = retireD + lifeD + pensionD + homeD;
-    var donateCap = Math.max(0, (donationBase - preDonate) * 0.10);
+    var donateCap = Math.max(0, (donationBase - preDonate) * C.donationPct);
     var donateD = Math.min(donate, donateCap);
 
     if (retire > retireCap) { warns.push({ th: 'กลุ่มเกษียณเกินเพดาน 500,000 · ส่วนเกินไม่ได้สิทธิ', en: 'Retirement group over ฿500,000 cap · excess not deductible' }); }
@@ -607,8 +609,9 @@
         otherExpense += T.expenseDeduction(amt, cat, year);
       }
     }
-    // shared 40(1)+40(2) expense: 50% of (salary + 40(2)) capped at 100k
-    var empExpense = Math.min((salary + cat2Salary) * 0.5, 100000);
+    // shared 40(1)+40(2) expense: 50% of (salary + 40(2)) capped at 100k (caps from _tax.js)
+    var _cfgY = T.taxConfig(year);
+    var empExpense = Math.min((salary + cat2Salary) * _cfgY.expensePct, _cfgY.expenseCap);
     var expense = empExpense + otherExpense;
 
     var gross = salary + otherIncome;

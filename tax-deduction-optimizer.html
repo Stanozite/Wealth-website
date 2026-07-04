@@ -391,7 +391,8 @@
   /* ---------- year-awareness (guideline #2: never freeze SSF as "still buyable") ---------- */
   /* current Thai tax year (B.E.) from the visitor's clock · SSF sunsets after ปีภาษี 2567 */
   var NOW_BE = new Date().getFullYear() + 543;
-  var SSF_OK = !!(T && T.taxConfig && T.taxConfig(NOW_BE).ssfBuyable);
+  var CFG = T.taxConfig(NOW_BE);                 /* single source of deduction caps (_tax.js) */
+  var SSF_OK = !!(CFG && CFG.ssfBuyable);
   (function gateSsfInput() {
     if (SSF_OK) { return; }
     var f = el('buy-ssf');
@@ -405,34 +406,22 @@
     }
   })();
 
-  /* ---------- Thai progressive brackets 2567 ---------- */
-  /* [floor, rate%] · rate applies to income ABOVE floor up to the next floor */
-  var BRACKETS = [
-    [0, 0], [150000, 5], [300000, 10], [500000, 15],
-    [750000, 20], [1000000, 25], [2000000, 30], [5000000, 35]
-  ];
-
-  /* marginal rate at a given net taxable income */
-  function marginalRate(net) {
-    var r = 0;
-    for (var i = 0; i < BRACKETS.length; i++) {
-      if (net > BRACKETS[i][0]) { r = BRACKETS[i][1]; }
-    }
-    return r;
+  /* ---------- Thai progressive brackets · derived from _tax.js (single source) ---------- */
+  /* _tax.js stores [ceiling, rate] pairs; derive [floor, ratePct] for the floor-walker below */
+  var _bkSrc = (T.TAX_YEARS[NOW_BE] || T.TAX_YEARS[2567]).brackets;
+  var BRACKETS = [[0, _bkSrc[0][1] * 100]];
+  for (var _bi = 1; _bi < _bkSrc.length; _bi++) {
+    BRACKETS.push([_bkSrc[_bi - 1][0], _bkSrc[_bi][1] * 100]);
   }
 
-  /* true stair-stepped tax on a net taxable income */
+  /* marginal rate (percent) at a given net taxable income — via shared engine */
+  function marginalRate(net) {
+    return Math.round(T.computeTax(net, NOW_BE).marginalRate * 100);
+  }
+
+  /* true stair-stepped tax on a net taxable income — via shared engine */
   function computeTax(net) {
-    if (net <= 0) { return 0; }
-    var tax = 0;
-    for (var i = 0; i < BRACKETS.length; i++) {
-      var floor = BRACKETS[i][0];
-      if (net <= floor) { break; }
-      var ceil = (i + 1 < BRACKETS.length) ? BRACKETS[i + 1][0] : Infinity;
-      var slice = Math.min(net, ceil) - floor;
-      tax += slice * BRACKETS[i][1] / 100;
-    }
-    return tax;
+    return T.computeTax(net, NOW_BE).tax;
   }
 
   /* real tax saved by an extra deduction, walking down the brackets */
@@ -447,7 +436,7 @@
     var gpf = num('gpf');
     var otherDedRaw = el('other-ded').value;
     var otherDed = W.parseNum(otherDedRaw);
-    if (String(otherDedRaw || '').replace(/[,฿\s]/g, '') === '') { otherDed = 160000; }
+    if (String(otherDedRaw || '').replace(/[,฿\s]/g, '') === '') { otherDed = CFG.expenseCap + CFG.personal; }
     var rmfBuy = num('buy-rmf');
     var ssfBuy = num('buy-ssf');
     var esgBuy = num('buy-esg');
@@ -455,15 +444,16 @@
     var healthBuy = num('buy-health');
     var penBuy = num('buy-pen');
 
-    var GROUP_CAP = 500000;
-    var rmfCap = Math.min(inc * 0.30, 500000);
+    /* all caps from _tax.js DED_CONFIG (single source · guideline #1) */
+    var GROUP_CAP = CFG.groupCap;
+    var rmfCap = Math.min(inc * CFG.rmfPct, CFG.rmfCap);
     /* SSF sunset: no deduction at all once ปีภาษี > 2567, regardless of what's typed */
-    var ssfCap = SSF_OK ? Math.min(inc * 0.30, 200000) : 0;
-    var esgCap = Math.min(inc * 0.30, 300000);
-    var lifeCap = 100000;
-    var healthCap = 25000;
-    var insCombCap = 100000;
-    var penCap = Math.min(inc * 0.15, 200000);
+    var ssfCap = SSF_OK ? Math.min(inc * CFG.ssfPct, CFG.ssfCap) : 0;
+    var esgCap = Math.min(inc * CFG.esgPct, CFG.esgCap);
+    var lifeCap = CFG.lifeCap;
+    var healthCap = CFG.healthCap;
+    var insCombCap = CFG.lifeHealthCombined;
+    var penCap = Math.min(inc * CFG.annuityPct, CFG.annuityCap);
 
     /* deductible amounts (individually capped) */
     var rmfDed = Math.min(rmfBuy, rmfCap);
@@ -524,7 +514,7 @@
       if (BRACKETS[i][0] < net) { floor = BRACKETS[i][0]; }
     }
     /* already in the lowest (0%) band, nothing below */
-    if (net <= BRACKETS[0][0] || net <= 150000) {
+    if (net <= BRACKETS[1][0]) {   /* already in the 0% band (below first taxable floor) */
       return { atFloor: true, floor: 0, needed: 0, possible: false, saving: 0 };
     }
     var needed = net - floor;
