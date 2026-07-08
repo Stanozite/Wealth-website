@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Sequence of returns risk">
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <rect width="1200" height="630" fill="#e4f7d2" opacity="0.22"/>
+  <line x1="120" y1="520" x2="1080" y2="520" stroke="#dfe7d8" stroke-width="2"/>
+  <!-- survives: rises early -->
+  <path d="M140 430 C 320 340, 520 260, 760 180 C 900 140, 1000 130, 1060 120" fill="none" stroke="#163300" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="1060" cy="120" r="11" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+  <text x="770" y="150" font-family="'IBM Plex Sans Thai',sans-serif" font-size="22" font-weight="700" fill="#163300">พังทีหลัง = รอด</text>
+  <!-- depletes: crashes early then can't recover -->
+  <path d="M140 430 C 260 470, 340 500, 420 500 C 620 500, 820 505, 1010 512" fill="none" stroke="#a8200d" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="1010" cy="512" r="10" fill="#a8200d"/>
+  <text x="560" y="560" font-family="'IBM Plex Sans Thai',sans-serif" font-size="22" font-weight="700" fill="#a8200d">พัง 5 ปีแรก = เงินหมด</text>
+  <text x="140" y="410" font-family="'IBM Plex Sans Thai',sans-serif" font-size="20" font-weight="600" fill="#5b6b63">เริ่มเท่ากัน</text>
+</svg>

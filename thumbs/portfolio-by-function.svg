@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="IBM Plex Sans Thai, sans-serif">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1080" cy="90" r="180" fill="#e4f7d2"/>
+  <circle cx="90" cy="580" r="150" fill="#e4f7d2"/>
+
+  <!-- title strip -->
+  <text x="120" y="118" font-size="40" font-weight="700" fill="#163300">เงินแต่ละก้อน · มีหน้าที่</text>
+  <text x="120" y="162" font-size="22" font-weight="500" fill="#0d7a3f">Give each pot of money a job</text>
+
+  <!-- ===== BUCKET 1 · PROTECT ===== -->
+  <g transform="translate(210,300)">
+    <!-- coins falling in -->
+    <circle cx="0" cy="-70" r="18" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <circle cx="34" cy="-95" r="18" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <!-- bucket body -->
+    <path d="M-60 0 L60 0 L46 150 L-46 150 Z" fill="#163300"/>
+    <ellipse cx="0" cy="0" rx="60" ry="16" fill="#0d7a3f"/>
+    <ellipse cx="0" cy="0" rx="60" ry="16" fill="none" stroke="#163300" stroke-width="3"/>
+    <text x="0" y="92" font-size="34" text-anchor="middle" fill="#9fe870">🛡</text>
+    <text x="0" y="200" font-size="27" font-weight="700" text-anchor="middle" fill="#163300">ปกป้อง</text>
+    <text x="0" y="230" font-size="18" font-weight="500" text-anchor="middle" fill="#0d7a3f">Protect</text>
+  </g>
+
+  <!-- ===== BUCKET 2 · COMPOUND ===== -->
+  <g transform="translate(600,300)">
+    <circle cx="-30" cy="-75" r="18" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <circle cx="6" cy="-100" r="18" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <circle cx="40" cy="-72" r="18" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <path d="M-60 0 L60 0 L46 150 L-46 150 Z" fill="#163300"/>
+    <ellipse cx="0" cy="0" rx="60" ry="16" fill="#0d7a3f"/>
+    <ellipse cx="0" cy="0" rx="60" ry="16" fill="none" stroke="#163300" stroke-width="3"/>
+    <text x="0" y="92" font-size="34" text-anchor="middle" fill="#9fe870">↗</text>
+    <text x="0" y="200" font-size="27" font-weight="700" text-anchor="middle" fill="#163300">ทบต้น</text>
+    <text x="0" y="230" font-size="18" font-weight="500" text-anchor="middle" fill="#0d7a3f">Compound</text>
+  </g>
+
+  <!-- ===== BUCKET 3 · CAN-LOSE ===== -->
+  <g transform="translate(990,300)">
+    <circle cx="8" cy="-88" r="18" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <path d="M-60 0 L60 0 L46 150 L-46 150 Z" fill="#163300"/>
+    <ellipse cx="0" cy="0" rx="60" ry="16" fill="#0d7a3f"/>
+    <ellipse cx="0" cy="0" rx="60" ry="16" fill="none" stroke="#163300" stroke-width="3"/>
+    <!-- dashed cap line = capped bucket -->
+    <line x1="-50" y1="44" x2="50" y2="44" stroke="#9fe870" stroke-width="4" stroke-dasharray="10 8"/>
+    <text x="0" y="98" font-size="30" text-anchor="middle" fill="#9fe870">?</text>
+    <text x="0" y="200" font-size="27" font-weight="700" text-anchor="middle" fill="#163300">ยอมเสียได้</text>
+    <text x="0" y="230" font-size="18" font-weight="500" text-anchor="middle" fill="#0d7a3f">Can-lose · capped</text>
+  </g>
+
+  <!-- baseline -->
+  <line x1="120" y1="452" x2="1080" y2="452" stroke="#163300" stroke-width="3" opacity="0.25"/>
+</svg>

@@ -256,6 +256,10 @@
             <button type="button" class="btn btn-primary" id="autofill"><span class="lang-th">⚡ เติมแผนอัตโนมัติ</span><span class="lang-en">⚡ Auto-fill plan</span></button>
           </div>
           <p class="hint" style="margin-bottom:10px;"><span class="lang-th">กรอกจำนวนต่อปี + จำนวนปีที่จะซื้อ (เริ่มจากปีแรกของแผน) · แก้ได้เอง หรือกดเติมอัตโนมัติให้จัดให้</span><span class="lang-en">Enter amount/year + how many years (from year 1). Edit freely, or auto-fill.</span></p>
+          <label class="hint" style="display:flex;align-items:center;gap:8px;margin-bottom:12px;cursor:pointer;">
+            <input type="checkbox" id="grow-buys"/>
+            <span class="lang-th">ปรับเงินซื้อให้โตตามรายได้ (ใช้ % รายได้โตด้านบน) — ปีท้ายเติมเพดานที่สูงขึ้นได้เต็มขึ้น</span><span class="lang-en">Grow yearly buys with income (uses the growth % above) — later years fill their higher caps</span>
+          </label>
           <table class="plan-tbl">
             <thead><tr><th><span class="lang-th">ผลิตภัณฑ์</span><span class="lang-en">Product</span></th><th><span class="lang-th">บาท/ปี</span><span class="lang-en">฿/yr</span></th><th><span class="lang-th">กี่ปี</span><span class="lang-en">Years</span></th><th></th></tr></thead>
             <tbody>
@@ -393,6 +397,7 @@
       years: Math.max(1, Math.min(40, intv('years'))),
       income0: num('income'),
       growth: (parseFloat(val('growth')) || 0) / 100,
+      growBuys: (function () { var e = el('grow-buys'); return e ? e.checked : false; })(),
       liqPct: (parseFloat(val('liq')) || 100) / 100,
       ssoYr: num('sso') * 12,
       pvdPct: (parseFloat(val('pvd-pct')) || 0) / 100,
@@ -417,7 +422,11 @@
       var key = prods[p][0];
       var amt = num(prods[p][1]);
       var yrs = intv(prods[p][2]);
-      for (y = 0; y < A.years; y++) { sch[key][y] = (y < yrs) ? amt : 0; }
+      for (y = 0; y < A.years; y++) {
+        if (y >= yrs) { sch[key][y] = 0; }
+        else if (A.growBuys) { sch[key][y] = amt * Math.pow(1 + A.growth, y); }  /* engine clamps to each year's cap */
+        else { sch[key][y] = amt; }
+      }
     }
     return sch;
   }
@@ -825,7 +834,7 @@
   if (W && W.bindNumInputs) { W.bindNumInputs(document); }
   var ids = ['age', 'start-year', 'years', 'income', 'growth', 'liq', 'sso', 'pvd-pct', 'spouse',
     'children', 'children2', 'parents', 'life', 'health', 'mortgage', 'donation',
-    'rmf-amt', 'rmf-yrs', 'ssf-amt', 'ssf-yrs', 'esg-amt', 'esg-yrs', 'ann-amt', 'ann-yrs'];
+    'rmf-amt', 'rmf-yrs', 'ssf-amt', 'ssf-yrs', 'esg-amt', 'esg-yrs', 'ann-amt', 'ann-yrs', 'grow-buys'];
   for (var i = 0; i < ids.length; i++) {
     var e = el(ids[i]);
     if (e) { e.addEventListener('input', run); e.addEventListener('change', run); }

@@ -15,14 +15,14 @@
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Wealth Compass"/>
 <meta property="og:title" content="ความรู้การเงิน · วางแผนเงิน ภาษี ลงทุน เกษียณ | Wealth Compass"/>
-<meta property="og:description" content="บทความการเงินฉบับเข้าใจง่าย วางแผนงบ ลดหย่อนภาษี ลงทุน ปลดหนี้ เกษียณ · อ้างอิงมาตรฐานสากล พร้อมเครื่องมือคำนวณฟรีในทุกบทความ"/>
+<meta property="og:description" content="พื้นที่อ่านและเรียนรู้เรื่องเงินฉบับลงมือทำได้จริง · วางแผนงบ ลดหย่อนภาษี ลงทุน ปลดหนี้ เกษียณ · อ่านตามซีรีส์ + เครื่องมือคำนวณฟรีทุกบทความ"/>
 <meta property="og:url" content="https://wealthcompass.example.com/blog.html"/>
 <meta property="og:locale" content="th_TH"/>
 <meta property="og:locale:alternate" content="en_US"/>
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="ความรู้การเงิน | Wealth Compass"/>
-<meta name="twitter:description" content="บทความการเงินเข้าใจง่าย พร้อมเครื่องมือคำนวณฟรีในทุกบทความ"/>
+<meta name="twitter:description" content="พื้นที่อ่านและเรียนรู้เรื่องเงิน อ่านตามซีรีส์ + เครื่องมือคำนวณฟรีในทุกบทความ"/>
 
 <link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/blog.html"/>
 <link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/blog.html?lang=en"/>
@@ -38,35 +38,18 @@
 {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://wealthcompass.example.com/#organization",
-      "name": "Wealth Compass",
-      "url": "https://wealthcompass.example.com",
-      "areaServed": "TH"
-    },
-    {
-      "@type": "Blog",
-      "@id": "https://wealthcompass.example.com/blog.html#blog",
-      "name": "ความรู้การเงิน Wealth Compass",
-      "description": "บทความวางแผนการเงิน ภาษี ลงทุน และเกษียณ สำหรับคนไทย",
-      "url": "https://wealthcompass.example.com/blog.html",
-      "inLanguage": ["th", "en"],
-      "publisher": {"@id": "https://wealthcompass.example.com/#organization"}
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://wealthcompass.example.com/"},
-        {"@type": "ListItem", "position": 2, "name": "ความรู้การเงิน", "item": "https://wealthcompass.example.com/blog.html"}
-      ]
-    }
+    {"@type": "Organization", "@id": "https://wealthcompass.example.com/#organization", "name": "Wealth Compass", "url": "https://wealthcompass.example.com", "areaServed": "TH"},
+    {"@type": "Blog", "@id": "https://wealthcompass.example.com/blog.html#blog", "name": "ความรู้การเงิน Wealth Compass", "description": "บทความวางแผนการเงิน ภาษี ลงทุน และเกษียณ สำหรับคนไทย อ่านตามซีรีส์ได้", "url": "https://wealthcompass.example.com/blog.html", "inLanguage": ["th", "en"], "publisher": {"@id": "https://wealthcompass.example.com/#organization"}},
+    {"@type": "BreadcrumbList", "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://wealthcompass.example.com/"},
+      {"@type": "ListItem", "position": 2, "name": "ความรู้การเงิน", "item": "https://wealthcompass.example.com/blog.html"}
+    ]}
   ]
 }
 </script>
 
 <title>ความรู้การเงิน · วางแผนเงิน ภาษี ลงทุน เกษียณ | Wealth Compass</title>
-<meta name="description" content="บทความการเงินฉบับเข้าใจง่าย วางแผนงบ ลดหย่อนภาษี 2567 ลงทุน ปลดหนี้ เกษียณ · อ้างอิงมาตรฐานสากล พร้อมเครื่องมือคำนวณฟรีในทุกบทความ"/>
+<meta name="description" content="พื้นที่อ่านและเรียนรู้เรื่องเงินฉบับลงมือทำได้จริง วางแผนงบ ลดหย่อนภาษี 2567 ลงทุน ปลดหนี้ เกษียณ · อ่านตามซีรีส์ + เครื่องมือคำนวณฟรีทุกบทความ"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -74,20 +57,65 @@
 <link rel="stylesheet" href="_theme.css"/>
 
 <style>
-.blog-hero { padding: 70px 0 30px; }
-.blog-hero h1 { font-size: clamp(34px, 5vw, 56px); font-weight: 800; }
-.blog-hero .lede { color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 16px; }
-.filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 30px 0 8px; }
-.filter-chip {
-  border: 1px solid var(--line); background: var(--panel);
-  border-radius: 99px; padding: 8px 18px; font-size: 14px; font-weight: 700;
-  color: var(--muted); cursor: pointer; transition: all .15s;
-}
+.blog-hero { padding: 64px 0 18px; }
+.blog-hero h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; }
+.blog-hero .lede { color: var(--muted); font-size: 18px; max-width: 620px; margin-top: 16px; }
+
+.section-title { font-size: 22px; font-weight: 800; color: var(--forest); margin: 0 0 4px; }
+.section-title-sub { color: var(--muted); font-size: 14px; margin: 0 0 14px; }
+
+/* start-here + featured card rows */
+.start-here { background: var(--bright-soft); border: 1px solid var(--bright-2); border-radius: 18px; padding: 20px 22px; margin: 22px 0 8px; }
+.start-here .sh-h { font-weight: 800; color: var(--forest); font-size: 16px; margin-bottom: 12px; }
+.mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.feat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .feat-grid { grid-template-columns: 1fr; } .mini-grid { grid-template-columns: 1fr; } }
+
+/* hub layout: main + sidebar */
+.hub { display: grid; grid-template-columns: 1fr 296px; gap: 34px; align-items: start; margin-top: 26px; }
+@media (max-width: 900px) { .hub { grid-template-columns: 1fr; } }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+.filters { display: flex; flex-wrap: wrap; gap: 9px; }
+.filter-chip { border: 1px solid var(--line); background: var(--panel); border-radius: 99px; padding: 7px 15px; font-size: 13.5px; font-weight: 700; color: var(--muted); cursor: pointer; transition: all .15s; }
 .filter-chip.on { background: var(--forest); color: var(--bright); border-color: var(--forest); }
-.article-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
-.tool-card .meta { font-size: 12.5px; color: var(--muted); font-weight: 600; margin-top: 4px; }
-@media (max-width: 1024px) { .article-grid { grid-template-columns: repeat(2, 1fr); } }
+.sortsel { padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; font-family: inherit; font-size: 13.5px; background: var(--panel); color: var(--forest); font-weight: 600; }
+.active-tag { font-size: 14.5px; color: var(--forest); font-weight: 700; margin: 14px 0 2px; }
+.active-tag button { background: none; border: none; color: #a8200d; cursor: pointer; font-weight: 700; margin-left: 8px; font-size: 13px; }
+.result-count { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
+
+.article-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 14px; }
+@media (max-width: 1200px) { .article-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px) { .article-grid { grid-template-columns: 1fr; } }
+.no-results { padding: 30px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 14px; }
+
+/* series */
+.series-block { border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; margin: 14px 0; background: var(--panel); }
+.series-block .sh { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.series-block .st { font-weight: 800; color: var(--forest); font-size: 17px; }
+.series-block .lvl { font-size: 12px; color: var(--muted); font-weight: 700; background: var(--bright-soft); border-radius: 99px; padding: 3px 10px; }
+.series-steps { list-style: none; padding: 0; margin: 12px 0 0; counter-reset: st; }
+.series-steps li { counter-increment: st; padding: 8px 0 8px 32px; position: relative; border-top: 1px dashed var(--line); }
+.series-steps li:first-child { border-top: none; }
+.series-steps li::before { content: counter(st); position: absolute; left: 0; top: 8px; width: 21px; height: 21px; background: var(--bright-soft); color: var(--forest); border-radius: 50%; font-size: 11px; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.series-steps a { color: #38454c; text-decoration: none; font-size: 14.5px; font-weight: 600; }
+.series-steps a:hover { color: var(--positive); }
+.series-steps .rt { color: var(--muted); font-size: 12px; font-weight: 600; }
+
+/* sidebar */
+.sidebar { display: flex; flex-direction: column; gap: 26px; position: sticky; top: 18px; }
+@media (max-width: 900px) { .sidebar { position: static; } }
+.side-box h4 { font-size: 12.5px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+.search-box { width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 12px; font-size: 14px; font-family: inherit; background: var(--panel); box-sizing: border-box; }
+.search-box:focus { outline: 2px solid var(--bright); border-color: var(--forest); }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag-chip { border: 1px solid var(--line); background: var(--panel); border-radius: 99px; padding: 5px 11px; font-size: 12.5px; font-weight: 600; color: var(--muted); cursor: pointer; }
+.tag-chip:hover { border-color: var(--forest); color: var(--forest); }
+.tag-chip.on { background: var(--forest); color: var(--bright); border-color: var(--forest); }
+.tag-chip .c { opacity: .55; margin-left: 5px; font-size: 11px; }
+.recent-list a { display: block; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; color: #38454c; text-decoration: none; font-weight: 600; line-height: 1.4; }
+.recent-list a:last-child { border-bottom: none; }
+.recent-list a:hover { color: var(--positive); }
 </style>
 </head>
 <body>
@@ -102,35 +130,95 @@
 <header class="blog-hero">
   <div class="container">
     <div class="crumb" style="font-size:13px;color:var(--muted);margin-bottom:14px;"><a href="index.html" style="color:var(--positive);font-weight:600;"><span class="lang-th">หน้าแรก</span><span class="lang-en">Home</span></a> / <span class="lang-th">ความรู้การเงิน</span><span class="lang-en">Learn</span></div>
-    <h1><span class="lang-th">ความรู้การเงิน ที่ลงมือทำได้จริง</span><span class="lang-en">Money knowledge you can act on</span></h1>
-    <p class="lede"><span class="lang-th">บทความฉบับเข้าใจง่าย อ้างอิงมาตรฐานสากล และทุกบทความมีเครื่องมือคำนวณฟรีให้ลองทันที</span><span class="lang-en">Plain-language guides grounded in global standards · every article comes with a free calculator.</span></p>
+    <h1><span class="lang-th">พื้นที่อ่านและเรียนรู้เรื่องเงิน</span><span class="lang-en">A place to read and learn about money</span></h1>
+    <p class="lede"><span class="lang-th">บทความฉบับเข้าใจง่าย อ้างอิงมาตรฐานสากล อ่านตามซีรีส์ได้ และทุกบทความมีเครื่องมือคำนวณฟรีให้ลองทันที</span><span class="lang-en">Plain-language guides grounded in global standards · read them as series, with a free calculator in every one.</span></p>
 
-    <div class="filters" id="filters" role="group" aria-label="Filter articles by topic"></div>
+    <!-- START HERE -->
+    <div class="start-here">
+      <div class="sh-h"><span class="lang-th">🧭 เพิ่งเริ่ม? อ่าน 2 บทความนี้ก่อน</span><span class="lang-en">🧭 New here? Start with these two</span></div>
+      <div class="mini-grid" id="start-here"></div>
+    </div>
   </div>
 </header>
 
-<section class="section tight" style="padding-top:18px;">
+<!-- FEATURED -->
+<section class="section tight" style="padding-top:16px;">
   <div class="container">
-    <!-- static fallback for crawlers / no-JS; JS re-renders this grid on load -->
-    <div class="article-grid" id="article-grid">
-      <a class="tool-card article-card" href="fire-movement-thailand.html"><div class="thumb"><img src="thumbs/fire-movement-thailand.svg" alt="" loading="lazy"/><span class="badge violet"><span class="lang-th">เกษียณ</span><span class="lang-en">Retire</span></span></div><div class="body"><h3><span class="lang-th">FIRE คืออะไร? เกษียณก่อน 40 ในไทยทำได้จริงไหม</span><span class="lang-en">What is FIRE? Early retirement in Thailand</span></h3><p><span class="lang-th">ขบวนการ FIRE เกษียณเร็วด้วยเลข 25 เท่า อัตราออม 50%+ ทำได้จริงแค่ไหนในบริบทไทย</span><span class="lang-en">The FIRE movement and 50%+ savings rates · how realistic in Thailand?</span></p></div></a>
-      <a class="tool-card article-card" href="social-security-pension.html"><div class="thumb"><img src="thumbs/social-security-pension.svg" alt="" loading="lazy"/><span class="badge violet"><span class="lang-th">เกษียณ</span><span class="lang-en">Retire</span></span></div><div class="body"><h3><span class="lang-th">ประกันสังคม ม.33 ได้บำนาญเท่าไหร่?</span><span class="lang-en">Thai social security pension: how much?</span></h3><p><span class="lang-th">สูตรคำนวณบำนาญชราภาพ มาตรา 33/39 ได้เดือนละเท่าไหร่ พอใช้ไหม และต้องเติมอีกแค่ไหน</span><span class="lang-en">The SSO pension formula and the gap you fill yourself.</span></p></div></a>
-      <a class="tool-card article-card" href="dca-how-to-start.html"><div class="thumb"><img src="thumbs/dca-how-to-start.svg" alt="" loading="lazy"/><span class="badge blue"><span class="lang-th">ลงทุน</span><span class="lang-en">Invest</span></span></div><div class="body"><h3><span class="lang-th">DCA คืออะไร? เริ่มลงทุนรายเดือนฉบับมือใหม่</span><span class="lang-en">What is DCA? Monthly investing for beginners</span></h3><p><span class="lang-th">DCA ตัดอารมณ์ออกจากการลงทุน เทียบ DCA vs ลงก้อนเดียว vs จับจังหวะตลาด</span><span class="lang-en">DCA vs lump sum vs market timing, with real steps.</span></p></div></a>
-      <a class="tool-card article-card" href="fund-fees-index-funds.html"><div class="thumb"><img src="thumbs/fund-fees-index-funds.svg" alt="" loading="lazy"/><span class="badge blue"><span class="lang-th">ลงทุน</span><span class="lang-en">Invest</span></span></div><div class="body"><h3><span class="lang-th">ค่าธรรมเนียมกองทุน 1.5% ไม่ใช่เรื่องเล็ก</span><span class="lang-en">Fund fees of 1.5% are not small</span></h3><p><span class="lang-th">อ่าน TER กองทุนไทย ค่าธรรมเนียมกินผลตอบแทนแค่ไหนใน 20 ปี ทำไม index ถูกกว่า 5 เท่า</span><span class="lang-en">How fees compound over 20 years; why index funds cost 5x less.</span></p></div></a>
-      <a class="tool-card article-card" href="risk-profile-explained.html"><div class="thumb"><img src="thumbs/risk-profile-explained.svg" alt="" loading="lazy"/><span class="badge blue"><span class="lang-th">ลงทุน</span><span class="lang-en">Invest</span></span></div><div class="body"><h3><span class="lang-th">ก่อนซื้อกองทุน รู้จัก Risk Profile ของตัวเองหรือยัง?</span><span class="lang-en">Know your risk profile before you buy</span></h3><p><span class="lang-th">ความเสี่ยง "รับได้" กับ "รับไหว" ต่างกันยังไง พอร์ตที่ดีคือพอร์ตที่ถือผ่านตลาดแดงได้</span><span class="lang-en">Willingness vs capacity, and the portfolio you can hold through a crash.</span></p></div></a>
-      <a class="tool-card article-card" href="net-worth-why-it-matters.html"><div class="thumb"><img src="thumbs/net-worth-why-it-matters.svg" alt="" loading="lazy"/><span class="badge green"><span class="lang-th">รากฐาน</span><span class="lang-en">Foundation</span></span></div><div class="body"><h3><span class="lang-th">Net Worth คืออะไร? ตัวเลขเดียวที่บอกฐานะจริง</span><span class="lang-en">Net worth: the one number that tells the truth</span></h3><p><span class="lang-th">รายได้สูงไม่ได้แปลว่ารวย วิธีคำนวณความมั่งคั่งสุทธิ ตีมูลค่าทรัพย์สิน และเป้าตามอายุ</span><span class="lang-en">High income ≠ wealthy. How to compute it, and age-based targets.</span></p></div></a>
-      <a class="tool-card article-card" href="financial-health-check.html"><div class="thumb"><img src="thumbs/financial-health-check.svg" alt="" loading="lazy"/><span class="badge green"><span class="lang-th">รากฐาน</span><span class="lang-en">Foundation</span></span></div><div class="body"><h3><span class="lang-th">เช็คสุขภาพการเงิน 8 ข้อ · แข็งแรงหรือแค่ยังไหว?</span><span class="lang-en">The 8-point financial health check</span></h3><p><span class="lang-th">กรอบ Spend/Save/Borrow/Plan 8 ตัวชี้วัดที่บอกว่าการเงินคุณแข็งแรงจริงไหม</span><span class="lang-en">The global Spend/Save/Borrow/Plan framework · thriving or coping?</span></p></div></a>
-      <a class="tool-card article-card" href="term-vs-whole-life.html"><div class="thumb"><img src="thumbs/term-vs-whole-life.svg" alt="" loading="lazy"/><span class="badge green"><span class="lang-th">ปกป้อง</span><span class="lang-en">Protect</span></span></div><div class="body"><h3><span class="lang-th">ประกันชีวิต Term vs Whole Life ซื้อแบบไหนดี?</span><span class="lang-en">Term vs whole life: which to buy?</span></h3><p><span class="lang-th">เทียบประกันชั่วระยะเวลากับตลอดชีพ เบี้ยต่างกัน 10 เท่า ความคุ้มครองเท่ากัน ใครเหมาะแบบไหน</span><span class="lang-en">Term costs 10x less for the same cover · who each type fits.</span></p></div></a>
-      <a class="tool-card article-card" href="health-insurance-guide.html"><div class="thumb"><img src="thumbs/health-insurance-guide.svg" alt="" loading="lazy"/><span class="badge green"><span class="lang-th">ปกป้อง</span><span class="lang-en">Protect</span></span></div><div class="body"><h3><span class="lang-th">ประกันสุขภาพจำเป็นไหม? เลือกยังไงไม่ให้เบี้ยบานปลาย</span><span class="lang-en">Do you need health insurance? How to choose</span></h3><p><span class="lang-th">ค่ารักษา รพ.เอกชนแพงแค่ไหน สิทธิที่มีครอบคลุมอะไร วิธีเลือกแผนเหมาจ่าย</span><span class="lang-en">Private hospital costs and choosing a plan without overpaying.</span></p></div></a>
-      <a class="tool-card article-card" href="income-tax-guide.html"><div class="thumb"><img src="thumbs/income-tax-guide.svg" alt="" loading="lazy"/><span class="badge amber"><span class="lang-th">ภาษี</span><span class="lang-en">Tax</span></span></div><div class="body"><h3><span class="lang-th">ภาษีเงินได้บุคคลธรรมดา 2567: คำนวณขั้นบันไดใน 10 นาที</span><span class="lang-en">Thai personal income tax in 10 minutes</span></h3><p><span class="lang-th">เงินได้สุทธิคิดยังไง ขั้นบันได 5-35% ทำงานแบบไหน และความเข้าใจผิดเรื่อง bracket</span><span class="lang-en">How taxable income works, the 5-35% ladder, the bracket myth.</span></p></div></a>
-      <a class="tool-card article-card" href="rmf-vs-thaiesg.html"><div class="thumb"><img src="thumbs/rmf-vs-thaiesg.svg" alt="" loading="lazy"/><span class="badge amber"><span class="lang-th">ภาษี</span><span class="lang-en">Tax</span></span></div><div class="body"><h3><span class="lang-th">RMF vs ThaiESG ซื้ออะไรก่อน? เทียบเพดาน เงื่อนไข</span><span class="lang-en">RMF vs ThaiESG: which to buy first?</span></h3><p><span class="lang-th">กองทุนลดหย่อน 2 ตัวหลัก ต่างที่เพดาน ระยะถือครอง เหมาะกับใคร พร้อมลำดับซื้อ</span><span class="lang-en">Caps, holding periods, and the smart buying order.</span></p></div></a>
-      <a class="tool-card article-card" href="refinance-home-loan.html"><div class="thumb"><img src="thumbs/refinance-home-loan.svg" alt="" loading="lazy"/><span class="badge red"><span class="lang-th">หนี้สิน</span><span class="lang-en">Debt</span></span></div><div class="body"><h3><span class="lang-th">รีไฟแนนซ์บ้านคุ้มไหม? คิดให้ขาดก่อนย้ายธนาคาร</span><span class="lang-en">Refinancing your home loan: when it pays</span></h3><p><span class="lang-th">ดอกลอยตัวหลังปี 3 แพงแค่ไหน ค่าใช้จ่ายรีไฟแนนซ์ และสูตรคุ้มทุนใน 5 นาที</span><span class="lang-en">Post-teaser rates, the real costs, and a 5-minute break-even.</span></p></div></a>
-      <a class="tool-card article-card" href="retirement-how-much.html"><div class="thumb"><img src="thumbs/retirement-how-much.svg" alt="" loading="lazy"/><span class="badge violet"><span class="lang-th">เกษียณ</span><span class="lang-en">Retire</span></span></div><div class="body"><h3><span class="lang-th">เกษียณต้องมีเงินเท่าไหร่ถึงพอ? (กฎ 4%)</span><span class="lang-en">How much do you need to retire? The 4% rule</span></h3><p><span class="lang-th">คำนวณเงินเกษียณด้วยกฎ 25 เท่าและกฎ 4% พร้อมตัวอย่างคนไทยและเครื่องมือฟรี</span><span class="lang-en">The 25x and 4% rules, with Thai examples and a free simulator.</span></p></div></a>
-      <a class="tool-card article-card" href="tax-deductions-2567.html"><div class="thumb"><img src="thumbs/tax-deductions-2567.svg" alt="" loading="lazy"/><span class="badge amber"><span class="lang-th">ภาษี</span><span class="lang-en">Tax</span></span></div><div class="body"><h3><span class="lang-th">ลดหย่อนภาษี 2567 มีอะไรบ้าง? RMF SSF ThaiESG</span><span class="lang-en">Thai tax deductions 2024</span></h3><p><span class="lang-th">รวมรายการลดหย่อนปี 2567 ทุกตัว เพดานเท่าไหร่ ซื้ออะไรก่อน คำนวณเงินที่ประหยัดได้</span><span class="lang-en">Every deduction, its cap, what to buy first, how much you save.</span></p></div></a>
-      <a class="tool-card article-card" href="how-much-to-save.html"><div class="thumb"><img src="thumbs/how-much-to-save.svg" alt="" loading="lazy"/><span class="badge green"><span class="lang-th">รากฐาน</span><span class="lang-en">Foundation</span></span></div><div class="body"><h3><span class="lang-th">เงินเดือน 30,000 / 50,000 ควรเก็บเท่าไหร่?</span><span class="lang-en">How much should you save on a 30k/50k salary?</span></h3><p><span class="lang-th">สูตร 50/30/20 ปรับเข้าค่าครองชีพไทย เก็บเท่าไหร่ถึงพอ พร้อมตัวอย่างทุกช่วงเงินเดือน</span><span class="lang-en">The 50/30/20 split adapted to Thai cost of living.</span></p></div></a>
-      <a class="tool-card article-card" href="emergency-fund-guide.html"><div class="thumb"><img src="thumbs/emergency-fund-guide.svg" alt="" loading="lazy"/><span class="badge green"><span class="lang-th">รากฐาน</span><span class="lang-en">Foundation</span></span></div><div class="body"><h3><span class="lang-th">เงินสำรองฉุกเฉินควรมีเท่าไหร่? เก็บที่ไหนดี</span><span class="lang-en">How big should your emergency fund be?</span></h3><p><span class="lang-th">ทำไมต้องมี 3-6 เดือน ฟรีแลนซ์ต้องเท่าไหร่ เก็บที่ไหนให้สภาพคล่องดี</span><span class="lang-en">Why 3-6 months, and where to park it.</span></p></div></a>
-      <a class="tool-card article-card" href="compound-interest-power.html"><div class="thumb"><img src="thumbs/compound-interest-power.svg" alt="" loading="lazy"/><span class="badge blue"><span class="lang-th">ลงทุน</span><span class="lang-en">Invest</span></span></div><div class="body"><h3><span class="lang-th">พลังดอกเบี้ยทบต้น: เริ่มเร็ว 5 ปี ปลายทางต่างล้าน</span><span class="lang-en">The power of compounding</span></h3><p><span class="lang-th">ดอกเบี้ยทบต้นทำงานยังไง ทำไมเวลาสำคัญกว่าเงิน ค่าธรรมเนียม 1% กินเงินมหาศาล</span><span class="lang-en">Why time beats amount, and why a 1% fee costs a fortune.</span></p></div></a>
-      <a class="tool-card article-card" href="debt-snowball-avalanche.html"><div class="thumb"><img src="thumbs/debt-snowball-avalanche.svg" alt="" loading="lazy"/><span class="badge red"><span class="lang-th">หนี้สิน</span><span class="lang-en">Debt</span></span></div><div class="body"><h3><span class="lang-th">ปลดหนี้บัตรเครดิตวิธีไหนดี? Snowball vs Avalanche</span><span class="lang-en">Snowball vs avalanche</span></h3><p><span class="lang-th">เทียบ 2 วิธีปลดหนี้ วิธีไหนประหยัดดอก วิธีไหนชนะใจ ทำไมจ่ายขั้นต่ำคือกับดัก</span><span class="lang-en">Which saves more interest, and why minimum payments trap you.</span></p></div></a>
+    <div class="section-title"><span class="lang-th">บทความเด่น</span><span class="lang-en">Featured</span></div>
+    <div class="section-title-sub"><span class="lang-th">เริ่มจากที่คนอ่านมากที่สุด</span><span class="lang-en">The most-read starting points</span></div>
+    <div class="feat-grid" id="featured">
+      <!-- static fallback (JS re-renders) -->
+      <a class="tool-card article-card" href="net-worth-why-it-matters.html"><div class="thumb"><div class="thumb-fallback">🏛️</div><img src="thumbs/net-worth-why-it-matters.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge green"><span class="lang-th">รากฐาน</span><span class="lang-en">Foundation</span></span></div><div class="body"><h3><span class="lang-th">Net Worth คืออะไร? ตัวเลขเดียวที่บอกฐานะจริง</span><span class="lang-en">Net worth: the one number that tells the truth</span></h3><p><span class="lang-th">รายได้สูงไม่ได้แปลว่ารวย วิธีคำนวณความมั่งคั่งสุทธิ และเป้าตามอายุ</span><span class="lang-en">High income ≠ wealthy. How to compute it, and age-based targets.</span></p></div></a>
+      <a class="tool-card article-card" href="retirement-how-much.html"><div class="thumb"><div class="thumb-fallback">🌅</div><img src="thumbs/retirement-how-much.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge violet"><span class="lang-th">เกษียณ</span><span class="lang-en">Retire</span></span></div><div class="body"><h3><span class="lang-th">เกษียณต้องมีเงินเท่าไหร่ถึงพอ? (กฎ 4%)</span><span class="lang-en">How much do you need to retire? The 4% rule</span></h3><p><span class="lang-th">คำนวณเงินเกษียณด้วยกฎ 25 เท่าและกฎ 4% พร้อมตัวอย่างคนไทย</span><span class="lang-en">The 25x and 4% rules, with Thai examples and a free simulator.</span></p></div></a>
+      <a class="tool-card article-card" href="tax-deductions-2567.html"><div class="thumb"><div class="thumb-fallback">🧾</div><img src="thumbs/tax-deductions-2567.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge amber"><span class="lang-th">ภาษี</span><span class="lang-en">Tax</span></span></div><div class="body"><h3><span class="lang-th">ลดหย่อนภาษี 2567 มีอะไรบ้าง? RMF SSF ThaiESG</span><span class="lang-en">Thai tax deductions 2024</span></h3><p><span class="lang-th">รวมรายการลดหย่อนปี 2567 ทุกตัว เพดานเท่าไหร่ ซื้ออะไรก่อน</span><span class="lang-en">Every deduction, its cap, what to buy first, how much you save.</span></p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- HUB: main + sidebar -->
+<section class="section tight" style="padding-top:6px;">
+  <div class="container">
+    <div class="hub">
+      <!-- MAIN -->
+      <div class="hub-main">
+        <div class="toolbar">
+          <div class="filters" id="filters" role="group" aria-label="Filter by pillar"></div>
+          <label style="font-size:13px;color:var(--muted);font-weight:600;"><span class="lang-th">เรียง</span><span class="lang-en">Sort</span>
+            <select class="sortsel" id="sort" aria-label="Sort articles">
+              <option value="newest">ใหม่สุด / Newest</option>
+              <option value="quick">อ่านไวสุด / Quickest</option>
+            </select>
+          </label>
+        </div>
+        <div class="active-tag" id="active-tag" style="display:none;"></div>
+        <p class="result-count" id="result-count" aria-live="polite"></p>
+
+        <!-- static fallback grid: ALL articles as crawlable links · JS re-renders -->
+        <div class="article-grid" id="article-grid">
+          <a class="tool-card article-card" href="lifestyle-inflation-save-your-raise.html"><div class="thumb"><div class="thumb-fallback">🪜</div><img src="thumbs/lifestyle-inflation-save-your-raise.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge green"><span class="lang-th">รากฐาน</span><span class="lang-en">Foundation</span></span></div><div class="body"><h3><span class="lang-th">เงินเดือนขึ้น 20% แต่สิ้นปีเงินเก็บเท่าเดิม</span><span class="lang-en">Your raise keeps disappearing</span></h3><p><span class="lang-th">lifestyle inflation ทำงานยังไง และกฎแบ่งครึ่งเงินที่เพิ่มขึ้น</span><span class="lang-en">How lifestyle inflation works, and the split-the-raise rule.</span></p></div></a>
+          <a class="tool-card article-card" href="net-worth-why-it-matters.html"><div class="thumb"><div class="thumb-fallback">🏛️</div><img src="thumbs/net-worth-why-it-matters.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge green"><span class="lang-th">รากฐาน</span><span class="lang-en">Foundation</span></span></div><div class="body"><h3><span class="lang-th">Net Worth คืออะไร? ตัวเลขเดียวที่บอกฐานะจริง</span><span class="lang-en">Net worth: the one number that tells the truth</span></h3><p><span class="lang-th">รายได้สูงไม่ได้แปลว่ารวย วิธีคำนวณความมั่งคั่งสุทธิ และเป้าตามอายุ</span><span class="lang-en">High income ≠ wealthy. How to compute it, and age-based targets.</span></p></div></a>
+          <a class="tool-card article-card" href="financial-health-check.html"><div class="thumb"><div class="thumb-fallback">❤️</div><img src="thumbs/financial-health-check.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge green"><span class="lang-th">รากฐาน</span><span class="lang-en">Foundation</span></span></div><div class="body"><h3><span class="lang-th">เช็คสุขภาพการเงิน 8 ข้อ · แข็งแรงหรือแค่ยังไหว?</span><span class="lang-en">The 8-point financial health check</span></h3><p><span class="lang-th">กรอบ Spend/Save/Borrow/Plan 8 ตัวชี้วัดที่บอกว่าการเงินคุณแข็งแรงจริงไหม</span><span class="lang-en">The global Spend/Save/Borrow/Plan framework.</span></p></div></a>
+          <a class="tool-card article-card" href="how-much-to-save.html"><div class="thumb"><div class="thumb-fallback">📊</div><img src="thumbs/how-much-to-save.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge green"><span class="lang-th">รากฐาน</span><span class="lang-en">Foundation</span></span></div><div class="body"><h3><span class="lang-th">เงินเดือน 30,000 / 50,000 ควรเก็บเท่าไหร่?</span><span class="lang-en">How much should you save on a 30k/50k salary?</span></h3><p><span class="lang-th">สูตร 50/30/20 ปรับเข้าค่าครองชีพไทย พร้อมตัวอย่างทุกช่วงเงินเดือน</span><span class="lang-en">The 50/30/20 split adapted to Thai cost of living.</span></p></div></a>
+          <a class="tool-card article-card" href="emergency-fund-guide.html"><div class="thumb"><div class="thumb-fallback">🛟</div><img src="thumbs/emergency-fund-guide.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge green"><span class="lang-th">รากฐาน</span><span class="lang-en">Foundation</span></span></div><div class="body"><h3><span class="lang-th">เงินสำรองฉุกเฉินควรมีเท่าไหร่? เก็บที่ไหนดี</span><span class="lang-en">How big should your emergency fund be?</span></h3><p><span class="lang-th">ทำไมต้องมี 3-6 เดือน ฟรีแลนซ์ต้องเท่าไหร่ เก็บที่ไหนให้สภาพคล่องดี</span><span class="lang-en">Why 3-6 months, and where to park it.</span></p></div></a>
+          <a class="tool-card article-card" href="risk-profile-explained.html"><div class="thumb"><div class="thumb-fallback">🎯</div><img src="thumbs/risk-profile-explained.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge blue"><span class="lang-th">ลงทุน</span><span class="lang-en">Invest</span></span></div><div class="body"><h3><span class="lang-th">ก่อนซื้อกองทุน รู้จัก Risk Profile ของตัวเองหรือยัง?</span><span class="lang-en">Know your risk profile before you buy</span></h3><p><span class="lang-th">ความเสี่ยง "รับได้" กับ "รับไหว" ต่างกันยังไง</span><span class="lang-en">Willingness vs capacity, and the portfolio you can hold.</span></p></div></a>
+          <a class="tool-card article-card" href="dca-how-to-start.html"><div class="thumb"><div class="thumb-fallback">🗓️</div><img src="thumbs/dca-how-to-start.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge blue"><span class="lang-th">ลงทุน</span><span class="lang-en">Invest</span></span></div><div class="body"><h3><span class="lang-th">DCA คืออะไร? เริ่มลงทุนรายเดือนฉบับมือใหม่</span><span class="lang-en">What is DCA? Monthly investing for beginners</span></h3><p><span class="lang-th">DCA ตัดอารมณ์ออกจากการลงทุน เทียบ DCA vs ลงก้อนเดียว vs จับจังหวะ</span><span class="lang-en">DCA vs lump sum vs market timing, with real steps.</span></p></div></a>
+          <a class="tool-card article-card" href="compound-interest-power.html"><div class="thumb"><div class="thumb-fallback">📈</div><img src="thumbs/compound-interest-power.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge blue"><span class="lang-th">ลงทุน</span><span class="lang-en">Invest</span></span></div><div class="body"><h3><span class="lang-th">พลังดอกเบี้ยทบต้น: เริ่มเร็ว 5 ปี ปลายทางต่างล้าน</span><span class="lang-en">The power of compounding</span></h3><p><span class="lang-th">ทำไมเวลาสำคัญกว่าเงิน ค่าธรรมเนียม 1% กินเงินมหาศาล</span><span class="lang-en">Why time beats amount, and why a 1% fee costs a fortune.</span></p></div></a>
+          <a class="tool-card article-card" href="fund-fees-index-funds.html"><div class="thumb"><div class="thumb-fallback">🧮</div><img src="thumbs/fund-fees-index-funds.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge blue"><span class="lang-th">ลงทุน</span><span class="lang-en">Invest</span></span></div><div class="body"><h3><span class="lang-th">ค่าธรรมเนียมกองทุน 1.5% ไม่ใช่เรื่องเล็ก</span><span class="lang-en">Fund fees of 1.5% are not small</span></h3><p><span class="lang-th">ค่าธรรมเนียมกินผลตอบแทนแค่ไหนใน 20 ปี ทำไม index ถูกกว่า 5 เท่า</span><span class="lang-en">How fees compound over 20 years; why index funds cost 5x less.</span></p></div></a>
+          <a class="tool-card article-card" href="income-tax-guide.html"><div class="thumb"><div class="thumb-fallback">📋</div><img src="thumbs/income-tax-guide.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge amber"><span class="lang-th">ภาษี</span><span class="lang-en">Tax</span></span></div><div class="body"><h3><span class="lang-th">ภาษีเงินได้บุคคลธรรมดา 2567: คำนวณขั้นบันไดใน 10 นาที</span><span class="lang-en">Thai personal income tax in 10 minutes</span></h3><p><span class="lang-th">ขั้นบันได 5-35% ทำงานแบบไหน และความเข้าใจผิดเรื่อง bracket</span><span class="lang-en">How the 5-35% ladder works, and the bracket myth.</span></p></div></a>
+          <a class="tool-card article-card" href="rmf-vs-thaiesg.html"><div class="thumb"><div class="thumb-fallback">⚖️</div><img src="thumbs/rmf-vs-thaiesg.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge amber"><span class="lang-th">ภาษี</span><span class="lang-en">Tax</span></span></div><div class="body"><h3><span class="lang-th">RMF vs ThaiESG ซื้ออะไรก่อน? เทียบเพดาน เงื่อนไข</span><span class="lang-en">RMF vs ThaiESG: which to buy first?</span></h3><p><span class="lang-th">ต่างที่เพดาน ระยะถือครอง เหมาะกับใคร พร้อมลำดับซื้อ</span><span class="lang-en">Caps, holding periods, and the smart buying order.</span></p></div></a>
+          <a class="tool-card article-card" href="tax-deductions-2567.html"><div class="thumb"><div class="thumb-fallback">🧾</div><img src="thumbs/tax-deductions-2567.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge amber"><span class="lang-th">ภาษี</span><span class="lang-en">Tax</span></span></div><div class="body"><h3><span class="lang-th">ลดหย่อนภาษี 2567 มีอะไรบ้าง? RMF SSF ThaiESG</span><span class="lang-en">Thai tax deductions 2024</span></h3><p><span class="lang-th">รวมรายการลดหย่อนปี 2567 ทุกตัว เพดานเท่าไหร่ ซื้ออะไรก่อน</span><span class="lang-en">Every deduction, its cap, what to buy first.</span></p></div></a>
+          <a class="tool-card article-card" href="term-vs-whole-life.html"><div class="thumb"><div class="thumb-fallback">🛡️</div><img src="thumbs/term-vs-whole-life.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge green"><span class="lang-th">ปกป้อง</span><span class="lang-en">Protect</span></span></div><div class="body"><h3><span class="lang-th">ประกันชีวิต Term vs Whole Life ซื้อแบบไหนดี?</span><span class="lang-en">Term vs whole life: which to buy?</span></h3><p><span class="lang-th">เบี้ยต่างกัน 10 เท่า ความคุ้มครองเท่ากัน ใครเหมาะแบบไหน</span><span class="lang-en">Term costs 10x less for the same cover · who each fits.</span></p></div></a>
+          <a class="tool-card article-card" href="health-insurance-guide.html"><div class="thumb"><div class="thumb-fallback">🏥</div><img src="thumbs/health-insurance-guide.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge green"><span class="lang-th">ปกป้อง</span><span class="lang-en">Protect</span></span></div><div class="body"><h3><span class="lang-th">ประกันสุขภาพจำเป็นไหม? เลือกยังไงไม่ให้เบี้ยบานปลาย</span><span class="lang-en">Do you need health insurance? How to choose</span></h3><p><span class="lang-th">ค่ารักษา รพ.เอกชนแพงแค่ไหน วิธีเลือกแผนเหมาจ่าย</span><span class="lang-en">Private hospital costs and choosing a plan without overpaying.</span></p></div></a>
+          <a class="tool-card article-card" href="refinance-home-loan.html"><div class="thumb"><div class="thumb-fallback">🏠</div><img src="thumbs/refinance-home-loan.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge red"><span class="lang-th">หนี้สิน</span><span class="lang-en">Debt</span></span></div><div class="body"><h3><span class="lang-th">รีไฟแนนซ์บ้านคุ้มไหม? คิดให้ขาดก่อนย้ายธนาคาร</span><span class="lang-en">Refinancing your home loan: when it pays</span></h3><p><span class="lang-th">ดอกลอยตัวหลังปี 3 แพงแค่ไหน และสูตรคุ้มทุนใน 5 นาที</span><span class="lang-en">Post-teaser rates, the real costs, and a 5-minute break-even.</span></p></div></a>
+          <a class="tool-card article-card" href="debt-snowball-avalanche.html"><div class="thumb"><div class="thumb-fallback">⛓️</div><img src="thumbs/debt-snowball-avalanche.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge red"><span class="lang-th">หนี้สิน</span><span class="lang-en">Debt</span></span></div><div class="body"><h3><span class="lang-th">ปลดหนี้บัตรเครดิตวิธีไหนดี? Snowball vs Avalanche</span><span class="lang-en">Snowball vs avalanche</span></h3><p><span class="lang-th">วิธีไหนประหยัดดอก วิธีไหนชนะใจ ทำไมจ่ายขั้นต่ำคือกับดัก</span><span class="lang-en">Which saves more interest, and why minimum payments trap you.</span></p></div></a>
+          <a class="tool-card article-card" href="retirement-how-much.html"><div class="thumb"><div class="thumb-fallback">🌅</div><img src="thumbs/retirement-how-much.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge violet"><span class="lang-th">เกษียณ</span><span class="lang-en">Retire</span></span></div><div class="body"><h3><span class="lang-th">เกษียณต้องมีเงินเท่าไหร่ถึงพอ? (กฎ 4%)</span><span class="lang-en">How much do you need to retire? The 4% rule</span></h3><p><span class="lang-th">คำนวณเงินเกษียณด้วยกฎ 25 เท่าและกฎ 4% พร้อมตัวอย่างคนไทย</span><span class="lang-en">The 25x and 4% rules, with Thai examples.</span></p></div></a>
+          <a class="tool-card article-card" href="fire-movement-thailand.html"><div class="thumb"><div class="thumb-fallback">🔥</div><img src="thumbs/fire-movement-thailand.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge violet"><span class="lang-th">เกษียณ</span><span class="lang-en">Retire</span></span></div><div class="body"><h3><span class="lang-th">FIRE คืออะไร? เกษียณก่อน 40 ในไทยทำได้จริงไหม</span><span class="lang-en">What is FIRE? Early retirement in Thailand</span></h3><p><span class="lang-th">อัตราออม 50%+ ทำได้จริงแค่ไหนในบริบทไทย</span><span class="lang-en">The FIRE movement and 50%+ savings rates.</span></p></div></a>
+          <a class="tool-card article-card" href="social-security-pension.html"><div class="thumb"><div class="thumb-fallback">🏛️</div><img src="thumbs/social-security-pension.svg" alt="" loading="lazy" onerror="this.style.display='none'"/><span class="badge violet"><span class="lang-th">เกษียณ</span><span class="lang-en">Retire</span></span></div><div class="body"><h3><span class="lang-th">ประกันสังคม ม.33 ได้บำนาญเท่าไหร่?</span><span class="lang-en">Thai social security pension: how much?</span></h3><p><span class="lang-th">สูตรคำนวณบำนาญ ม.33/39 ได้เดือนละเท่าไหร่ และต้องเติมอีกแค่ไหน</span><span class="lang-en">The SSO pension formula and the gap you fill yourself.</span></p></div></a>
+        </div>
+
+        <!-- SERIES -->
+        <div style="margin-top:40px;">
+          <div class="section-title"><span class="lang-th">📚 อ่านตามซีรีส์</span><span class="lang-en">📚 Read as a series</span></div>
+          <div class="section-title-sub"><span class="lang-th">เส้นทางอ่านที่ต่อกัน จบเรื่องหนึ่งไปอีกเรื่องได้เลย</span><span class="lang-en">Connected reading paths · finish one, flow into the next</span></div>
+          <div id="series-list"></div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar" aria-label="Discovery">
+        <div class="side-box">
+          <h4><span class="lang-th">ค้นหา</span><span class="lang-en">Search</span></h4>
+          <input type="search" class="search-box" id="search" placeholder="ค้นหาบทความ / Search…" aria-label="Search articles"/>
+        </div>
+        <div class="side-box">
+          <h4><span class="lang-th">แท็ก</span><span class="lang-en">Tags</span></h4>
+          <div class="tag-cloud" id="tag-cloud"></div>
+        </div>
+        <div class="side-box">
+          <h4><span class="lang-th">ล่าสุด</span><span class="lang-en">Latest</span></h4>
+          <div class="recent-list" id="recent"></div>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
@@ -160,49 +248,145 @@
 <script>
 (function () {
   'use strict';
-  var current = 'all';
+  var state = { pillar: 'all', tag: 'all', query: '', sort: 'newest' };
 
   function lang() { return (window.WC && window.WC.getLang) ? window.WC.getLang() : 'th'; }
+  function A() { return window.WC_articles; }
+  function ttl(a) { return lang() === 'th' ? a.title.th : (a.title.en || a.title.th); }
 
+  /* ---- URL params (shareable tag/series/search) ---- */
+  function readParams() {
+    var q = location.search;
+    var mt = q.match(/[?&]tag=([^&]+)/); if (mt) { state.tag = decodeURIComponent(mt[1]); }
+    var mq = q.match(/[?&]q=([^&]+)/); if (mq) { state.query = decodeURIComponent(mq[1].replace(/\+/g, ' ')); }
+  }
+  function syncUrl() {
+    var parts = [];
+    if (state.tag && state.tag !== 'all') { parts.push('tag=' + encodeURIComponent(state.tag)); }
+    if (state.query) { parts.push('q=' + encodeURIComponent(state.query)); }
+    var qs = parts.length ? ('?' + parts.join('&')) : location.pathname;
+    try { history.replaceState(null, '', qs); } catch (e) {}
+  }
+
+  /* ---- pillar chips ---- */
   function buildFilters() {
     var host = document.getElementById('filters');
-    var ALL = window.WC_articles.list();
-    var PILLARS = window.WC_articles.pillars;
-    var L = lang();
-    var html = '<button type="button" class="filter-chip' + (current === 'all' ? ' on' : '') + '" data-f="all">'
-      + (L === 'th' ? 'ทั้งหมด' : 'All') + '</button>';
+    var ALL = A().list(); var P = A().pillars; var L = lang();
+    var html = '<button type="button" class="filter-chip' + (state.pillar === 'all' ? ' on' : '') + '" data-f="all">' + (L === 'th' ? 'ทั้งหมด' : 'All') + '</button>';
     var keys = [];
-    for (var k = 0; k < ALL.length; k++) {
-      if (keys.indexOf(ALL[k].pillar) < 0) { keys.push(ALL[k].pillar); }
-    }
+    for (var k = 0; k < ALL.length; k++) { if (keys.indexOf(ALL[k].pillar) < 0) { keys.push(ALL[k].pillar); } }
     for (var i = 0; i < keys.length; i++) {
-      var p = PILLARS[keys[i]] || { th: keys[i], en: keys[i] };
-      html += '<button type="button" class="filter-chip' + (current === keys[i] ? ' on' : '') + '" data-f="' + keys[i] + '">'
-        + (L === 'th' ? p.th : p.en) + '</button>';
+      var p = P[keys[i]] || { th: keys[i], en: keys[i] };
+      html += '<button type="button" class="filter-chip' + (state.pillar === keys[i] ? ' on' : '') + '" data-f="' + keys[i] + '">' + (L === 'th' ? p.th : p.en) + '</button>';
     }
     host.innerHTML = html;
     var chips = host.querySelectorAll('.filter-chip');
     for (var c = 0; c < chips.length; c++) {
       (function (chip) {
-        chip.addEventListener('click', function () {
-          current = chip.getAttribute('data-f');
-          var all = host.querySelectorAll('.filter-chip');
-          for (var x = 0; x < all.length; x++) { all[x].classList.remove('on'); }
-          chip.classList.add('on');
-          renderGrid();
-        });
+        chip.addEventListener('click', function () { state.pillar = chip.getAttribute('data-f'); renderGrid(); buildFilters(); });
       })(chips[c]);
     }
   }
 
-  function renderGrid() {
-    window.WC_articles.render('#article-grid', { filterPillar: current });
+  /* ---- tag cloud (global counts) ---- */
+  function buildTagCloud() {
+    var host = document.getElementById('tag-cloud'); if (!host) { return; }
+    var counts = A().tagCounts(); var L = lang();
+    var html = '<button type="button" class="tag-chip' + (state.tag === 'all' ? ' on' : '') + '" data-t="all">' + (L === 'th' ? 'ทั้งหมด' : 'All') + '</button>';
+    for (var i = 0; i < counts.length; i++) {
+      var c = counts[i];
+      html += '<button type="button" class="tag-chip' + (state.tag === c.tag ? ' on' : '') + '" data-t="' + c.tag + '">' + (L === 'th' ? c.label.th : c.label.en) + '<span class="c">' + c.count + '</span></button>';
+    }
+    host.innerHTML = html;
+    var chips = host.querySelectorAll('.tag-chip');
+    for (var j = 0; j < chips.length; j++) {
+      (function (chip) {
+        chip.addEventListener('click', function () { state.tag = chip.getAttribute('data-t'); renderGrid(); buildTagCloud(); syncUrl(); });
+      })(chips[j]);
+    }
   }
 
-  function rerender() { buildFilters(); renderGrid(); }
-  rerender();
-  window.addEventListener('wc:lang', buildFilters);     /* grid re-renders itself via registry */
-  window.addEventListener('wc:articles', buildFilters); /* DB arrived · refresh filter chips */
+  /* ---- recent ---- */
+  function buildRecent() {
+    var host = document.getElementById('recent'); if (!host) { return; }
+    var r = A().recent(6); var html = '';
+    for (var i = 0; i < r.length; i++) { html += '<a href="' + A().hrefFor(r[i]) + '">' + ttl(r[i]) + '</a>'; }
+    host.innerHTML = html;
+  }
+
+  /* ---- featured + start-here (renderCards handles lang) ---- */
+  function buildFeatured() { if (A().renderCards) { A().renderCards('#featured', A().featured(3)); } }
+  function buildStartHere() { if (A().renderCards) { A().renderCards('#start-here', A().startHere()); } }
+
+  /* ---- series ---- */
+  function buildSeries() {
+    var host = document.getElementById('series-list'); if (!host) { return; }
+    var list = A().seriesList(); var L = lang(); var html = '';
+    for (var i = 0; i < list.length; i++) {
+      var s = list[i];
+      html += '<div class="series-block"><div class="sh"><span class="st">' + (L === 'th' ? s.th : s.en) + '</span>';
+      html += '<span class="lvl">' + s.items.length + (L === 'th' ? ' ตอน · ' : ' parts · ') + (s.level || '') + '</span></div>';
+      html += '<ol class="series-steps">';
+      for (var j = 0; j < s.items.length; j++) {
+        var a = s.items[j];
+        var rt = (L === 'th' ? ('อ่าน ' + a.readMin + ' นาที') : (a.readMin + ' min'));
+        html += '<li><a href="' + A().hrefFor(a) + '">' + ttl(a) + '</a> <span class="rt">· ' + rt + '</span></li>';
+      }
+      html += '</ol></div>';
+    }
+    host.innerHTML = html;
+  }
+
+  /* ---- active-tag banner ---- */
+  function buildActiveTag() {
+    var host = document.getElementById('active-tag'); if (!host) { return; }
+    if (state.tag === 'all') { host.style.display = 'none'; host.innerHTML = ''; return; }
+    var lbl = A().tags[state.tag]; var L = lang();
+    var name = lbl ? (L === 'th' ? lbl.th : lbl.en) : state.tag;
+    host.style.display = 'block';
+    host.innerHTML = (L === 'th' ? '🏷️ กำลังดูแท็ก: ' : '🏷️ Tag: ') + name + '<button type="button" id="clear-tag">' + (L === 'th' ? '✕ ล้าง' : '✕ clear') + '</button>';
+    var btn = document.getElementById('clear-tag');
+    if (btn) { btn.addEventListener('click', function () { state.tag = 'all'; renderGrid(); buildTagCloud(); buildActiveTag(); syncUrl(); }); }
+  }
+
+  /* ---- main grid + result count + empty state ---- */
+  function renderGrid() {
+    var L = lang();
+    var emptyHTML = '<div class="no-results">' + (L === 'th' ? 'ไม่พบบทความที่ตรงกับที่ค้นหา ลองคำอื่น หรือดูบทความล่าสุดด้านขวา' : 'No articles match. Try another term, or see Latest on the right.') + '</div>';
+    A().render('#article-grid', { filterPillar: state.pillar, tag: state.tag, query: state.query, sort: state.sort, emptyHTML: emptyHTML });
+    buildActiveTag();
+    /* result count */
+    var rc = document.getElementById('result-count');
+    if (rc) {
+      var n = document.querySelectorAll('#article-grid .article-card').length;
+      rc.textContent = (L === 'th' ? ('พบ ' + n + ' บทความ') : (n + ' articles'));
+    }
+  }
+
+  /* ---- search input (debounced, escaped via textContent path) ---- */
+  var searchTimer = null;
+  function bindSearch() {
+    var inp = document.getElementById('search'); if (!inp) { return; }
+    if (state.query) { inp.value = state.query; }
+    inp.addEventListener('input', function () {
+      if (searchTimer) { clearTimeout(searchTimer); }
+      searchTimer = setTimeout(function () { state.query = inp.value; renderGrid(); syncUrl(); }, 180);
+    });
+  }
+  function bindSort() {
+    var sel = document.getElementById('sort'); if (!sel) { return; }
+    sel.addEventListener('change', function () { state.sort = sel.value; renderGrid(); });
+  }
+
+  function renderAll() {
+    buildFilters(); buildTagCloud(); buildRecent(); buildFeatured(); buildStartHere(); buildSeries(); renderGrid();
+  }
+
+  readParams();
+  bindSearch(); bindSort();
+  renderAll();
+  window.addEventListener('wc:lang', renderAll);
+  window.addEventListener('wc:articles', renderAll); /* DB arrived */
 })();
 </script>
 </body>

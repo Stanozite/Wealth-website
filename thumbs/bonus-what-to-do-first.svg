@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Bonus waterfall">
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <rect width="1200" height="630" fill="#e4f7d2" opacity="0.22"/>
+  <!-- bonus envelope -->
+  <rect x="120" y="80" width="180" height="120" rx="10" fill="#163300"/>
+  <path d="M120 90 L210 150 L300 90" fill="none" stroke="#9fe870" stroke-width="6"/>
+  <text x="210" y="235" text-anchor="middle" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#163300">โบนัส</text>
+  <!-- waterfall steps -->
+  <g font-family="'IBM Plex Sans Thai',sans-serif" font-size="24" font-weight="700" fill="#163300">
+    <rect x="430" y="90" width="360" height="60" rx="10" fill="#9fe870"/><text x="450" y="128">1 · เงินสำรอง</text>
+    <rect x="500" y="200" width="360" height="60" rx="10" fill="#c9ee9f"/><text x="520" y="238">2 · ปิดหนี้แพง</text>
+    <rect x="570" y="310" width="360" height="60" rx="10" fill="#e4f7d2"/><text x="590" y="348" fill="#163300">3 · ลดหย่อนภาษี</text>
+    <rect x="640" y="420" width="360" height="60" rx="10" fill="#163300"/><text x="660" y="458" fill="#9fe870">4 · ค่อยลงทุน</text>
+  </g>
+  <path d="M330 150 C 400 150, 400 120, 430 120 M470 260 C 520 280, 530 230, 570 230 M540 370 C 600 390, 610 340, 640 340" fill="none" stroke="#8a97a0" stroke-width="3" stroke-dasharray="7 6"/>
+</svg>

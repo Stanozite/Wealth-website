@@ -287,6 +287,11 @@
         <div id="next-bracket-body" style="font-size:14px;color:var(--muted);"></div>
       </div>
 
+      <div class="panel" style="margin-top:16px;border-left:4px solid var(--bright);">
+        <span class="lang-th" style="font-size:14px;">การลดหย่อนไม่ใช่เรื่องปีเดียว — รายได้และเพดานเปลี่ยนทุกปี </span><span class="lang-en" style="font-size:14px;">Deductions aren't a one-year game — income and caps shift yearly </span>
+        <a href="multi-year-tax-planner.html" style="color:var(--forest);font-weight:700;text-decoration:none;white-space:nowrap;"><span class="lang-th">วางแผนล่วงหน้า 10 ปี →</span><span class="lang-en">Plan 10 years ahead →</span></a>
+      </div>
+
       <div class="panel" style="margin-top:20px;">
         <h3 style="font-size:17px;margin-bottom:18px;"><span class="lang-th">เพดานรายกลุ่ม · ใช้ไปแล้ว / เพดานของคุณ</span><span class="lang-en">Per-bucket caps · used / your cap</span></h3>
         <div id="bk-rows"></div>
@@ -694,6 +699,25 @@
     el('next-bracket-body').innerHTML = html;
   }
 
+  /* ponytail: shares the 'tax' snapshot key with tax-calculator (last-write-wins).
+     Both are tax-pillar/educational; optimizer's angle = unused deduction room. */
+  function emitFinding(d, saveIfFull) {
+    if (!W || !W.saveFinding) { return; }
+    var status = (d.totalRem > 0 && saveIfFull >= 1000) ? 'warn' : 'good';
+    var roomTxt = W.fmtBaht(d.totalRem);
+    var saveTxt = W.fmtBaht(saveIfFull);
+    try {
+      W.saveFinding('tax', {
+        tool: 'tax-deduction-optimizer.html',
+        labelTh: 'ภาษี', labelEn: 'Tax',
+        status: status,
+        headlineTh: 'เพดานลดหย่อนเหลือ ' + roomTxt + ' · ใช้เต็มประหยัด ~' + saveTxt,
+        headlineEn: 'Deduction room left ' + roomTxt + ' · save ~' + saveTxt + ' if filled',
+        monthlyClaim: 0
+      });
+    } catch (e) {}
+  }
+
   function render() {
     var d = compute();
     var L = lang();
@@ -707,6 +731,7 @@
     el('r-rate').textContent = d.rate + '%';
     el('r-per10k').textContent = W.fmtBaht(savingFor(d.net, 10000));
 
+    emitFinding(d, saveIfFull);
     renderBuckets(d, L);
     renderGroupBar(d, L);
     renderNextBracket(d, L);

@@ -10,3 +10,7 @@ node_modules/
 *recovery*code*
 .env
 .env.*
+
+# internal content-ops docs (not part of the public site)
+Content_OS_prompt_v2.md
+Content_Drafts/

@@ -355,17 +355,6 @@
 <footer></footer>
 <script src="_footer.js"></script>
 
-<script>
-(function () {
-  'use strict';
-  function renderRelated() {
-    if (window.WC_articles && window.WC_articles.render) {
-      window.WC_articles.render('#related', { exclude: 'fire-movement-thailand.html', pillar: 'retire', limit: 3 });
-    }
-  }
-  renderRelated();
-  window.addEventListener('wc:lang', renderRelated);
-})();
-</script>
+<script src="_related.js"></script>
 </body>
 </html>

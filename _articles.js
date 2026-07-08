@@ -1,17 +1,24 @@
 /* ============================================================
    Wealth Compass · article registry (single source of truth)
-   Powers blog.html index + related-article widgets + homepage.
+   Powers blog.html hub + related-article widgets + homepage.
 
    DUAL-MODE: the baked-in ARTICLES below always work (static
    fallback). If Supabase is configured (_brand.js + _supabase.js
    loaded before this file), published rows from the `articles`
    table are merged in automatically:
-     - DB row with same slug as a static article → overrides its
-       card fields (title/desc/thumb/emoji/readMin)
-     - DB row with a new slug → appears as a new article, served
+     - DB row with same slug as a static article -> overrides its
+       card fields (title/desc/thumb/emoji/readMin/tags/series...)
+     - DB row with a new slug -> appears as a new article, served
        by article.html?slug=<slug>
    Any card list rendered via WC_articles.render() re-renders
-   automatically when DB data arrives · pages need no extra code.
+   automatically when DB data arrives.
+
+   Learning-hub fields (all optional except the originals):
+     tags:     ['behavior','henry']   -> tag cloud + recommend score
+     series:   {id:'foundations', order:2}
+     featured: true
+     related:  ['net-worth.html', ...]  editorial "read next" override
+   Compatibility: var + string concat only.
    ============================================================ */
 (function () {
   'use strict';
@@ -25,15 +32,132 @@
     retire:     { th: 'เกษียณ', en: 'Retire', badge: 'violet' }
   };
 
+  /* closed tag taxonomy · th/en labels for the tag cloud.
+     Keep editor-controlled (no free typing) so recommend scoring stays clean. */
+  var TAGS = {
+    behavior:        { th: 'พฤติกรรมเงิน', en: 'Behavior' },
+    henry:           { th: 'รายได้สูงยังไม่รวย', en: 'HENRY' },
+    psychology:      { th: 'จิตวิทยาลงทุน', en: 'Psychology' },
+    framework:       { th: 'กรอบตัดสินใจ', en: 'Framework' },
+    cashflow:        { th: 'กระแสเงินสด', en: 'Cash flow' },
+    budgeting:       { th: 'จัดงบ', en: 'Budgeting' },
+    'investing-start': { th: 'เริ่มลงทุน', en: 'Start investing' },
+    timing:          { th: 'จังหวะเวลา', en: 'Timing' },
+    portfolio:       { th: 'จัดพอร์ต', en: 'Portfolio' },
+    risk:            { th: 'ความเสี่ยง', en: 'Risk' },
+    compounding:     { th: 'ทบต้น', en: 'Compounding' },
+    funds:           { th: 'กองทุน', en: 'Funds' },
+    retirement:      { th: 'เกษียณ', en: 'Retirement' },
+    sequence:        { th: 'ลำดับผลตอบแทน', en: 'Sequence risk' },
+    inflation:       { th: 'เงินเฟ้อ', en: 'Inflation' },
+    tax:             { th: 'ภาษี', en: 'Tax' },
+    deductions:      { th: 'ลดหย่อน', en: 'Deductions' },
+    insurance:       { th: 'ประกัน', en: 'Insurance' },
+    protection:      { th: 'คุ้มครอง', en: 'Protection' },
+    debt:            { th: 'หนี้', en: 'Debt' },
+    networth:        { th: 'ความมั่งคั่งสุทธิ', en: 'Net worth' },
+    fire:            { th: 'FIRE', en: 'FIRE' }
+  };
+
+  /* reading paths · order = slug list (with .html); level for the "learning" feel */
+  var SERIES = {
+    foundations: {
+      th: 'รากฐานก่อนรวย', en: 'Foundations first', level: 'พื้นฐาน',
+      order: ['net-worth-why-it-matters.html', 'lifestyle-inflation-save-your-raise.html', 'bonus-what-to-do-first.html', 'how-much-to-save.html', 'emergency-fund-guide.html']
+    },
+    'invest-psych': {
+      th: 'จิตวิทยาการลงทุน', en: 'The investor mindset', level: 'กลาง',
+      order: ['risk-profile-explained.html', 'checking-portfolio-too-often.html', 'portfolio-by-function.html']
+    },
+    'retire-survive': {
+      th: 'เกษียณให้รอด', en: 'Retire and stay retired', level: 'กลาง',
+      order: ['retirement-how-much.html', 'sequence-of-returns-risk.html', 'real-inflation-vs-cpi.html', 'fire-movement-thailand.html']
+    }
+  };
+
+  /* "เริ่มต้นที่นี่" on-ramp for first-time readers */
+  var START_HERE = ['financial-health-check.html', 'net-worth-why-it-matters.html'];
+
   /* static articles · slug = real .html file, thumb = local SVG art */
   var STATIC_ARTICLES = [
+    {
+      slug: 'lifestyle-inflation-save-your-raise.html',
+      pillar: 'foundation', emoji: '🪜', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/lifestyle-inflation-save-your-raise.svg',
+      title: { th: 'เงินเดือนขึ้น 20% แต่สิ้นปีเงินเก็บเท่าเดิม', en: 'Your raise keeps disappearing: the lifestyle-inflation trap' },
+      desc: { th: 'ทำไมรายได้ที่เพิ่มขึ้นถึงหายไปทุกปี lifestyle inflation ทำงานยังไง และกฎแบ่งครึ่งเงินที่เพิ่มขึ้นที่ทำให้อัตราการออมโตเองทุกครั้งที่เงินเดือนขึ้น', en: 'Why your pay rises vanish every year, how lifestyle inflation works, and the split-the-raise rule that ratchets your savings rate up automatically.' },
+      tool: 'net-worth.html',
+      tags: ['behavior', 'henry', 'cashflow', 'networth'], series: { id: 'foundations', order: 2 },
+      related: ['net-worth-why-it-matters.html', 'bonus-what-to-do-first.html', 'how-much-to-save.html']
+    },
+    {
+      slug: 'bonus-what-to-do-first.html',
+      pillar: 'foundation', emoji: '🎁', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/bonus-what-to-do-first.svg',
+      title: { th: 'โบนัสออกแล้ว! สิ่งแรกที่ควรทำ ไม่ใช่รีบลงทุน', en: 'Got your bonus? The first move isn\'t investing' },
+      desc: { th: 'ทำไมสิ่งแรกที่ควรทำกับโบนัสคืออุดรูรั่ว (เงินสำรอง หนี้แพง เพดานลดหย่อน) ก่อนลงทุน และวิธีไม่ให้โบนัสตั้งมาตรฐานไลฟ์สไตล์ใหม่', en: 'Why the smart first move with a bonus is plugging leaks (buffer, high-interest debt, tax room) before investing, and not letting it inflate your lifestyle.' },
+      tool: 'budget-planner.html',
+      tags: ['cashflow', 'behavior', 'henry'], series: { id: 'foundations', order: 3 },
+      related: ['lifestyle-inflation-save-your-raise.html', 'how-much-to-save.html', 'debt-snowball-avalanche.html']
+    },
+    {
+      slug: 'dont-wait-for-lump-sum.html',
+      pillar: 'invest', emoji: '⏳', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/dont-wait-for-lump-sum.svg',
+      title: { th: '"รอมีเงินก้อนค่อยลงทุน" คือคำแนะนำที่ฟังดูดีแต่แพงที่สุด', en: '"Wait for a lump sum to invest" is the most expensive good-sounding advice' },
+      desc: { th: 'ทำไมการรอสะสมเงินก้อนก่อนลงทุนถึงแพงกว่าที่คิด เพราะเสียเวลาทบต้น เริ่มทีละน้อยดีกว่าอย่างไร และเมื่อไหร่ที่การรอถึงถูกต้อง', en: 'Why waiting to save up a lump sum costs more than you think · lost compounding time · how starting small wins, and when waiting is right.' },
+      tool: 'compound-dca.html',
+      tags: ['investing-start', 'timing', 'behavior'],
+      related: ['compound-interest-power.html', 'dca-how-to-start.html', 'emergency-fund-guide.html']
+    },
+    {
+      slug: 'checking-portfolio-too-often.html',
+      pillar: 'invest', emoji: '📱', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/checking-portfolio-too-often.svg',
+      title: { th: 'ทำไมเช็คพอร์ตทุกวันทำให้ตัดสินใจแย่ลง', en: 'Why checking your portfolio daily makes your decisions worse' },
+      desc: { th: 'myopic loss aversion ทำงานยังไง ยิ่งเช็คบ่อยยิ่งเห็นการขาดทุนบ่อยและยิ่งอยากขายผิดจังหวะ · เช็คให้น้อยลง ตัดสินใจดีขึ้น', en: 'How myopic loss aversion works · the more often you look, the more losses you feel and the worse you sell · check less, decide better.' },
+      tool: 'risk-profile.html',
+      tags: ['psychology', 'behavior', 'portfolio'], series: { id: 'invest-psych', order: 2 },
+      related: ['risk-profile-explained.html', 'portfolio-by-function.html', 'dca-how-to-start.html']
+    },
+    {
+      slug: 'portfolio-by-function.html',
+      pillar: 'invest', emoji: '🧩', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/portfolio-by-function.svg',
+      title: { th: 'คนส่วนใหญ่ไม่ได้ขาดทุนเพราะเลือกหุ้นผิด แต่จัดพอร์ตผิด', en: 'Most people don\'t lose from picking wrong — they lose from structuring wrong' },
+      desc: { th: 'ก่อนซื้ออะไร ให้เงินแต่ละก้อนมี "หน้าที่" (ปกป้อง / ทบต้น / ยอมเสียได้) · โครงสร้างพอร์ตสำคัญกว่าการเลือกหุ้น', en: 'Before buying, give each part of your money a job (protect / compound / can-lose) · structure matters more than stock picking.' },
+      tool: 'risk-profile.html',
+      tags: ['portfolio', 'framework', 'risk'], series: { id: 'invest-psych', order: 3 },
+      related: ['risk-profile-explained.html', 'checking-portfolio-too-often.html', 'net-worth-why-it-matters.html']
+    },
+    {
+      slug: 'sequence-of-returns-risk.html',
+      pillar: 'retire', emoji: '📉', date: '2026-07-05', readMin: 8,
+      thumb: 'thumbs/sequence-of-returns-risk.svg',
+      title: { th: 'ตลาดพัง 5 ปีแรกหลังเกษียณ อันตรายกว่าพังตอนอายุ 40 หลายเท่า', en: 'A crash in your first 5 retirement years is far more dangerous than one at 40' },
+      desc: { th: 'sequence-of-returns risk · ลำดับผลตอบแทนสำคัญมากเมื่อเริ่มถอนเงิน "retirement red zone" และวิธีป้องกันด้วยกันชนเงินสดกับการถอนแบบยืดหยุ่น', en: 'Sequence-of-returns risk · why the ORDER of returns matters once you\'re withdrawing, the retirement red zone, and how to guard against it.' },
+      tool: 'retirement-simulator.html',
+      tags: ['retirement', 'sequence', 'risk'], series: { id: 'retire-survive', order: 2 },
+      related: ['retirement-how-much.html', 'real-inflation-vs-cpi.html', 'fire-movement-thailand.html']
+    },
+    {
+      slug: 'real-inflation-vs-cpi.html',
+      pillar: 'retire', emoji: '🎈', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/real-inflation-vs-cpi.svg',
+      title: { th: 'เงินเฟ้อไทย "ต่ำ" แต่ค่าใช้จ่ายจริงของคุณไม่เคยต่ำ', en: 'Thai inflation looks low, but your real cost of living never is' },
+      desc: { th: 'ทำไม CPI ที่ประกาศไม่ใช่เงินเฟ้อของคุณ ค่ารักษาพยาบาลและค่าเทอมมักขึ้นเร็วกว่าค่าเฉลี่ย และทำไมวางแผนเกษียณต้องใช้ตะกร้าเงินเฟ้อของตัวเอง', en: 'Why headline CPI isn\'t your inflation, why healthcare and education rise faster, and why retirement planning needs your own inflation basket.' },
+      tool: 'retirement-simulator.html',
+      tags: ['inflation', 'retirement'], series: { id: 'retire-survive', order: 3 },
+      related: ['retirement-how-much.html', 'sequence-of-returns-risk.html', 'social-security-pension.html']
+    },
     {
       slug: 'fire-movement-thailand.html',
       pillar: 'retire', emoji: '🔥', date: '2026-06-12', readMin: 8,
       thumb: 'thumbs/fire-movement-thailand.svg',
       title: { th: 'FIRE คืออะไร? เกษียณก่อน 40 ในไทยทำได้จริงไหม', en: 'What is FIRE? Early retirement in Thailand, realistically' },
       desc: { th: 'ขบวนการ FIRE เกษียณเร็วด้วยเลข 25 เท่า อัตราออม 50%+ ทำได้จริงแค่ไหนในบริบทไทย พร้อมตัวอย่างคำนวณ', en: 'The FIRE movement, the 25x number and 50%+ savings rates · how realistic is it in Thailand?' },
-      tool: 'retirement-simulator.html'
+      tool: 'retirement-simulator.html',
+      tags: ['fire', 'retirement', 'framework'], series: { id: 'retire-survive', order: 4 }
     },
     {
       slug: 'social-security-pension.html',
@@ -41,7 +165,8 @@
       thumb: 'thumbs/social-security-pension.svg',
       title: { th: 'ประกันสังคม ม.33 ได้บำนาญเท่าไหร่? คำนวณเงินชราภาพให้ดูชัดๆ', en: 'Thai social security pension: how much will you actually get?' },
       desc: { th: 'สูตรคำนวณบำนาญชราภาพประกันสังคม มาตรา 33/39 ได้เดือนละเท่าไหร่ พอใช้ไหม และต้องเติมอีกแค่ไหน', en: 'The Thai SSO pension formula, what it pays monthly, and the gap you need to fill yourself.' },
-      tool: 'retirement-simulator.html'
+      tool: 'retirement-simulator.html',
+      tags: ['retirement', 'framework']
     },
     {
       slug: 'dca-how-to-start.html',
@@ -49,7 +174,8 @@
       thumb: 'thumbs/dca-how-to-start.svg',
       title: { th: 'DCA คืออะไร? เริ่มลงทุนรายเดือนฉบับมือใหม่ (พิสูจน์ด้วยตัวเลข)', en: 'What is DCA? Monthly investing for beginners, proven with numbers' },
       desc: { th: 'DCA ตัดอารมณ์ออกจากการลงทุนยังไง เทียบ DCA vs ลงก้อนเดียว vs จับจังหวะตลาด พร้อมขั้นตอนเริ่มจริง', en: 'How dollar-cost averaging removes emotion · DCA vs lump sum vs market timing, with real steps.' },
-      tool: 'compound-dca.html'
+      tool: 'compound-dca.html',
+      tags: ['investing-start', 'behavior', 'timing']
     },
     {
       slug: 'fund-fees-index-funds.html',
@@ -57,7 +183,8 @@
       thumb: 'thumbs/fund-fees-index-funds.svg',
       title: { th: 'ค่าธรรมเนียมกองทุน 1.5% ไม่ใช่เรื่องเล็ก · Index Fund คือทางออก?', en: 'Fund fees of 1.5% are not small · are index funds the answer?' },
       desc: { th: 'เปิดวิธีอ่าน TER กองทุนรวมไทย ค่าธรรมเนียมกินผลตอบแทนทบต้นแค่ไหนใน 20 ปี และทำไมกองทุน index ถูกกว่า 5 เท่า', en: 'How to read Thai fund TERs, what fees compound to over 20 years, and why index funds cost 5x less.' },
-      tool: 'compound-dca.html'
+      tool: 'compound-dca.html',
+      tags: ['funds', 'compounding', 'investing-start']
     },
     {
       slug: 'risk-profile-explained.html',
@@ -65,7 +192,8 @@
       thumb: 'thumbs/risk-profile-explained.svg',
       title: { th: 'ก่อนซื้อกองทุน รู้จัก Risk Profile ของตัวเองหรือยัง?', en: 'Know your risk profile before you buy any fund' },
       desc: { th: 'ความเสี่ยง "รับได้" กับ "รับไหว" ต่างกันยังไง ทำไมพอร์ตที่ดีที่สุดคือพอร์ตที่คุณถือผ่านตลาดแดงได้', en: 'Risk willingness vs capacity · and why the best portfolio is the one you can hold through a crash.' },
-      tool: 'risk-profile.html'
+      tool: 'risk-profile.html',
+      tags: ['portfolio', 'psychology', 'risk'], series: { id: 'invest-psych', order: 1 }
     },
     {
       slug: 'net-worth-why-it-matters.html',
@@ -73,7 +201,9 @@
       thumb: 'thumbs/net-worth-why-it-matters.svg',
       title: { th: 'Net Worth คืออะไร? ตัวเลขเดียวที่บอกฐานะการเงินจริงของคุณ', en: 'Net worth: the one number that tells your true financial position' },
       desc: { th: 'รายได้สูงไม่ได้แปลว่ารวย · วิธีคำนวณความมั่งคั่งสุทธิ ตีมูลค่าทรัพย์สินแบบ realistic และเป้าตามช่วงอายุ', en: 'High income ≠ wealthy. How to compute net worth, value assets realistically, and age-based targets.' },
-      tool: 'net-worth.html'
+      tool: 'net-worth.html', featured: true,
+      tags: ['networth', 'framework', 'henry'], series: { id: 'foundations', order: 1 },
+      related: ['lifestyle-inflation-save-your-raise.html', 'how-much-to-save.html', 'financial-health-check.html']
     },
     {
       slug: 'financial-health-check.html',
@@ -81,7 +211,8 @@
       thumb: 'thumbs/financial-health-check.svg',
       title: { th: 'เช็คสุขภาพการเงิน 8 ข้อ · คุณ "แข็งแรง" หรือแค่ "ยังไหว"?', en: 'The 8-point financial health check: thriving or just coping?' },
       desc: { th: 'กรอบ Spend/Save/Borrow/Plan ระดับสากล 8 ตัวชี้วัดที่บอกว่าการเงินคุณแข็งแรงจริงไหม พร้อมแบบทดสอบฟรี 3 นาที', en: 'The global Spend/Save/Borrow/Plan framework · 8 indicators of real financial health, free 3-minute test.' },
-      tool: 'financial-health-score.html'
+      tool: 'financial-health-score.html',
+      tags: ['framework', 'budgeting']
     },
     {
       slug: 'term-vs-whole-life.html',
@@ -89,7 +220,8 @@
       thumb: 'thumbs/term-vs-whole-life.svg',
       title: { th: 'ประกันชีวิต Term vs Whole Life ต่างกันยังไง ซื้อแบบไหนดี?', en: 'Term vs whole life insurance: which should you buy?' },
       desc: { th: 'เทียบประกันชีวิตแบบชั่วระยะเวลากับตลอดชีพ เบี้ยต่างกัน 10 เท่า ความคุ้มครองเท่ากัน · ใครเหมาะแบบไหน', en: 'Term costs 10x less for the same cover · who each type actually fits, without the sales pitch.' },
-      tool: 'insurance-needs.html'
+      tool: 'insurance-needs.html',
+      tags: ['insurance', 'protection', 'framework']
     },
     {
       slug: 'health-insurance-guide.html',
@@ -97,7 +229,8 @@
       thumb: 'thumbs/health-insurance-guide.svg',
       title: { th: 'ประกันสุขภาพจำเป็นไหม? เลือกยังไงไม่ให้เบี้ยบานปลายทาง', en: 'Do you need health insurance in Thailand? How to choose well' },
       desc: { th: 'ค่ารักษาโรงพยาบาลเอกชนแพงแค่ไหน สิทธิที่มีอยู่แล้วครอบคลุมอะไร และวิธีเลือกแผนเหมาจ่ายไม่ให้จ่ายเกินจำเป็น', en: 'Private hospital costs, what your existing coverage already pays, and choosing a plan without overpaying.' },
-      tool: 'insurance-needs.html'
+      tool: 'insurance-needs.html',
+      tags: ['insurance', 'protection']
     },
     {
       slug: 'income-tax-guide.html',
@@ -105,7 +238,8 @@
       thumb: 'thumbs/income-tax-guide.svg',
       title: { th: 'ภาษีเงินได้บุคคลธรรมดา 2567: วิธีคำนวณขั้นบันไดแบบเข้าใจใน 10 นาที', en: 'Thai personal income tax: the bracket system explained in 10 minutes' },
       desc: { th: 'เงินได้สุทธิคิดยังไง ขั้นบันไดภาษี 5-35% ทำงานแบบไหน และความเข้าใจผิดเรื่อง "ขึ้น bracket แล้วโดนทั้งก้อน"', en: 'How Thai taxable income works, the 5-35% ladder, and the bracket myth that costs people money.' },
-      tool: 'tax-calculator.html'
+      tool: 'tax-calculator.html',
+      tags: ['tax', 'framework']
     },
     {
       slug: 'rmf-vs-thaiesg.html',
@@ -113,7 +247,8 @@
       thumb: 'thumbs/rmf-vs-thaiesg.svg',
       title: { th: 'RMF vs ThaiESG ซื้ออะไรก่อน? เทียบชัดๆ เพดาน เงื่อนไข ระยะถือ', en: 'RMF vs ThaiESG: which to buy first? Caps, conditions, lock-ups' },
       desc: { th: 'กองทุนลดหย่อนภาษี 2 ตัวหลัก ต่างกันที่เพดาน ระยะถือครอง และเหมาะกับใคร พร้อมลำดับซื้อที่ฉลาดตามฐานภาษี', en: 'Thailand’s two main tax funds compared · caps, holding periods, and the smart buying order by tax bracket.' },
-      tool: 'tax-deduction-optimizer.html'
+      tool: 'tax-deduction-optimizer.html',
+      tags: ['tax', 'deductions', 'funds']
     },
     {
       slug: 'refinance-home-loan.html',
@@ -121,7 +256,8 @@
       thumb: 'thumbs/refinance-home-loan.svg',
       title: { th: 'รีไฟแนนซ์บ้านคุ้มไหม? วิธีคิดให้ขาดก่อนย้ายธนาคาร', en: 'Refinancing your Thai home loan: when it actually pays off' },
       desc: { th: 'ดอกเบี้ยลอยตัวหลังปี 3 แพงแค่ไหน ค่าใช้จ่ายรีไฟแนนซ์มีอะไรบ้าง และสูตรคุ้มทุนที่ตัดสินใจได้ใน 5 นาที', en: 'Post-teaser floating rates, the real costs of refinancing, and a 5-minute break-even formula.' },
-      tool: 'debt-payoff.html'
+      tool: 'debt-payoff.html',
+      tags: ['debt', 'framework']
     },
     {
       slug: 'retirement-how-much.html',
@@ -129,7 +265,9 @@
       thumb: 'thumbs/retirement-how-much.svg',
       title: { th: 'เกษียณต้องมีเงินเท่าไหร่ถึงพอ? (สูตรคิดง่ายๆ + กฎ 4%)', en: 'How much do you need to retire? The 4% rule explained' },
       desc: { th: 'คำนวณเงินเกษียณที่ต้องมีจริง ด้วยกฎ 25 เท่าและกฎ 4% พร้อมตัวอย่างคนไทยและเครื่องมือจำลองฟรี', en: 'Work out your real retirement number with the 25x and 4% rules · with Thai examples and a free simulator.' },
-      tool: 'retirement-simulator.html'
+      tool: 'retirement-simulator.html', featured: true,
+      tags: ['retirement', 'framework', 'inflation', 'fire'], series: { id: 'retire-survive', order: 1 },
+      related: ['sequence-of-returns-risk.html', 'real-inflation-vs-cpi.html', 'fire-movement-thailand.html']
     },
     {
       slug: 'tax-deductions-2567.html',
@@ -137,7 +275,9 @@
       thumb: 'thumbs/tax-deductions-2567.svg',
       title: { th: 'ลดหย่อนภาษี 2567 มีอะไรบ้าง? RMF SSF ThaiESG ประกัน ครบจบที่เดียว', en: 'Thai tax deductions 2024: RMF, SSF, ThaiESG and insurance' },
       desc: { th: 'รวมรายการลดหย่อนภาษีปี 2567 ทุกตัว เพดานเท่าไหร่ ซื้ออะไรก่อน พร้อมวิธีคำนวณเงินที่ประหยัดได้จริง', en: 'Every Thai 2024 tax deduction, its cap, what to buy first, and how much you actually save.' },
-      tool: 'tax-deduction-optimizer.html'
+      tool: 'tax-deduction-optimizer.html', featured: true,
+      tags: ['tax', 'deductions'],
+      related: ['rmf-vs-thaiesg.html', 'income-tax-guide.html']
     },
     {
       slug: 'how-much-to-save.html',
@@ -145,7 +285,8 @@
       thumb: 'thumbs/how-much-to-save.svg',
       title: { th: 'เงินเดือน 30,000 / 50,000 ควรเก็บเท่าไหร่? แบ่งเงินยังไงให้เหลือ', en: 'How much should you save on a 30k/50k salary?' },
       desc: { th: 'สูตรแบ่งเงินเดือน 50/30/20 ปรับให้เข้ากับค่าครองชีพไทย เก็บเท่าไหร่ถึงพอ พร้อมตัวอย่างจริงทุกช่วงเงินเดือน', en: 'The 50/30/20 split adapted to Thai cost of living, with real examples for every salary band.' },
-      tool: 'budget-planner.html'
+      tool: 'budget-planner.html',
+      tags: ['budgeting', 'cashflow'], series: { id: 'foundations', order: 4 }
     },
     {
       slug: 'emergency-fund-guide.html',
@@ -153,7 +294,8 @@
       thumb: 'thumbs/emergency-fund-guide.svg',
       title: { th: 'เงินสำรองฉุกเฉินควรมีเท่าไหร่? (3-6 เดือน เก็บที่ไหนดี)', en: 'How big should your emergency fund be?' },
       desc: { th: 'ทำไมต้องมีเงินสำรอง 3-6 เดือน ฟรีแลนซ์ต้องมีเท่าไหร่ เก็บที่ไหนให้สภาพคล่องดีและไม่หาย', en: 'Why 3-6 months, how much freelancers need, and where to park it for liquidity and safety.' },
-      tool: 'emergency-fund.html'
+      tool: 'emergency-fund.html',
+      tags: ['cashflow', 'budgeting'], series: { id: 'foundations', order: 5 }
     },
     {
       slug: 'compound-interest-power.html',
@@ -161,7 +303,8 @@
       thumb: 'thumbs/compound-interest-power.svg',
       title: { th: 'พลังดอกเบี้ยทบต้น: เริ่มเร็ว 5 ปี ปลายทางต่างกันล้าน', en: 'The power of compounding: why starting 5 years earlier matters' },
       desc: { th: 'ดอกเบี้ยทบต้นทำงานยังไง ทำไมเวลาสำคัญกว่าจำนวนเงิน และทำไมค่าธรรมเนียม 1% กินเงินคุณมหาศาล', en: 'How compounding works, why time beats amount, and why a 1% fee quietly costs a fortune.' },
-      tool: 'compound-dca.html'
+      tool: 'compound-dca.html',
+      tags: ['compounding', 'investing-start', 'timing']
     },
     {
       slug: 'debt-snowball-avalanche.html',
@@ -169,7 +312,8 @@
       thumb: 'thumbs/debt-snowball-avalanche.svg',
       title: { th: 'ปลดหนี้บัตรเครดิตวิธีไหนดี? Snowball vs Avalanche', en: 'Snowball vs avalanche: the smartest way to pay off debt' },
       desc: { th: 'เทียบ 2 วิธีปลดหนี้ยอดนิยม วิธีไหนประหยัดดอกเบี้ย วิธีไหนชนะใจ และทำไมจ่ายขั้นต่ำคือกับดัก', en: 'Compare the two popular payoff methods, which saves more interest, and why minimum payments are a trap.' },
-      tool: 'debt-payoff.html'
+      tool: 'debt-payoff.html',
+      tags: ['debt', 'behavior']
     }
   ];
 
@@ -179,14 +323,39 @@
   /* remember every render call so we can replay it when DB data lands */
   var RENDERED = [];
 
+  /* one slug identity everywhere · strips .html so static + DB rows compare equal */
+  function normSlug(s) { return String(s || '').replace(/\.html$/, ''); }
+
   function hrefFor(a) {
-    if (a.dynamic) { return 'article.html?slug=' + encodeURIComponent(a.slug); }
+    if (a.dynamic) { return 'article.html?slug=' + encodeURIComponent(normSlug(a.slug)); }
     return a.slug;
+  }
+
+  function bySlug(slug) {
+    var key = normSlug(slug);
+    for (var i = 0; i < LIST.length; i++) {
+      if (normSlug(LIST[i].slug) === key) { return LIST[i]; }
+    }
+    return null;
+  }
+
+  function fmtDate(d, lang) {
+    /* d = 'YYYY-MM-DD' -> 'D MMM YY' */
+    if (!d) { return ''; }
+    var mTh = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+    var mEn = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var p = d.split('-');
+    if (p.length < 3) { return ''; }
+    var mi = parseInt(p[1], 10) - 1;
+    if (mi < 0 || mi > 11) { return ''; }
+    var yy = (lang === 'th') ? (parseInt(p[0], 10) + 543) % 100 : parseInt(p[0], 10) % 100;
+    return parseInt(p[2], 10) + ' ' + (lang === 'th' ? mTh[mi] : mEn[mi]) + ' ' + yy;
   }
 
   function cardHTML(a, lang) {
     var p = PILLARS[a.pillar] || { th: '', en: '', badge: 'green' };
     var readTxt = lang === 'th' ? ('อ่าน ' + a.readMin + ' นาที') : (a.readMin + ' min read');
+    var dateTxt = fmtDate(a.date, lang);
     var html = '<a class="tool-card article-card" href="' + hrefFor(a) + '">';
     html += '<div class="thumb">';
     /* emoji fallback layer · shows if thumb is missing or fails to load (onerror) */
@@ -199,10 +368,47 @@
     html += '<div class="body">';
     html += '<h3>' + (lang === 'th' ? a.title.th : (a.title.en || a.title.th)) + '</h3>';
     html += '<p>' + (lang === 'th' ? a.desc.th : (a.desc.en || a.desc.th)) + '</p>';
-    html += '<div style="font-size:12.5px;color:var(--muted);font-weight:600;">' + readTxt + '</div>';
+    html += '<div class="meta" style="font-size:12.5px;color:var(--muted);font-weight:600;">' + readTxt + (dateTxt ? (' · ' + dateTxt) : '') + '</div>';
     html += '<span class="link"><span class="lang-th">อ่านต่อ</span><span class="lang-en">Read</span> →</span>';
     html += '</div></a>';
     return html;
+  }
+
+  function matchesQuery(a, q, lang) {
+    if (!q) { return true; }
+    var hay = (a.title.th + ' ' + (a.title.en || '') + ' ' + a.desc.th + ' ' + (a.desc.en || '')).toLowerCase();
+    var tg = a.tags || [];
+    for (var i = 0; i < tg.length; i++) {
+      var tl = TAGS[tg[i]];
+      hay += ' ' + tg[i] + ' ' + (tl ? (tl.th + ' ' + tl.en) : '');
+    }
+    return hay.toLowerCase().indexOf(q.toLowerCase()) > -1;
+  }
+
+  function applyOpts(list, opts) {
+    var out = list.filter(function (a) { return normSlug(a.slug) !== normSlug(opts.exclude); });
+    if (opts.filterPillar && opts.filterPillar !== 'all') {
+      out = out.filter(function (a) { return a.pillar === opts.filterPillar; });
+    }
+    if (opts.tag && opts.tag !== 'all') {
+      out = out.filter(function (a) { return (a.tags || []).indexOf(opts.tag) > -1; });
+    }
+    if (opts.query) {
+      var lang = (window.WC && window.WC.getLang) ? window.WC.getLang() : 'th';
+      out = out.filter(function (a) { return matchesQuery(a, opts.query, lang); });
+    }
+    if (opts.sort === 'quick') {
+      out = out.slice().sort(function (x, y) { return x.readMin - y.readMin; });
+    } else if (opts.sort === 'newest' || !opts.sort) {
+      out = out.slice().sort(function (x, y) { return (y.date || '').localeCompare(x.date || ''); });
+    }
+    if (opts.pillar) { /* soft-priority same pillar (legacy behavior) */
+      var same = out.filter(function (a) { return a.pillar === opts.pillar; });
+      var rest = out.filter(function (a) { return a.pillar !== opts.pillar; });
+      out = same.concat(rest);
+    }
+    if (opts.limit) { out = out.slice(0, opts.limit); }
+    return out;
   }
 
   function doRender(targetSel, opts) {
@@ -210,16 +416,8 @@
     var host = document.querySelector(targetSel);
     if (!host) { return; }
     var lang = (window.WC && window.WC.getLang) ? window.WC.getLang() : 'th';
-    var list = LIST.filter(function (a) { return a.slug !== opts.exclude; });
-    if (opts.filterPillar && opts.filterPillar !== 'all') {
-      list = list.filter(function (a) { return a.pillar === opts.filterPillar; });
-    }
-    if (opts.pillar) {
-      var same = list.filter(function (a) { return a.pillar === opts.pillar; });
-      var rest = list.filter(function (a) { return a.pillar !== opts.pillar; });
-      list = same.concat(rest);
-    }
-    if (opts.limit) { list = list.slice(0, opts.limit); }
+    var list = applyOpts(LIST, opts);
+    if (!list.length && opts.emptyHTML) { host.innerHTML = opts.emptyHTML; return; }
     var html = '';
     for (var i = 0; i < list.length; i++) { html += cardHTML(list[i], lang); }
     host.innerHTML = html;
@@ -231,6 +429,142 @@
     }
   }
 
+  /* ---------- discovery helpers ---------- */
+
+  function tagCounts() {
+    var counts = {};
+    for (var i = 0; i < LIST.length; i++) {
+      var tg = LIST[i].tags || [];
+      for (var j = 0; j < tg.length; j++) {
+        counts[tg[j]] = (counts[tg[j]] || 0) + 1;
+      }
+    }
+    var arr = [];
+    for (var k in counts) {
+      if (Object.prototype.hasOwnProperty.call(counts, k)) {
+        arr.push({ tag: k, count: counts[k], label: TAGS[k] || { th: k, en: k } });
+      }
+    }
+    arr.sort(function (a, b) { return b.count - a.count; });
+    return arr;
+  }
+
+  function featuredList(n) {
+    var out = LIST.filter(function (a) { return a.featured; });
+    out.sort(function (x, y) { return (y.date || '').localeCompare(x.date || ''); });
+    return n ? out.slice(0, n) : out;
+  }
+
+  function recentList(n) {
+    var out = LIST.slice().sort(function (x, y) { return (y.date || '').localeCompare(x.date || ''); });
+    return n ? out.slice(0, n) : out;
+  }
+
+  function startHere() {
+    var out = [];
+    for (var i = 0; i < START_HERE.length; i++) {
+      var a = bySlug(START_HERE[i]);
+      if (a) { out.push(a); }
+    }
+    return out;
+  }
+
+  function seriesList() {
+    var out = [];
+    for (var id in SERIES) {
+      if (!Object.prototype.hasOwnProperty.call(SERIES, id)) { continue; }
+      var s = SERIES[id];
+      var items = [];
+      for (var i = 0; i < s.order.length; i++) {
+        var a = bySlug(s.order[i]);
+        if (a) { items.push(a); }
+      }
+      if (items.length) { out.push({ id: id, th: s.th, en: s.en, level: s.level, items: items }); }
+    }
+    return out;
+  }
+
+  /* prev/next within an article's series */
+  function seriesNav(slug) {
+    var a = bySlug(slug);
+    if (!a || !a.series || !SERIES[a.series.id]) { return null; }
+    var s = SERIES[a.series.id];
+    var order = s.order;
+    var idx = -1;
+    for (var i = 0; i < order.length; i++) { if (normSlug(order[i]) === normSlug(slug)) { idx = i; break; } }
+    if (idx < 0) { return null; }
+    return {
+      id: a.series.id, th: s.th, en: s.en, pos: idx + 1, total: order.length,
+      prev: idx > 0 ? bySlug(order[idx - 1]) : null,
+      next: idx < order.length - 1 ? bySlug(order[idx + 1]) : null
+    };
+  }
+
+  /* scored "read next" · related[] override first, then similarity, dedup + diversity */
+  function recommend(slug, n) {
+    n = n || 3;
+    var cur = bySlug(slug);
+    if (!cur) { return recentList(n); }
+    var used = {};
+    used[normSlug(slug)] = 1;
+    var picks = [];
+    var i, cand;
+
+    /* 0 · skip the series prev/next (shown separately) so they don't repeat */
+    var nav = seriesNav(slug);
+    if (nav) {
+      if (nav.prev) { used[normSlug(nav.prev.slug)] = 1; }
+      if (nav.next) { used[normSlug(nav.next.slug)] = 1; }
+    }
+
+    /* 1 · editorial override */
+    var rel = cur.related || [];
+    for (i = 0; i < rel.length && picks.length < n; i++) {
+      cand = bySlug(rel[i]);
+      if (cand && !used[normSlug(cand.slug)]) { used[normSlug(cand.slug)] = 1; picks.push(cand); }
+    }
+
+    /* 2 · similarity score */
+    var curTags = cur.tags || [];
+    var scored = [];
+    for (i = 0; i < LIST.length; i++) {
+      cand = LIST[i];
+      if (used[normSlug(cand.slug)]) { continue; }
+      var s = 0, ct = cand.tags || [], j;
+      for (j = 0; j < ct.length; j++) { if (curTags.indexOf(ct[j]) > -1) { s += 3; } }
+      if (cand.series && cur.series && cand.series.id === cur.series.id) { s += 2; }
+      if (cand.tool && cur.tool && cand.tool === cur.tool) { s += 2; }
+      if (cand.pillar === cur.pillar) { s += 1; }
+      if (s > 0) { scored.push({ a: cand, s: s }); }
+    }
+    /* tie-break: higher score, then newer -> variety, avoids always surfacing same hub */
+    scored.sort(function (x, y) {
+      if (y.s !== x.s) { return y.s - x.s; }
+      return (y.a.date || '').localeCompare(x.a.date || '');
+    });
+    for (i = 0; i < scored.length && picks.length < n; i++) {
+      if (!used[normSlug(scored[i].a.slug)]) { used[normSlug(scored[i].a.slug)] = 1; picks.push(scored[i].a); }
+    }
+
+    /* 3 · fallback fill · same pillar then recent */
+    if (picks.length < n) {
+      var fill = applyOpts(LIST, { pillar: cur.pillar, exclude: slug });
+      for (i = 0; i < fill.length && picks.length < n; i++) {
+        if (!used[normSlug(fill[i].slug)]) { used[normSlug(fill[i].slug)] = 1; picks.push(fill[i]); }
+      }
+    }
+    return picks;
+  }
+
+  function renderCards(targetSel, arr) {
+    var host = document.querySelector(targetSel);
+    if (!host) { return; }
+    var lang = (window.WC && window.WC.getLang) ? window.WC.getLang() : 'th';
+    var html = '';
+    for (var i = 0; i < arr.length; i++) { html += cardHTML(arr[i], lang); }
+    host.innerHTML = html;
+  }
+
   /* escape text coming from the DB before it enters card innerHTML */
   function esc(s) {
     return String(s || '')
@@ -238,17 +572,24 @@
       .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
+  function toArr(v) {
+    if (!v) { return []; }
+    if (Object.prototype.toString.call(v) === '[object Array]') { return v; }
+    if (typeof v === 'string') { try { var p = JSON.parse(v); return toArr(p); } catch (e) { return []; } }
+    return [];
+  }
+
   function mergeDb(rows) {
     if (!rows || !rows.length) { return; }
-    var bySlug = {};
+    var byKey = {};
     var i;
     for (i = 0; i < STATIC_ARTICLES.length; i++) {
-      bySlug[STATIC_ARTICLES[i].slug.replace('.html', '')] = STATIC_ARTICLES[i];
+      byKey[normSlug(STATIC_ARTICLES[i].slug)] = STATIC_ARTICLES[i];
     }
     var merged = STATIC_ARTICLES.slice();
     for (i = 0; i < rows.length; i++) {
       var r = rows[i];
-      var key = String(r.slug || '').replace('.html', '');
+      var key = normSlug(r.slug);
       var entry = {
         slug: key,
         dynamic: true,
@@ -259,16 +600,24 @@
         thumb: r.thumb_url ? esc(r.thumb_url) : null,
         title: { th: esc(r.title_th), en: esc(r.title_en) },
         desc: { th: esc(r.desc_th), en: esc(r.desc_en) },
-        tool: r.tool_slug || null
+        tool: r.tool_slug || null,
+        tags: toArr(r.tags),
+        series: (r.series && r.series.id) ? { id: esc(r.series.id), order: r.series.order || 0 } : null,
+        featured: !!r.featured,
+        related: toArr(r.related)
       };
-      var existing = bySlug[key];
+      var existing = byKey[key];
       if (existing) {
-        /* DB overrides the static card's display fields; keep static href */
+        /* DB overrides display + learning-hub fields; keep static href */
         existing.title = entry.title;
         existing.desc = entry.desc;
         existing.emoji = entry.emoji;
         existing.readMin = entry.readMin;
         if (entry.thumb) { existing.thumb = entry.thumb; }
+        if (entry.tags.length) { existing.tags = entry.tags; }
+        if (entry.series) { existing.series = entry.series; }
+        if (entry.related.length) { existing.related = entry.related; }
+        if (r.featured != null) { existing.featured = entry.featured; }
       } else {
         merged.unshift(entry); /* new DB articles first (newest content) */
       }
@@ -285,13 +634,26 @@
     }
   }
 
-  window.ARTICLES = LIST; /* legacy reference (blog.html uses WC_articles.list() below) */
+  window.ARTICLES = LIST; /* legacy reference */
   window.ARTICLE_PILLARS = PILLARS;
 
   window.WC_articles = {
     list: function () { return LIST.slice(); },
     pillars: PILLARS,
+    tags: TAGS,
+    series: SERIES,
     hrefFor: hrefFor,
+    bySlug: bySlug,
+    normSlug: normSlug,
+    fmtDate: fmtDate,
+    tagCounts: tagCounts,
+    featured: featuredList,
+    recent: recentList,
+    startHere: startHere,
+    seriesList: seriesList,
+    seriesNav: seriesNav,
+    recommend: recommend,
+    renderCards: renderCards,
     render: function (targetSel, opts) {
       /* register for auto re-render on lang change + DB arrival */
       var known = false;

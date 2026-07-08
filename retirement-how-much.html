@@ -358,15 +358,6 @@
 <footer></footer>
 <script src="_footer.js"></script>
 
-<script>
-(function () {
-  if (window.WC_articles) {
-    WC_articles.render('#related', { exclude: 'retirement-how-much.html', pillar: 'retire', limit: 3 });
-    window.addEventListener('wc:lang', function () {
-      WC_articles.render('#related', { exclude: 'retirement-how-much.html', pillar: 'retire', limit: 3 });
-    });
-  }
-})();
-</script>
+<script src="_related.js"></script>
 </body>
 </html>

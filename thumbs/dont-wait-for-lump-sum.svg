@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1070" cy="110" r="185" fill="#e4f7d2"/>
+  <circle cx="130" cy="560" r="165" fill="#e4f7d2"/>
+
+  <!-- axes -->
+  <g stroke="#e4e9ec" stroke-width="3">
+    <line x1="150" y1="120" x2="150" y2="520"/>
+    <line x1="150" y1="520" x2="1060" y2="520"/>
+  </g>
+  <!-- faint year gridlines -->
+  <g stroke="#e9edf0" stroke-width="2">
+    <line x1="360" y1="140" x2="360" y2="520"/>
+    <line x1="570" y1="140" x2="570" y2="520"/>
+    <line x1="780" y1="140" x2="780" y2="520"/>
+    <line x1="990" y1="140" x2="990" y2="520"/>
+  </g>
+
+  <!-- ===== WAIT THEN LUMP · starts later, ends lower (mid-green) ===== -->
+  <!-- flat dashed cash line for the 3 waiting years -->
+  <path d="M150 512 L360 512" fill="none" stroke="#9aa7ad" stroke-width="8"
+        stroke-linecap="round" stroke-dasharray="4 20"/>
+  <!-- step up at the lump entry, then a slightly lower-ending curve (starts later) -->
+  <path d="M360 512 L360 468 C520 442 680 372 840 288 C910 252 965 218 1000 200"
+        fill="none" stroke="#0d7a3f" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="360" cy="468" r="16" fill="#0d7a3f"/>
+  <circle cx="1000" cy="200" r="18" fill="#0d7a3f"/>
+
+  <!-- ===== START NOW SMALL · starts at origin, ends higher (forest + lime) ===== -->
+  <path d="M150 508 C360 492 560 440 760 330 C860 274 940 210 1000 168"
+        fill="none" stroke="#163300" stroke-width="16" stroke-linecap="round"/>
+  <!-- lime area under the winning curve -->
+  <path d="M150 508 C360 492 560 440 760 330 C860 274 940 210 1000 168 L1000 520 L150 520 Z"
+        fill="#9fe870" opacity="0.5"/>
+  <!-- arrow head on the winning curve -->
+  <path d="M1000 168 L942 176 M1000 168 L988 226" stroke="#163300" stroke-width="16" stroke-linecap="round"/>
+
+  <!-- small baht coins along the early path (money starts working immediately) -->
+  <g>
+    <circle cx="250" cy="500" r="20" fill="#163300"/>
+    <circle cx="440" cy="466" r="24" fill="#163300"/>
+    <circle cx="630" cy="398" r="30" fill="#163300"/>
+    <text x="250" y="507" text-anchor="middle" font-family="IBM Plex Sans Thai, Arial, sans-serif" font-size="20" font-weight="800" fill="#9fe870">฿</text>
+    <text x="440" y="474" text-anchor="middle" font-family="IBM Plex Sans Thai, Arial, sans-serif" font-size="24" font-weight="800" fill="#9fe870">฿</text>
+    <text x="630" y="408" text-anchor="middle" font-family="IBM Plex Sans Thai, Arial, sans-serif" font-size="30" font-weight="800" fill="#9fe870">฿</text>
+  </g>
+
+  <!-- gap bracket between the two endpoints (the cost of the lost early years) -->
+  <g stroke="#163300" stroke-width="4" fill="none" opacity="0.7">
+    <path d="M1035 168 L1050 168 L1050 200 L1035 200"/>
+  </g>
+
+  <!-- legend -->
+  <g font-family="IBM Plex Sans Thai, Arial, sans-serif" font-weight="700">
+    <rect x="180" y="150" width="34" height="14" rx="7" fill="#163300"/>
+    <text x="224" y="163" font-size="24" fill="#163300">เริ่มเล็กวันนี้</text>
+    <rect x="180" y="192" width="34" height="14" rx="7" fill="#0d7a3f"/>
+    <text x="224" y="205" font-size="24" fill="#455a5f">รอ 3 ปีแล้วลงก้อน</text>
+  </g>
+
+  <!-- axis captions -->
+  <g font-family="IBM Plex Sans Thai, Arial, sans-serif" font-weight="600" fill="#7d8a90" font-size="19">
+    <text x="150" y="556" text-anchor="middle">วันนี้</text>
+    <text x="360" y="556" text-anchor="middle">ปีที่ 3</text>
+    <text x="1000" y="556" text-anchor="middle">ปีที่ 20</text>
+  </g>
+</svg>
