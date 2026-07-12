@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="120" cy="100" r="150" fill="#e4f7d2"/>
+  <circle cx="1085" cy="545" r="185" fill="#e4f7d2"/>
+
+  <!-- axes -->
+  <g stroke="#c2ccd0" stroke-width="4" stroke-linecap="round">
+    <line x1="150" y1="140" x2="150" y2="472"/>
+    <line x1="150" y1="472" x2="1055" y2="472"/>
+  </g>
+
+  <!-- ===== survivor markets: rising lines that keep going (forest / green / lime) ===== -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="170,415 290,395 410,405 540,338 680,318 820,248 1030,172" stroke="#163300" stroke-width="10"/>
+    <polyline points="170,435 300,420 440,393 590,360 740,318 880,283 1030,232" stroke="#0d7a3f" stroke-width="9"/>
+    <polyline points="170,450 320,445 470,415 620,398 770,358 900,328 1030,293" stroke="#6fae3e" stroke-width="9"/>
+  </g>
+  <!-- survivor end dots (they continue) -->
+  <circle cx="1030" cy="172" r="9" fill="#163300"/>
+  <circle cx="1030" cy="232" r="9" fill="#0d7a3f"/>
+  <circle cx="1030" cy="293" r="9" fill="#6fae3e"/>
+
+  <!-- ===== vanished markets: rise, then drop straight to zero and stop (greyed) ===== -->
+  <g opacity="0.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- muted-red market: zeroed early -->
+    <polyline points="170,445 260,412 360,358 470,312" stroke="#a8200d" stroke-width="8"/>
+    <line x1="470" y1="312" x2="470" y2="470" stroke="#a8200d" stroke-width="8" stroke-dasharray="4 12"/>
+    <!-- grey market: zeroed later -->
+    <polyline points="170,458 300,432 450,382 590,346 690,320" stroke="#5d7079" stroke-width="8"/>
+    <line x1="690" y1="320" x2="690" y2="470" stroke="#5d7079" stroke-width="8" stroke-dasharray="4 12"/>
+  </g>
+  <!-- zero markers at the baseline where they died -->
+  <circle cx="470" cy="472" r="10" fill="#a8200d" opacity="0.7"/>
+  <circle cx="690" cy="472" r="10" fill="#5d7079" opacity="0.7"/>
+  <text x="470" y="508" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="26" font-weight="700" fill="#a8200d" opacity="0.75">0</text>
+  <text x="690" y="508" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="26" font-weight="700" fill="#5d7079" opacity="0.8">0</text>
+
+  <!-- caption -->
+  <text x="600" y="572" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="34" font-weight="700" fill="#5d7079">ตลาดที่รอด vs ตลาดที่หายเป็นศูนย์</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="IBM Plex Sans Thai, sans-serif">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1105" cy="70" r="180" fill="#e4f7d2"/>
+  <circle cx="55" cy="600" r="140" fill="#e4f7d2"/>
+
+  <!-- ===== title ===== -->
+  <text x="90" y="112" font-size="46" font-weight="700" fill="#163300">อาหารกลางวันฟรีมื้อเดียว</text>
+  <text x="90" y="156" font-size="24" font-weight="600" fill="#0d7a3f">กระจายความเสี่ยง · ลดความเหวี่ยง โดยผลตอบแทนคาดหวังไม่ลด</text>
+  <text x="90" y="188" font-size="19" font-weight="500" fill="#6b7a80">Two volatile assets, one smoother path — the only free lunch</text>
+
+  <!-- ===== chart · two jagged lines + a smoother blend between ===== -->
+  <!-- faint gridlines -->
+  <g stroke="#e4e9ec" stroke-width="2">
+    <line x1="140" y1="340" x2="1130" y2="340"/>
+    <line x1="140" y1="420" x2="1130" y2="420"/>
+    <line x1="140" y1="500" x2="1130" y2="500"/>
+  </g>
+  <!-- baseline -->
+  <line x1="140" y1="560" x2="1130" y2="560" stroke="#163300" stroke-width="3" opacity="0.3"/>
+
+  <!-- lime area under the smoother blend -->
+  <path d="M 140 517 L 336 465 L 532 491 L 728 445 L 924 441 L 1120 341 L 1120 560 L 140 560 Z" fill="#9fe870" opacity="0.35"/>
+
+  <!-- Asset A · jagged clay line -->
+  <polyline points="140,517 336,430 532,538 728,376 924,473 1120,322" fill="none" stroke="#b45309" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="1120" cy="322" r="9" fill="#b45309"/>
+
+  <!-- Asset B · jagged slate line -->
+  <polyline points="140,517 336,499 532,441 728,512 924,408 1120,361" fill="none" stroke="#5d7079" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" opacity="0.9"/>
+  <circle cx="1120" cy="361" r="9" fill="#5d7079"/>
+
+  <!-- Blend A+B · smoother forest line, thickest, sitting between the two -->
+  <polyline points="140,517 336,465 532,491 728,445 924,441 1120,341" fill="none" stroke="#163300" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="1120" cy="341" r="13" fill="#163300"/>
+
+  <!-- ===== legend ===== -->
+  <g font-weight="700">
+    <rect x="140" y="586" width="30" height="12" rx="6" fill="#b45309"/>
+    <text x="180" y="598" font-size="20" fill="#455a5f">สินทรัพย์ A</text>
+    <rect x="330" y="586" width="30" height="12" rx="6" fill="#5d7079"/>
+    <text x="370" y="598" font-size="20" fill="#455a5f">สินทรัพย์ B</text>
+    <rect x="520" y="586" width="30" height="12" rx="6" fill="#163300"/>
+    <text x="560" y="598" font-size="20" fill="#163300">พอร์ตผสม A+B · เรียบกว่า</text>
+  </g>
+
+  <!-- x captions -->
+  <g font-weight="500" fill="#7d8a90" font-size="18">
+    <text x="140" y="620" text-anchor="middle">ปี 0</text>
+    <text x="1120" y="620" text-anchor="middle">ปี 10</text>
+    <text x="960" y="326" text-anchor="end" font-size="16" fill="#9aa7ad">ตัวอย่างสมมติ</text>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Wealth is what you don't see: spending is the visible tip, wealth is the hidden base">
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <rect width="1200" height="630" fill="#e4f7d2" opacity="0.22"/>
+  <!-- soft accent circles -->
+  <circle cx="1080" cy="90" r="150" fill="#e4f7d2"/>
+  <circle cx="110" cy="560" r="120" fill="#e4f7d2"/>
+
+  <!-- waterline -->
+  <rect x="70" y="256" width="1060" height="5" rx="2.5" fill="#9fe870"/>
+  <line x1="70" y1="300" x2="1130" y2="300" stroke="#c9e6b0" stroke-width="2" stroke-dasharray="14 16"/>
+  <line x1="70" y1="345" x2="1130" y2="345" stroke="#dcefca" stroke-width="2" stroke-dasharray="14 16"/>
+
+  <!-- iceberg tip (above water) = visible spending -->
+  <polygon points="360,158 470,158 452,250 398,250" fill="#9fe870" stroke="#163300" stroke-width="3"/>
+
+  <!-- iceberg base (below water) = unseen wealth -->
+  <polygon points="345,262 495,262 548,415 452,566 352,566 268,400" fill="#163300"/>
+  <!-- lighter facet on the base -->
+  <polygon points="345,262 425,262 392,566 352,566 268,400" fill="#1f4d10"/>
+
+  <!-- labels -->
+  <text x="560" y="200" font-family="'IBM Plex Sans Thai', sans-serif" font-size="26" font-weight="700" fill="#5b6b73">การใช้จ่าย · ที่คนเห็น</text>
+  <text x="560" y="232" font-family="'IBM Plex Sans Thai', sans-serif" font-size="18" font-weight="500" fill="#8a97a0">the part everyone sees</text>
+
+  <text x="590" y="400" font-family="'IBM Plex Sans Thai', sans-serif" font-size="44" font-weight="800" fill="#163300">ความมั่งคั่งจริง</text>
+  <text x="590" y="446" font-family="'IBM Plex Sans Thai', sans-serif" font-size="26" font-weight="600" fill="#2f5d1a">คือสิ่งที่คุณมองไม่เห็น</text>
+  <text x="590" y="486" font-family="'IBM Plex Sans Thai', sans-serif" font-size="19" font-weight="500" fill="#8a97a0">wealth is what you don't see</text>
+
+  <text x="1120" y="612" font-family="'IBM Plex Sans Thai', sans-serif" font-size="18" font-weight="600" fill="#9fbf86" text-anchor="end">wealthcompass</text>
+</svg>

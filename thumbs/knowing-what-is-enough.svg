@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Knowing what is enough: a rising staircase of desires chasing income, with a flat enough line">
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <rect width="1200" height="630" fill="#e4f7d2" opacity="0.25"/>
+
+  <!-- ground baseline -->
+  <line x1="110" y1="520" x2="1090" y2="520" stroke="#d7e0d2" stroke-width="3"/>
+
+  <!-- staircase of desires (one-way ratchet up) -->
+  <polygon points="170,520 170,430 245,430 245,375 320,375 320,315 395,315 395,250 470,250 470,180 545,180 545,520"
+           fill="#163300"/>
+  <!-- lime tread caps -->
+  <rect x="170" y="424" width="75" height="8" rx="2" fill="#9fe870"/>
+  <rect x="245" y="369" width="75" height="8" rx="2" fill="#9fe870"/>
+  <rect x="320" y="309" width="75" height="8" rx="2" fill="#9fe870"/>
+  <rect x="395" y="244" width="75" height="8" rx="2" fill="#9fe870"/>
+  <rect x="470" y="174" width="75" height="8" rx="2" fill="#9fe870"/>
+
+  <!-- rising income curve -->
+  <path d="M150 486 C 430 474, 660 360, 1040 250" fill="none" stroke="#2f7a3f" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="1040" cy="250" r="12" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+
+  <!-- flat, deliberately set 'enough' line -->
+  <line x1="110" y1="345" x2="1090" y2="345" stroke="#5b6b73" stroke-width="5" stroke-dasharray="14 10"/>
+
+  <!-- labels -->
+  <text x="560" y="196" font-family="'IBM Plex Sans Thai',sans-serif" font-size="30" font-weight="700" fill="#163300">สิ่งที่อยากได้</text>
+  <text x="1040" y="228" font-family="'IBM Plex Sans Thai',sans-serif" font-size="27" font-weight="700" fill="#2f7a3f" text-anchor="end">รายได้</text>
+  <text x="1082" y="331" font-family="'IBM Plex Sans Thai',sans-serif" font-size="24" font-weight="600" fill="#5b6b73" text-anchor="end">เส้น "พอ"</text>
+
+  <!-- title -->
+  <text x="110" y="588" font-family="'IBM Plex Sans Thai',sans-serif" font-size="46" font-weight="700" fill="#163300">รู้จักคำว่า "พอ"</text>
+  <text x="110" y="620" font-family="'IBM Plex Sans Thai',sans-serif" font-size="23" font-weight="500" fill="#5b6b73">ตั้งเส้นเอง แล้วช่องว่างจะกลายเป็นอิสรภาพ</text>
+</svg>

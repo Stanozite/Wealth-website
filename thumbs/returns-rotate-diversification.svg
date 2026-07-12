@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="'IBM Plex Sans Thai','Segoe UI',sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbfdf9"/>
+      <stop offset="1" stop-color="#f2f9ea"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="#fbfdf9" opacity="0"/>
+
+  <!-- soft brand blobs -->
+  <circle cx="140" cy="120" r="240" fill="#e4f7d2" opacity="0.45"/>
+  <circle cx="1120" cy="560" r="220" fill="#e4f7d2" opacity="0.35"/>
+
+  <!-- wordmark -->
+  <g transform="translate(80,86)">
+    <circle cx="12" cy="6" r="12" fill="#163300"/>
+    <circle cx="12" cy="6" r="4.5" fill="#9fe870"/>
+    <text x="34" y="12" font-size="21" font-weight="700" fill="#163300" letter-spacing="0.4">Wealth Compass</text>
+  </g>
+
+  <!-- headline -->
+  <text x="80" y="250" font-size="62" font-weight="700" fill="#163300">ผู้ชนะเปลี่ยน</text>
+  <text x="80" y="322" font-size="62" font-weight="700" fill="#163300">ทุกปี</text>
+  <rect x="82" y="352" width="150" height="10" rx="5" fill="#9fe870"/>
+  <text x="80" y="410" font-size="30" font-weight="600" fill="#2d5f0a">การกระจาย ชนะการเดา</text>
+  <text x="80" y="452" font-size="20" font-weight="500" fill="#4e6b3a">ผลตอบแทนหมุนเวียน · ไม่มีใครเดาลำดับได้</text>
+
+  <!-- pill -->
+  <g transform="translate(80,498)">
+    <rect x="0" y="0" width="150" height="40" rx="20" fill="#163300"/>
+    <text x="75" y="26" font-size="17" font-weight="600" fill="#9fe870" text-anchor="middle">ลงทุน · Invest</text>
+  </g>
+
+  <!-- ============ 5x5 return quilt (winner = lime, rotates each column) ============ -->
+  <!-- cols x: 630,734,838,942,1046 ; rows y:150,232,314,396,478 ; cell 92x72 -->
+  <g>
+    <!-- col headers (illustrative years) -->
+    <text x="676" y="132" font-size="15" font-weight="600" fill="#4e6b3a" text-anchor="middle">ปี 1</text>
+    <text x="780" y="132" font-size="15" font-weight="600" fill="#4e6b3a" text-anchor="middle">ปี 2</text>
+    <text x="884" y="132" font-size="15" font-weight="600" fill="#4e6b3a" text-anchor="middle">ปี 3</text>
+    <text x="988" y="132" font-size="15" font-weight="600" fill="#4e6b3a" text-anchor="middle">ปี 4</text>
+    <text x="1092" y="132" font-size="15" font-weight="600" fill="#4e6b3a" text-anchor="middle">ปี 5</text>
+
+    <!-- Column 1 (winner row 2) -->
+    <rect x="630" y="150" width="92" height="72" rx="9" fill="#e4f7d2"/>
+    <rect x="630" y="232" width="92" height="72" rx="9" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <rect x="630" y="314" width="92" height="72" rx="9" fill="#163300"/>
+    <rect x="630" y="396" width="92" height="72" rx="9" fill="#c9efa8"/>
+    <rect x="630" y="478" width="92" height="72" rx="9" fill="#4e8a1f"/>
+
+    <!-- Column 2 (winner row 1) -->
+    <rect x="734" y="150" width="92" height="72" rx="9" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <rect x="734" y="232" width="92" height="72" rx="9" fill="#4e8a1f"/>
+    <rect x="734" y="314" width="92" height="72" rx="9" fill="#e4f7d2"/>
+    <rect x="734" y="396" width="92" height="72" rx="9" fill="#163300"/>
+    <rect x="734" y="478" width="92" height="72" rx="9" fill="#c9efa8"/>
+
+    <!-- Column 3 (winner row 3) -->
+    <rect x="838" y="150" width="92" height="72" rx="9" fill="#163300"/>
+    <rect x="838" y="232" width="92" height="72" rx="9" fill="#c9efa8"/>
+    <rect x="838" y="314" width="92" height="72" rx="9" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <rect x="838" y="396" width="92" height="72" rx="9" fill="#e4f7d2"/>
+    <rect x="838" y="478" width="92" height="72" rx="9" fill="#4e8a1f"/>
+
+    <!-- Column 4 (winner row 5) -->
+    <rect x="942" y="150" width="92" height="72" rx="9" fill="#4e8a1f"/>
+    <rect x="942" y="232" width="92" height="72" rx="9" fill="#163300"/>
+    <rect x="942" y="314" width="92" height="72" rx="9" fill="#c9efa8"/>
+    <rect x="942" y="396" width="92" height="72" rx="9" fill="#e4f7d2"/>
+    <rect x="942" y="478" width="92" height="72" rx="9" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+
+    <!-- Column 5 (winner row 4) -->
+    <rect x="1046" y="150" width="92" height="72" rx="9" fill="#c9efa8"/>
+    <rect x="1046" y="232" width="92" height="72" rx="9" fill="#e4f7d2"/>
+    <rect x="1046" y="314" width="92" height="72" rx="9" fill="#4e8a1f"/>
+    <rect x="1046" y="396" width="92" height="72" rx="9" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <rect x="1046" y="478" width="92" height="72" rx="9" fill="#163300"/>
+
+    <!-- shuffle path connecting the winners -->
+    <polyline points="676,268 780,186 884,350 988,514 1092,432"
+      fill="none" stroke="#163300" stroke-width="3" stroke-dasharray="6 7" opacity="0.55"/>
+    <circle cx="676" cy="268" r="5" fill="#163300"/>
+    <circle cx="780" cy="186" r="5" fill="#163300"/>
+    <circle cx="884" cy="350" r="5" fill="#163300"/>
+    <circle cx="988" cy="514" r="5" fill="#163300"/>
+    <circle cx="1092" cy="432" r="5" fill="#163300"/>
+
+    <text x="884" y="588" font-size="15" font-weight="500" fill="#6a7d55" text-anchor="middle">ผู้นำ (แถบไลม์) ย้ายที่ทุกปี · ตัวอย่างสมมติ</text>
+  </g>
+</svg>

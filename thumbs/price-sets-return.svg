@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Bars falling from cheap to expensive: the more you pay, the lower the future return, with the last bar negative">
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <rect width="1200" height="630" fill="#e4f7d2" opacity="0.20"/>
+
+  <!-- title -->
+  <text x="80" y="74" font-family="'IBM Plex Sans Thai',sans-serif" font-size="40" font-weight="800" fill="#163300">ราคาที่จ่าย กำหนดผลตอบแทน</text>
+  <text x="80" y="112" font-family="'IBM Plex Sans Thai',sans-serif" font-size="22" font-weight="500" fill="#5b6b63">The price you pay sets the return you get · เข้าซื้อยิ่งแพง อนาคตยิ่งบาง</text>
+
+  <!-- y-axis note -->
+  <text x="52" y="335" font-family="'IBM Plex Sans Thai',sans-serif" font-size="21" font-weight="600" fill="#8a97a0" transform="rotate(-90 52 335)" text-anchor="middle">ผลตอบแทน 10 ปีข้างหน้า</text>
+
+  <!-- baseline (zero) -->
+  <line x1="130" y1="455" x2="1090" y2="455" stroke="#163300" stroke-width="2" opacity="0.4"/>
+  <text x="120" y="450" font-family="'IBM Plex Sans Thai',sans-serif" font-size="18" font-weight="600" fill="#8a97a0" text-anchor="end">0%</text>
+
+  <!-- bars: cheap (tall, forest) -> expensive (short) -> very expensive (negative, red) -->
+  <rect x="174" y="215" width="120" height="240" rx="4" fill="#163300"/>
+  <rect x="362" y="275" width="120" height="180" rx="4" fill="#34691a"/>
+  <rect x="550" y="335" width="120" height="120" rx="4" fill="#63a338"/>
+  <rect x="738" y="395" width="120" height="60"  rx="4" fill="#9fe870"/>
+  <rect x="926" y="455" width="120" height="22"  rx="3" fill="#a8200d"/>
+
+  <!-- value labels -->
+  <text x="234" y="200" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#163300" text-anchor="middle">+12%</text>
+  <text x="422" y="260" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#163300" text-anchor="middle">+9%</text>
+  <text x="610" y="320" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#163300" text-anchor="middle">+6%</text>
+  <text x="798" y="380" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#4d7a24" text-anchor="middle">+3%</text>
+  <text x="986" y="503" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#a8200d" text-anchor="middle">−1%</text>
+
+  <!-- downward trend line across bar tops -->
+  <polyline points="234,215 422,275 610,335 798,395 986,455" fill="none" stroke="#5b6b63" stroke-width="3" stroke-dasharray="7 7" opacity="0.75"/>
+  <path d="M986 455 l16 -6 m-16 6 l-2 -17" fill="none" stroke="#5b6b63" stroke-width="3" opacity="0.75"/>
+
+  <!-- category labels (valuation: cheap -> expensive) -->
+  <g font-family="'IBM Plex Sans Thai',sans-serif" font-size="22" font-weight="600" fill="#5b6b63" text-anchor="middle">
+    <text x="234" y="535">ถูกมาก</text>
+    <text x="422" y="535">ถูก</text>
+    <text x="610" y="535">ปานกลาง</text>
+    <text x="798" y="535">แพง</text>
+    <text x="986" y="535" fill="#a8200d">แพงมาก</text>
+  </g>
+
+  <!-- caption -->
+  <text x="80" y="580" font-family="'IBM Plex Sans Thai',sans-serif" font-size="22" font-weight="700" fill="#163300">ยิ่งซื้อแพง ผลตอบแทน 10 ปีข้างหน้ายิ่งต่ำ<tspan font-weight="500" fill="#8a97a0"> · ตัวอย่างสมมติ (อ้าง Shiller CAPE)</tspan></text>
+
+  <!-- wordmark -->
+  <text x="1120" y="608" font-family="'IBM Plex Sans Thai',sans-serif" font-size="16" font-weight="600" fill="#8a97a0" text-anchor="end" opacity="0.85">Wealth Compass</text>
+</svg>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- GEO / SEO -->
+<meta name="geo.region" content="TH-10"/>
+<meta name="geo.placename" content="Bangkok, Thailand"/>
+<meta name="geo.position" content="13.7563;100.5018"/>
+<meta name="ICBM" content="13.7563, 100.5018"/>
+<meta name="language" content="th"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"/>
+<meta name="author" content="Wealth Compass"/>
+
+<!-- Open Graph -->
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Wealth Compass"/>
+<meta property="og:title" content="ขาดทุน 50% ต้องกำไร 100% ถึงเท่าทุน — คณิตที่เปลี่ยนวิธีมองความเสี่ยง | Wealth Compass"/>
+<meta property="og:description" content="คณิตของการกลับมาเท่าทุนไม่สมมาตร · ขาดทุน 50% ต้องกำไร 100% ขาดทุน 90% ต้องกำไร 900% สูตร L ÷ (1−L) และทำไมการเลี่ยงหายนะสำคัญกว่าการไล่ล่าผลตอบแทน"/>
+<meta property="og:url" content="https://wealthcompass.example.com/loss-recovery-math.html"/>
+<meta property="og:locale" content="th_TH"/>
+<meta property="og:locale:alternate" content="en_US"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="ขาดทุน 50% ต้องกำไร 100% ถึงเท่าทุน — คณิตที่เปลี่ยนวิธีมองความเสี่ยง | Wealth Compass"/>
+<meta name="twitter:description" content="ดาวน์ไซด์ทบต้นเข้าหาตัวคุณ · ขาดทุนก้อนใหญ่ต้องการกำไรที่โตแบบทวีคูณเพื่อกลับมาเท่าทุน การป้องกันหายนะจึงสำคัญกว่าการไล่ล่าผลตอบแทน"/>
+
+<!-- Hreflang / canonical -->
+<link rel="alternate" hreflang="th" href="https://wealthcompass.example.com/loss-recovery-math.html"/>
+<link rel="alternate" hreflang="en" href="https://wealthcompass.example.com/loss-recovery-math.html?lang=en"/>
+<link rel="alternate" hreflang="x-default" href="https://wealthcompass.example.com/loss-recovery-math.html"/>
+<link rel="canonical" href="https://wealthcompass.example.com/loss-recovery-math.html"/>
+
+<!-- Security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()"/>
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://wealthcompass.example.com/#organization",
+      "name": "Wealth Compass",
+      "url": "https://wealthcompass.example.com",
+      "areaServed": "TH"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://wealthcompass.example.com/loss-recovery-math.html#article",
+      "headline": "ขาดทุน 50% ต้องกำไร 100% ถึงเท่าทุน — คณิตที่เปลี่ยนวิธีมองความเสี่ยง",
+      "description": "คณิตของการกลับมาเท่าทุนไม่สมมาตร · ขาดทุน 50% ต้องกำไร 100% ขาดทุน 90% ต้องกำไร 900% สูตร L ÷ (1−L) และทำไมการเลี่ยงหายนะสำคัญกว่าการไล่ล่าผลตอบแทน",
+      "datePublished": "2026-07-05",
+      "dateModified": "2026-07-05",
+      "inLanguage": "th",
+      "author": {"@type": "Organization", "name": "Wealth Compass"},
+      "publisher": {"@id": "https://wealthcompass.example.com/#organization"},
+      "mainEntityOfPage": "https://wealthcompass.example.com/loss-recovery-math.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "หน้าแรก", "item": "https://wealthcompass.example.com/"},
+        {"@type": "ListItem", "position": 2, "name": "ความรู้การเงิน", "item": "https://wealthcompass.example.com/blog.html"},
+        {"@type": "ListItem", "position": 3, "name": "ขาดทุน 50% ต้องกำไร 100%", "item": "https://wealthcompass.example.com/loss-recovery-math.html"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "ทำไมขาดทุน 50% ต้องกำไรถึง 100% ไม่ใช่ 50%?",
+          "acceptedAnswer": {"@type": "Answer", "text": "เพราะกำไรคิดจากฐานที่เหลือหลังขาดทุน ไม่ใช่ฐานเดิม ถ้าเงิน 100 บาทขาดทุน 50% จะเหลือ 50 บาท การจะกลับไปที่ 100 บาท คือต้องโตจาก 50 เป็น 100 ซึ่งเท่ากับ +100% พอดี สูตรคือ กำไรที่ต้องได้ = ขาดทุน ÷ (1 − ขาดทุน) หรือ L ÷ (1−L)"}
+        },
+        {
+          "@type": "Question",
+          "name": "พอร์ตแดงทุกครั้ง ต้องรีบขายไหม?",
+          "acceptedAnswer": {"@type": "Answer", "text": "ความผันผวนปกติของพอร์ตที่กระจายความเสี่ยงดีอยู่แล้ว มักฟื้นกลับได้ตามเวลา การขายเพราะตกใจคือการเปลี่ยนขาดทุนชั่วคราวให้กลายเป็นขาดทุนถาวร อันตรายจริงจึงไม่ใช่พอร์ตแดง แต่คือการล็อกขาดทุนก้อนใหญ่แบบถาวร บทความนี้ไม่ใช่คำแนะนำให้ซื้อหรือขายสินทรัพย์ใดโดยเฉพาะ"}
+        },
+        {
+          "@type": "Question",
+          "name": "เลเวอเรจหรือมาร์จิ้นอันตรายอย่างไรกับคณิตข้อนี้?",
+          "acceptedAnswer": {"@type": "Answer", "text": "เลเวอเรจขยายทั้งกำไรและขาดทุน เมื่อขาดทุนลึกพอ อาจถูกบังคับขาย (margin call/force sell) ทำให้ขาดทุนกลายเป็นถาวรทันที แม้สินทรัพย์จะฟื้นในภายหลังก็ไม่ทันแล้ว เพราะคุณออกจากเกมไปก่อน นี่คือเหตุผลที่ดาวน์ไซด์แบบใช้หนี้อันตรายกว่าที่คณิตพื้นฐานบอก"}
+        },
+        {
+          "@type": "Question",
+          "name": "ถ้าอย่างนั้นควรถือเงินสดทั้งหมดเพื่อเลี่ยงขาดทุนไหม?",
+          "acceptedAnswer": {"@type": "Answer", "text": "ไม่ใช่ เงินสดก็มีความเสี่ยงของมันเอง คือถูกเงินเฟ้อกัดกร่อนกำลังซื้อไปเรื่อยๆ ประเด็นของบทความนี้ไม่ใช่ให้หนีความผันผวนทุกชนิด แต่ให้หลีกเลี่ยงขาดทุนถาวรก้อนใหญ่ที่คณิตการฟื้นตัวเอาชนะได้ยาก การกระจายความเสี่ยงและการรู้ระดับความเสี่ยงที่ตัวเองรับได้จริงคือทางสายกลาง"}
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<title>ขาดทุน 50% ต้องกำไร 100% ถึงเท่าทุน — คณิตที่เปลี่ยนวิธีมองความเสี่ยง | Wealth Compass</title>
+<meta name="description" content="คณิตของการกลับมาเท่าทุนไม่สมมาตร · ขาดทุน 50% ต้องกำไร 100% ขาดทุน 90% ต้องกำไร 900% สูตร L ÷ (1−L) และทำไมการเลี่ยงหายนะสำคัญกว่าการไล่ล่าผลตอบแทน"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="_theme.css"/>
+
+<style>
+/* article hero */
+.article-hero { padding: 56px 0 24px; }
+.article-hero .crumb { font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+.article-hero .crumb a { color: var(--positive); font-weight: 600; }
+.article-hero h1 { font-size: clamp(30px, 4.4vw, 46px); font-weight: 800; margin: 14px 0 0; max-width: 820px; }
+.article-hero .byline { color: var(--muted); font-size: 13.5px; font-weight: 600; margin-top: 16px; }
+.article-hero .lede { color: #38454c; font-size: 18px; max-width: 720px; margin-top: 18px; }
+
+/* SEO content */
+.content-prose { max-width: 760px; }
+.content-prose h2 { font-size: 26px; margin: 38px 0 12px; }
+.content-prose h3 { font-size: 19px; margin: 26px 0 10px; }
+.content-prose p, .content-prose li { color: #38454c; font-size: 15.5px; line-height: 1.7; margin-bottom: 12px; }
+.content-prose ul, .content-prose ol { padding-left: 22px; margin-bottom: 14px; }
+.content-prose ul { list-style: disc; }
+.content-prose ol { list-style: decimal; }
+.content-prose .src { font-size: 13px; color: var(--muted); }
+.content-prose .lead-q { font-weight: 700; color: var(--forest); }
+
+/* mid-article CTA */
+.mid-cta {
+  margin: 30px 0; padding: 22px 24px; border-radius: 16px;
+  background: var(--bright-soft); border: 1px solid var(--bright-2);
+  display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
+}
+.mid-cta .mc-txt { flex: 1; min-width: 240px; }
+.mid-cta .mc-txt b { color: var(--forest); font-size: 16px; }
+.mid-cta .mc-txt span.sub { display: block; color: #38454c; font-size: 14px; margin-top: 4px; }
+
+/* example table */
+.salary-table { width: 100%; border-collapse: collapse; margin: 18px 0 8px; font-size: 14.5px; }
+.salary-table th, .salary-table td { padding: 11px 12px; text-align: right; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.salary-table th { background: var(--forest); color: var(--bright); font-weight: 700; text-align: right; }
+.salary-table th:first-child, .salary-table td:first-child { text-align: left; }
+.salary-table thead th:first-child { border-top-left-radius: 10px; }
+.salary-table thead th:last-child { border-top-right-radius: 10px; }
+.salary-table tbody tr:nth-child(even) { background: #f6f9f4; }
+.salary-table td:first-child { font-weight: 700; color: var(--forest); }
+.salary-table .save-col { color: var(--positive); font-weight: 700; }
+.tbl-wrap { overflow-x: auto; }
+
+/* FAQ */
+.faq-block { max-width: 760px; }
+.faq-item { border-bottom: 1px solid var(--line); padding: 18px 0; }
+.faq-item h3 { font-size: 17px; margin: 0 0 8px; color: var(--forest); }
+.faq-item p { color: #38454c; font-size: 15px; line-height: 1.7; margin: 0; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content"><span class="lang-th">ข้ามไปเนื้อหาหลัก</span><span class="lang-en">Skip to main content</span></a>
+<nav></nav>
+<script src="_brand.js"></script>
+<script src="_app.js"></script>
+<script src="_articles.js"></script>
+<script src="_nav.js"></script>
+
+<main id="main-content">
+
+<!-- ============ HERO ============ -->
+<header class="article-hero">
+  <div class="container">
+    <div class="crumb">
+      <a href="index.html"><span class="lang-th">หน้าแรก</span><span class="lang-en">Home</span></a> /
+      <a href="blog.html"><span class="lang-th">ความรู้การเงิน</span><span class="lang-en">Learn</span></a> /
+      <span class="lang-th">ขาดทุน 50% ต้องกำไร 100%</span><span class="lang-en">The loss-recovery math</span>
+    </div>
+    <span class="badge blue"><span class="lang-th">ลงทุน</span><span class="lang-en">Invest</span></span>
+    <h1>
+      <span class="lang-th">ขาดทุน 50% ต้องกำไร 100% ถึงเท่าทุน — คณิตที่เปลี่ยนวิธีมองความเสี่ยง</span>
+      <span class="lang-en">A 50% loss needs a 100% gain just to break even</span>
+    </h1>
+    <div class="byline">Wealth Compass · 5 ก.ค. 2026 · <span class="lang-th">อ่าน 7 นาที</span><span class="lang-en">7 min read</span></div>
+    <p class="lede">
+      <span class="lang-th">ขาดทุนกับกำไรไม่ได้อยู่คนละฝั่งของกระจกเงา · ยิ่งขาดทุนลึก ยิ่งต้องกำไรมากขึ้นแบบทวีคูณเพื่อกลับมาเท่าทุน บทความนี้จะพาดูสูตรง่ายๆ หนึ่งบรรทัดที่อธิบายทุกอย่าง และทำไมการหลีกเลี่ยงหายนะจึงสำคัญกว่าการไล่ล่าผลตอบแทนสูงสุด</span>
+      <span class="lang-en">Losses and gains are not mirror images. The deeper the loss, the more the gain you need to break even grows, and it grows fast. Here is the one-line formula that explains it, and why avoiding ruin beats chasing the highest return.</span>
+    </p>
+  </div>
+</header>
+
+<!-- ============ BODY (TH) ============ -->
+<section class="section alt">
+  <div class="container content-prose">
+    <div class="section-label"><span class="lang-th">ความรู้</span><span class="lang-en">Learn</span></div>
+
+    <div class="lang-th">
+      <h2>ทำไมขาดทุนกับกำไรถึงไม่สมมาตร</h2>
+      <p>สมมติว่าคุณมีเงินลงทุน 100 บาท แล้วพอร์ตขาดทุนไป 50% เหลือ 50 บาท · คำถามคือต้องกำไรกี่เปอร์เซ็นต์ถึงจะกลับมาที่ 100 บาทเท่าเดิม สัญชาตญาณของคนส่วนใหญ่ตอบทันทีว่า 50% แต่คำตอบจริงคือ <span class="lead-q">100%</span> เพราะกำไรครั้งใหม่ไม่ได้คิดจากเงินก้อนเดิม 100 บาท แต่คิดจากเงินที่เหลือจริง 50 บาท · การจะโตจาก 50 กลับไป 100 คือการเพิ่มขึ้นเป็นสองเท่า นั่นคือ +100% พอดี</p>
+      <p>นี่คือความไม่สมมาตรที่คนไทยจำนวนมากมองข้าม ขาดทุนกัดกินฐานเงินของคุณให้เล็กลง แล้วกำไรที่ต้องได้กลับต้องวิ่งบนฐานที่เล็กลงนั้น ยิ่งขาดทุนลึกเท่าไหร่ ช่องว่างระหว่าง "เปอร์เซ็นต์ที่เสียไป" กับ "เปอร์เซ็นต์ที่ต้องได้คืน" ยิ่งถ่างออกอย่างน่ากลัว</p>
+
+      <h2>สูตรเดียวที่อธิบายทุกอย่าง: กำไรที่ต้องได้ = L ÷ (1 − L)</h2>
+      <p>ถ้า L คือสัดส่วนที่ขาดทุน (เช่น ขาดทุน 30% ก็คือ L = 0.30) กำไรที่ต้องได้เพื่อกลับมาเท่าทุนจะเท่ากับ <b>L ÷ (1 − L)</b> เสมอ · เป็นคณิตล้วน ไม่ต้องเดา ไม่ต้องอ้างสถิติตลาดใดๆ ลองแทนค่าดู แล้วคุณจะเห็นว่าตัวเลขพุ่งเร็วแค่ไหน</p>
+      <div class="tbl-wrap">
+        <table class="salary-table">
+          <thead>
+            <tr>
+              <th>ขาดทุน</th>
+              <th>กำไรที่ต้องได้เพื่อเท่าทุน</th>
+              <th>คิดจากสูตร L ÷ (1−L)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>10%</td><td class="save-col">11%</td><td>0.10 ÷ 0.90</td></tr>
+            <tr><td>20%</td><td class="save-col">25%</td><td>0.20 ÷ 0.80</td></tr>
+            <tr><td>30%</td><td class="save-col">43%</td><td>0.30 ÷ 0.70</td></tr>
+            <tr><td>50%</td><td class="save-col">100%</td><td>0.50 ÷ 0.50</td></tr>
+            <tr><td>70%</td><td class="save-col">233%</td><td>0.70 ÷ 0.30</td></tr>
+            <tr><td>90%</td><td class="save-col">900%</td><td>0.90 ÷ 0.10</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">ตัวเลขทั้งหมดในตารางนี้เป็นการคำนวณจากสูตรโดยตรง ปัดเศษเป็นจำนวนเต็มเพื่อให้อ่านง่าย</p>
+      <p>สังเกตช่วงท้ายของตาราง · ขาดทุน 90% ไม่ได้ต้องการกำไร 90% หรือแม้แต่ 200% แต่ต้องการถึง <b>900%</b> คือต้องทำเงินให้โตสิบเท่าเพียงเพื่อกลับมาที่จุดเริ่มต้น ไม่ใช่เพื่อกำไรด้วยซ้ำ นี่คือเหตุผลที่คนในวงการมักพูดว่า "กฎข้อแรกคืออย่าขาดทุนหนัก"</p>
+
+      <div class="chart-box" style="background:#fbfdf9;border:1px solid var(--line);border-radius:12px;padding:10px;margin:20px 0;"><div id="fig1"></div></div>
+
+      <h2>ดาวน์ไซด์ทบต้นเข้าหาตัวคุณ · บริบทไทยที่ต้องระวัง</h2>
+      <p>ผลของการทบต้นที่เราชอบพูดถึงในแง่ดี คือเงินโตขึ้นเรื่อยๆ แต่คณิตข้อนี้เตือนว่าการทบต้นทำงานสองทาง · เมื่อขาดทุนก้อนใหญ่ มันไม่ได้แค่ทำให้พอร์ตเล็กลง แต่ทำให้ทุกกำไรในอนาคตต้องเริ่มจากฐานที่ต่ำลง ความเสียหายจึงลากยาวไปในเวลา ไม่ใช่แค่เหตุการณ์วันเดียว จุดที่ทำให้ดาวน์ไซด์กลายเป็นหายนะจริงในบริบทไทยมักมาจากสามที่:</p>
+      <ol>
+        <li><b>เลเวอเรจและมาร์จิ้น</b> · การกู้เงินมาลงทุนหรือเทรดด้วยมาร์จิ้นขยายทั้งกำไรและขาดทุน เมื่อราคาลงลึกพอ คุณอาจถูกบังคับขาย (force sell) ทำให้ขาดทุนที่ยังเป็นแค่ "ตัวเลขบนจอ" กลายเป็นขาดทุนถาวรทันที แม้สินทรัพย์จะฟื้นในภายหลัง คุณก็ออกจากเกมไปแล้ว</li>
+        <li><b>ทุ่มหุ้นตัวเดียวแบบ all-in</b> · การเอาเงินเก็บทั้งชีวิตไปลงหุ้นตัวเดียวเพราะมั่นใจสุดๆ คือการเปิดโอกาสให้ขาดทุนแบบ 70-90% เกิดขึ้นได้จริง เพราะบริษัทเดียวล้มได้ แต่ตลาดที่กระจายดีทั้งตลาดล้มพร้อมกันยากกว่ามาก</li>
+        <li><b>ขายตอนตกใจ</b> · พอร์ตที่กระจายความเสี่ยงดีและร่วงตามตลาดชั่วคราว มักฟื้นได้ตามเวลา แต่ถ้าคุณเทขายตอนแดงที่สุด คุณเปลี่ยนขาดทุนชั่วคราวให้กลายเป็นขาดทุนถาวรด้วยมือตัวเอง</li>
+      </ol>
+      <p>ข้อสรุปเชิงปฏิบัติจากคณิตข้อนี้จึงไม่ใช่ "หาผลตอบแทนให้สูงที่สุด" แต่คือ <b>ปกป้องตัวเองจากขาดทุนถาวรก้อนใหญ่ก่อนเป็นอันดับแรก</b> เพราะการหลีกเลี่ยงหลุมลึกมีค่ามากกว่าการปีนกำแพงสูง · ก่อนตัดสินใจลงเงินก้อนใหญ่ การรู้ว่าตัวเองรับความเสี่ยงได้แค่ไหนจริงๆ จึงเป็นด่านแรกที่ข้ามไม่ได้ อ่านเพิ่มเรื่อง <a href="risk-profile-explained.html">ระดับความเสี่ยงที่คุณรับได้จริง</a> และ <a href="sequence-of-returns-risk.html">ความเสี่ยงลำดับผลตอบแทน</a> ซึ่งอธิบายว่าทำไม "จังหวะ" ของการขาดทุนก็สำคัญไม่แพ้ขนาดของมัน</p>
+
+      <div class="mid-cta">
+        <div class="mc-txt">
+          <b>คุณรับความเสี่ยงได้แค่ไหนจริงๆ?</b>
+          <span class="sub">ก่อนจะกลัวขาดทุนหรือกล้าเกินตัว ลองประเมินระดับความเสี่ยงที่เหมาะกับเป้าหมายและฐานะของคุณ ฟรี ไม่ต้องสมัคร</span>
+        </div>
+        <a class="btn btn-primary btn-lg" href="risk-profile.html"><span class="lang-th">ทำแบบประเมินความเสี่ยง</span><span class="lang-en">Take the risk assessment</span></a>
+      </div>
+
+      <h2>แต่นี่ไม่ได้แปลว่าห้ามเสี่ยงเลย</h2>
+      <p>ถ้าอ่านมาถึงตรงนี้แล้วสรุปว่า "งั้นถือเงินสดหมดดีกว่า จะได้ไม่ขาดทุน" แสดงว่าเข้าใจคลาดเคลื่อนไปคนละทาง · คณิตข้อนี้ไม่ได้บอกให้กลัวความผันผวนทุกชนิด ความผันผวนปกติของพอร์ตที่กระจายความเสี่ยงดีเป็นเรื่องธรรมดาและมักฟื้นกลับได้ตามเวลา สิ่งที่คณิตข้อนี้เตือนคือ <b>ขาดทุนถาวรและขาดทุนก้อนใหญ่</b> ต่างหาก ไม่ใช่ตัวเลขแดงชั่วคราวระหว่างทาง</p>
+      <p>เงินสดเองก็มีความเสี่ยงที่ซ่อนอยู่ คือถูกเงินเฟ้อกัดกร่อนกำลังซื้อไปเรื่อยๆ อย่างเงียบๆ การไม่ยอมเสี่ยงเลยจึงไม่ใช่การไม่มีความเสี่ยง แต่เป็นการเลือกความเสี่ยงอีกแบบที่มองไม่เห็น ความแตกต่างที่สำคัญคือแยกให้ออกระหว่าง "ความผันผวนที่ฟื้นได้" กับ "หายนะที่ฟื้นยาก" · การรับความเสี่ยงที่คำนวณแล้ว กระจายพอร์ต และหลีกเลี่ยงเลเวอเรจที่บังคับขายได้ คือทางที่ทำให้คุณอยู่ในเกมนานพอจะได้ประโยชน์จากการทบต้นฝั่งบวก</p>
+
+      <h2>อะไรจะทำให้ข้อสรุปนี้ผิด</h2>
+      <p>เพื่อความซื่อสัตย์กับตัวเลข · ข้อสรุปที่ว่า "ดาวน์ไซด์อันตรายกว่าอัปไซด์" จะผิดทันทีถ้าขาดทุนกับกำไรสมมาตรกัน คือถ้าขาดทุน 50% แล้วต้องการกำไรแค่ 50% เพื่อกลับมาเท่าทุน · แต่มันไม่เป็นอย่างนั้น เพราะสูตร L ÷ (1−L) เป็นคณิตล้วน ตราบใดที่กำไรคิดจากฐานที่เหลือหลังขาดทุน ความไม่สมมาตรนี้จะเป็นจริงเสมอ อีกกรณีที่จะทำให้บทสรุปเปลี่ยนคือถ้าคุณมีเงินก้อนใหม่เติมเข้าไปได้ไม่จำกัดหลังขาดทุน แต่ในโลกจริงเงินและเวลาของคนเรามีจำกัด · ข้อสรุปจึงยังยืน</p>
+
+      <h2>สรุป</h2>
+      <p>กำไรกับขาดทุนไม่ได้หนักเท่ากัน ยิ่งขาดทุนลึก กำไรที่ต้องได้เพื่อกลับมาเท่าทุนยิ่งพุ่งแบบทวีคูณตามสูตร L ÷ (1−L) · ขาดทุน 10% ต้องได้คืน 11% แต่ขาดทุน 90% ต้องได้คืนถึง 900% นี่คือเหตุผลที่การป้องกันตัวเองจากหายนะ เช่น เลี่ยงเลเวอเรจที่บังคับขายได้ ไม่ทุ่มหุ้นตัวเดียว และไม่ขายตอนตกใจ มีค่ามากกว่าการไล่ล่าผลตอบแทนสูงสุด ขณะเดียวกันก็อย่าเข้าใจผิดว่าต้องหนีความเสี่ยงทุกชนิด เพราะความผันผวนปกติฟื้นได้ และเงินสดล้วนๆ ก็ถูกเงินเฟ้อกัดกร่อน อยากเห็นภาพรวมฐานะการเงินของตัวเองก่อนตัดสินใจเสี่ยง ลองเริ่มจาก <a href="net-worth-why-it-matters.html">Net Worth คืออะไร</a> แล้วค่อยวางแผนความเสี่ยงบนฐานที่มั่นคง</p>
+    </div>
+
+    <!-- ============ BODY (EN) ============ -->
+    <div class="lang-en">
+      <h2>Why gains and losses are not symmetric</h2>
+      <p>Put 100 baht in, lose 50%, and you have 50 baht. To get back to 100, most people guess you need a 50% gain. The real answer is <b>100%</b>, because the new gain is measured on the 50 baht you have left, not the 100 you started with. Going from 50 back to 100 is a doubling. The deeper the loss, the wider the gap between the percent you lost and the percent you must earn back.</p>
+
+      <h2>One formula: gain needed = L ÷ (1 − L)</h2>
+      <p>If L is the fraction lost, the gain needed to break even is always <b>L ÷ (1 − L)</b> · pure arithmetic, no market statistics required. Lose 10% and you need 11%. Lose 30%, you need 43%. Lose 50%, you need 100%. Lose 90%, you need <b>900%</b> · a tenfold gain just to return to where you started. This is why "don't take a big loss" is rule number one.</p>
+
+      <h2>Downside compounds against you</h2>
+      <p>Compounding works both ways. A large loss shrinks the base every future gain has to grow from, so the damage stretches across time. In practice the danger turns into ruin through three things: <b>leverage/margin</b> (a forced sell locks in a loss even if the asset later recovers), <b>going all-in on a single stock</b> (one company can collapse in a way a diversified market rarely does), and <b>panic-selling</b> (turning a temporary drawdown into a permanent loss). The practical takeaway is to protect against large permanent loss first, before chasing the highest return.</p>
+
+      <h2>This does not mean never take risk</h2>
+      <p>If your conclusion is "hold all cash so I never lose," you have read it backwards. The math warns against <b>permanent, large</b> loss, not the normal volatility of a diversified portfolio, which tends to recover. Cash carries its own risk: inflation quietly erodes its purchasing power. The skill is telling apart volatility that heals from a wipeout that doesn't · take calculated, diversified risk and avoid the kind of leverage that can force you out of the game.</p>
+
+      <h2>What would make this wrong</h2>
+      <p>This conclusion would fail only if losses and gains were symmetric · if a 50% loss needed just a 50% gain to recover. They are not, because L ÷ (1−L) is pure arithmetic whenever the gain is measured on the reduced base. The asymmetry always holds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section tight">
+  <div class="container faq-block">
+    <div class="section-label"><span class="lang-th">คำถามที่พบบ่อย</span><span class="lang-en">FAQ</span></div>
+
+    <div class="faq-item">
+      <h3><span class="lang-th">ทำไมขาดทุน 50% ต้องกำไรถึง 100% ไม่ใช่ 50%?</span><span class="lang-en">Why does a 50% loss need a 100% gain, not 50%?</span></h3>
+      <p><span class="lang-th">เพราะกำไรคิดจากฐานที่เหลือหลังขาดทุน ไม่ใช่ฐานเดิม ถ้าเงิน 100 บาทขาดทุน 50% จะเหลือ 50 บาท การจะกลับไปที่ 100 บาท คือต้องโตจาก 50 เป็น 100 ซึ่งเท่ากับ +100% พอดี สูตรคือ กำไรที่ต้องได้ = ขาดทุน ÷ (1 − ขาดทุน) หรือ L ÷ (1−L)</span><span class="lang-en">Because the gain is measured on what's left after the loss, not the original base. 100 baht down 50% leaves 50; getting back to 100 means doubling, which is +100%. The formula is gain = loss ÷ (1 − loss), or L ÷ (1−L).</span></p>
+    </div>
+
+    <div class="faq-item">
+      <h3><span class="lang-th">พอร์ตแดงทุกครั้ง ต้องรีบขายไหม?</span><span class="lang-en">Should I sell every time my portfolio is red?</span></h3>
+      <p><span class="lang-th">ความผันผวนปกติของพอร์ตที่กระจายความเสี่ยงดีอยู่แล้ว มักฟื้นกลับได้ตามเวลา การขายเพราะตกใจคือการเปลี่ยนขาดทุนชั่วคราวให้กลายเป็นขาดทุนถาวร อันตรายจริงจึงไม่ใช่พอร์ตแดง แต่คือการล็อกขาดทุนก้อนใหญ่แบบถาวร บทความนี้ไม่ใช่คำแนะนำให้ซื้อหรือขายสินทรัพย์ใดโดยเฉพาะ</span><span class="lang-en">Normal volatility in a well-diversified portfolio tends to recover over time. Panic-selling turns a temporary loss into a permanent one. The real danger isn't a red screen, it's locking in a large permanent loss. This is not advice to buy or sell any specific asset.</span></p>
+    </div>
+
+    <div class="faq-item">
+      <h3><span class="lang-th">เลเวอเรจหรือมาร์จิ้นอันตรายอย่างไรกับคณิตข้อนี้?</span><span class="lang-en">How do leverage and margin worsen this math?</span></h3>
+      <p><span class="lang-th">เลเวอเรจขยายทั้งกำไรและขาดทุน เมื่อขาดทุนลึกพอ อาจถูกบังคับขาย (margin call/force sell) ทำให้ขาดทุนกลายเป็นถาวรทันที แม้สินทรัพย์จะฟื้นในภายหลังก็ไม่ทันแล้ว เพราะคุณออกจากเกมไปก่อน นี่คือเหตุผลที่ดาวน์ไซด์แบบใช้หนี้อันตรายกว่าที่คณิตพื้นฐานบอก</span><span class="lang-en">Leverage magnifies both gains and losses. Deep enough, it can trigger a forced sell (margin call), making the loss permanent immediately, even if the asset later recovers, because you're already out. That's why leveraged downside is more dangerous than the base math suggests.</span></p>
+    </div>
+
+    <div class="faq-item">
+      <h3><span class="lang-th">ถ้าอย่างนั้นควรถือเงินสดทั้งหมดเพื่อเลี่ยงขาดทุนไหม?</span><span class="lang-en">So should I just hold all cash to avoid losses?</span></h3>
+      <p><span class="lang-th">ไม่ใช่ เงินสดก็มีความเสี่ยงของมันเอง คือถูกเงินเฟ้อกัดกร่อนกำลังซื้อไปเรื่อยๆ ประเด็นของบทความนี้ไม่ใช่ให้หนีความผันผวนทุกชนิด แต่ให้หลีกเลี่ยงขาดทุนถาวรก้อนใหญ่ที่คณิตการฟื้นตัวเอาชนะได้ยาก การกระจายความเสี่ยงและการรู้ระดับความเสี่ยงที่ตัวเองรับได้จริงคือทางสายกลาง</span><span class="lang-en">No · cash has its own risk: inflation steadily erodes its purchasing power. The point isn't to flee all volatility, but to avoid the large permanent losses that recovery math struggles to beat. Diversifying and knowing your real risk tolerance is the middle path.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RELATED ============ -->
+<section class="section tight">
+  <div class="container">
+    <div class="section-label"><span class="lang-th">บทความที่เกี่ยวข้อง</span><span class="lang-en">Related reading</span></div>
+    <div id="related" class="article-grid"></div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section tight">
+  <div class="container">
+    <div class="cta-band reveal">
+      <div>
+        <h2><span class="lang-th">รู้แล้วว่าดาวน์ไซด์อันตราย · อยากวางพอร์ตให้ทนหลุมได้ไหม?</span><span class="lang-en">Downside is dangerous · want a portfolio that survives it?</span></h2>
+        <p><span class="lang-th">นักวางแผนการเงินช่วยจัดพอร์ตให้กระจายความเสี่ยง ป้องกันขาดทุนถาวร และเหมาะกับระดับความเสี่ยงที่คุณรับได้จริง นัดคุยครั้งแรกฟรี 30 นาที</span><span class="lang-en">A planner helps diversify your portfolio, guard against permanent loss, and fit your real risk tolerance. First 30 minutes free.</span></p>
+      </div>
+      <form data-lead aria-label="Consultation request">
+        <input type="text" name="name" required autocomplete="name" placeholder="ชื่อของคุณ / Your name" aria-label="Name"/>
+        <input type="email" name="email" required autocomplete="email" placeholder="อีเมล / Email" aria-label="Email"/>
+        <input type="hidden" name="topic" value="invest"/>
+        <button class="btn btn-primary btn-lg" type="submit"><span class="lang-th">นัดคุยฟรี</span><span class="lang-en">Book free consult</span></button>
+        <div class="msg ok"><span class="lang-th">ได้รับข้อมูลแล้ว เราจะติดต่อกลับภายใน 1 วันทำการ</span><span class="lang-en">Received · we'll reply within 1 business day.</span></div>
+        <div class="msg err"><span class="lang-th">ส่งไม่สำเร็จ ลองอีกครั้ง</span><span class="lang-en">Couldn't send · try again.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DISCLAIMER ============ -->
+<section class="section tight">
+  <div class="container content-prose">
+    <div class="disclaimer">
+      <b><span class="lang-th">หมายเหตุ:</span><span class="lang-en">Note:</span></b>
+      <span class="lang-th">บทความนี้จัดทำเพื่อการศึกษาและการวางแผนเบื้องต้นเท่านั้น ไม่ใช่คำแนะนำให้ซื้อ ขาย หรือถือหลักทรัพย์/สินทรัพย์ใดโดยเฉพาะ การตัดสินใจควรพิจารณาจากเป้าหมาย ฐานะการเงิน ความเสี่ยง ภาษี และข้อจำกัดส่วนบุคคล</span>
+      <span class="lang-en">This article is for educational and preliminary-planning purposes only and is not advice to buy, sell, or hold any specific security or asset. Decisions should consider your goals, financial position, risk, taxes, and personal constraints.</span>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer></footer>
+<script src="_footer.js"></script>
+<script src="_related.js"></script>
+<script src="_chart.js"></script>
+<script>
+(function(){'use strict';function draw(){if(!window.WC_CHART)return;var th=(window.WC&&window.WC.getLang)?window.WC.getLang()==='th':true;
+WC_CHART.bars('#fig1',{title:th?'กำไรที่ต้องได้เพื่อกลับมาเท่าทุน':'Gain needed just to break even',
+xLabels:th?['ขาดทุน 10%','20%','30%','50%','70%','90%']:['−10%','−20%','−30%','−50%','−70%','−90%'],
+yFmt:'pct',source:th?'คณิตล้วน (gain = L ÷ (1−L))':'pure arithmetic',
+series:[{name:th?'กำไรที่ต้องได้ (%)':'Gain needed (%)',color:'#a8200d',values:[11,25,43,100,233,900]}]});}
+draw();window.addEventListener('wc:lang',draw);})();
+</script>
+</body>
+</html>

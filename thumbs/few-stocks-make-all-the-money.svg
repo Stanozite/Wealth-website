@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="A skewed distribution of stock returns: a few tall winners, many small or negative">
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <rect width="1200" height="630" fill="#e4f7d2" opacity="0.20"/>
+
+  <!-- title -->
+  <text x="80" y="82" font-family="'IBM Plex Sans Thai',sans-serif" font-size="40" font-weight="700" fill="#163300">หุ้นไม่กี่ตัว สร้างผลตอบแทนเกือบทั้งหมด</text>
+  <text x="80" y="122" font-family="'IBM Plex Sans Thai',sans-serif" font-size="22" font-weight="500" fill="#5b6b63">A few stocks make all the money · returns are skewed</text>
+
+  <!-- baseline -->
+  <line x1="80" y1="480" x2="1120" y2="480" stroke="#163300" stroke-width="2" opacity="0.35"/>
+
+  <!-- winners (few, tall) -->
+  <rect x="100" y="195" width="40" height="285" rx="3" fill="#163300"/>
+  <rect x="156" y="275" width="40" height="205" rx="3" fill="#9fe870"/>
+  <rect x="212" y="345" width="40" height="135" rx="3" fill="#163300"/>
+  <rect x="268" y="400" width="40" height="80" rx="3" fill="#9fe870"/>
+
+  <!-- long tail (many, small positive) -->
+  <rect x="324" y="430" width="40" height="50" rx="3" fill="#7bab52"/>
+  <rect x="380" y="446" width="40" height="34" rx="3" fill="#7bab52"/>
+  <rect x="436" y="458" width="40" height="22" rx="3" fill="#7bab52"/>
+  <rect x="492" y="466" width="40" height="14" rx="3" fill="#7bab52"/>
+  <rect x="548" y="472" width="40" height="8" rx="2" fill="#7bab52"/>
+  <rect x="660" y="474" width="40" height="6" rx="2" fill="#7bab52"/>
+  <rect x="772" y="476" width="40" height="4" rx="2" fill="#7bab52"/>
+
+  <!-- losers (below baseline, muted red) -->
+  <rect x="604" y="480" width="40" height="12" rx="2" fill="#a8200d"/>
+  <rect x="716" y="480" width="40" height="22" rx="2" fill="#a8200d"/>
+  <rect x="828" y="480" width="40" height="30" rx="2" fill="#a8200d"/>
+  <rect x="884" y="480" width="40" height="14" rx="2" fill="#a8200d"/>
+  <rect x="940" y="480" width="40" height="34" rx="2" fill="#a8200d"/>
+  <rect x="996" y="480" width="40" height="20" rx="2" fill="#a8200d"/>
+  <rect x="1052" y="480" width="40" height="40" rx="2" fill="#a8200d"/>
+
+  <!-- captions -->
+  <text x="100" y="560" font-family="'IBM Plex Sans Thai',sans-serif" font-size="21" font-weight="700" fill="#163300">ผู้ชนะกลุ่มเล็ก · สร้างความมั่งคั่งเกือบทั้งหมด</text>
+  <text x="700" y="588" font-family="'IBM Plex Sans Thai',sans-serif" font-size="19" font-weight="600" fill="#a8200d">หุ้นส่วนใหญ่ · แพ้แม้แต่พันธบัตร</text>
+
+  <!-- wordmark -->
+  <text x="1120" y="610" font-family="'IBM Plex Sans Thai',sans-serif" font-size="16" font-weight="600" fill="#8a97a0" text-anchor="end" opacity="0.85">Wealth Compass</text>
+</svg>

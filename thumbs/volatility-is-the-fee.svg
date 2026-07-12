@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Bumpy market line ending above a flat cash line — volatility is the fee">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1080" cy="120" r="185" fill="#e4f7d2"/>
+  <circle cx="120" cy="560" r="150" fill="#e4f7d2"/>
+
+  <!-- axes -->
+  <g stroke="#e4e9ec" stroke-width="3">
+    <line x1="150" y1="110" x2="150" y2="520"/>
+    <line x1="150" y1="520" x2="1070" y2="520"/>
+  </g>
+  <!-- faint gridlines -->
+  <g stroke="#e9edf0" stroke-width="2">
+    <line x1="334" y1="130" x2="334" y2="520"/>
+    <line x1="518" y1="130" x2="518" y2="520"/>
+    <line x1="702" y1="130" x2="702" y2="520"/>
+    <line x1="886" y1="130" x2="886" y2="520"/>
+  </g>
+
+  <!-- ===== CASH · flat dashed line, ends low ===== -->
+  <path d="M150 470 L1010 438" fill="none" stroke="#5d7079" stroke-width="9"
+        stroke-linecap="round" stroke-dasharray="2 22"/>
+  <circle cx="1010" cy="438" r="13" fill="#5d7079"/>
+
+  <!-- ===== MARKET · bumpy line, dips hard but ends high (forest) ===== -->
+  <!-- lime area under the winning curve -->
+  <path d="M150 452 L242 396 L334 486 L426 320 L518 402 L610 250 L702 336 L794 214 L886 288 L1010 150 L1010 520 L150 520 Z"
+        fill="#9fe870" opacity="0.42"/>
+  <polyline points="150,452 242,396 334,486 426,320 518,402 610,250 702,336 794,214 886,288 1010,150"
+        fill="none" stroke="#163300" stroke-width="15" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- arrow head on the winning endpoint -->
+  <path d="M1010 150 L954 158 M1010 150 L1000 206" stroke="#163300" stroke-width="15" stroke-linecap="round" fill="none"/>
+  <circle cx="150" cy="452" r="13" fill="#163300"/>
+
+  <!-- callout: one dip = "the fee" -->
+  <g stroke="#163300" stroke-width="3" fill="none" opacity="0.6">
+    <line x1="334" y1="486" x2="334" y2="548"/>
+  </g>
+  <rect x="238" y="552" width="192" height="46" rx="23" fill="#163300"/>
+  <text x="334" y="582" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="24" font-weight="800" fill="#9fe870">คือค่าธรรมเนียม</text>
+
+  <!-- legend -->
+  <g font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-weight="700">
+    <rect x="196" y="150" width="36" height="14" rx="7" fill="#163300"/>
+    <text x="244" y="163" font-size="26" fill="#163300">ตลาด (มีขึ้นลง)</text>
+    <rect x="196" y="196" width="36" height="14" rx="7" fill="#5d7079"/>
+    <text x="244" y="209" font-size="26" fill="#455a5f">เงินสด (เรียบ แต่ไม่โต)</text>
+  </g>
+
+  <!-- axis captions -->
+  <g font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-weight="600" fill="#7d8a90" font-size="20">
+    <text x="150" y="512" text-anchor="middle" fill="#7d8a90" font-size="0"> </text>
+    <text x="1010" y="118" text-anchor="middle" font-size="22" font-weight="800" fill="#163300">ปลายทางสูงกว่า</text>
+  </g>
+</svg>

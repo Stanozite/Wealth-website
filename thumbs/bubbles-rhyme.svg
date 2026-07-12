@@ -1,0 +1,62 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ฟองสบู่ไม่ซ้ำรอยเดิม แต่มันคล้องจองกัน">
+  <defs>
+    <style>
+      .t-forest { fill:#163300; font-family:'IBM Plex Sans Thai','IBM Plex Sans',sans-serif; }
+      .t-red { fill:#a8200d; font-family:'IBM Plex Sans Thai','IBM Plex Sans',sans-serif; }
+      .t-mut { fill:#4a5a4a; font-family:'IBM Plex Sans Thai','IBM Plex Sans',sans-serif; }
+    </style>
+    <linearGradient id="bubbleFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9fe870" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#9fe870" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <circle cx="1080" cy="120" r="300" fill="#e4f7d2" opacity="0.5"/>
+  <circle cx="120" cy="610" r="200" fill="#e4f7d2" opacity="0.36"/>
+
+  <!-- wordmark -->
+  <text x="80" y="92" class="t-forest" font-size="26" font-weight="700">Wealth Compass</text>
+  <rect x="80" y="110" width="54" height="5" rx="2.5" fill="#9fe870"/>
+
+  <!-- headline -->
+  <text x="80" y="212" class="t-forest" font-size="60" font-weight="800">ฟองสบู่ไม่ซ้ำรอยเดิม</text>
+  <text x="80" y="284" class="t-forest" font-size="60" font-weight="800">แต่มัน<tspan class="t-red">คล้องจอง</tspan>กัน</text>
+  <text x="80" y="336" class="t-mut" font-size="29" font-weight="600">ทิวลิป · ดอตคอม · คริปโต</text>
+
+  <!-- baseline -->
+  <line x1="120" y1="560" x2="1130" y2="560" stroke="#163300" stroke-width="2" opacity="0.3"/>
+
+  <!-- filled area under the parabolic bubble curve -->
+  <path d="M150 555
+           C300 552 430 545 560 500
+           C660 465 720 400 760 300
+           C788 232 806 190 820 176
+           C834 190 852 250 900 470
+           C930 545 990 555 1090 556
+           L1090 560 L150 560 Z"
+        fill="url(#bubbleFill)"/>
+
+  <!-- the bubble curve: slow climb, near-vertical mania, sharp crash -->
+  <path d="M150 555
+           C300 552 430 545 560 500
+           C660 465 720 400 760 300
+           C788 232 806 190 820 176"
+        fill="none" stroke="#163300" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M820 176
+           C834 190 852 250 900 470
+           C930 545 990 555 1090 556"
+        fill="none" stroke="#a8200d" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- peak marker + "this time is different" tag -->
+  <circle cx="820" cy="176" r="13" fill="#9fe870" stroke="#163300" stroke-width="5"/>
+  <g>
+    <rect x="612" y="112" width="330" height="46" rx="23" fill="#163300"/>
+    <text x="777" y="143" class="t-mut" fill="#9fe870" font-size="24" font-weight="700" text-anchor="middle">รอบนี้มันไม่เหมือนเดิม</text>
+  </g>
+  <line x1="820" y1="158" x2="820" y2="164" stroke="#163300" stroke-width="3"/>
+
+  <!-- crash label -->
+  <text x="1000" y="520" class="t-red" font-size="26" font-weight="800" text-anchor="middle">พังทลาย</text>
+</svg>

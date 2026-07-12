@@ -81,6 +81,106 @@
   /* static articles · slug = real .html file, thumb = local SVG art */
   var STATIC_ARTICLES = [
     {
+      slug: 'returns-rotate-diversification.html',
+      pillar: 'invest', emoji: '🔀', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/returns-rotate-diversification.svg',
+      title: { th: 'ทำไมผู้ชนะเปลี่ยนทุกปี — และเหตุผลที่การกระจายชนะการเดา', en: 'Why the winner changes every year — and why diversification beats guessing' },
+      desc: { th: 'แต่ละปีมีสินทรัพย์คนละประเภทที่ผลตอบแทนนำ (หุ้นไทย หุ้นโลก ตราสารหนี้ ทอง เงินสด) โดยไม่มีลำดับที่คาดเดาได้ การไล่ซื้อผู้ชนะปีที่แล้วคือเกมที่แพ้ ถือแบบกระจายแปลว่ามีส่วนของผู้นำปีนี้เสมอ', en: 'Each year a different asset class leads — Thai stocks, global stocks, bonds, gold, cash — in an order almost no one predicts. Chasing last year\'s winner is a losing game; diversifying means you always own part of this year\'s leader.' },
+      tool: 'risk-profile.html',
+      tags: ['portfolio', 'risk', 'behavior'],
+      related: ['diversification-free-lunch.html', 'the-60-40-portfolio.html', 'few-stocks-make-all-the-money.html']
+    },
+    {
+      slug: 'diversification-free-lunch.html',
+      pillar: 'invest', emoji: '🍱', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/diversification-free-lunch.svg',
+      title: { th: 'อาหารกลางวันฟรีมื้อเดียวในการลงทุน — การกระจายที่ลดความเสี่ยงโดยไม่ลดผลตอบแทนที่คาดหวัง', en: 'The only free lunch in investing — diversification' },
+      desc: { th: 'การผสมสินทรัพย์ที่ไม่ขึ้นลงพร้อมกัน ช่วยลดความผันผวนของพอร์ตได้โดยไม่ลดผลตอบแทนที่คาดหวัง — สิ่งที่ใกล้เคียงกับ "อาหารกลางวันฟรี" ที่สุดในโลกการเงิน แนวคิดที่มักยกให้ Harry Markowitz', en: 'Blending assets that don\'t rise and fall together lowers a portfolio\'s volatility without lowering its expected return — the closest thing to a free lunch in finance, an idea usually credited to Harry Markowitz.' },
+      tool: 'risk-profile.html',
+      tags: ['portfolio', 'risk', 'framework'],
+      related: ['returns-rotate-diversification.html', 'the-60-40-portfolio.html', 'few-stocks-make-all-the-money.html']
+    },
+    {
+      slug: 'price-sets-return.html',
+      pillar: 'invest', emoji: '🏷️', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/price-sets-return.svg',
+      title: { th: 'ราคาที่คุณจ่าย กำหนดผลตอบแทนที่คุณจะได้', en: 'The price you pay sets the return you get' },
+      desc: { th: 'ราคาที่จ่ายวันนี้คือคำทำนายผลตอบแทนระยะยาวที่ดีที่สุดที่เรามี · ซื้อตลาดตอนถูก ผลตอบแทน 10 ปีข้างหน้ามักสูง ซื้อตอนแพงมักต่ำ (อ้างงาน CAPE ของ Robert Shiller และวินัยแบบ Graham/Buffett) บริษัทดีถ้าซื้อแพงเกินไปก็ยังทำให้จนได้', en: 'How expensive the market is on the day you buy is the best long-run predictor of return we have — buy cheap and the next decade tends to pay well, buy dear and it tends to disappoint (per Robert Shiller\'s CAPE).' },
+      tool: 'risk-profile.html',
+      tags: ['framework', 'risk', 'timing'],
+      related: ['extremes-revert.html', 'volatility-is-the-fee.html', 'time-shrinks-the-range.html']
+    },
+    {
+      slug: 'extremes-revert.html',
+      pillar: 'invest', emoji: '↩️', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/extremes-revert.svg',
+      title: { th: 'ของสุดขั้วมักกลับสู่ค่ากลาง — แต่ตามจังหวะของมันเอง', en: 'Extremes revert — but on their own schedule' },
+      desc: { th: 'ผลตอบแทนที่สูงผิดปกติ มูลค่าที่แพงลิ่ว หรือกองที่ร้อนแรงสุด มักกลับสู่ค่าเฉลี่ยระยะยาว (mean reversion) · ใช้ตั้งความคาดหวังได้ดี แต่เป็นนาฬิกาจับจังหวะที่แย่ เพราะของสุดขั้วอยู่สุดขั้วได้นานกว่าที่คุณจะทนไหว', en: 'Unusually high returns, sky-high valuations, or a red-hot manager tend to drift back to their long-run average — great for setting expectations, but a terrible market-timing clock, because extremes can stay extreme longer than you can bear.' },
+      tool: 'risk-profile.html',
+      tags: ['framework', 'behavior', 'timing'],
+      related: ['price-sets-return.html', 'missing-the-best-days.html', 'the-emotional-cycle.html']
+    },
+    {
+      slug: 'bubbles-rhyme.html',
+      pillar: 'invest', emoji: '🫧', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/bubbles-rhyme.svg',
+      title: { th: 'ฟองสบู่ไม่ซ้ำรอยเดิม แต่มันคล้องจองกัน — ทิวลิป ดอตคอม คริปโต', en: 'Bubbles don\'t repeat, but they rhyme — tulips, dot-com, crypto' },
+      desc: { th: 'จากทิวลิปฮอลันดา สู่ฟองสบู่ดอตคอม จนถึงคริปโต · ฟองสบู่การเงินทุกยุคเล่นตามสคริปต์อารมณ์เดียวกัน — เรื่องจริง เงินหาง่าย ความคลั่ง "รอบนี้ไม่เหมือนเดิม" และการพังทลาย รู้แพตเทิร์นไม่ช่วยให้ทายจุดสูงสุดได้ แต่ช่วยไม่ให้คุณเป็นคนซื้อคนสุดท้าย', en: 'From Dutch tulips to the dot-com crash to crypto, every bubble runs the same emotional script — a real story, easy money, "this time is different" mania, and the collapse. Knowing the pattern won\'t call the top, but it keeps you from being the last buyer.' },
+      tool: 'risk-profile.html',
+      tags: ['psychology', 'behavior', 'framework'],
+      related: ['the-emotional-cycle.html', 'markets-that-went-to-zero.html', 'volatility-is-the-fee.html']
+    },
+    {
+      slug: 'markets-that-went-to-zero.html',
+      pillar: 'invest', emoji: '🕳️', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/markets-that-went-to-zero.svg',
+      title: { th: 'ตลาดหุ้นที่หายไปเป็นศูนย์ — อคติผู้รอดชีวิตที่ทำให้ "หุ้นขึ้นเสมอ" หลอกเรา', en: 'The stock markets that went to zero — the survivorship bias behind "stocks always go up"' },
+      desc: { th: 'เรามักยก "หุ้นขึ้นเสมอ" จากตลาดที่รอดชีวิตอย่างสหรัฐฯ และอังกฤษ แต่ผู้ลงทุนในรัสเซีย (1917) และจีน (1949) เสียทุกอย่างถาวร กราฟระยะยาวที่ปลอบใจคืออคติผู้รอดชีวิต และบทเรียนคือทำไมการกระจายข้ามประเทศถึงสำคัญ', en: '"Stocks always go up" comes from survivor markets like the US and UK — but investors in Russia (1917) and China (1949) lost everything permanently. That comforting long-run chart is survivorship bias, and the lesson is why cross-country diversification matters.' },
+      tool: 'risk-profile.html',
+      tags: ['risk', 'portfolio', 'framework'],
+      related: ['bubbles-rhyme.html', 'few-stocks-make-all-the-money.html', 'diversification-free-lunch.html']
+    },
+    {
+      slug: 'the-emotional-cycle.html',
+      pillar: 'invest', emoji: '🎭', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/the-emotional-cycle.svg',
+      title: { th: 'วงจรอารมณ์นักลงทุน — จุดที่เสี่ยงที่สุดคือตอนที่รู้สึกดีที่สุด', en: 'The cycle of investor emotion — peak risk feels like peak confidence' },
+      desc: { th: 'ตลาดเคลื่อนไปตามวงจรอารมณ์ที่วนซ้ำ · มองโลกดี ตื่นเต้น ยูโฟเรียที่จุดสูงสุด แล้วกังวล กลัว สิ้นหวังที่จุดต่ำสุด กับดักคือความเสี่ยงสูงสุดกลับรู้สึกเหมือนมั่นใจที่สุด กฎที่เขียนไว้ช่วยกันคุณจากอารมณ์ตัวเอง', en: 'Markets run on a repeating emotional loop — optimism, excitement, euphoria at the top, then anxiety, fear, and despair at the bottom. The trap is that peak risk feels like peak confidence; written rules protect you from your own emotions.' },
+      tool: 'risk-profile.html',
+      tags: ['psychology', 'behavior', 'timing'],
+      related: ['bubbles-rhyme.html', 'checking-portfolio-too-often.html', 'volatility-is-the-fee.html']
+    },
+    {
+      slug: 'the-rebalancing-bonus.html',
+      pillar: 'invest', emoji: '🔁', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/the-rebalancing-bonus.svg',
+      title: { th: 'โบนัสจากการปรับสมดุลพอร์ต — บังคับตัวเองซื้อถูก ขายแพง อย่างเป็นระบบ', en: 'The rebalancing bonus — a system that forces you to buy low and sell high' },
+      desc: { th: 'ปรับสมดุลพอร์ตกลับสู่สัดส่วนเป้าหมาย คือการตัดกำไรตัวที่วิ่งแรงไปเติมตัวที่ราคาตก · ซื้อถูกขายแพงเชิงกลไกที่คนส่วนใหญ่ทำไม่ได้เพราะอารมณ์ ทำตามปฏิทิน ไม่ใช่ตามข่าว', en: 'Rebalancing back to your target mix means trimming what has run up to top up what has fallen — buying low and selling high mechanically, something most people can\'t do on emotion. Do it by the calendar, not the news.' },
+      tool: 'risk-profile.html',
+      tags: ['portfolio', 'framework', 'behavior'],
+      related: ['the-60-40-portfolio.html', 'returns-rotate-diversification.html', 'checking-portfolio-too-often.html']
+    },
+    {
+      slug: 'tails-drive-everything.html',
+      pillar: 'invest', emoji: '🎲', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/tails-drive-everything.svg',
+      title: { th: 'หางยาวขับเคลื่อนทุกอย่าง — ทำไมไม่กี่ครั้งที่ถูก สำคัญกว่าจำนวนครั้งที่ผิด', en: 'Tails drive everything — why a few big wins matter more than being right often' },
+      desc: { th: 'ทั้งในการลงทุนและการงาน ผลลัพธ์ส่วนใหญ่มาจากเหตุการณ์เพียงหยิบมือ คุณผิดได้เกือบตลอดเวลาแล้วยังชนะใหญ่ได้ ถ้ายังอยู่รอดพอจะเจอเหตุการณ์ปลายหางไม่กี่ครั้ง และไม่ปล่อยให้หายนะครั้งเดียวจบเกม', en: 'In investing and careers alike, almost the entire result comes from a handful of events. You can be wrong most of the time and still win big — if you survive long enough to catch the few tail events, and never let one disaster end the game (per Housel/Taleb).' },
+      tool: 'risk-profile.html',
+      tags: ['psychology', 'risk', 'framework'],
+      related: ['few-stocks-make-all-the-money.html', 'wealth-is-what-you-dont-see.html', 'markets-that-went-to-zero.html']
+    },
+    {
+      slug: 'most-active-funds-lose.html',
+      pillar: 'invest', emoji: '🏳️', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/most-active-funds-lose.svg',
+      title: { th: 'ทำไมกองทุน active ส่วนใหญ่แพ้ดัชนี — ยิ่งเวลานานยิ่งชัด', en: 'Why most active funds lose to the index — and it gets worse with time' },
+      desc: { th: 'ปีแล้วปีเล่า กองทุน active ส่วนใหญ่ให้ผลตอบแทนต่ำกว่าดัชนีที่ใช้เทียบ และยิ่งวัดนานสัดส่วนที่ชนะยิ่งหด อ้างอิง SPIVA scorecard ของ S&P · สาเหตุหลักคือค่าธรรมเนียมที่ทบต้นสวนทาง และการเอาชนะตลาดสม่ำเสมอนั้นหายาก', en: 'Year after year, most active funds return less than their benchmark, and the longer you measure, the smaller the share that beats it (per S&P\'s SPIVA scorecard). The main culprit is fees compounding against you — consistently beating the market is rare.' },
+      tool: 'risk-profile.html',
+      tags: ['funds', 'framework', 'portfolio'],
+      related: ['fund-fees-index-funds.html', 'few-stocks-make-all-the-money.html', 'volatility-is-the-fee.html']
+    },
+    {
       slug: 'lifestyle-inflation-save-your-raise.html',
       pillar: 'foundation', emoji: '🪜', date: '2026-07-05', readMin: 6,
       thumb: 'thumbs/lifestyle-inflation-save-your-raise.svg',
@@ -89,6 +189,106 @@
       tool: 'net-worth.html',
       tags: ['behavior', 'henry', 'cashflow', 'networth'], series: { id: 'foundations', order: 2 },
       related: ['net-worth-why-it-matters.html', 'bonus-what-to-do-first.html', 'how-much-to-save.html']
+    },
+    {
+      slug: 'loss-recovery-math.html',
+      pillar: 'invest', emoji: '📉', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/loss-recovery-math.svg',
+      title: { th: 'ขาดทุน 50% ต้องกำไร 100% ถึงเท่าทุน — คณิตที่เปลี่ยนวิธีมองความเสี่ยง', en: 'A 50% loss needs a 100% gain just to break even' },
+      desc: { th: 'ทำไมการกู้คืนขาดทุนถึงไม่สมมาตร — ยิ่งขาดทุนก้อนใหญ่ยิ่งต้องกำไรทวีคูณ และทำไมการเลี่ยงหายนะสำคัญกว่าไล่ผลตอบแทน', en: 'Why loss recovery is asymmetric — big losses need exponentially bigger gains — and why avoiding catastrophe beats chasing returns.' },
+      tool: 'risk-profile.html',
+      tags: ['risk', 'portfolio', 'framework'],
+      related: ['risk-profile-explained.html', 'sequence-of-returns-risk.html', 'the-60-40-portfolio.html']
+    },
+    {
+      slug: 'wealth-is-what-you-dont-see.html',
+      pillar: 'foundation', emoji: '🫥', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/wealth-is-what-you-dont-see.svg',
+      title: { th: 'ความมั่งคั่งคือสิ่งที่คุณมองไม่เห็น', en: 'Wealth is what you don\'t see' },
+      desc: { th: 'เราตัดสินความรวยจากสิ่งที่คนใช้จ่าย แต่ความมั่งคั่งจริงคือเงินที่ไม่ได้ใช้ซึ่งมองไม่เห็น จึงลอกสัญญาณผิด (แนวคิด Morgan Housel)', en: 'We judge wealth by what people spend, but real wealth is the money not spent — which is invisible, so we copy the wrong signal (per Morgan Housel).' },
+      tool: 'net-worth.html',
+      tags: ['networth', 'behavior', 'henry'],
+      related: ['lifestyle-inflation-save-your-raise.html', 'net-worth-why-it-matters.html', 'knowing-what-is-enough.html']
+    },
+    {
+      slug: 'savings-rate-beats-returns-early.html',
+      pillar: 'invest', emoji: '🌱', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/savings-rate-beats-returns-early.svg',
+      title: { th: 'ช่วงแรกของการลงทุน "อัตราการออม" สำคัญกว่า "ผลตอบแทน"', en: 'Early on, your savings rate matters more than your return' },
+      desc: { th: 'เมื่อพอร์ตยังเล็ก เงินที่เติมทุกเดือนขับเคลื่อนการเติบโตมากกว่า % ผลตอบแทน · ผลตอบแทนมาครองทีหลัง — จุดตัดที่มือใหม่ควรเข้าใจ', en: 'When the pot is small, monthly contributions drive growth far more than the return %; returns take over later — the crossover beginners should understand.' },
+      tool: 'compound-dca.html',
+      tags: ['investing-start', 'compounding', 'behavior'],
+      related: ['compound-interest-power.html', 'dont-wait-for-lump-sum.html', 'rule-of-72.html']
+    },
+    {
+      slug: 'missing-the-best-days.html',
+      pillar: 'invest', emoji: '⚡', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/missing-the-best-days.svg',
+      title: { th: 'พลาดแค่ 10 วันที่ดีที่สุด ผลตอบแทนหายครึ่ง — แต่มีข้อโต้แย้งที่ต้องรู้', en: 'Miss the 10 best days and returns halve — with the rebuttal you must know' },
+      desc: { th: 'สถิติ "อยู่ในตลาด" คลาสสิก และข้อโต้แย้งที่ซื่อสัตย์: วันดีที่สุดมักอยู่ติดวันแย่ที่สุด จับจังหวะเลี่ยงวันร้ายมักพลาดวันดีไปด้วย', en: 'The classic "stay invested" stat and its honest rebuttal: best days cluster next to worst days, so trying to dodge the bad ones usually costs you the good ones too.' },
+      tool: 'risk-profile.html',
+      tags: ['behavior', 'risk', 'timing'],
+      related: ['dont-wait-for-lump-sum.html', 'checking-portfolio-too-often.html', 'volatility-is-the-fee.html']
+    },
+    {
+      slug: 'rule-of-72.html',
+      pillar: 'invest', emoji: '⏱️', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/rule-of-72.svg',
+      title: { th: 'กฎ 72 — คำนวณในหัวว่าเงินจะโตเท่าตัวในกี่ปี', en: 'The Rule of 72 — double your money in your head' },
+      desc: { th: '72 ÷ อัตราต่อปี ≈ จำนวนปีที่เงินโตเท่าตัว · ทางลัดคิดในหัวที่ทำให้พลังทบต้น ต้นทุนเงินเฟ้อ และค่าธรรมเนียม เห็นภาพทันที', en: '72 ÷ your annual rate ≈ years to double — a mental shortcut that makes compounding, inflation, and fees instantly visible.' },
+      tool: 'compound-dca.html',
+      tags: ['compounding', 'framework', 'investing-start'],
+      related: ['compound-interest-power.html', 'savings-rate-beats-returns-early.html', 'real-inflation-vs-cpi.html']
+    },
+    {
+      slug: 'time-shrinks-the-range.html',
+      pillar: 'invest', emoji: '📏', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/time-shrinks-the-range.svg',
+      title: { th: 'ยิ่งถือนาน ช่วงผลลัพธ์ยิ่งแคบ — ทำไมเวลาคือเพื่อนของนักลงทุน', en: 'The longer you hold, the narrower the range of outcomes' },
+      desc: { th: 'หนึ่งปีตลาดทำอะไรก็ได้ แต่ 10-20 ปี ช่วงผลตอบแทนต่อปีแคบลงและเลื่อนไปทางบวก · เวลาไม่ได้ลบความเสี่ยง แต่บีบอัดมัน', en: 'Over a year the market can do anything; over 10-20 years the annualized range narrows and drifts positive. Time doesn\'t remove risk, it compresses it.' },
+      tool: 'retirement-simulator.html',
+      tags: ['risk', 'framework', 'retirement'],
+      related: ['risk-profile-explained.html', 'dont-wait-for-lump-sum.html', 'sequence-of-returns-risk.html']
+    },
+    {
+      slug: 'the-60-40-portfolio.html',
+      pillar: 'invest', emoji: '⚖️', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/the-60-40-portfolio.svg',
+      title: { th: 'พอร์ต 60/40 — น่าเบื่อ แต่ทนทานอย่างน่าประหลาด', en: 'The 60/40 portfolio — boring, and surprisingly hard to beat' },
+      desc: { th: 'หุ้น 60% เป็นเครื่องยนต์ ตราสารหนี้ 40% เป็นโช้คอัพ · ทำไมความสมดุลที่น่าเบื่อถึงถือไหวจริง และบังคับซื้อถูกขายแพงผ่าน rebalancing', en: 'Stocks are the engine, bonds the shock absorber — why the boring balance is one you can actually hold, and how rebalancing enforces buy-low/sell-high.' },
+      tool: 'risk-profile.html',
+      tags: ['portfolio', 'framework', 'risk'],
+      related: ['risk-profile-explained.html', 'portfolio-by-function.html', 'loss-recovery-math.html']
+    },
+    {
+      slug: 'knowing-what-is-enough.html',
+      pillar: 'foundation', emoji: '🎯', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/knowing-what-is-enough.svg',
+      title: { th: 'รู้จักคำว่า "พอ" — บันไดไลฟ์สไตล์ที่หมุนขึ้นได้ทางเดียว', en: 'Knowing what is "enough"' },
+      desc: { th: 'ถ้าไม่นิยามคำว่า "พอ" ความอยากจะโตตามรายได้ไปเรื่อยๆ และไม่เคยรู้สึกรวยไม่ว่าหาได้เท่าไหร่ · การตั้งเส้น "พอ" คือสิ่งที่ทำให้ไปถึงจริง (แนวคิด Housel)', en: 'Without a defined "enough," desires rise with income forever and you never feel wealthy. Defining "enough" is what lets you arrive (per Housel).' },
+      tool: 'budget-planner.html',
+      tags: ['behavior', 'henry', 'cashflow'],
+      related: ['lifestyle-inflation-save-your-raise.html', 'wealth-is-what-you-dont-see.html', 'bonus-what-to-do-first.html']
+    },
+    {
+      slug: 'volatility-is-the-fee.html',
+      pillar: 'invest', emoji: '🎢', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/volatility-is-the-fee.svg',
+      title: { th: 'ความผันผวนคือค่าธรรมเนียม ไม่ใช่ค่าปรับ', en: 'Volatility is the fee, not the fine' },
+      desc: { th: 'ผลตอบแทนตลาดไม่ฟรี — ค่าเข้าชมคือการทนความผันผวน · คนที่มองว่ามันคือค่าปรับแล้วหนี จ่ายแพงกว่าคนที่ยอมรับว่าเป็นค่าธรรมเนียม (แนวคิด Housel)', en: 'Market returns aren\'t free — the price of admission is enduring the swings; those who treat volatility as a fine and flee pay far more (per Housel).' },
+      tool: 'risk-profile.html',
+      tags: ['psychology', 'behavior', 'risk'],
+      related: ['risk-profile-explained.html', 'checking-portfolio-too-often.html', 'missing-the-best-days.html']
+    },
+    {
+      slug: 'few-stocks-make-all-the-money.html',
+      pillar: 'invest', emoji: '🎰', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/few-stocks-make-all-the-money.svg',
+      title: { th: 'หุ้นไม่กี่ตัวสร้างผลตอบแทนเกือบทั้งหมด — ทำไมการกระจายถึงชนะการเลือก', en: 'A few stocks make all the money — why diversification beats picking' },
+      desc: { th: 'งานวิจัยพบว่าหุ้นส่วนน้อยขับเคลื่อนความมั่งคั่งระยะยาวเกือบทั้งหมด ขณะที่ส่วนใหญ่แพ้แม้แต่พันธบัตร · ความเบ้นี้คือเหตุผลที่การกระจายเงียบๆ ชนะ (อ้างงาน Bessembinder)', en: 'Research finds a tiny minority of stocks drive nearly all long-run wealth while most lag even bills — the skew is why broad diversification quietly wins (per Bessembinder).' },
+      tool: 'risk-profile.html',
+      tags: ['portfolio', 'risk', 'framework'],
+      related: ['fund-fees-index-funds.html', 'portfolio-by-function.html', 'risk-profile-explained.html']
     },
     {
       slug: 'bonus-what-to-do-first.html',

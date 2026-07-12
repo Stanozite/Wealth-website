@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="IBM Plex Sans Thai, sans-serif">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1095" cy="80" r="175" fill="#e4f7d2"/>
+  <circle cx="60" cy="610" r="140" fill="#e4f7d2"/>
+
+  <!-- ===== title ===== -->
+  <text x="90" y="116" font-size="46" font-weight="700" fill="#163300">พอร์ต 60/40</text>
+  <text x="90" y="160" font-size="24" font-weight="600" fill="#0d7a3f">หุ้น 60 · ตราสารหนี้ 40 — เครื่องยนต์ + โช้คอัพ</text>
+  <text x="90" y="192" font-size="19" font-weight="500" fill="#6b7a80">Boring, and surprisingly hard to beat</text>
+
+  <!-- ===== 60/40 donut split ===== -->
+  <g>
+    <!-- หุ้น 60% (forest = engine) -->
+    <path d="M 330 285 A 135 135 0 1 1 250.65 529.2 L 287.68 478.25 A 72 72 0 0 0 330 348 Z" fill="#163300"/>
+    <!-- ตราสารหนี้ 40% (lime = shock absorber) -->
+    <path d="M 250.65 529.2 A 135 135 0 0 1 330 285 L 330 348 A 72 72 0 0 0 287.68 478.25 Z" fill="#9fe870"/>
+    <!-- center label -->
+    <text x="330" y="412" font-size="42" font-weight="700" text-anchor="middle" fill="#163300">60/40</text>
+    <text x="330" y="440" font-size="16" font-weight="500" text-anchor="middle" fill="#6b7a80">stocks / bonds</text>
+  </g>
+
+  <!-- donut legend -->
+  <g font-weight="600">
+    <rect x="150" y="576" width="26" height="26" rx="6" fill="#163300"/>
+    <text x="186" y="595" font-size="20" fill="#163300">หุ้น 60% · เครื่องยนต์</text>
+    <rect x="150" y="612" width="26" height="26" rx="6" fill="#9fe870" stroke="#163300" stroke-width="2"/>
+    <text x="186" y="631" font-size="20" fill="#163300">ตราสารหนี้ 40% · โช้คอัพ</text>
+  </g>
+
+  <!-- ===== two paths: smoother 60/40 vs bumpier all-stock ===== -->
+  <!-- faint gridlines -->
+  <g stroke="#e4e9ec" stroke-width="2">
+    <line x1="600" y1="300" x2="1130" y2="300"/>
+    <line x1="600" y1="380" x2="1130" y2="380"/>
+    <line x1="600" y1="460" x2="1130" y2="460"/>
+  </g>
+  <!-- baseline -->
+  <line x1="600" y1="520" x2="1130" y2="520" stroke="#163300" stroke-width="3" opacity="0.3"/>
+
+  <!-- lime area under the smoother 60/40 line -->
+  <path d="M 600 486 L 705 447 L 810 472 L 915 416 L 1020 405 L 1120 326 L 1120 520 L 600 520 Z" fill="#9fe870" opacity="0.4"/>
+
+  <!-- all-stock: bumpy clay line -->
+  <polyline points="600,486 705,430 810,497 915,396 1020,416 1120,270" fill="none" stroke="#b45309" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="1120" cy="270" r="10" fill="#b45309"/>
+
+  <!-- 60/40: smoother forest line -->
+  <polyline points="600,486 705,447 810,472 915,416 1020,405 1120,326" fill="none" stroke="#163300" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="1120" cy="326" r="12" fill="#163300"/>
+
+  <!-- path legend -->
+  <g font-weight="700">
+    <rect x="620" y="252" width="34" height="12" rx="6" fill="#b45309"/>
+    <text x="664" y="264" font-size="20" fill="#455a5f">100% หุ้น · เหวี่ยงแรง</text>
+    <rect x="900" y="252" width="34" height="12" rx="6" fill="#163300"/>
+    <text x="944" y="264" font-size="20" fill="#163300">60/40 · เรียบกว่า</text>
+  </g>
+
+  <!-- x captions -->
+  <g font-weight="500" fill="#7d8a90" font-size="18">
+    <text x="600" y="548" text-anchor="middle">ปี 0</text>
+    <text x="1120" y="548" text-anchor="middle">ปี 15</text>
+    <text x="865" y="500" text-anchor="middle" font-size="16" fill="#9aa7ad">ตัวอย่างสมมติ</text>
+  </g>
+</svg>

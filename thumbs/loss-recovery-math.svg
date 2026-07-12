@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ขาดทุน 50% ต้องกำไร 100% ถึงเท่าทุน">
+  <defs>
+    <style>
+      .t-forest { fill:#163300; font-family:'IBM Plex Sans Thai','IBM Plex Sans',sans-serif; }
+      .t-red { fill:#a8200d; font-family:'IBM Plex Sans Thai','IBM Plex Sans',sans-serif; }
+      .t-mut { fill:#4a5a4a; font-family:'IBM Plex Sans Thai','IBM Plex Sans',sans-serif; }
+      .t-lime { fill:#163300; font-family:'IBM Plex Sans Thai','IBM Plex Sans',sans-serif; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <circle cx="1060" cy="120" r="300" fill="#e4f7d2" opacity="0.55"/>
+  <circle cx="150" cy="600" r="200" fill="#e4f7d2" opacity="0.4"/>
+
+  <!-- wordmark -->
+  <text x="80" y="90" class="t-forest" font-size="26" font-weight="700">Wealth Compass</text>
+  <rect x="80" y="108" width="54" height="5" rx="2.5" fill="#9fe870"/>
+
+  <!-- headline -->
+  <text x="80" y="230" class="t-forest" font-size="70" font-weight="800">ขาดทุน 50%</text>
+  <text x="80" y="318" class="t-forest" font-size="70" font-weight="800">ต้องกำไร <tspan class="t-red">100%</tspan></text>
+  <text x="80" y="386" class="t-mut" font-size="34" font-weight="600">ถึงจะกลับมาเท่าทุน</text>
+  <text x="80" y="440" class="t-mut" font-size="27" font-weight="500">gain = L &#247; (1 &#8722; L)</text>
+
+  <!-- asymmetry bars -->
+  <!-- baseline -->
+  <line x1="770" y1="520" x2="1120" y2="520" stroke="#163300" stroke-width="2" opacity="0.35"/>
+
+  <!-- loss bar (small, red) : represents -50% -->
+  <rect x="800" y="400" width="110" height="120" rx="6" fill="#a8200d"/>
+  <text x="855" y="382" class="t-red" font-size="36" font-weight="800" text-anchor="middle">&#8722;50%</text>
+  <text x="855" y="552" class="t-mut" font-size="23" font-weight="600" text-anchor="middle">ขาดทุน</text>
+
+  <!-- gain bar (tall, forest+lime) : represents +100% needed -->
+  <rect x="980" y="280" width="110" height="240" rx="6" fill="#163300"/>
+  <rect x="980" y="280" width="110" height="60" rx="6" fill="#9fe870"/>
+  <text x="1035" y="262" class="t-lime" font-size="36" font-weight="800" text-anchor="middle">+100%</text>
+  <text x="1035" y="552" class="t-mut" font-size="23" font-weight="600" text-anchor="middle">ต้องได้คืน</text>
+</svg>

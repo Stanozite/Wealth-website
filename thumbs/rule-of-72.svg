@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Rule of 72 — 72 divided by rate equals years to double">
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <rect width="1200" height="630" fill="#e4f7d2" opacity="0.22"/>
+  <circle cx="1080" cy="90" r="150" fill="#e4f7d2" opacity="0.6"/>
+
+  <!-- eyebrow -->
+  <text x="80" y="120" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" letter-spacing="3" fill="#5b6b63">กฎ 72 · RULE OF 72</text>
+
+  <!-- formula -->
+  <text x="76" y="248" font-family="'IBM Plex Sans Thai',sans-serif" font-size="104" font-weight="700" fill="#163300">72 <tspan fill="#9fe870">÷</tspan> อัตรา%</text>
+  <text x="80" y="330" font-family="'IBM Plex Sans Thai',sans-serif" font-size="44" font-weight="600" fill="#163300">= จำนวนปีที่เงินโตเท่าตัว</text>
+
+  <!-- doubling bars: height proportional to years-to-double, shrinking as rate rises -->
+  <line x1="80" y1="524" x2="1120" y2="524" stroke="#dfe7d8" stroke-width="3"/>
+
+  <!-- 2% -> 36 yr -->
+  <rect x="120" y="180" width="76" height="344" rx="8" fill="#163300"/>
+  <text x="158" y="164" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#163300" text-anchor="middle">36 ปี</text>
+  <text x="158" y="560" font-family="'IBM Plex Sans Thai',sans-serif" font-size="28" font-weight="700" fill="#5b6b63" text-anchor="middle">2%</text>
+
+  <!-- 4% -> 18 yr -->
+  <rect x="316" y="352" width="76" height="172" rx="8" fill="#163300"/>
+  <text x="354" y="336" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#163300" text-anchor="middle">18 ปี</text>
+  <text x="354" y="560" font-family="'IBM Plex Sans Thai',sans-serif" font-size="28" font-weight="700" fill="#5b6b63" text-anchor="middle">4%</text>
+
+  <!-- 6% -> 12 yr -->
+  <rect x="512" y="410" width="76" height="114" rx="8" fill="#163300"/>
+  <text x="550" y="394" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#163300" text-anchor="middle">12 ปี</text>
+  <text x="550" y="560" font-family="'IBM Plex Sans Thai',sans-serif" font-size="28" font-weight="700" fill="#5b6b63" text-anchor="middle">6%</text>
+
+  <!-- 8% -> 9 yr -->
+  <rect x="708" y="438" width="76" height="86" rx="8" fill="#163300"/>
+  <text x="746" y="422" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#163300" text-anchor="middle">9 ปี</text>
+  <text x="746" y="560" font-family="'IBM Plex Sans Thai',sans-serif" font-size="28" font-weight="700" fill="#5b6b63" text-anchor="middle">8%</text>
+
+  <!-- 10% -> 7.2 yr (lime accent = the goal: faster) -->
+  <rect x="904" y="455" width="76" height="69" rx="8" fill="#9fe870"/>
+  <text x="942" y="439" font-family="'IBM Plex Sans Thai',sans-serif" font-size="26" font-weight="700" fill="#4a7a2a" text-anchor="middle">7.2 ปี</text>
+  <text x="942" y="560" font-family="'IBM Plex Sans Thai',sans-serif" font-size="28" font-weight="700" fill="#4a7a2a" text-anchor="middle">10%</text>
+
+  <!-- caption + brand -->
+  <text x="120" y="606" font-family="'IBM Plex Sans Thai',sans-serif" font-size="22" font-weight="600" fill="#163300">ยิ่งผลตอบแทนสูง เงินยิ่งโตเท่าตัวเร็ว</text>
+  <text x="1120" y="606" font-family="'IBM Plex Sans Thai',sans-serif" font-size="20" font-weight="600" fill="#5b6b63" text-anchor="end" opacity="0.85">wealthcompass</text>
+</svg>

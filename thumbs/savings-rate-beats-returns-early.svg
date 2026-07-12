@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1080" cy="120" r="185" fill="#e4f7d2"/>
+  <circle cx="120" cy="560" r="150" fill="#e4f7d2"/>
+
+  <!-- axes -->
+  <g stroke="#e4e9ec" stroke-width="3">
+    <line x1="150" y1="120" x2="150" y2="520"/>
+    <line x1="150" y1="520" x2="1060" y2="520"/>
+  </g>
+  <!-- faint gridlines -->
+  <g stroke="#e9edf0" stroke-width="2">
+    <line x1="377" y1="140" x2="377" y2="520"/>
+    <line x1="605" y1="140" x2="605" y2="520"/>
+    <line x1="832" y1="140" x2="832" y2="520"/>
+  </g>
+
+  <!-- ===== RETURNS · starts near floor, curves up steeply (forest + lime) ===== -->
+  <path d="M150 512 C 470 500 720 430 1000 150 L1000 520 L150 520 Z"
+        fill="#9fe870" opacity="0.42"/>
+  <path d="M150 512 C 470 500 720 430 1000 150"
+        fill="none" stroke="#163300" stroke-width="16" stroke-linecap="round"/>
+  <!-- arrow head on the steepening returns curve -->
+  <path d="M1000 150 L964 178 M1000 150 L1010 194" stroke="#163300" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="150" cy="512" r="13" fill="#163300"/>
+
+  <!-- ===== CONTRIBUTIONS · flatter, rises then levels off (mid green) ===== -->
+  <path d="M150 486 C 380 392 640 322 1000 288"
+        fill="none" stroke="#3f8f5a" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="150" cy="486" r="13" fill="#3f8f5a"/>
+  <circle cx="1000" cy="288" r="15" fill="#3f8f5a"/>
+
+  <!-- ===== CROSSOVER marker ~ (780, 312) ===== -->
+  <line x1="782" y1="120" x2="782" y2="520" stroke="#163300" stroke-width="2.5" stroke-dasharray="5 9" opacity="0.55"/>
+  <circle cx="782" cy="312" r="15" fill="#f2f5f7" stroke="#163300" stroke-width="6"/>
+  <g font-family="IBM Plex Sans Thai, Arial, sans-serif" font-weight="700">
+    <text x="782" y="150" text-anchor="middle" font-size="24" fill="#163300">จุดตัด</text>
+    <text x="782" y="178" text-anchor="middle" font-size="19" font-weight="600" fill="#455a5f">~ ปีที่ 15–20</text>
+  </g>
+
+  <!-- title -->
+  <g font-family="IBM Plex Sans Thai, Arial, sans-serif">
+    <text x="150" y="70" font-size="40" font-weight="800" fill="#163300">อัตราการออม &gt; ผลตอบแทน</text>
+    <text x="150" y="106" font-size="23" font-weight="600" fill="#455a5f">ช่วงแรกพอร์ตยังเล็ก · เงินที่เติมคือพระเอกตัวจริง</text>
+  </g>
+
+  <!-- legend -->
+  <g font-family="IBM Plex Sans Thai, Arial, sans-serif" font-weight="700">
+    <rect x="185" y="220" width="34" height="14" rx="7" fill="#3f8f5a"/>
+    <text x="229" y="233" font-size="23" fill="#455a5f">จากเงินที่เติม</text>
+    <rect x="185" y="260" width="34" height="14" rx="7" fill="#163300"/>
+    <text x="229" y="273" font-size="23" fill="#163300">จากผลตอบแทน</text>
+  </g>
+
+  <!-- axis captions -->
+  <g font-family="IBM Plex Sans Thai, Arial, sans-serif" font-weight="600" fill="#7d8a90" font-size="20">
+    <text x="150" y="556" text-anchor="middle">เริ่มต้น</text>
+    <text x="1000" y="556" text-anchor="middle">ระยะยาว</text>
+  </g>
+
+  <!-- illustrative label -->
+  <text x="1060" y="606" text-anchor="end" font-family="IBM Plex Sans Thai, Arial, sans-serif" font-size="17" fill="#9aa7ad">ตัวอย่างสมมติเพื่อสาธิตกลไก</text>
+</svg>

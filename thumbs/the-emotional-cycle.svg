@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="The cycle of investor emotion — a wave peaking at euphoria and troughing at despair">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1080" cy="115" r="185" fill="#e4f7d2"/>
+  <circle cx="130" cy="560" r="150" fill="#e4f7d2"/>
+
+  <!-- title -->
+  <g font-family="'IBM Plex Sans Thai', Arial, sans-serif" fill="#163300">
+    <text x="150" y="92" font-size="46" font-weight="800">วงจรอารมณ์นักลงทุน</text>
+    <text x="150" y="134" font-size="25" font-weight="600" fill="#5b6b63">จุดที่รู้สึกดีที่สุด คือจุดที่เสี่ยงที่สุด</text>
+  </g>
+
+  <!-- baseline axis -->
+  <line x1="150" y1="470" x2="1060" y2="470" stroke="#cdd6d0" stroke-width="3"/>
+
+  <!-- sentiment wave: rise to euphoria peak, crash to despair trough, recover -->
+  <path d="M150 430
+           C 250 415, 320 360, 400 245
+           C 445 178, 480 175, 520 250
+           C 575 355, 640 470, 720 520
+           C 780 552, 815 505, 860 430
+           C 915 340, 985 300, 1060 285"
+        fill="none" stroke="#163300" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- euphoria peak · max-risk marker -->
+  <circle cx="500" cy="200" r="15" fill="#9fe870" stroke="#163300" stroke-width="5"/>
+  <g font-family="'IBM Plex Sans Thai', Arial, sans-serif" text-anchor="middle">
+    <text x="500" y="168" font-size="27" font-weight="800" fill="#163300">ยูโฟเรีย</text>
+    <rect x="405" y="98" width="190" height="40" rx="20" fill="#a8200d"/>
+    <text x="500" y="126" font-size="21" font-weight="700" fill="#ffffff">เสี่ยงสูงสุด</text>
+  </g>
+
+  <!-- despair trough · opportunity marker -->
+  <circle cx="720" cy="524" r="15" fill="#163300" stroke="#9fe870" stroke-width="5"/>
+  <g font-family="'IBM Plex Sans Thai', Arial, sans-serif" text-anchor="middle">
+    <text x="720" y="575" font-size="27" font-weight="800" fill="#0d7a3f">สิ้นหวัง</text>
+    <text x="720" y="602" font-size="20" font-weight="700" fill="#5b6b63">โอกาสสูงสุด</text>
+  </g>
+
+  <!-- small stage labels along the rise and recovery -->
+  <g font-family="'IBM Plex Sans Thai', Arial, sans-serif" fill="#7d8a90" font-size="18" font-weight="600" text-anchor="middle">
+    <text x="235" y="405">มองโลกดี</text>
+    <text x="965" y="270">เริ่มหวัง</text>
+  </g>
+
+  <!-- illustrative note -->
+  <text x="150" y="612" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="19" font-weight="600" fill="#7d8a90">ตัวอย่างสมมติเพื่อสาธิตกลไก · wealthcompass</text>
+</svg>

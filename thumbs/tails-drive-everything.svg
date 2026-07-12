@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="A distribution with two very tall bars at the edges (the tails) dwarfing many small middle bars">
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <rect width="1200" height="630" fill="#e4f7d2" opacity="0.20"/>
+
+  <!-- title -->
+  <text x="80" y="82" font-family="'IBM Plex Sans Thai',sans-serif" font-size="40" font-weight="700" fill="#163300">หางยาวขับเคลื่อนทุกอย่าง</text>
+  <text x="80" y="122" font-family="'IBM Plex Sans Thai',sans-serif" font-size="22" font-weight="500" fill="#5b6b63">Tails drive everything · a few events decide the outcome</text>
+
+  <!-- baseline -->
+  <line x1="80" y1="500" x2="1120" y2="500" stroke="#163300" stroke-width="2" opacity="0.35"/>
+
+  <!-- LEFT tail (very tall) -->
+  <rect x="110" y="185" width="70" height="315" rx="4" fill="#163300"/>
+
+  <!-- many small middle bars -->
+  <rect x="270" y="452" width="34" height="48" rx="3" fill="#7bab52"/>
+  <rect x="322" y="466" width="34" height="34" rx="3" fill="#7bab52"/>
+  <rect x="374" y="474" width="34" height="26" rx="3" fill="#7bab52"/>
+  <rect x="426" y="480" width="34" height="20" rx="3" fill="#7bab52"/>
+  <rect x="478" y="470" width="34" height="30" rx="3" fill="#7bab52"/>
+  <rect x="530" y="478" width="34" height="22" rx="3" fill="#7bab52"/>
+  <rect x="582" y="464" width="34" height="36" rx="3" fill="#7bab52"/>
+  <rect x="634" y="482" width="34" height="18" rx="3" fill="#7bab52"/>
+  <rect x="686" y="472" width="34" height="28" rx="3" fill="#7bab52"/>
+  <rect x="738" y="476" width="34" height="24" rx="3" fill="#7bab52"/>
+  <rect x="790" y="484" width="34" height="16" rx="3" fill="#7bab52"/>
+  <rect x="842" y="468" width="34" height="32" rx="3" fill="#7bab52"/>
+  <rect x="894" y="478" width="34" height="22" rx="3" fill="#7bab52"/>
+
+  <!-- RIGHT tail (very tall) -->
+  <rect x="1020" y="205" width="70" height="295" rx="4" fill="#9fe870"/>
+
+  <!-- captions -->
+  <text x="145" y="558" font-family="'IBM Plex Sans Thai',sans-serif" font-size="19" font-weight="700" fill="#163300" text-anchor="middle">หางซ้าย</text>
+  <text x="585" y="558" font-family="'IBM Plex Sans Thai',sans-serif" font-size="18" font-weight="500" fill="#5b6b63" text-anchor="middle">ส่วนใหญ่ที่เหลือ · แทบไม่ขยับเข็ม</text>
+  <text x="1055" y="558" font-family="'IBM Plex Sans Thai',sans-serif" font-size="19" font-weight="700" fill="#163300" text-anchor="middle">หางขวา</text>
+
+  <text x="80" y="602" font-family="'IBM Plex Sans Thai',sans-serif" font-size="20" font-weight="600" fill="#163300">ไม่กี่เหตุการณ์ปลายหาง · สร้างผลลัพธ์เกือบทั้งหมด</text>
+
+  <!-- wordmark -->
+  <text x="1120" y="610" font-family="'IBM Plex Sans Thai',sans-serif" font-size="16" font-weight="600" fill="#8a97a0" text-anchor="end" opacity="0.85">Wealth Compass</text>
+</svg>

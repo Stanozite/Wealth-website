@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Miss the best days vs miss the worst days — three bars">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1075" cy="120" r="190" fill="#e4f7d2"/>
+  <circle cx="120" cy="560" r="150" fill="#e4f7d2"/>
+
+  <!-- title -->
+  <g font-family="'IBM Plex Sans Thai', Arial, sans-serif" fill="#163300">
+    <text x="150" y="92" font-size="46" font-weight="800">พลาด 10 วันที่สำคัญที่สุด</text>
+    <text x="150" y="134" font-size="25" font-weight="600" fill="#5b6b63">วันดีกับวันแย่อยู่ปนกัน · มองให้ครบทั้งสองด้าน</text>
+  </g>
+
+  <!-- baseline axis -->
+  <line x1="150" y1="520" x2="1050" y2="520" stroke="#cdd6d0" stroke-width="4"/>
+
+  <!-- ===== Bar 1 · fully invested (forest, reference) ===== -->
+  <rect x="245" y="335" width="150" height="185" rx="6" fill="#163300"/>
+  <text x="320" y="315" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="34" font-weight="800" fill="#163300">100</text>
+  <text x="320" y="562" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="24" font-weight="700" fill="#455a5f">เต็มเวลา</text>
+
+  <!-- ===== Bar 2 · miss best days (muted red — the loss) ===== -->
+  <rect x="485" y="437" width="150" height="83" rx="6" fill="#c1512f"/>
+  <text x="560" y="417" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="34" font-weight="800" fill="#a8200d">45</text>
+  <text x="560" y="562" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="24" font-weight="700" fill="#a8200d">พลาดวันดีสุด</text>
+  <!-- down arrow marker -->
+  <path d="M560 468 l-16 -22 h32 z" fill="#fbe3dc"/>
+
+  <!-- ===== Bar 3 · miss worst days (forest + lime cap — the gain) ===== -->
+  <rect x="725" y="140" width="150" height="380" rx="6" fill="#163300"/>
+  <rect x="725" y="140" width="150" height="120" rx="6" fill="#9fe870"/>
+  <rect x="725" y="248" width="150" height="14" fill="#163300"/>
+  <text x="800" y="120" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="34" font-weight="800" fill="#0d7a3f">205</text>
+  <text x="800" y="562" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="24" font-weight="700" fill="#0d7a3f">พลาดวันแย่สุด</text>
+
+  <!-- best/worst days cluster together (small adjacent dots) -->
+  <g>
+    <circle cx="965" cy="205" r="15" fill="#9fe870" stroke="#163300" stroke-width="4"/>
+    <circle cx="1010" cy="228" r="15" fill="#c1512f"/>
+    <text x="988" y="290" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="20" font-weight="700" fill="#5b6b63">วันดี &amp; วันแย่</text>
+    <text x="988" y="316" text-anchor="middle" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="20" font-weight="700" fill="#5b6b63">มักมาติดกัน</text>
+  </g>
+
+  <!-- illustrative note -->
+  <text x="150" y="600" font-family="'IBM Plex Sans Thai', Arial, sans-serif" font-size="19" font-weight="600" fill="#7d8a90">ตัวอย่างสมมติเพื่อสาธิตกลไก · wealthcompass</text>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="IBM Plex Sans Thai, sans-serif">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1105" cy="70" r="170" fill="#e4f7d2"/>
+  <circle cx="70" cy="600" r="150" fill="#e4f7d2"/>
+
+  <!-- ===== title ===== -->
+  <text x="90" y="112" font-size="46" font-weight="700" fill="#163300">โบนัสจากการปรับสมดุลพอร์ต</text>
+  <text x="90" y="156" font-size="24" font-weight="600" fill="#0d7a3f">ตัดตัวที่วิ่งแรง · เติมตัวที่ราคาตก — ซื้อถูก ขายแพง เป็นระบบ</text>
+  <text x="90" y="188" font-size="19" font-weight="500" fill="#6b7a80">The rebalancing bonus · buy low, sell high — by rule</text>
+
+  <!-- ===== trim / add arrow motif (left) ===== -->
+  <!-- trim the winner (sell high) -->
+  <g>
+    <circle cx="132" cy="322" r="34" fill="#163300"/>
+    <polygon points="124,304 140,304 140,320 150,320 132,342 114,320 124,320" fill="#9fe870"/>
+    <text x="184" y="316" font-size="23" font-weight="700" fill="#163300">ตัดกำไรตัวที่วิ่งแรง</text>
+    <text x="184" y="344" font-size="18" font-weight="500" fill="#6b7a80">ขายแพง · trim the winner</text>
+  </g>
+  <!-- add the laggard (buy low) -->
+  <g>
+    <circle cx="132" cy="430" r="34" fill="#9fe870" stroke="#163300" stroke-width="2.5"/>
+    <polygon points="124,448 140,448 140,432 150,432 132,410 114,432 124,432" fill="#163300"/>
+    <text x="184" y="424" font-size="23" font-weight="700" fill="#163300">เติมตัวที่ราคาตก</text>
+    <text x="184" y="452" font-size="18" font-weight="500" fill="#6b7a80">ซื้อถูก · add the laggard</text>
+  </g>
+
+  <!-- pull-back-to-target chip -->
+  <g>
+    <rect x="98" y="500" width="404" height="60" rx="14" fill="#ffffff" stroke="#d7e0e4" stroke-width="2"/>
+    <circle cx="134" cy="530" r="9" fill="#163300"/>
+    <text x="156" y="524" font-size="19" font-weight="700" fill="#163300">ดึงสัดส่วนกลับสู่เป้า เช่น 60/40</text>
+    <text x="156" y="548" font-size="16" font-weight="500" fill="#6b7a80">ทำตามปฏิทิน ไม่ใช่ตามข่าว</text>
+  </g>
+
+  <!-- ===== two close paths: smoother/higher rebalanced vs bumpier drift ===== -->
+  <!-- faint gridlines -->
+  <g stroke="#e4e9ec" stroke-width="2">
+    <line x1="600" y1="300" x2="1140" y2="300"/>
+    <line x1="600" y1="380" x2="1140" y2="380"/>
+    <line x1="600" y1="460" x2="1140" y2="460"/>
+  </g>
+  <!-- baseline -->
+  <line x1="600" y1="540" x2="1140" y2="540" stroke="#163300" stroke-width="3" opacity="0.3"/>
+
+  <!-- lime area under the smoother rebalanced line -->
+  <path d="M 600 500 L 708 470 L 816 455 L 924 408 L 1032 396 L 1140 318 L 1140 540 L 600 540 Z" fill="#9fe870" opacity="0.38"/>
+
+  <!-- drift: bumpier muted line (ends slightly lower) -->
+  <polyline points="600,500 708,452 816,492 924,392 1032,430 1140,350" fill="none" stroke="#5d7079" stroke-width="6" stroke-dasharray="12 8" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="1140" cy="350" r="10" fill="#5d7079"/>
+
+  <!-- rebalanced: smoother forest line (ends slightly higher) -->
+  <polyline points="600,500 708,470 816,455 924,408 1032,396 1140,318" fill="none" stroke="#163300" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="1140" cy="318" r="12" fill="#163300"/>
+
+  <!-- path legend -->
+  <g font-weight="700">
+    <rect x="612" y="250" width="34" height="10" rx="5" fill="#163300"/>
+    <text x="656" y="260" font-size="20" fill="#163300">ปรับสมดุล · เรียบกว่า</text>
+    <rect x="900" y="250" width="34" height="10" rx="5" fill="#5d7079"/>
+    <text x="944" y="260" font-size="20" fill="#455a5f">ปล่อยไหล · เหวี่ยงแรง</text>
+  </g>
+
+  <!-- x captions -->
+  <g font-weight="500" fill="#7d8a90" font-size="18">
+    <text x="600" y="568" text-anchor="middle">ปี 0</text>
+    <text x="1140" y="568" text-anchor="middle">ปี 10</text>
+    <text x="870" y="520" text-anchor="middle" font-size="16" fill="#9aa7ad">ตัวอย่างสมมติ</text>
+  </g>
+</svg>
