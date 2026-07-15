@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="IBM Plex Sans Thai, sans-serif">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1105" cy="70" r="170" fill="#e4f7d2"/>
+  <circle cx="70" cy="600" r="150" fill="#e4f7d2"/>
+
+  <!-- ===== title ===== -->
+  <text x="90" y="112" font-size="46" font-weight="700" fill="#163300">เงินเฟ้อกินเงินสดเงียบ ๆ ทุกปี</text>
+  <text x="90" y="156" font-size="24" font-weight="600" fill="#0d7a3f">ตัวเลขไม่ลด แต่อำนาจซื้อลด — ภาษีเงียบที่มองไม่เห็น</text>
+  <text x="90" y="188" font-size="19" font-weight="500" fill="#6b7a80">Inflation quietly eats cash · the number stays, the value shrinks</text>
+
+  <!-- ===== baht-coin motif (left) ===== -->
+  <!-- solid full coin (today) -->
+  <g>
+    <circle cx="132" cy="322" r="38" fill="#163300"/>
+    <text x="132" y="336" font-size="40" font-weight="700" fill="#9fe870" text-anchor="middle">฿</text>
+    <text x="192" y="316" font-size="23" font-weight="700" fill="#163300">฿1 ล้าน วันนี้</text>
+    <text x="192" y="344" font-size="18" font-weight="500" fill="#6b7a80">มูลค่าหน้าเงินเต็มร้อย</text>
+  </g>
+  <!-- eroded coin (30 years) -->
+  <g>
+    <circle cx="132" cy="438" r="38" fill="#eef2f4" stroke="#163300" stroke-width="2.5"/>
+    <!-- lime wedge = remaining ~41% purchasing power -->
+    <path d="M 132 438 L 132 400 A 38 38 0 0 1 148 471 Z" fill="#9fe870"/>
+    <text x="132" y="452" font-size="34" font-weight="700" fill="#163300" text-anchor="middle">฿</text>
+    <text x="192" y="432" font-size="23" font-weight="700" fill="#163300">เหลือ ~฿4.1 แสน ใน 30 ปี</text>
+    <text x="192" y="460" font-size="18" font-weight="500" fill="#6b7a80">อำนาจซื้อจริง · เงินเฟ้อ 3%/ปี</text>
+  </g>
+
+  <!-- pull chip -->
+  <g>
+    <rect x="98" y="508" width="428" height="60" rx="14" fill="#ffffff" stroke="#d7e0e4" stroke-width="2"/>
+    <circle cx="134" cy="538" r="9" fill="#163300"/>
+    <text x="156" y="532" font-size="19" font-weight="700" fill="#163300">1,000,000 ÷ (1.03 ยกกำลังปี)</text>
+    <text x="156" y="556" font-size="16" font-weight="500" fill="#6b7a80">ภาษีเงียบที่จ่ายทุกปีโดยไม่รู้ตัว</text>
+  </g>
+
+  <!-- ===== two paths: flat nominal vs declining real ===== -->
+  <!-- faint gridlines -->
+  <g stroke="#e4e9ec" stroke-width="2">
+    <line x1="600" y1="320" x2="1140" y2="320"/>
+    <line x1="600" y1="400" x2="1140" y2="400"/>
+    <line x1="600" y1="480" x2="1140" y2="480"/>
+  </g>
+  <!-- baseline -->
+  <line x1="600" y1="540" x2="1140" y2="540" stroke="#163300" stroke-width="3" opacity="0.3"/>
+
+  <!-- lime area under the declining real line (shrinking purchasing power) -->
+  <path d="M 600 300 L 690 335 L 780 366 L 870 393 L 960 417 L 1050 439 L 1140 458 L 1140 540 L 600 540 Z" fill="#9fe870" opacity="0.38"/>
+
+  <!-- nominal: flat dashed line (the number never moves) -->
+  <polyline points="600,300 1140,300" fill="none" stroke="#5d7079" stroke-width="6" stroke-dasharray="12 8" stroke-linecap="round"/>
+  <circle cx="1140" cy="300" r="10" fill="#5d7079"/>
+
+  <!-- real: declining forest line -->
+  <polyline points="600,300 690,335 780,366 870,393 960,417 1050,439 1140,458" fill="none" stroke="#163300" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="600" cy="300" r="12" fill="#163300"/>
+  <circle cx="1140" cy="458" r="12" fill="#163300"/>
+
+  <!-- legend -->
+  <g font-weight="700">
+    <rect x="612" y="252" width="34" height="10" rx="5" fill="#5d7079"/>
+    <text x="656" y="262" font-size="20" fill="#455a5f">มูลค่าหน้าเงิน · คงที่</text>
+    <rect x="900" y="252" width="34" height="10" rx="5" fill="#163300"/>
+    <text x="944" y="262" font-size="20" fill="#163300">อำนาจซื้อจริง · ลดลง</text>
+  </g>
+
+  <!-- x captions -->
+  <g font-weight="500" fill="#7d8a90" font-size="18">
+    <text x="600" y="568" text-anchor="middle">ปี 0</text>
+    <text x="1140" y="568" text-anchor="middle">ปี 30</text>
+    <text x="870" y="520" text-anchor="middle" font-size="16" fill="#9aa7ad">ตัวอย่างสมมติ</text>
+  </g>
+</svg>

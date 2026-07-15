@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="IBM Plex Sans Thai, sans-serif">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1105" cy="70" r="170" fill="#e4f7d2"/>
+  <circle cx="70" cy="600" r="150" fill="#e4f7d2"/>
+
+  <!-- ===== title ===== -->
+  <text x="90" y="112" font-size="46" font-weight="700" fill="#163300">ยิ่งถือนาน โอกาสได้ปีบวกยิ่งสูง</text>
+  <text x="90" y="156" font-size="24" font-weight="600" fill="#0d7a3f">1 ปีเหมือนโยนเหรียญ · แต่ 20 ปีเข้าใกล้เกือบ 100%</text>
+  <text x="90" y="188" font-size="19" font-weight="500" fill="#6b7a80">The longer you hold, the better your odds · time is on your side</text>
+
+  <!-- ===== left: coin-toss vs near-certain motif ===== -->
+  <g>
+    <circle cx="132" cy="322" r="34" fill="#163300"/>
+    <text x="132" y="331" font-size="26" font-weight="700" fill="#9fe870" text-anchor="middle">?</text>
+    <text x="184" y="316" font-size="23" font-weight="700" fill="#163300">1 ปี · แทบจะโยนเหรียญ</text>
+    <text x="184" y="344" font-size="18" font-weight="500" fill="#6b7a80">ราว 74% · เดายาก</text>
+  </g>
+  <g>
+    <circle cx="132" cy="430" r="34" fill="#9fe870" stroke="#163300" stroke-width="2.5"/>
+    <polygon points="118,430 129,443 148,417 143,413 128,433 122,426" fill="#163300"/>
+    <text x="184" y="424" font-size="23" font-weight="700" fill="#163300">20 ปี · เกือบจะแน่นอน</text>
+    <text x="184" y="452" font-size="18" font-weight="500" fill="#6b7a80">ใกล้ 100% · เวลาช่วย</text>
+  </g>
+
+  <!-- pull-idea chip -->
+  <g>
+    <rect x="98" y="500" width="424" height="60" rx="14" fill="#ffffff" stroke="#d7e0e4" stroke-width="2"/>
+    <circle cx="134" cy="530" r="9" fill="#163300"/>
+    <text x="156" y="524" font-size="19" font-weight="700" fill="#163300">เวลาในตลาด &gt; จับจังหวะตลาด</text>
+    <text x="156" y="548" font-size="16" font-weight="500" fill="#6b7a80">จับคู่เงินกับขอบเขตเวลาที่ยาวพอ</text>
+  </g>
+
+  <!-- ===== right: ascending bars 74 -> 100 (odds by holding period) ===== -->
+  <!-- faint gridlines -->
+  <g stroke="#e4e9ec" stroke-width="2">
+    <line x1="600" y1="300" x2="1140" y2="300"/>
+    <line x1="600" y1="380" x2="1140" y2="380"/>
+    <line x1="600" y1="460" x2="1140" y2="460"/>
+  </g>
+  <!-- baseline -->
+  <line x1="600" y1="540" x2="1140" y2="540" stroke="#163300" stroke-width="3" opacity="0.3"/>
+
+  <!-- bars: heights scale with odds; last one bright (near 100%) -->
+  <g>
+    <rect x="620" y="392" width="72" height="148" rx="5" fill="#163300" opacity="0.55"/>
+    <rect x="720" y="360" width="72" height="180" rx="5" fill="#163300" opacity="0.68"/>
+    <rect x="820" y="344" width="72" height="196" rx="5" fill="#163300" opacity="0.80"/>
+    <rect x="920" y="316" width="72" height="224" rx="5" fill="#163300" opacity="0.92"/>
+    <rect x="1020" y="288" width="72" height="252" rx="5" fill="#9fe870" stroke="#163300" stroke-width="2.5"/>
+  </g>
+
+  <!-- odds labels above bars -->
+  <g font-weight="700" fill="#163300" font-size="19" text-anchor="middle">
+    <text x="656" y="378">74%</text>
+    <text x="756" y="346">84%</text>
+    <text x="856" y="330">88%</text>
+    <text x="956" y="302">95%</text>
+    <text x="1056" y="274">100%</text>
+  </g>
+
+  <!-- x captions (holding period) -->
+  <g font-weight="500" fill="#7d8a90" font-size="17" text-anchor="middle">
+    <text x="656" y="566">1 ปี</text>
+    <text x="756" y="566">3 ปี</text>
+    <text x="856" y="566">5 ปี</text>
+    <text x="956" y="566">10 ปี</text>
+    <text x="1056" y="566">20 ปี</text>
+  </g>
+
+  <!-- caption -->
+  <text x="870" y="258" text-anchor="middle" font-size="16" fill="#9aa7ad">โอกาสได้ปีบวก · ตัวอย่างโดยประมาณ</text>
+</svg>

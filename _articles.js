@@ -81,6 +81,86 @@
   /* static articles · slug = real .html file, thumb = local SVG art */
   var STATIC_ARTICLES = [
     {
+      slug: 'inflation-erodes-cash.html',
+      pillar: 'invest', emoji: '💸', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/inflation-erodes-cash.svg',
+      title: { th: 'เงินสดไม่ใช่ที่ปลอดภัยเสมอไป — เงินเฟ้อกินเงินคุณเงียบ ๆ ทุกปี', en: 'Cash isn\'t always safe — inflation quietly eats it every year' },
+      desc: { th: 'เงินสดดูปลอดภัยเพราะตัวเลขในบัญชีไม่ลด แต่ "อำนาจซื้อ" ลดลงทุกปีตามเงินเฟ้อ — ฿1 ล้านวันนี้ อีก 30 ปีที่เงินเฟ้อ 3% ซื้อของได้เท่าราว ฿4 แสน นี่คือภาษีเงียบของคนถือเงินสดล้วน', en: 'Cash looks safe because the number never drops — but its purchasing power falls every year with inflation. ฿1M today buys about ฿410k in 30 years at 3% inflation: the silent tax on holding only cash.' },
+      tool: 'compound-dca.html',
+      tags: ['inflation', 'framework', 'compounding'],
+      related: ['real-inflation-vs-cpi.html', 'growth-of-one-baht.html', 'risk-of-ruin.html']
+    },
+    {
+      slug: 'odds-of-a-green-year.html',
+      pillar: 'invest', emoji: '🟢', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/odds-of-a-green-year.svg',
+      title: { th: 'ยิ่งถือนาน โอกาสได้ปีบวกยิ่งสูง — เวลาอยู่ข้างนักลงทุน', en: 'The longer you hold, the better your odds of a positive return' },
+      desc: { th: 'ในกรอบ 1 ปี ตลาดขึ้นหรือลงเกือบเหมือนโยนเหรียญ แต่พอยืดเป็น 5–10–20 ปี สัดส่วนช่วงที่ได้ผลตอบแทนบวกเข้าใกล้เกือบ 100% เวลาไม่การันตีกำไร แต่เปลี่ยนเกมจากพนันเป็นความน่าจะเป็นที่เข้าข้างคุณ', en: 'Over one year the market is nearly a coin flip; over 5–10–20 years the share of positive periods approaches ~100%. Time doesn\'t guarantee gains, but it tilts the odds in your favor.' },
+      tool: 'risk-profile.html',
+      tags: ['timing', 'risk', 'framework'],
+      related: ['time-shrinks-the-range.html', 'missing-the-best-days.html', 'markets-that-went-to-zero.html']
+    },
+    {
+      slug: 'luck-vs-skill.html',
+      pillar: 'invest', emoji: '🍀', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/luck-vs-skill.svg',
+      title: { th: 'โชคหรือฝีมือ? ยิ่งกิจกรรมมีโชคมาก ผลงานดี ๆ ยิ่งหลอกตา', en: 'Luck or skill? The more luck involved, the more a good record can fool you' },
+      desc: { th: 'กรอบคิดของ Michael Mauboussin — ทุกกิจกรรมอยู่บนสเปกตรัมโชค↔ฝีมือ การลงทุนระยะสั้นมีโชคปนสูง คนกำไรงามปีนี้อาจแค่โชค ไม่ใช่เก่ง บทเรียนคือดู "กระบวนการ" ไม่ใช่ผลลัพธ์ครั้งเดียว', en: 'Michael Mauboussin\'s framework: every activity sits on a luck↔skill spectrum, and short-term investing is heavy on luck — this year\'s big winner may just be lucky, not skilled. Judge the process, not one outcome.' },
+      tool: 'risk-profile.html',
+      tags: ['psychology', 'framework', 'behavior'],
+      related: ['most-active-funds-lose.html', 'tails-drive-everything.html', 'the-behavior-gap.html']
+    },
+    {
+      slug: 'risk-of-ruin.html',
+      pillar: 'invest', emoji: '⚠️', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/risk-of-ruin.svg',
+      title: { th: 'ทำไมห้าม all-in — คณิตของการอยู่รอด', en: 'Why you never bet it all — the math of survival' },
+      desc: { th: 'การทบต้นต้องการ "การอยู่รอด" ก่อนเสมอ ขาดทุน −100% ครั้งเดียวจบเกมถาวร ไม่ว่าก่อนหน้าจะกำไรแค่ไหน พอร์ตที่โตช้าแต่ไม่เคยแตะศูนย์ ชนะพอร์ตที่โตเร็วแต่มีโอกาสล้างพอร์ต', en: 'Compounding needs survival first — one −100% loss ends the game permanently, no matter the gains before it. A slow portfolio that never hits zero beats a fast one that can be wiped out.' },
+      tool: 'risk-profile.html',
+      tags: ['risk', 'framework', 'portfolio'],
+      related: ['loss-recovery-math.html', 'tails-drive-everything.html', 'volatility-is-the-fee.html']
+    },
+    {
+      slug: 'bears-are-regular.html',
+      pillar: 'invest', emoji: '🐻', date: '2026-07-05', readMin: 7,
+      thumb: 'thumbs/bears-are-regular.svg',
+      title: { th: 'ตลาดหมีมาเป็นประจำ — ไม่ใช่ความผิดปกติ แต่คือค่าผ่านประตู', en: 'Bear markets are regular — not an anomaly, but the price of admission' },
+      desc: { th: 'ตลอดกว่าศตวรรษ ตลาดหมี (ตกจากจุดสูงสุด ≥20%) เกิดซ้ำ ๆ ทุกไม่กี่ปี เป็นส่วนหนึ่งของวัฏจักรปกติ คนที่มองมันเป็นเหตุพิเศษที่ต้องหนีมักขายผิดจังหวะ คนที่รู้ว่ามัน "จะมาแน่" จะเตรียมใจและอยู่รอด', en: 'Over a century, bear markets (a ≥20% fall from the peak) recur every few years — part of the normal cycle. Those who treat them as emergencies sell at the wrong time; those who expect them survive.' },
+      tool: 'risk-profile.html',
+      tags: ['risk', 'behavior', 'framework'],
+      related: ['missing-the-best-days.html', 'volatility-is-the-fee.html', 'the-emotional-cycle.html']
+    },
+    {
+      slug: 'growth-of-one-baht.html',
+      pillar: 'invest', emoji: '🌳', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/growth-of-one-baht.svg',
+      title: { th: 'พลังของการทบต้น: ฿1 ที่ 7% ต่อปี 100 ปี กลายเป็นเกือบ ฿868', en: 'The power of compounding: ฿1 at 7% a year for 100 years ≈ ฿868' },
+      desc: { th: 'การทบต้นดูช้าจนน่าเบื่อช่วงต้น แต่ปลายทางระเบิด — เกือบทั้งหมดของการเติบโตกระจุกช่วงท้าย นี่คือเหตุผลที่ "เวลา" คือวัตถุดิบทรงพลังที่สุด และทำไมเริ่มเร็วชนะเริ่มด้วยเงินเยอะ (ภาพประกอบที่ 7% ก่อนหักเงินเฟ้อ)', en: 'Compounding looks boringly slow early, then explodes — almost all the growth clusters at the end. Why time is the most powerful input, and why starting early beats starting big (illustrative 7%, before inflation).' },
+      tool: 'compound-dca.html',
+      tags: ['compounding', 'timing', 'framework'],
+      related: ['compound-interest-power.html', 'rule-of-72.html', 'savings-rate-beats-returns-early.html']
+    },
+    {
+      slug: 'the-behavior-gap.html',
+      pillar: 'invest', emoji: '🧠', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/the-behavior-gap.svg',
+      title: { th: 'ช่องว่างพฤติกรรม — ทำไมนักลงทุนมักได้น้อยกว่ากองทุนที่ตัวเองถือ', en: 'The behavior gap — why investors usually earn less than their own funds' },
+      desc: { th: 'กองทุนหนึ่งอาจให้ผลตอบแทนดี แต่ "นักลงทุนโดยเฉลี่ย" ในกองนั้นมักได้น้อยกว่า เพราะซื้อตอนขึ้น (โลภ) ขายตอนตก (กลัว) ซ้ำ ๆ ช่องว่างนี้เกิดจากพฤติกรรม ไม่ใช่การเลือกกองผิด — เปลี่ยนพฤติกรรมช่วยได้', en: 'A fund can perform well while its average investor earns less — buying high on greed and selling low on fear, over and over. The gap comes from behavior, not fund choice; changing behavior closes it.' },
+      tool: 'risk-profile.html',
+      tags: ['behavior', 'psychology', 'timing'],
+      related: ['checking-portfolio-too-often.html', 'the-emotional-cycle.html', 'missing-the-best-days.html']
+    },
+    {
+      slug: 'home-bias-trap.html',
+      pillar: 'invest', emoji: '🌏', date: '2026-07-05', readMin: 6,
+      thumb: 'thumbs/home-bias-trap.svg',
+      title: { th: 'กับดักลงทุนแต่ในบ้าน — ทำไมพอร์ตคนไทยเสี่ยงกระจุกโดยไม่รู้ตัว', en: 'The home-bias trap — why a Thai portfolio is more concentrated than it looks' },
+      desc: { th: 'คนมักลงทุนหนักในตลาดประเทศตัวเองเพราะคุ้นเคย (home bias) แต่หุ้นไทยเป็นสัดส่วนเล็กมากของตลาดโลก การถือเกือบทั้งพอร์ตเป็นหุ้นไทยคือเดิมพันกับเศรษฐกิจ ค่าเงิน การเมืองเดียว — ความเสี่ยงกระจุกที่มองไม่เห็น', en: 'People overweight their home market because it feels familiar (home bias) — but Thai equities are a tiny slice of the world. Holding almost all Thai stocks bets everything on one economy, currency, and politics: hidden concentration risk.' },
+      tool: 'risk-profile.html',
+      tags: ['portfolio', 'risk', 'framework'],
+      related: ['markets-that-went-to-zero.html', 'diversification-free-lunch.html', 'returns-rotate-diversification.html']
+    },
+    {
       slug: 'returns-rotate-diversification.html',
       pillar: 'invest', emoji: '🔀', date: '2026-07-05', readMin: 7,
       thumb: 'thumbs/returns-rotate-diversification.svg',

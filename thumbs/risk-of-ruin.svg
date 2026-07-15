@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="IBM Plex Sans Thai, sans-serif">
+  <rect width="1200" height="630" fill="#f2f5f7"/>
+  <circle cx="1105" cy="70" r="170" fill="#e4f7d2"/>
+  <circle cx="70" cy="600" r="150" fill="#e4f7d2"/>
+
+  <!-- ===== title ===== -->
+  <text x="90" y="110" font-size="42" font-weight="700" fill="#163300">ทำไมห้าม all-in — คณิตของการอยู่รอด</text>
+  <text x="90" y="152" font-size="24" font-weight="600" fill="#0d7a3f">ขาดทุน −100% ครั้งเดียว จบเกมถาวร · 0 คูณอะไรก็เป็น 0</text>
+  <text x="90" y="184" font-size="19" font-weight="500" fill="#6b7a80">Why you never bet it all · the math of survival</text>
+
+  <!-- ===== survive vs ruin motif (left) ===== -->
+  <!-- survive: grows slowly, never touches zero -->
+  <g>
+    <circle cx="132" cy="322" r="34" fill="#163300"/>
+    <polygon points="124,332 140,332 140,316 150,316 132,296 114,316 124,316" fill="#9fe870"/>
+    <text x="184" y="316" font-size="23" font-weight="700" fill="#163300">โตช้าแต่ไม่เคยแตะศูนย์</text>
+    <text x="184" y="344" font-size="18" font-weight="500" fill="#6b7a80">รอด · stays in the game</text>
+  </g>
+  <!-- ruin: one all-in ends the game -->
+  <g>
+    <circle cx="132" cy="430" r="34" fill="#a8200d"/>
+    <polygon points="124,418 140,418 140,434 150,434 132,454 114,434 124,434" fill="#ffffff"/>
+    <text x="184" y="424" font-size="23" font-weight="700" fill="#163300">all-in ครั้งเดียวจบเกม</text>
+    <text x="184" y="452" font-size="18" font-weight="500" fill="#6b7a80">−100% · wiped out for good</text>
+  </g>
+
+  <!-- survival-rules chip -->
+  <g>
+    <rect x="98" y="500" width="428" height="60" rx="14" fill="#ffffff" stroke="#d7e0e4" stroke-width="2"/>
+    <circle cx="134" cy="530" r="9" fill="#163300"/>
+    <text x="156" y="524" font-size="18" font-weight="700" fill="#163300">กันเงินจำเป็น · จำกัดเดิมพัน · กระจายเสี่ยง</text>
+    <text x="156" y="548" font-size="16" font-weight="500" fill="#6b7a80">อยู่รอดก่อน แล้วค่อยโต · survive first</text>
+  </g>
+
+  <!-- ===== two paths: slow survivor vs fast then zero ===== -->
+  <!-- faint gridlines -->
+  <g stroke="#e4e9ec" stroke-width="2">
+    <line x1="600" y1="300" x2="1140" y2="300"/>
+    <line x1="600" y1="380" x2="1140" y2="380"/>
+    <line x1="600" y1="460" x2="1140" y2="460"/>
+  </g>
+  <!-- baseline (zero) -->
+  <line x1="600" y1="540" x2="1140" y2="540" stroke="#163300" stroke-width="3" opacity="0.3"/>
+  <text x="612" y="560" font-size="15" font-weight="600" fill="#a8200d">ศูนย์ = จบเกม</text>
+
+  <!-- lime area under the surviving line -->
+  <path d="M 600 500 L 708 478 L 816 456 L 924 432 L 1032 406 L 1140 378 L 1140 540 L 600 540 Z" fill="#9fe870" opacity="0.38"/>
+
+  <!-- all-in: spikes fast then crashes to zero and stays flat -->
+  <polyline points="600,500 672,450 744,392 816,330 864,540 1140,540" fill="none" stroke="#a8200d" stroke-width="6" stroke-dasharray="12 8" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="816" cy="330" r="9" fill="#a8200d"/>
+  <circle cx="1140" cy="540" r="10" fill="#a8200d"/>
+
+  <!-- survivor: slower forest line that keeps climbing -->
+  <polyline points="600,500 708,478 816,456 924,432 1032,406 1140,378" fill="none" stroke="#163300" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="1140" cy="378" r="12" fill="#163300"/>
+
+  <!-- path legend -->
+  <g font-weight="700">
+    <rect x="612" y="250" width="34" height="10" rx="5" fill="#163300"/>
+    <text x="656" y="260" font-size="20" fill="#163300">บริหารความเสี่ยง · รอด</text>
+    <rect x="900" y="250" width="34" height="10" rx="5" fill="#a8200d"/>
+    <text x="944" y="260" font-size="20" fill="#8a2a1c">all-in · ล้างพอร์ต</text>
+  </g>
+
+  <!-- x captions -->
+  <g font-weight="500" fill="#7d8a90" font-size="18">
+    <text x="600" y="588" text-anchor="middle">งวด 0</text>
+    <text x="1140" y="588" text-anchor="middle">งวด 8</text>
+    <text x="884" y="520" text-anchor="middle" font-size="16" fill="#9aa7ad">ตัวอย่างสมมติ</text>
+  </g>
+</svg>

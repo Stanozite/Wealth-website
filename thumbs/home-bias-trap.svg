@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Two paired bars: Thailand is a tiny sliver of the world market but dominates a typical Thai portfolio">
+  <rect width="1200" height="630" fill="#fbfdf9"/>
+  <rect width="1200" height="630" fill="#e4f7d2" opacity="0.20"/>
+
+  <!-- title -->
+  <text x="80" y="82" font-family="'IBM Plex Sans Thai',sans-serif" font-size="40" font-weight="700" fill="#163300">กับดักลงทุนแต่ในบ้าน</text>
+  <text x="80" y="122" font-family="'IBM Plex Sans Thai',sans-serif" font-size="22" font-weight="500" fill="#5b6b63">The home-bias trap · a tiny slice of the world, almost all your portfolio</text>
+
+  <!-- baseline -->
+  <line x1="80" y1="500" x2="1120" y2="500" stroke="#163300" stroke-width="2" opacity="0.35"/>
+
+  <!-- GROUP 1: Thailand in the world market -->
+  <!-- faint full-world reference outline -->
+  <rect x="210" y="200" width="150" height="300" rx="6" fill="none" stroke="#163300" stroke-width="1.5" stroke-dasharray="5 6" opacity="0.45"/>
+  <!-- tiny Thai sliver at the bottom -->
+  <rect x="210" y="490" width="150" height="10" rx="2" fill="#163300"/>
+  <text x="285" y="558" font-family="'IBM Plex Sans Thai',sans-serif" font-size="19" font-weight="700" fill="#163300" text-anchor="middle">ไทยในตลาดโลก</text>
+  <text x="285" y="584" font-family="'IBM Plex Sans Thai',sans-serif" font-size="17" font-weight="600" fill="#5b6b63" text-anchor="middle">~2%</text>
+
+  <!-- GROUP 2: Thai stocks in a typical Thai portfolio -->
+  <!-- near-full bright bar with small remainder cap -->
+  <rect x="820" y="200" width="150" height="45" rx="6" fill="#9fe870" opacity="0.30"/>
+  <rect x="820" y="245" width="150" height="255" rx="6" fill="#9fe870"/>
+  <!-- little house glyph on the dominant bar -->
+  <path d="M895 300 l32 26 h-64 z" fill="#163300"/>
+  <rect x="880" y="326" width="30" height="30" fill="#163300"/>
+  <text x="895" y="558" font-family="'IBM Plex Sans Thai',sans-serif" font-size="19" font-weight="700" fill="#163300" text-anchor="middle">ในพอร์ตคนไทย</text>
+  <text x="895" y="584" font-family="'IBM Plex Sans Thai',sans-serif" font-size="17" font-weight="600" fill="#5b6b63" text-anchor="middle">~85%</text>
+
+  <!-- caption -->
+  <text x="80" y="622" font-family="'IBM Plex Sans Thai',sans-serif" font-size="20" font-weight="600" fill="#163300">คุ้นเคยจนไม่รู้สึกว่าเสี่ยง · การกระจุกที่มองไม่เห็น</text>
+
+  <!-- wordmark -->
+  <text x="1120" y="620" font-family="'IBM Plex Sans Thai',sans-serif" font-size="16" font-weight="600" fill="#8a97a0" text-anchor="end" opacity="0.85">Wealth Compass</text>
+</svg>
